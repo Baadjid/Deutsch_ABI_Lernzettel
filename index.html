@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deutsch Lernzettel - Gymnasium Baden-Württemberg</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+
+        .navigation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .nav-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            border: 2px solid transparent;
+        }
+
+        .nav-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            border-color: #667eea;
+        }
+
+        .nav-card h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-card .icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: white;
+        }
+
+        .icon-literatur { background: #e74c3c; }
+        .icon-pragmatisch { background: #3498db; }
+        .icon-medien { background: #9b59b6; }
+        .icon-textproduktion { background: #27ae60; }
+        .icon-sprachreflexion { background: #f39c12; }
+        .icon-epochen { background: #e67e22; }
+        .icon-erzaehltechnik { background: #1abc9c; }
+        .icon-kommunikation { background: #8e44ad; }
+
+        .nav-card ul {
+            list-style: none;
+            color: #7f8c8d;
+        }
+
+        .nav-card li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .nav-card li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .overview-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            margin-bottom: 30px;
+        }
+
+        .overview-section h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            text-align: center;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .competence-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .competence-card {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .competence-card h3 {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .footer {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+            margin-top: 40px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .navigation-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .competence-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📚 Deutsch Lernzettel</h1>
+            <p>Gymnasium Baden-Württemberg • Eingangsklasse bis Abitur</p>
+        </div>
+
+        <div class="overview-section">
+            <h2>Fünf Kompetenzbereiche des Deutschunterrichts</h2>
+            <div class="competence-grid">
+                <div class="navigation-grid">
+            <div class="nav-card" onclick="window.open('literarische-texte.html', '_self')">
+                <h2><span class="icon icon-literatur">📖</span>Literarische Texte</h2>
+                <ul>
+                    <li>Texterschließung und Lesetechniken</li>
+                    <li>Gattungen: Epik, Lyrik, Drama</li>
+                    <li>Epochen und literarische Strömungen</li>
+                    <li>Interpretationsmethoden</li>
+                    <li>Menschenbilder in der Literatur</li>
+                </ul>
+            </div>
+
+            <div class="nav-card" onclick="window.open('pragmatische-texte.html', '_self')">
+                <h2><span class="icon icon-pragmatisch">📰</span>Pragmatische Texte</h2>
+                <ul>
+                    <li>Informationsgewinnung aus Sachtexten</li>
+                    <li>Argumentationsstrategien</li>
+                    <li>Textanalyse und -kritik</li>
+                    <li>Gesellschaftliche Fragestellungen</li>
+                    <li>Berufliche Textsorten</li>
+                </ul>
+            </div>
+
+            <div class="nav-card" onclick="window.open('medien.html', '_self')">
+                <h2><span class="icon icon-medien">📱</span>Medien</h2>
+                <ul>
+                    <li>Filmische Darstellungsformen</li>
+                    <li>Digitale Medien als Lernwerkzeuge</li>
+                    <li>Kritischer Umgang mit Medien</li>
+                    <li>Literaturverfilmungen</li>
+                    <li>Medienproduktion</li>
+                </ul>
+            </div>
+
+            <div class="nav-card" onclick="window.open('textproduktion.html', '_self')">
+                <h2><span class="icon icon-textproduktion">✍️</span>Textproduktion</h2>
+                <ul>
+                    <li>Schreibprozess planen</li>
+                    <li>Verschiedene Schreibformate</li>
+                    <li>Textüberarbeitung</li>
+                    <li>Kriterienorientiertes Schreiben</li>
+                    <li>Sprachrichtigkeit</li>
+                </ul>
+            </div>
+
+            <div class="nav-card" onclick="window.open('sprachreflexion.html', '_self')">
+                <h2><span class="icon icon-sprachreflexion">🔍</span>Sprachreflexion</h2>
+                <ul>
+                    <li>Grammatik und Stilistik</li>
+                    <li>Sprachwandel und -entwicklung</li>
+                    <li>Sprachvarietäten</li>
+                    <li>Mehrsprachigkeit</li>
+                    <li>Sprachkritik</li>
+                </ul>
+            </div>
+
+            <div class="nav-card" onclick="window.open('epochen.html', '_self')">
+                <h2><span class="icon icon-epochen">🏛️</span>Literaturepochen</h2>
+                <ul>
+                    <li>Romantik und ihre Merkmale</li>
+                    <li>Realismus und Naturalismus</li>
+                    <li>Expressionismus und Moderne</li>
+                    <li>Nachkriegsliteratur</li>
+                    <li>Gegenwartsliteratur</li>
+                </ul>
+            </div>
+
+            <div class="nav-card" onclick="window.open('erzaehltechnik.html', '_self')">
+                <h2><span class="icon icon-erzaehltechnik">🎭</span>Erzähltechnik</h2>
+                <ul>
+                    <li>Erzählperspektiven</li>
+                    <li>Zeitstruktur in Texten</li>
+                    <li>Figuren und Charakterisierung</li>
+                    <li>Episches Theater (Brecht)</li>
+                    <li>Textanalysemethoden</li>
+                </ul>
+            </div>
+
+            <div class="nav-card" onclick="window.open('kommunikation.html', '_self')">
+                <h2><span class="icon icon-kommunikation">💬</span>Kommunikation</h2>
+                <ul>
+                    <li>Kommunikationsmodelle</li>
+                    <li>Gesprächsführung</li>
+                    <li>Rhetorik und Präsentation</li>
+                    <li>Konfliktgespräche</li>
+                    <li>Digitale Kommunikation</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+            </div>
+        </div>
+
+        
+
+    <script>
+        // Smooth animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.nav-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                setTimeout(() => {
+                    card.style.transition = 'all 0.6s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+    </script>
+</body>
+</html>

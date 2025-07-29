@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pragmatische Texte - Deutsch Lernzettel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .back-button {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .back-button:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        .content-section {
+            background: rgba(255, 255, 255, 0.95);
+            margin-bottom: 25px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 25px;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .section-content {
+            padding: 30px;
+        }
+
+        .text-types-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin: 25px 0;
+        }
+
+        .text-type-card {
+            border: 2px solid #3498db;
+            border-radius: 12px;
+            padding: 25px;
+            background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .text-type-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #3498db, #2980b9);
+        }
+
+        .text-type-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(52, 152, 219, 0.2);
+        }
+
+        .text-type-card h3 {
+            color: #3498db;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .strategy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .strategy-card {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        .strategy-card:hover {
+            transform: translateY(-5px) scale(1.03);
+            box-shadow: 0 10px 25px rgba(52, 152, 219, 0.4);
+        }
+
+        .strategy-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        th {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        tr:hover {
+            background: #e3f2fd;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 25px 0;
+            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.3);
+        }
+
+        .highlight-box h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .example-box {
+            background: #ecf0f1;
+            border-left: 5px solid #3498db;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .example-box h4 {
+            color: #3498db;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+
+        .checklist {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+            border: 2px solid #3498db;
+        }
+
+        .checklist ul {
+            list-style: none;
+        }
+
+        .checklist li {
+            margin-bottom: 12px;
+            padding-left: 35px;
+            position: relative;
+            font-size: 1.05rem;
+        }
+
+        .checklist li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #27ae60;
+            font-weight: bold;
+            font-size: 1.4rem;
+        }
+
+        .analysis-steps {
+            counter-reset: step-counter;
+            margin: 25px 0;
+        }
+
+        .analysis-step {
+            counter-increment: step-counter;
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 5px solid #3498db;
+            position: relative;
+        }
+
+        .analysis-step::before {
+            content: "Schritt " counter(step-counter);
+            background: #3498db;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            position: absolute;
+            top: -10px;
+            left: 20px;
+        }
+
+        .analysis-step h4 {
+            color: #3498db;
+            margin-bottom: 15px;
+            margin-top: 10px;
+        }
+
+        .argumentation-pyramid {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin: 30px 0;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 15px;
+        }
+
+        .pyramid-level {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .pyramid-level:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        .pyramid-level.top {
+            width: 200px;
+        }
+
+        .pyramid-level.middle {
+            width: 300px;
+        }
+
+        .pyramid-level.bottom {
+            width: 400px;
+        }
+
+        .error-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .error-card {
+            background: linear-gradient(135deg, #f8f9fa, #ecf0f1);
+            border-radius: 12px;
+            padding: 20px;
+            border-top: 4px solid #e74c3c;
+            transition: all 0.3s ease;
+        }
+
+        .error-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(231, 76, 60, 0.2);
+        }
+
+        .error-card h4 {
+            color: #e74c3c;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .text-types-grid, .strategy-grid, .error-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pyramid-level.top,
+            .pyramid-level.middle,
+            .pyramid-level.bottom {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .section-content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">← Zurück zur Hauptseite</a>
+        
+        <div class="header">
+            <h1>📰 Pragmatische Texte</h1>
+            <p>Abitur Baden-Württemberg • Sachtextanalyse • Argumentation • Textproduktion</p>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                📋 Arten pragmatischer Texte
+            </div>
+            <div class="section-content">
+                <div class="text-types-grid">
+                    <div class="text-type-card">
+                        <h3>📄 Informierende Texte</h3>
+                        <p><strong>Ziel:</strong> Objektive Wissensvermittlung</p>
+                        <ul>
+                            <li><strong>Nachricht:</strong> Aktuelle Ereignisse, W-Fragen</li>
+                            <li><strong>Bericht:</strong> Detaillierte Darstellung</li>
+                            <li><strong>Lexikonartikel:</strong> Systematische Information</li>
+                            <li><strong>Sachbuch:</strong> Umfassende Darstellung</li>
+                        </ul>
+                        <p><strong>Merkmale:</strong> Sachlich, objektiv, verständlich, strukturiert</p>
+                    </div>
+
+                    <div class="text-type-card">
+                        <h3>💼 Appellierende Texte</h3>
+                        <p><strong>Ziel:</strong> Meinungsbildung und Handlungsaufforderung</p>
+                        <ul>
+                            <li><strong>Rede:</strong> Direkte Publikumsansprache</li>
+                            <li><strong>Werbung:</strong> Kaufmotivation</li>
+                            <li><strong>Flugblatt:</strong> Politische Meinungsbildung</li>
+                            <li><strong>Petition:</strong> Forderungen und Unterschriften</li>
+                        </ul>
+                        <p><strong>Merkmale:</strong> Persuasiv, emotional, rhetorische Mittel</p>
+                    </div>
+
+                    <div class="text-type-card">
+                        <h3>🎯 Darstellende Texte</h3>
+                        <p><strong>Ziel:</strong> Problemstellung und Analyse</p>
+                        <ul>
+                            <li><strong>Erörterung:</strong> Pro- und Contra-Abwägung</li>
+                            <li><strong>Essay:</strong> Reflexive Gedankenführung</li>
+                            <li><strong>Kommentar:</strong> Bewertende Stellungnahme</li>
+                            <li><strong>Analyse:</strong> Systematische Untersuchung</li>
+                        </ul>
+                        <p><strong>Merkmale:</strong> Argumentativ, analytisch, strukturiert</p>
+                    </div>
+
+                    <div class="text-type-card">
+                        <h3>📝 Instruierende Texte</h3>
+                        <p><strong>Ziel:</strong> Anleitung und Handlungsführung</p>
+                        <ul>
+                            <li><strong>Gebrauchsanweisung:</strong> Technische Anleitung</li>
+                            <li><strong>Rezept:</strong> Kochanleitungen</li>
+                            <li><strong>Ratgeber:</strong> Lebenshilfe und Tipps</li>
+                            <li><strong>Gesetzestext:</strong> Rechtliche Vorschriften</li>
+                        </ul>
+                        <p><strong>Merkmale:</strong> Präzise, imperativisch, chronologisch</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                🎯 Argumentationsstrategien und -strukturen
+            </div>
+            <div class="section-content">
+                <div class="argumentation-pyramid">
+                    <div class="pyramid-level top">💡 These/Behauptung</div>
+                    <div class="pyramid-level middle">🔍 Argumente + Begründungen</div>
+                    <div class="pyramid-level bottom">📊 Belege + Beispiele + Fakten</div>
+                </div>
+
+                <div class="strategy-grid">
+                    <div class="strategy-card">
+                        <h3>📊 Sachargument</h3>
+                        <p><strong>Basis:</strong> Fakten, Statistiken, wissenschaftliche Erkenntnisse</p>
+                        <p><strong>Beispiel:</strong> "Laut WHO sterben jährlich 7 Millionen Menschen an Luftverschmutzung."</p>
+                        <p><strong>Wirkung:</strong> Objektivität, Glaubwürdigkeit</p>
+                    </div>
+
+                    <div class="strategy-card">
+                        <h3>⚖️ Normatives Argument</h3>
+                        <p><strong>Basis:</strong> Werte, Normen, moralische Grundsätze</p>
+                        <p><strong>Beispiel:</strong> "Jeder Mensch hat das Recht auf saubere Luft."</p>
+                        <p><strong>Wirkung:</strong> Ethische Überzeugung, Gewissensappell</p>
+                    </div>
+
+                    <div class="strategy-card">
+                        <h3>👥 Autoritätsargument</h3>
+                        <p><strong>Basis:</strong> Expertenmeinungen, anerkannte Persönlichkeiten</p>
+                        <p><strong>Beispiel:</strong> "Prof. Dr. Schmidt, Klimaforscher am MPI, warnt vor..."</p>
+                        <p><strong>Wirkung:</strong> Vertrauen durch Expertise</p>
+                    </div>
+
+                    <div class="strategy-card">
+                        <h3>📝 Beispielargument</h3>
+                        <p><strong>Basis:</strong> Konkrete Fälle, Analogien, Vergleiche</p>
+                        <p><strong>Beispiel:</strong> "In Kopenhagen führte das Fahrradkonzept zu 50% weniger Verkehr."</p>
+                        <p><strong>Wirkung:</strong> Veranschaulichung, Nachvollziehbarkeit</p>
+                    </div>
+
+                    <div class="strategy-card">
+                        <h3>💡 Kausalargument</h3>
+                        <p><strong>Basis:</strong> Ursache-Wirkungs-Zusammenhänge</p>
+                        <p><strong>Beispiel:</strong> "Wenn wir jetzt nicht handeln, wird die Erderwärmung unumkehrbar."</p>
+                        <p><strong>Wirkung:</strong> Logische Überzeugung, Dringlichkeit</p>
+                    </div>
+
+                    <div class="strategy-card">
+                        <h3>🔄 Indirektes Argument</h3>
+                        <p><strong>Basis:</strong> Widerlegung der Gegenposition</p>
+                        <p><strong>Beispiel:</strong> "Die Behauptung X ist falsch, weil..."</p>
+                        <p><strong>Wirkung:</strong> Schwächung der Opposition</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                🗣️ Rhetorische Mittel in Sachtexten
+            </div>
+            <div class="section-content">
+                <div class="table-responsive">
+                    <table>
+                        <tr>
+                            <th>Rhetorisches Mittel</th>
+                            <th>Definition</th>
+                            <th>Beispiel</th>
+                            <th>Wirkung</th>
+                        </tr>
+                        <tr>
+                            <td><strong>Rhetorische Frage</strong></td>
+                            <td>Frage ohne erwartete Antwort</td>
+                            <td>"Wollen wir das wirklich hinnehmen?"</td>
+                            <td>Aktivierung, Nachdenklichkeit, Zustimmung</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Dreiergruppe (Trikolon)</strong></td>
+                            <td>Drei gleichwertige Begriffe/Sätze</td>
+                            <td>"Schnell, einfach, effektiv"</td>
+                            <td>Einprägsamkeit, Vollständigkeit, Rhythmus</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Antithese</strong></td>
+                            <td>Gegenüberstellung von Gegensätzen</td>
+                            <td>"Nicht Worte, sondern Taten zählen"</td>
+                            <td>Kontrastierung, Verstärkung, Klarheit</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Metapher</strong></td>
+                            <td>Übertragener Bildvergleich</td>
+                            <td>"Ein Sturm der Entrüstung"</td>
+                            <td>Veranschaulichung, Emotionalisierung</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Anapher</strong></td>
+                            <td>Wiederholung am Satzanfang</td>
+                            <td>"Wir können... Wir müssen... Wir werden..."</td>
+                            <td>Betonung, Eindringlichkeit, Rhythmus</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Klimax</strong></td>
+                            <td>Steigerung zum Höhepunkt</td>
+                            <td>"Bedenklich, gefährlich, katastrophal"</td>
+                            <td>Dramatisierung, Intensivierung</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Hyperbel</strong></td>
+                            <td>Bewusste Übertreibung</td>
+                            <td>"Das größte Problem aller Zeiten"</td>
+                            <td>Aufmerksamkeit, Dramatik</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ironie</strong></td>
+                            <td>Gegenteil des Gemeinten</td>
+                            <td>"Das ist ja eine 'brillante' Idee"</td>
+                            <td>Kritik, Spott, indirekte Ablehnung</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                🔍 Systematische Sachtextanalyse
+            </div>
+            <div class="section-content">
+                <div class="analysis-steps">
+                    <div class="analysis-step">
+                        <h4>Erster Überblick und Texterschließung</h4>
+                        <ul>
+                            <li><strong>Textart bestimmen:</strong> Kommentar, Bericht, Essay, Rede?</li>
+                            <li><strong>Thema erfassen:</strong> Worum geht es grundsätzlich?</li>
+                            <li><strong>Kernaussage identifizieren:</strong> Was ist die Hauptthese?</li>
+                            <li><strong>Adressat und Intention:</strong> An wen richtet sich der Text? Was will er erreichen?</li>
+                            <li><strong>Publikationskontext:</strong> Wo und wann erschienen?</li>
+                        </ul>
+                    </div>
+
+                    <div class="analysis-step">
+                        <h4>Inhaltliche Strukturanalyse</h4>
+                        <ul>
+                            <li><strong>Gedankengang nachvollziehen:</strong> Logische Abfolge der Argumente</li>
+                            <li><strong>Argumentationsstruktur:</strong> These-Antithese-Synthese</li>
+                            <li><strong>Gewichtung der Argumente:</strong> Welche sind zentral, welche nebensächlich?</li>
+                            <li><strong>Belege und Beispiele:</strong> Wie werden Behauptungen gestützt?</li>
+                            <li><strong>Schlussfolgerungen:</strong> Wie wird das Fazit entwickelt?</li>
+                        </ul>
+                    </div>
+
+                    <div class="analysis-step">
+                        <h4>Sprachlich-stilistische Analyse</h4>
+                        <ul>
+                            <li><strong>Sprachebene:</strong> Fachsprache, Umgangssprache, gehobene Sprache?</li>
+                            <li><strong>Rhetorische Mittel:</strong> Metaphern, Fragen, Wiederholungen</li>
+                            <li><strong>Wortwahl:</strong> Neutral, wertend, emotional?</li>
+                            <li><strong>Satzbau:</strong> Parataxe, Hypotaxe, Länge der Sätze</li>
+                            <li><strong>Textaufbau:</strong> Überschriften, Absätze, Gliederung</li>
+                        </ul>
+                    </div>
+
+                    <div class="analysis-step">
+                        <h4>Wirkungsanalyse und Bewertung</h4>
+                        <ul>
+                            <li><strong>Überzeugungskraft:</strong> Sind die Argumente stichhaltig?</li>
+                            <li><strong>Vollständigkeit:</strong> Werden wichtige Aspekte ausgelassen?</li>
+                            <li><strong>Objektivität vs. Subjektivität:</strong> Wie neutral ist die Darstellung?</li>
+                            <li><strong>Zielgruppenansprache:</strong> Erreicht der Text seine Adressaten?</li>
+                            <li><strong>Aktualität und Relevanz:</strong> Wie zeitgemäß sind die Aussagen?</li>
+                        </ul>
+                    </div>
+
+                    <div class="analysis-step">
+                        <h4>Kritische Stellungnahme</h4>
+                        <ul>
+                            <li><strong>Eigene Position entwickeln:</strong> Stimme ich der Argumentation zu?</li>
+                            <li><strong>Schwächen benennen:</strong> Wo ist die Argumentation angreifbar?</li>
+                            <li><strong>Ergänzungen vorschlagen:</strong> Was fehlt in der Darstellung?</li>
+                            <li><strong>Bezug zur Gegenwart:</strong> Wie relevant ist das Thema heute?</li>
+                            <li><strong>Alternative Lösungsansätze:</strong> Gibt es andere Perspektiven?</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                ⚠️ Argumentationsfehler erkennen
+            </div>
+            <div class="section-content">
+                <div class="error-grid">
+                    <div class="error-card">
+                        <h4>👤 Ad hominem</h4>
+                        <p><strong>Problem:</strong> Angriff auf die Person statt auf die Sache</p>
+                        <p><strong>Beispiel:</strong> "Herr X kann das nicht beurteilen, er ist ja nur Lehrer."</p>
+                        <p><strong>Erkennung:</strong> Fokus auf Persönlichkeit statt Argument</p>
+                    </div>
+
+                    <div class="error-card">
+                        <h4>🥖 Strohmann-Argument</h4>
+                        <p><strong>Problem:</strong> Verzerrung der gegnerischen Position</p>
+                        <p><strong>Beispiel:</strong> "Die Gegner wollen alle Autos verbieten." (obwohl sie nur Tempolimit fordern)</p>
+                        <p><strong>Erkennung:</strong> Übertreibung der Gegenposition</p>
+                    </div>
+
+                    <div class="error-card">
+                        <h4>🔗 Falsche Kausalität</h4>
+                        <p><strong>Problem:</strong> Verwechslung von Korrelation und Kausalität</p>
+                        <p><strong>Beispiel:</strong> "Seit der Handy-Nutzung steigen Krebsraten" (andere Ursachen möglich)</p>
+                        <p><strong>Erkennung:</strong> "Nach diesem, also wegen diesem"-Fehlschluss</p>
+                    </div>
+
+                    <div class="error-card">
+                        <h4>📈 Unzulässige Verallgemeinerung</h4>
+                        <p><strong>Problem:</strong> Von Einzelfällen auf das Ganze schließen</p>
+                        <p><strong>Beispiel:</strong> "Alle Politiker sind korrupt" (basierend auf einzelnen Fällen)</p>
+                        <p><strong>Erkennung:</strong> Absolute Begriffe ohne ausreichende Belege</p>
+                    </div>
+
+                    <div class="error-card">
+                        <h4>⚡ Falsche Dichotomie</h4>
+                        <p><strong>Problem:</strong> Nur zwei Alternativen bei mehr Möglichkeiten</p>
+                        <p><strong>Beispiel:</strong> "Entweder Atomkraft oder Blackout"</p>
+                        <p><strong>Erkennung:</strong> "Entweder-oder" ohne Zwischenlösungen</p>
+                    </div>
+
+                    <div class="error-card">
+                        <h4>🌊 Dammbruch-Argument</h4>
+                        <p><strong>Problem:</strong> Übertriebene Folgenabschätzung</p>
+                        <p><strong>Beispiel:</strong> "Wenn wir das erlauben, bricht das Chaos aus"</p>
+                        <p><strong>Erkennung:</strong> Extreme Zukunftsprognosen ohne Belege</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                📝 Abitur-Aufgabenformate
+            </div>
+            <div class="section-content">
+                <div class="example-box">
+                    <h4>📊 Aufgabentyp A: Analyse eines pragmatischen Textes</h4>
+                    <p><strong>Anforderungen:</strong></p>
+                    <ul>
+                        <li>Einleitung: Autor, Titel, Textart, Thema, Erscheinungskontext</li>
+                        <li>Hauptteil: Inhaltswiedergabe → Strukturanalyse → Sprachanalyse</li>
+                        <li>Schluss: Gesamtwürdigung und Bewertung der Überzeugungskraft</li>
+                    </ul>
+                    <p><strong>Bewertungskriterien:</strong> Textverständnis, Analysefähigkeit, sprachliche Darstellung</p>
+                </div>
+
+                <div class="example-box">
+                    <h4>🎯 Aufgabentyp B: Erörterung eines pragmatischen Textes</h4>
+                    <p><strong>Anforderungen:</strong></p>
+                    <ul>
+                        <li>Kurze Texterschließung und Wiedergabe der Kernthesen</li>
+                        <li>Erörterung der im Text behandelten Problemstellung</li>
+                        <li>Eigene begründete Stellungnahme mit zusätzlichen Argumenten</li>
+                        <li>Fazit mit persönlicher Positionierung</li>
+                    </ul>
+                    <p><strong>Bewertungskriterien:</strong> Argumentationsqualität, eigene Urteilsbildung</p>
+                </div>
+
+                <div class="example-box">
+                    <h4>✍️ Aufgabentyp C: Vergleichende Erörterung zweier Texte</h4>
+                    <p><strong>Vorgehen nach dem Aufgabenzitat:</strong></p>
+                    <ol>
+                        <li><strong>Textanalyse beider Texte:</strong> Kernaussagen herausarbeiten</li>
+                        <li><strong>Vergleich der Positionen:</strong> Gemeinsamkeiten und Unterschiede</li>
+                        <li><strong>Eigentlicher Vergleich:</strong> Aspektorientierte Gegenüberstellung</li>
+                        <li><strong>Eigene Stellungnahme:</strong> Welche Position ist überzeugender?</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                ✅ Checkliste für Sachtextanalyse
+            </div>
+            <div class="section-content">
+                <div class="checklist">
+                    <h3>Grundkompetenzen für das Abitur:</h3>
+                    <ul>
+                        <li>Kann ich verschiedene Sachtextarten sicher unterscheiden und deren Merkmale benennen?</li>
+                        <li>Erkenne ich Argumentationsstrukturen und kann sie systematisch analysieren?</li>
+                        <li>Kann ich rhetorische Mittel identifizieren und ihre Wirkung präzise erläutern?</li>
+                        <li>Beherrsche ich die systematische Textanalyse von der Einleitung bis zum Schluss?</li>
+                        <li>Kann ich zwischen sachlichen und wertenden Aussagen unterscheiden?</li>
+                        <li>Erkenne ich Argumentationsfehler und kann sie benennen?</li>
+                        <li>Kann ich eine eigene begründete Stellungnahme verfassen?</li>
+                        <li>Beherrsche ich die vergleichende Erörterung zweier Texte?</li>
+                    </ul>
+                </div>
+
+                <div class="highlight-box">
+                    <h3>🎯 Tipps für die Sachtextanalyse-Klausur:</h3>
+                    <ol>
+                        <li><strong>Aktives Lesen:</strong> Text mehrmals lesen, Kernaussagen markieren</li>
+                        <li><strong>Randnotizen:</strong> Eigene Gedanken und Bewertungen notieren</li>
+                        <li><strong>Strukturanalyse:</strong> Argumentationsgang in eigenen Worten nachvollziehen</li>
+                        <li><strong>Sprachanalyse:</strong> Rhetorische Mittel funktional interpretieren</li>
+                        <li><strong>Kritische Bewertung:</strong> Schwächen und Stärken der Argumentation benennen</li>
+                        <li><strong>Eigene Position:</strong> Begründete Stellungnahme mit zusätzlichen Argumenten</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 30px 0;">
+            <a href="index.html" class="back-button">← Zurück zur Hauptseite</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach((section, index) => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(30px)';
+                setTimeout(() => {
+                    section.style.transition = 'all 0.6s ease';
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+
+            // Interactive text type cards
+            const textTypeCards = document.querySelectorAll('.text-type-card');
+            textTypeCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px) rotate(1deg)';
+                    this.style.boxShadow = '0 20px 40px rgba(52, 152, 219, 0.3)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(-8px) rotate(0deg)';
+                    this.style.boxShadow = '0 15px 35px rgba(52, 152, 219, 0.2)';
+                });
+            });
+
+            // Pyramid interaction
+            const pyramidLevels = document.querySelectorAll('.pyramid-level');
+            pyramidLevels.forEach((level, index) => {
+                setTimeout(() => {
+                    level.style.transform = 'scale(1.1)';
+                    setTimeout(() => {
+                        level.style.transform = 'scale(1)';
+                    }, 200);
+                }, index * 300);
+
+                level.addEventListener('click', function() {
+                    // Reset all levels
+                    pyramidLevels.forEach(l => l.style.background = 'linear-gradient(135deg, #3498db, #2980b9)');
+                    // Highlight clicked level
+                    this.style.background = 'linear-gradient(135deg, #2980b9, #1f4e79)';
+                    setTimeout(() => {
+                        this.style.background = 'linear-gradient(135deg, #3498db, #2980b9)';
+                    }, 2000);
+                });
+            });
+
+            // Strategy cards animation
+            const strategyCards = document.querySelectorAll('.strategy-card');
+            strategyCards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 150);
+
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-8px) scale(1.05) rotate(2deg)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(-5px) scale(1.03) rotate(0deg)';
+                });
+            });
+
+            // Error cards hover effect
+            const errorCards = document.querySelectorAll('.error-card');
+            errorCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-8px)';
+                    this.style.boxShadow = '0 15px 30px rgba(231, 76, 60, 0.3)';
+                    this.style.borderTop = '6px solid #e74c3c';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(-5px)';
+                    this.style.boxShadow = '0 10px 25px rgba(231, 76, 60, 0.2)';
+                    this.style.borderTop = '4px solid #e74c3c';
+                });
+            });
+
+            // Interactive table highlighting
+            const tableRows = document.querySelectorAll('table tr:not(:first-child)');
+            tableRows.forEach(row => {
+                row.addEventListener('click', function() {
+                    // Reset all rows
+                    tableRows.forEach(r => {
+                        r.style.background = '';
+                        r.style.transform = '';
+                    });
+                    // Highlight clicked row
+                    this.style.background = 'linear-gradient(135deg, #e3f2fd, #bbdefb)';
+                    this.style.transform = 'scale(1.02)';
+                    setTimeout(() => {
+                        this.style.background = '';
+                        this.style.transform = '';
+                    }, 3000);
+                });
+            });
+
+            // Analysis steps progressive reveal
+            const analysisSteps = document.querySelectorAll('.analysis-step');
+            analysisSteps.forEach((step, index) => {
+                step.style.opacity = '0';
+                step.style.transform = 'translateX(-50px)';
+                setTimeout(() => {
+                    step.style.transition = 'all 0.6s ease';
+                    step.style.opacity = '1';
+                    step.style.transform = 'translateX(0)';
+                }, index * 300);
+            });
+        });
+    </script>
+</body>
+</html>

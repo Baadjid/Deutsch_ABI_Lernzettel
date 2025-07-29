@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Literarische Texte - Deutsch Lernzettel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .back-button {
+            display: inline-block;
+            background: #e74c3c;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .back-button:hover {
+            background: #c0392b;
+            transform: translateY(-2px);
+        }
+
+        .content-section {
+            background: rgba(255, 255, 255, 0.95);
+            margin-bottom: 25px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 25px;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .section-content {
+            padding: 30px;
+        }
+
+        .gattung-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin: 25px 0;
+        }
+
+        .gattung-card {
+            border: 2px solid #e74c3c;
+            border-radius: 12px;
+            padding: 25px;
+            background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gattung-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #e74c3c, #c0392b);
+        }
+
+        .gattung-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(231, 76, 60, 0.2);
+        }
+
+        .gattung-card h3 {
+            color: #e74c3c;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .epoch-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .epoch-item {
+            background: linear-gradient(135deg, #f8f9fa, #ecf0f1);
+            border-left: 5px solid #e74c3c;
+            padding: 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .epoch-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .epoch-item h4 {
+            color: #e74c3c;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .epoch-years {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        th {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        tr:hover {
+            background: #e8f4fd;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 25px 0;
+            box-shadow: 0 8px 20px rgba(231, 76, 60, 0.3);
+        }
+
+        .highlight-box h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .example-box {
+            background: #ecf0f1;
+            border-left: 5px solid #e74c3c;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .example-box h4 {
+            color: #e74c3c;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+
+        .checklist {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+            border: 2px solid #e74c3c;
+        }
+
+        .checklist ul {
+            list-style: none;
+        }
+
+        .checklist li {
+            margin-bottom: 12px;
+            padding-left: 35px;
+            position: relative;
+            font-size: 1.05rem;
+        }
+
+        .checklist li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #27ae60;
+            font-weight: bold;
+            font-size: 1.4rem;
+        }
+
+        .interpretation-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .step-card {
+            background: linear-gradient(135deg, #f8f9fa, #ecf0f1);
+            border-radius: 12px;
+            padding: 20px;
+            border-top: 4px solid #e74c3c;
+            transition: all 0.3s ease;
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .step-card h4 {
+            color: #e74c3c;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .stilmittel-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .stilmittel-card {
+            background: white;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #e74c3c;
+        }
+
+        .stilmittel-card h5 {
+            color: #e74c3c;
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .gattung-grid, .interpretation-steps {
+                grid-template-columns: 1fr;
+            }
+            
+            .header {
+                padding: 20px;
+            }
+            
+            .section-content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">← Zurück zur Hauptseite</a>
+        
+        <div class="header">
+            <h1>📖 Literarische Texte</h1>
+            <p>Abitur Baden-Württemberg • Textverständnis • Interpretation • Epochenverständnis</p>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                📚 Die drei literarischen Gattungen
+            </div>
+            <div class="section-content">
+                <div class="gattung-grid">
+                    <div class="gattung-card">
+                        <h3>📜 Epik (Erzählende Texte)</h3>
+                        <p><strong>Grundmerkmale:</strong></p>
+                        <ul>
+                            <li><strong>Erzähler:</strong> Vermittelt das Geschehen</li>
+                            <li><strong>Erzählperspektiven:</strong> Ich-, Er/Sie-Erzähler, allwissend</li>
+                            <li><strong>Zeit- und Raumgestaltung:</strong> Chronologie, Rückblenden</li>
+                            <li><strong>Figurencharakterisierung:</strong> Direkt und indirekt</li>
+                        </ul>
+                        <p><strong>Wichtige Formen:</strong></p>
+                        <ul>
+                            <li>Roman (Der Steppenwolf - Hesse)</li>
+                            <li>Novelle (Der goldne Topf - E.T.A. Hoffmann)</li>
+                            <li>Kurzgeschichte</li>
+                            <li>Parabel (Kafka)</li>
+                        </ul>
+                    </div>
+
+                    <div class="gattung-card">
+                        <h3>🎭 Drama (Bühnentexte)</h3>
+                        <p><strong>Grundmerkmale:</strong></p>
+                        <ul>
+                            <li><strong>Dialog und Monolog:</strong> Direkte Figurenrede</li>
+                            <li><strong>Regieanweisungen:</strong> Didascalia</li>
+                            <li><strong>Aufbau:</strong> Akte und Szenen</li>
+                            <li><strong>Konfliktdarstellung:</strong> Dramatische Spannung</li>
+                        </ul>
+                        <p><strong>Wichtige Formen:</strong></p>
+                        <ul>
+                            <li>Klassische Tragödie (Faust I - Goethe)</li>
+                            <li>Bürgerliches Trauerspiel</li>
+                            <li>Episches Theater (Brecht)</li>
+                            <li>Modernes Drama</li>
+                        </ul>
+                    </div>
+
+                    <div class="gattung-card">
+                        <h3>🎵 Lyrik (Gedichte)</h3>
+                        <p><strong>Grundmerkmale:</strong></p>
+                        <ul>
+                            <li><strong>Verdichtete Sprache:</strong> Metaphern, Symbole</li>
+                            <li><strong>Formale Gestaltung:</strong> Metrum, Reim, Strophen</li>
+                            <li><strong>Lyrisches Ich:</strong> Sprechinstanz im Gedicht</li>
+                            <li><strong>Emotionale Intensität:</strong> Stimmung, Gefühle</li>
+                        </ul>
+                        <p><strong>Wichtige Formen:</strong></p>
+                        <ul>
+                            <li>Sonett (Barock)</li>
+                            <li>Volkslied (Romantik)</li>
+                            <li>Freie Verse (Moderne)</li>
+                            <li>Reiselyrik (alle Epochen)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                🏛️ Literarische Epochen im Überblick
+            </div>
+            <div class="section-content">
+                <div class="epoch-timeline">
+                    <div class="epoch-item">
+                        <div class="epoch-years">1600-1720</div>
+                        <h4>Barock</h4>
+                        <p><strong>Merkmale:</strong> Vanitas (Vergänglichkeit), Memento mori, Carpe diem. Geprägt von 30-jährigem Krieg, Furcht vor dem Tod. <strong>Stilmittel:</strong> Antithetik (Diesseits/Jenseits), Sonettform. <strong>Vertreter:</strong> Martin Opitz, Paul Fleming</p>
+                    </div>
+
+                    <div class="epoch-item">
+                        <div class="epoch-years">1720-1790</div>
+                        <h4>Aufklärung</h4>
+                        <p><strong>Merkmale:</strong> Vernunft, Fortschritt, Toleranz. "Sapere aude!" (Kant). Bürgerliche Sprache ohne Fachwörter. <strong>Themen:</strong> Humanität, Individualität, Kritik an Autoritäten. <strong>Vertreter:</strong> Lessing (Nathan der Weise), Kant</p>
+                    </div>
+
+                    <div class="epoch-item">
+                        <div class="epoch-years">1767-1790</div>
+                        <h4>Sturm und Drang</h4>
+                        <p><strong>Merkmale:</strong> Gefühl vor Vernunft, Geniekullt, Naturverbundenheit. Ablehnung von Normen und Traditionen. <strong>Sprache:</strong> Leidenschaftlich, Regelbrüche. <strong>Vertreter:</strong> Junger Goethe, Schiller</p>
+                    </div>
+
+                    <div class="epoch-item">
+                        <div class="epoch-years">1785-1805</div>
+                        <h4>Weimarer Klassik</h4>
+                        <p><strong>Merkmale:</strong> Harmonie, Maß, Schönheit. Humanitätsideal, Bildung durch Kunst. Orientierung an Antike. <strong>Sprache:</strong> Klare Form, edle Einfalt. <strong>Vertreter:</strong> Goethe, Schiller (Faust I)</p>
+                    </div>
+
+                    <div class="epoch-item">
+                        <div class="epoch-years">1795-1830</div>
+                        <h4>Romantik</h4>
+                        <p><strong>Merkmale:</strong> All-Einheit, Sehnsucht nach dem Unendlichen, Rückzug ins Innere. <strong>Symbol:</strong> Blaue Blume. <strong>Motive:</strong> Nacht, Traum, Märchen. <strong>Technik:</strong> Romantische Ironie, Synästhesie. <strong>Vertreter:</strong> Novalis, E.T.A. Hoffmann (Der goldne Topf)</p>
+                    </div>
+
+                    <div class="epoch-item">
+                        <div class="epoch-years">1850-1900</div>
+                        <h4>Realismus</h4>
+                        <p><strong>Merkmale:</strong> Objektive Wirklichkeitsdarstellung, gesellschaftliche Themen, bürgerliche Welt. <strong>Vertreter:</strong> Fontane, Storm, Raabe</p>
+                    </div>
+
+                    <div class="epoch-item">
+                        <div class="epoch-years">1905-1925</div>
+                        <h4>Expressionismus</h4>
+                        <p><strong>Merkmale:</strong> Subjektive Weltsicht, Zivilisationskritik, Aufbruch zur neuen Menschlichkeit. <strong>Stil:</strong> Verzerrung, Fragmentierung. <strong>Vertreter:</strong> Georg Heym, Gottfried Benn</p>
+                    </div>
+
+                    <div class="epoch-item">
+                        <div class="epoch-years">1883-1924</div>
+                        <h4>Kafka & Moderne</h4>
+                        <p><strong>Kafkas Besonderheiten:</strong> Parabelhafte Erzählweise, Entfremdung, bürokratische Machtsysteme. Menschenbild: Der moderne Mensch in ausweglosen Situationen. <strong>Stil:</strong> Nüchterne Sprache, surreale Situationen</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                🔍 Stilmittel und ihre Wirkung
+            </div>
+            <div class="section-content">
+                <div class="table-responsive">
+                    <table>
+                        <tr>
+                            <th>Stilmittel</th>
+                            <th>Definition</th>
+                            <th>Beispiel</th>
+                            <th>Wirkung</th>
+                        </tr>
+                        <tr>
+                            <td><strong>Metapher</strong></td>
+                            <td>Übertragener Vergleich ohne "wie"</td>
+                            <td>"Das Leben ist ein Traum"</td>
+                            <td>Veranschaulichung, Emotionalisierung</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Symbol</strong></td>
+                            <td>Sinnbild für abstrakten Begriff</td>
+                            <td>Blaue Blume = Sehnsucht (Romantik)</td>
+                            <td>Verdichtung, Mehrdeutigkeit</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Personifikation</strong></td>
+                            <td>Vermenschlichung von Abstraktem</td>
+                            <td>"Der Wind flüstert Geheimnisse"</td>
+                            <td>Lebendigkeit, emotionale Nähe</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Romantische Ironie</strong></td>
+                            <td>Zerstörung der Illusion durch Kommentar</td>
+                            <td>Erzählerkommentare im "Goldnen Topf"</td>
+                            <td>Verfremdung, Reflexion</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Synästhesie</strong></td>
+                            <td>Verbindung verschiedener Sinneseindrücke</td>
+                            <td>"Goldene Klänge", "blaue Töne"</td>
+                            <td>Musikalität, Gesamteindruck</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Leitmotiv</strong></td>
+                            <td>Wiederkehrendes Motiv/Symbol</td>
+                            <td>Gretchenfrage in Faust I</td>
+                            <td>Strukturierung, Vertiefung</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                📋 Interpretationsmethoden
+            </div>
+            <div class="section-content">
+                <div class="interpretation-steps">
+                    <div class="step-card">
+                        <h4>🧩 Werkimmanente Interpretation</h4>
+                        <ul>
+                            <li>Fokus ausschließlich auf den Text</li>
+                            <li>Sprachliche und strukturelle Analyse</li>
+                            <li>Formale Gestaltungsmittel</li>
+                            <li>Textinterne Zusammenhänge</li>
+                            <li>Keine biografischen/historischen Bezüge</li>
+                        </ul>
+                    </div>
+
+                    <div class="step-card">
+                        <h4>📚 Biografische Interpretation</h4>
+                        <ul>
+                            <li>Bezug zum Leben des Autors</li>
+                            <li>Persönliche Erfahrungen des Dichters</li>
+                            <li>Entstehungszeit und -umstände</li>
+                            <li>Autobiografische Elemente</li>
+                            <li>Vorsicht vor Fehlschlüssen!</li>
+                        </ul>
+                    </div>
+
+                    <div class="step-card">
+                        <h4>🏛️ Epochentypische Interpretation</h4>
+                        <ul>
+                            <li>Literaturgeschichtliche Einordnung</li>
+                            <li>Typische Merkmale der Epoche</li>
+                            <li>Gesellschaftliche Strömungen</li>
+                            <li>Stil- und Motivgeschichte</li>
+                            <li>Zeitgeist und Weltanschauung</li>
+                        </ul>
+                    </div>
+
+                    <div class="step-card">
+                        <h4>🔄 Vergleichende Interpretation</h4>
+                        <ul>
+                            <li>Zwei oder mehr Texte vergleichen</li>
+                            <li>Gemeinsamkeiten herausarbeiten</li>
+                            <li>Unterschiede verdeutlichen</li>
+                            <li>Aspektorientiertes Vorgehen</li>
+                            <li>Beispiel: Steppenwolf vs. Goldner Topf</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                📖 Abitur-relevante Werke
+            </div>
+            <div class="section-content">
+                <div class="example-box">
+                    <h4>🐺 Hermann Hesse: Der Steppenwolf (1927)</h4>
+                    <p><strong>Thema:</strong> Leiden eines innerlich zerrissenen Menschen in einer geistlosen Zeit. Zwiespalt zwischen Geist und Trieb.</p>
+                    <p><strong>Figur Harry Haller:</strong> Intellektueller Einzelgänger, Kulturkritiker, gefangen zwischen bürgerlicher und künstlerischer Welt.</p>
+                    <p><strong>Epochenbezug:</strong> Neuromantik, Expressionismus - Kritik an der modernen Zivilisation</p>
+                </div>
+
+                <div class="example-box">
+                    <h4>🏺 E.T.A. Hoffmann: Der goldne Topf (1814)</h4>
+                    <p><strong>Thema:</strong> Konflikt zwischen bürgerlicher Realität und märchenhafter Fantasiewelt. Künstlerproblematik.</p>
+                    <p><strong>Figur Anselmus:</strong> Träumerischer Student zwischen zwei Welten - bürgerlich (Veronika) und poetisch (Serpentina).</p>
+                    <p><strong>Epochenbezug:</strong> Hochromantik - Motiv der Doppelwelt, romantische Ironie</p>
+                </div>
+
+                <div class="example-box">
+                    <h4>⚔️ Goethe: Faust I (1808)</h4>
+                    <p><strong>Thema:</strong> Erkenntnisstreben und Lebensdurst. Schuld und Erlösung.</p>
+                    <p><strong>Figur Faust:</strong> Gelehrter, der mit dem Teufel paktiert, um alle Erfahrungen zu machen.</p>
+                    <p><strong>Epochenbezug:</strong> Weimarer Klassik - Humanitätsideal, universelle Menschheitsproblematik</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                ✅ Checkliste für die Textinterpretation
+            </div>
+            <div class="section-content">
+                <div class="checklist">
+                    <h3>Grundkompetenzen für das Abitur:</h3>
+                    <ul>
+                        <li>Kann ich die drei Gattungen sicher unterscheiden und deren Merkmale benennen?</li>
+                        <li>Erkenne ich die wichtigsten Stilmittel und kann ihre Wirkung präzise erläutern?</li>
+                        <li>Beherrsche ich die systematische Texterschließung (Einleitung-Hauptteil-Schluss)?</li>
+                        <li>Kann ich zwischen Form und Inhalt differenzieren und Zusammenhänge erkennen?</li>
+                        <li>Verstehe ich die Grundlagen der abiturrelevanten Epochen?</li>
+                        <li>Kann ich literarische Werke in ihren historischen Kontext einordnen?</li>
+                        <li>Beherrsche ich die vergleichende Interpretation von zwei Texten?</li>
+                        <li>Kann ich eine strukturierte Interpretation mit rotem Faden schreiben?</li>
+                    </ul>
+                </div>
+
+                <div class="highlight-box">
+                    <h3>🎯 Aufbau einer Textinterpretation:</h3>
+                    <ol>
+                        <li><strong>Einleitung:</strong> Autor, Titel, Textart, Thema, Epocheneinordnung</li>
+                        <li><strong>Hauptteil:</strong> 
+                            <ul>
+                                <li>Kurze Inhaltsangabe (Präsens, indirekte Rede)</li>
+                                <li>Formale Analyse (Aufbau, Sprache, Stilmittel)</li>
+                                <li>Inhaltliche Interpretation (Deutung, Bedeutung)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Schluss:</strong> Zusammenfassung, Wertung, Aktualitätsbezug</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 30px 0;">
+            <a href="index.html" class="back-button">← Zurück zur Hauptseite</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach((section, index) => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(30px)';
+                setTimeout(() => {
+                    section.style.transition = 'all 0.6s ease';
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+
+            // Hover-Effekte für Epochen-Timeline
+            const epochItems = document.querySelectorAll('.epoch-item');
+            epochItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.borderLeft = '8px solid #e74c3c';
+                });
+                item.addEventListener('mouseleave', function() {
+                    this.style.borderLeft = '5px solid #e74c3c';
+                });
+            });
+
+            // Interaktive Tabelle
+            const tableRows = document.querySelectorAll('table tr:not(:first-child)');
+            tableRows.forEach(row => {
+                row.addEventListener('click', function() {
+                    const cells = this.querySelectorAll('td');
+                    cells.forEach(cell => {
+                        cell.style.background = '#e8f4fd';
+                    });
+                    setTimeout(() => {
+                        cells.forEach(cell => {
+                            cell.style.background = '';
+                        });
+                    }, 2000);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

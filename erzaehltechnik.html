@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erzähltechnik - Deutsch Lernzettel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #16a085 0%, #1abc9c 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .back-button {
+            display: inline-block;
+            background: #16a085;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .back-button:hover {
+            background: #1abc9c;
+            transform: translateY(-2px);
+        }
+
+        .content-section {
+            background: rgba(255, 255, 255, 0.95);
+            margin-bottom: 25px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, #16a085, #1abc9c);
+            color: white;
+            padding: 25px;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .section-content {
+            padding: 30px;
+        }
+
+        .perspective-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin: 25px 0;
+        }
+
+        .perspective-card {
+            border: 2px solid #16a085;
+            border-radius: 12px;
+            padding: 25px;
+            background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .perspective-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #16a085, #1abc9c);
+        }
+
+        .perspective-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(22, 160, 133, 0.2);
+        }
+
+        .perspective-card h3 {
+            color: #16a085;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .example-box {
+            background: #ecf0f1;
+            border-left: 5px solid #16a085;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .example-box h4 {
+            color: #16a085;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+
+        .example-text {
+            font-style: italic;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid #16a085;
+            margin: 10px 0;
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        th {
+            background: linear-gradient(135deg, #16a085, #1abc9c);
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        tr:hover {
+            background: #e8f4fd;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #16a085, #1abc9c);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 25px 0;
+            box-shadow: 0 8px 20px rgba(22, 160, 133, 0.3);
+        }
+
+        .highlight-box h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .technique-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .technique-card {
+            background: linear-gradient(135deg, #f8f9fa, #ecf0f1);
+            border-radius: 12px;
+            padding: 20px;
+            border-top: 4px solid #16a085;
+            transition: all 0.3s ease;
+        }
+
+        .technique-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .technique-card h4 {
+            color: #16a085;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .checklist {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+            border: 2px solid #16a085;
+        }
+
+        .checklist ul {
+            list-style: none;
+        }
+
+        .checklist li {
+            margin-bottom: 12px;
+            padding-left: 35px;
+            position: relative;
+            font-size: 1.05rem;
+        }
+
+        .checklist li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #27ae60;
+            font-weight: bold;
+            font-size: 1.4rem;
+        }
+
+        .narrative-flow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 30px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 15px;
+        }
+
+        .flow-element {
+            background: linear-gradient(135deg, #16a085, #1abc9c);
+            color: white;
+            padding: 12px 18px;
+            border-radius: 20px;
+            font-weight: 600;
+            text-align: center;
+            min-width: 100px;
+            transition: all 0.3s ease;
+        }
+
+        .flow-element:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(22, 160, 133, 0.3);
+        }
+
+        .flow-arrow {
+            font-size: 1.5rem;
+            color: #16a085;
+            font-weight: bold;
+        }
+
+        .analysis-steps {
+            counter-reset: step-counter;
+            margin: 25px 0;
+        }
+
+        .analysis-step {
+            counter-increment: step-counter;
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 5px solid #16a085;
+            position: relative;
+        }
+
+        .analysis-step::before {
+            content: "Schritt " counter(step-counter);
+            background: #16a085;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            position: absolute;
+            top: -10px;
+            left: 20px;
+        }
+
+        .analysis-step h4 {
+            color: #16a085;
+            margin-bottom: 15px;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .perspective-grid, .technique-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .narrative-flow {
+                flex-direction: column;
+            }
+            
+            .flow-arrow {
+                transform: rotate(90deg);
+            }
+            
+            .section-content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">← Zurück zur Hauptseite</a>
+        
+        <div class="header">
+            <h1>📖 Erzähltechnik</h1>
+            <p>Abitur Baden-Württemberg • Erzählperspektiven • Zeitgestaltung • Figurendarstellung</p>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                👁️ Erzählperspektiven im Detail
+            </div>
+            <div class="section-content">
+                <div class="perspective-grid">
+                    <div class="perspective-card">
+                        <h3>🗣️ Ich-Erzähler</h3>
+                        <p><strong>Merkmale:</strong></p>
+                        <ul>
+                            <li>Erzähler ist Teil der Handlung</li>
+                            <li>Subjektive, begrenzte Sicht</li>
+                            <li>Identifikation mit dem Leser</li>
+                            <li>Authentizität und Glaubwürdigkeit</li>
+                        </ul>
+                        <p><strong>Unterformen:</strong></p>
+                        <ul>
+                            <li><strong>Erlebendes Ich:</strong> Erzählt als Figur in der Handlung</li>
+                            <li><strong>Erzählendes Ich:</strong> Reflektiert aus zeitlichem Abstand</li>
+                        </ul>
+                        <div class="example-box">
+                            <h4>Beispiel aus "Der Steppenwolf":</h4>
+                            <div class="example-text">
+                                "Ich bin ein Steppenwolf, irre einsam durch die Welt..."
+                            </div>
+                            <p><strong>Wirkung:</strong> Unmittelbare emotionale Nähe, subjektive Weltsicht Hallers</p>
+                        </div>
+                    </div>
+
+                    <div class="perspective-card">
+                        <h3>👤 Er/Sie-Erzähler (Personal)</h3>
+                        <p><strong>Merkmale:</strong></p>
+                        <ul>
+                            <li>Fokus auf eine Hauptfigur</li>
+                            <li>Innensicht dieser Figur</li>
+                            <li>Gedanken und Gefühle zugänglich</li>
+                            <li>Begrenzte Perspektive</li>
+                        </ul>
+                        <div class="example-box">
+                            <h4>Beispiel aus "Der goldne Topf":</h4>
+                            <div class="example-text">
+                                "Anselmus fühlte, wie sein Inneres von wunderbaren Klängen durchdrungen wurde."
+                            </div>
+                            <p><strong>Wirkung:</strong> Einblick in Anselmus' Gefühlswelt bei märchenhaften Erlebnissen</p>
+                        </div>
+                    </div>
+
+                    <div class="perspective-card">
+                        <h3>🌐 Allwissender Erzähler</h3>
+                        <p><strong>Merkmale:</strong></p>
+                        <ul>
+                            <li>Kennt alle Figuren und deren Gedanken</li>
+                            <li>Überblick über Vergangenheit und Zukunft</li>
+                            <li>Kann kommentieren und bewerten</li>
+                            <li>Objektivität und Vollständigkeit</li>
+                        </ul>
+                        <div class="example-box">
+                            <h4>Klassisches Beispiel:</h4>
+                            <div class="example-text">
+                                "Während Anna hoffnungsvoll auf den Brief wartete, ahnte sie nicht, dass Peter bereits eine Entscheidung getroffen hatte, die ihr Schicksal besiegeln würde."
+                            </div>
+                            <p><strong>Wirkung:</strong> Spannung durch Wissensvorsprung, umfassende Darstellung</p>
+                        </div>
+                    </div>
+
+                    <div class="perspective-card">
+                        <h3>🎥 Neutraler Erzähler</h3>
+                        <p><strong>Merkmale:</strong></p>
+                        <ul>
+                            <li>Kameraähnliche Perspektive</li>
+                            <li>Nur äußere Handlungen sichtbar</li>
+                            <li>Keine Gedanken oder Kommentare</li>
+                            <li>Objektive, distanzierte Darstellung</li>
+                        </ul>
+                        <div class="example-box">
+                            <h4>Beispiel:</h4>
+                            <div class="example-text">
+                                "Sie stand auf, ging zur Tür und verließ den Raum. Die Tür fiel ins Schloss."
+                            </div>
+                            <p><strong>Wirkung:</strong> Leser muss selbst interpretieren, realistische Darstellung</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                ⏰ Zeitgestaltung in epischen Texten
+            </div>
+            <div class="section-content">
+                <div class="narrative-flow">
+                    <div class="flow-element">Erzählzeit</div>
+                    <div class="flow-arrow">⟷</div>
+                    <div class="flow-element">Erzählte Zeit</div>
+                    <div class="flow-arrow">⟷</div>
+                    <div class="flow-element">Lesezeit</div>
+                </div>
+
+                <div class="table-responsive">
+                    <table>
+                        <tr>
+                            <th>Zeitgestaltung</th>
+                            <th>Beschreibung</th>
+                            <th>Verhältnis Erzählzeit : Erzählte Zeit</th>
+                            <th>Wirkung</th>
+                        </tr>
+                        <tr>
+                            <td><strong>Zeitdeckung</strong></td>
+                            <td>Erzählzeit = erzählte Zeit</td>
+                            <td>1:1 (Dialog, szenische Darstellung)</td>
+                            <td>Unmittelbarkeit, Realismus</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Zeitraffung</strong></td>
+                            <td>Lange Zeiträume kurz dargestellt</td>
+                            <td>Erzählzeit < erzählte Zeit</td>
+                            <td>Fokus auf wichtige Momente</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Zeitdehnung</strong></td>
+                            <td>Kurze Zeit ausführlich beschrieben</td>
+                            <td>Erzählzeit > erzählte Zeit</td>
+                            <td>Intensivierung, Dramatik</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Rückblende</strong></td>
+                            <td>Sprung in die Vergangenheit</td>
+                            <td>Analepse</td>
+                            <td>Erklärung, Hintergrundinformation</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Vorausschau</strong></td>
+                            <td>Verweis auf zukünftige Ereignisse</td>
+                            <td>Prolepse</td>
+                            <td>Spannung, Erwartung</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="highlight-box">
+                    <h3>🔍 Wichtiger Hinweis zur Zeitanalyse:</h3>
+                    <p>Unterscheide zwischen <strong>Erzählzeit</strong> (Zeit des Lesens/Erzählens), <strong>erzählter Zeit</strong> (Zeitspanne der Handlung) und <strong>Erzähltempo</strong> (Verhältnis zwischen beiden). Die Zeitgestaltung ist ein bewusst eingesetztes Stilmittel zur Lenkung der Aufmerksamkeit.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                🎭 Figurendarstellung und Charakterisierung
+            </div>
+            <div class="section-content">
+                <div class="technique-grid">
+                    <div class="technique-card">
+                        <h4>📝 Direkte Charakterisierung</h4>
+                        <ul>
+                            <li><strong>Erzählerkommentar:</strong> Direkte Beschreibung durch den Erzähler</li>
+                            <li><strong>Selbstcharakterisierung:</strong> Figur beschreibt sich selbst</li>
+                            <li><strong>Fremdcharakterisierung:</strong> Andere Figuren beschreiben die Person</li>
+                        </ul>
+                        <div class="example-box">
+                            <h4>Beispiel aus "Steppenwolf":</h4>
+                            <div class="example-text">
+                                "Harry Haller war ein Mann von knapp fünfzig Jahren..."
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="technique-card">
+                        <h4>🎯 Indirekte Charakterisierung</h4>
+                        <ul>
+                            <li><strong>Verhalten:</strong> Handlungen der Figur</li>
+                            <li><strong>Sprache:</strong> Wortwahl, Dialekt, Stil</li>
+                            <li><strong>Gedanken:</strong> Innere Monologe</li>
+                            <li><strong>Umgebung:</strong> Wohnort, Besitz, Kleidung</li>
+                        </ul>
+                        <div class="example-box">
+                            <h4>Beispiel:</h4>
+                            <div class="example-text">
+                                "Er zog seinen abgetragenen Mantel fester um sich und blickte misstrauisch zu Boden."
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="technique-card">
+                        <h4>🔄 Figurenentwicklung</h4>
+                        <ul>
+                            <li><strong>Statische Figuren:</strong> Keine Veränderung</li>
+                            <li><strong>Dynamische Figuren:</strong> Entwicklung im Verlauf</li>
+                            <li><strong>Typen:</strong> Repräsentieren bestimmte Eigenschaften</li>
+                            <li><strong>Individuen:</strong> Komplexe, widersprüchliche Charaktere</li>
+                        </ul>
+                    </div>
+
+                    <div class="technique-card">
+                        <h4>🎪 Figurenkonstellation</h4>
+                        <ul>
+                            <li><strong>Protagonist:</strong> Hauptfigur</li>
+                            <li><strong>Antagonist:</strong> Gegenspieler</li>
+                            <li><strong>Nebenfiguren:</strong> Unterstützende Rollen</li>
+                            <li><strong>Kontrastfiguren:</strong> Hervorhebung durch Gegensatz</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                💭 Bewusstseinswiedergabe
+            </div>
+            <div class="section-content">
+                <div class="table-responsive">
+                    <table>
+                        <tr>
+                            <th>Technik</th>
+                            <th>Beschreibung</th>
+                            <th>Beispiel</th>
+                            <th>Wirkung</th>
+                        </tr>
+                        <tr>
+                            <td><strong>Innerer Monolog</strong></td>
+                            <td>Ungefilterte Gedankenwiedergabe</td>
+                            <td><em>"Was soll ich nur tun? Alles ist so verwirrend..."</em></td>
+                            <td>Unmittelbare Nähe, Authentizität</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Bewusstseinsstrom</strong></td>
+                            <td>Ununterbrochener Gedankenfluss</td>
+                            <td><em>"Regen tropft klopft ans Fenster Mutter früher immer Sonntag..."</em></td>
+                            <td>Realistische Bewusstseinsdarstellung</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Erlebte Rede</strong></td>
+                            <td>Gedanken in 3. Person, Präteritum</td>
+                            <td><em>"Das konnte nicht wahr sein! Hatte er sich geirrt?"</em></td>
+                            <td>Nähe bei Objektivität</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Indirekte Rede</strong></td>
+                            <td>Gedanken im Konjunktiv</td>
+                            <td><em>"Er dachte, dass alles verloren sei."</em></td>
+                            <td>Distanz, Objektivität</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                🔍 Romantische Ironie in "Der goldne Topf"
+            </div>
+            <div class="section-content">
+                <div class="highlight-box">
+                    <h3>📚 Spezialfall: E.T.A. Hoffmanns Erzähltechnik</h3>
+                    <p>Hoffmann nutzt die <strong>romantische Ironie</strong> als zentrales Gestaltungsmittel. Der Erzähler durchbricht bewusst die Illusion und führt den Leser in die Erzählsituation ein.</p>
+                </div>
+
+                <div class="technique-grid">
+                    <div class="technique-card">
+                        <h4>🎭 Techniken der romantischen Ironie</h4>
+                        <ul>
+                            <li><strong>Erzählerkommentare:</strong> Direkte Ansprache des Lesers</li>
+                            <li><strong>Illusionsbrechung:</strong> Verweis auf die Künstlichkeit des Erzählens</li>
+                            <li><strong>Perspektivwechsel:</strong> Zwischen verschiedenen Erzählebenen</li>
+                            <li><strong>Metafiktion:</strong> Reflexion über das Erzählen selbst</li>
+                        </ul>
+                    </div>
+
+                    <div class="technique-card">
+                        <h4>🌟 Wirkung der romantischen Ironie</h4>
+                        <ul>
+                            <li><strong>Verfremdungseffekt:</strong> Leser wird zum Mitdenken animiert</li>
+                            <li><strong>Doppelwelt-Thematik:</strong> Realität vs. Märchenwelt</li>
+                            <li><strong>Lesereinbindung:</strong> Aktive Teilnahme am Erzählprozess</li>
+                            <li><strong>Künstlerproblematik:</strong> Schwierigkeit der Darstellung</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="example-box">
+                    <h4>Beispiel aus "Der goldne Topf":</h4>
+                    <div class="example-text">
+                        "Geneigter Leser! vielleicht ist es dir schon einmal in einem träumerischen Moment gelungen, die wunderbare Figur des Anselmus zu erblicken..."
+                    </div>
+                    <p><strong>Analyse:</strong> Direkter Leserbezug, Vermischung von Realität und Fiktion, Infragestellung der Erzählsituation</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                📊 Erzähltechnik-Analyse: Systematisches Vorgehen
+            </div>
+            <div class="section-content">
+                <div class="analysis-steps">
+                    <div class="analysis-step">
+                        <h4>Erzählsituation bestimmen</h4>
+                        <ul>
+                            <li>Wer erzählt? (Ich-, Er/Sie-Erzähler, allwissend, neutral)</li>
+                            <li>Aus welcher zeitlichen Distanz wird erzählt?</li>
+                            <li>Welche Informationen hat der Erzähler?</li>
+                            <li>Wie verhält sich der Erzähler zu den Figuren?</li>
+                        </ul>
+                    </div>
+
+                    <div class="analysis-step">
+                        <h4>Zeitstruktur analysieren</h4>
+                        <ul>
+                            <li>Chronologische oder asprungartige Erzählweise?</li>
+                            <li>Rückblenden oder Vorausdeutungen?</li>
+                            <li>Verhältnis von Erzählzeit zu erzählter Zeit?</li>
+                            <li>Tempowechsel und deren Funktion?</li>
+                        </ul>
+                    </div>
+
+                    <div class="analysis-step">
+                        <h4>Figurendarstellung untersuchen</h4>
+                        <ul>
+                            <li>Direkte oder indirekte Charakterisierung?</li>
+                            <li>Statische oder dynamische Figuren?</li>
+                            <li>Figurenkonstellation und Beziehungen?</li>
+                            <li>Symbolische Bedeutung der Figuren?</li>
+                        </ul>
+                    </div>
+
+                    <div class="analysis-step">
+                        <h4>Bewusstseinswiedergabe prüfen</h4>
+                        <ul>
+                            <li>Innere Monologe, erlebte Rede, Bewusstseinsstrom?</li>
+                            <li>Zugang zu den Gedanken und Gefühlen?</li>
+                            <li>Subjektive oder objektive Darstellung?</li>
+                            <li>Psychologische Tiefe der Figuren?</li>
+                        </ul>
+                    </div>
+
+                    <div class="analysis-step">
+                        <h4>Besondere Techniken erkennen</h4>
+                        <ul>
+                            <li>Romantische Ironie, Verfremdungseffekte?</li>
+                            <li>Leseransprache oder Erzählerkommentare?</li>
+                            <li>Symbolik, Leitmotive, Wiederholungen?</li>
+                            <li>Intertextuelle Bezüge oder Anspielungen?</li>
+                        </ul>
+                    </div>
+
+                    <div class="analysis-step">
+                        <h4>Gesamtwirkung bewerten</h4>
+                        <ul>
+                            <li>Wie unterstützt die Erzähltechnik die Thematik?</li>
+                            <li>Welche Leserlenkung findet statt?</li>
+                            <li>Epochentypische Merkmale erkennbar?</li>
+                            <li>Innovative oder traditionelle Techniken?</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                ✅ Checkliste für die Erzähltechnik-Analyse
+            </div>
+            <div class="section-content">
+                <div class="checklist">
+                    <h3>Grundkompetenzen für das Abitur:</h3>
+                    <ul>
+                        <li>Kann ich die verschiedenen Erzählperspektiven sicher unterscheiden?</li>
+                        <li>Erkenne ich die Zeitgestaltung und kann ihre Wirkung erläutern?</li>
+                        <li>Kann ich zwischen direkter und indirekter Charakterisierung unterscheiden?</li>
+                        <li>Verstehe ich die verschiedenen Formen der Bewusstseinswiedergabe?</li>
+                        <li>Erkenne ich romantische Ironie und andere besondere Techniken?</li>
+                        <li>Kann ich die Funktion der Erzähltechnik für die Gesamtaussage erklären?</li>
+                        <li>Beherrsche ich die systematische Analyse der Erzählsituation?</li>
+                        <li>Kann ich epochentypische Erzähltechniken identifizieren?</li>
+                    </ul>
+                </div>
+
+                <div class="highlight-box">
+                    <h3>🎯 Tipps für die Klausur:</h3>
+                    <ol>
+                        <li><strong>Belege sammeln:</strong> Konkrete Textstellen für jede Behauptung</li>
+                        <li><strong>Fachsprache verwenden:</strong> Präzise Begriffe der Erzähltheorie</li>
+                        <li><strong>Wirkung erläutern:</strong> Nicht nur benennen, sondern analysieren</li>
+                        <li><strong>Kontext berücksichtigen:</strong> Epochenbezug und Textgattung beachten</li>
+                        <li><strong>Struktur einhalten:</strong> Systematisches Vorgehen von Perspektive über Zeit zu Figuren</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 30px 0;">
+            <a href="index.html" class="back-button">← Zurück zur Hauptseite</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach((section, index) => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(30px)';
+                setTimeout(() => {
+                    section.style.transition = 'all 0.6s ease';
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+
+            // Interactive perspective cards
+            const perspectiveCards = document.querySelectorAll('.perspective-card');
+            perspectiveCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px) rotate(1deg)';
+                    this.style.boxShadow = '0 20px 40px rgba(22, 160, 133, 0.3)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(-8px) rotate(0deg)';
+                    this.style.boxShadow = '0 15px 35px rgba(22, 160, 133, 0.2)';
+                });
+            });
+
+            // Narrative flow animation
+            const flowElements = document.querySelectorAll('.flow-element');
+            flowElements.forEach((element, index) => {
+                setTimeout(() => {
+                    element.style.transform = 'scale(1.1)';
+                    setTimeout(() => {
+                        element.style.transform = 'scale(1)';
+                    }, 200);
+                }, index * 300);
+            });
+
+            // Analysis steps progressive reveal
+            const analysisSteps = document.querySelectorAll('.analysis-step');
+            analysisSteps.forEach((step, index) => {
+                setTimeout(() => {
+                    step.style.opacity = '1';
+                    step.style.transform = 'translateX(0)';
+                }, index * 400);
+            });
+
+            // Interactive table highlighting
+            const tableRows = document.querySelectorAll('table tr:not(:first-child)');
+            tableRows.forEach(row => {
+                row.addEventListener('click', function() {
+                    // Reset all rows
+                    tableRows.forEach(r => {
+                        r.style.background = '';
+                        r.style.transform = '';
+                    });
+                    // Highlight clicked row
+                    this.style.background = 'linear-gradient(135deg, #e8f6f3, #d5f4e6)';
+                    this.style.transform = 'scale(1.02)';
+                    setTimeout(() => {
+                        this.style.background = '';
+                        this.style.transform = '';
+                    }, 2000);
+                });
+            });
+
+            // Technique cards hover effect
+            const techniqueCards = document.querySelectorAll('.technique-card');
+            techniqueCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-8px) scale(1.03)';
+                    this.style.boxShadow = '0 15px 30px rgba(22, 160, 133, 0.2)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(-5px) scale(1)';
+                    this.style.boxShadow = '0 10px 25px rgba(0, 0, 0, 0.1)';
+                });
+            });
+
+            // Example text highlighting
+            const exampleTexts = document.querySelectorAll('.example-text');
+            exampleTexts.forEach(text => {
+                text.addEventListener('mouseenter', function() {
+                    this.style.borderLeft = '5px solid #16a085';
+                    this.style.background = '#f0fffe';
+                });
+                
+                text.addEventListener('mouseleave', function() {
+                    this.style.borderLeft = '3px solid #16a085';
+                    this.style.background = 'white';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

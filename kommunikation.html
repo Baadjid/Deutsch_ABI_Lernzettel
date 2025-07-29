@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kommunikation - Kompetenzbereich Deutsch</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .back-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+        }
+
+        .content-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            margin-bottom: 25px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 20px;
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+
+        .section-content {
+            padding: 30px;
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .model-card {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 15px;
+            padding: 25px;
+            border-left: 5px solid #667eea;
+            transition: all 0.3s ease;
+        }
+
+        .model-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .model-card h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .conversation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .conversation-card {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .conversation-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(52, 152, 219, 0.4);
+        }
+
+        .rhetoric-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .rhetoric-card {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .rhetoric-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(231, 76, 60, 0.4);
+        }
+
+        .rhetoric-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+            color: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 10px 30px rgba(243, 156, 18, 0.3);
+        }
+
+        .highlight-box h3 {
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .example-box {
+            background: linear-gradient(135deg, #e8f5e8, #c8e6c9);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            border-left: 5px solid #4caf50;
+        }
+
+        .example-box h4 {
+            color: #2e7d32;
+            margin-bottom: 15px;
+        }
+
+        .checklist {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            border-left: 5px solid #27ae60;
+        }
+
+        .checklist ul {
+            list-style: none;
+        }
+
+        .checklist li {
+            margin-bottom: 15px;
+            padding-left: 35px;
+            position: relative;
+            font-size: 1.1rem;
+        }
+
+        .checklist li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #27ae60;
+            font-weight: bold;
+            font-size: 1.4rem;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        th {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            font-weight: bold;
+        }
+
+        tr:hover {
+            background: #f8f9fa;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 4px solid #2196f3;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 4px solid #ff9800;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .step-card {
+            background: linear-gradient(135deg, #9b59b6, #8e44ad);
+            color: white;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .step-card:hover {
+            transform: scale(1.05);
+        }
+
+        .step-number {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .model-grid, .conversation-grid, .rhetoric-grid, .steps-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            table {
+                min-width: 500px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">← Zurück zur Hauptseite</a>
+        
+        <div class="header">
+            <h1>🗣️ Kommunikation</h1>
+            <p>Gesprächsführung • Rhetorik • Kommunikationsmodelle • Argumentation</p>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                📡 Kommunikationsmodelle für das Abitur
+            </div>
+            <div class="section-content">
+                <div class="model-grid">
+                    <div class="model-card">
+                        <h3>📊 Organon-Modell (Karl Bühler)</h3>
+                        <p><strong>Drei Funktionen der Sprache:</strong></p>
+                        <ul>
+                            <li><strong>Darstellungsfunktion:</strong> Sachverhalt objektiv darstellen</li>
+                            <li><strong>Ausdrucksfunktion:</strong> Befindlichkeit des Senders ausdrücken</li>
+                            <li><strong>Appellfunktion:</strong> Wirkung auf den Empfänger erzielen</li>
+                        </ul>
+                        <div class="info-box">
+                            <p><strong>Abitur-Tipp:</strong> Dieses Modell eignet sich perfekt zur Analyse von Reden, Kommentaren und appellativen Texten!</p>
+                        </div>
+                    </div>
+
+                    <div class="model-card">
+                        <h3>🟩 Vier-Seiten-Modell (Schulz von Thun)</h3>
+                        <p><strong>Jede Nachricht hat vier Aspekte:</strong></p>
+                        <ul>
+                            <li><strong>Sachinhalt:</strong> Worüber informiere ich?</li>
+                            <li><strong>Selbstkundgabe:</strong> Was gebe ich von mir preis?</li>
+                            <li><strong>Beziehung:</strong> Wie stehe ich zu dir?</li>
+                            <li><strong>Appell:</strong> Was will ich erreichen?</li>
+                        </ul>
+                        <div class="example-box">
+                            <h4>💡 Klassisches Beispiel:</h4>
+                            <p><strong>Äußerung:</strong> "Die Ampel ist grün!"</p>
+                            <ul>
+                                <li><strong>Sachinhalt:</strong> Die Ampel zeigt grünes Licht</li>
+                                <li><strong>Selbstkundgabe:</strong> Ich bin aufmerksam/ungeduldig</li>
+                                <li><strong>Beziehung:</strong> Du solltest aufmerksamer sein</li>
+                                <li><strong>Appell:</strong> Fahr endlich los!</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="model-card">
+                        <h3>🎭 Kommunikationsaxiome (Watzlawick)</h3>
+                        <p><strong>Grundannahmen der Kommunikation:</strong></p>
+                        <ol>
+                            <li><strong>Man kann nicht nicht kommunizieren</strong></li>
+                            <li><strong>Jede Kommunikation hat Inhalts- und Beziehungsaspekt</strong></li>
+                            <li><strong>Kommunikation ist kreisförmig strukturiert</strong></li>
+                            <li><strong>Digital und analog</strong> (verbal und nonverbal)</li>
+                            <li><strong>Symmetrisch oder komplementär</strong> (gleichberechtigt oder hierarchisch)</li>
+                        </ol>
+                    </div>
+
+                    <div class="model-card">
+                        <h3>📞 Sender-Empfänger-Modell (Shannon/Weaver)</h3>
+                        <p><strong>Technisches Kommunikationsmodell:</strong></p>
+                        <ul>
+                            <li><strong>Sender:</strong> Kodiert die Nachricht</li>
+                            <li><strong>Kanal:</strong> Übertragungsweg</li>
+                            <li><strong>Empfänger:</strong> Dekodiert die Nachricht</li>
+                            <li><strong>Störungen:</strong> Beeinträchtigen die Übertragung</li>
+                            <li><strong>Feedback:</strong> Rückmeldung</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <h4>⚠️ Abitur-Hinweis: Modelle funktional anwenden!</h4>
+                    <p>Verwende Kommunikationsmodelle nicht nur als "Etiketten", sondern nutze sie zur <strong>systematischen Textanalyse</strong>. Erkläre, wie die verschiedenen Ebenen im konkreten Text realisiert werden und welche <strong>Wirkung</strong> sie erzielen.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                🗣️ Gesprächsführung und Gesprächsarten
+            </div>
+            <div class="section-content">
+                <div class="table-container">
+                    <table>
+                        <tr>
+                            <th>Gesprächsart</th>
+                            <th>Ziel</th>
+                            <th>Merkmale</th>
+                            <th>Beispiele</th>
+                        </tr>
+                        <tr>
+                            <td><strong>Informationsgespräch</strong></td>
+                            <td>Wissen vermitteln</td>
+                            <td>Sachlich, strukturiert</td>
+                            <td>Unterricht, Präsentation</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Beratungsgespräch</strong></td>
+                            <td>Hilfe anbieten</td>
+                            <td>Empathisch, lösungsorientiert</td>
+                            <td>Therapie, Coaching</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Verhandlungsgespräch</strong></td>
+                            <td>Kompromiss finden</td>
+                            <td>Strategisch, argumentativ</td>
+                            <td>Geschäfte, Tarifverhandlung</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Konfliktgespräch</strong></td>
+                            <td>Problem lösen</td>
+                            <td>Emotional, klärend</td>
+                            <td>Streitschlichtung, Mediation</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Bewerbungsgespräch</strong></td>
+                            <td>Eignung prüfen</td>
+                            <td>Formal, bewertend</td>
+                            <td>Jobinterview, Aufnahmeprüfung</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="highlight-box">
+                    <h3>🎯 Erfolgreiche Gesprächsführung - Die 5 Schritte:</h3>
+                    <div class="steps-grid">
+                        <div class="step-card">
+                            <div class="step-number">1</div>
+                            <h4>Vorbereitung</h4>
+                            <p>Ziele klären, Informationen sammeln</p>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-number">2</div>
+                            <h4>Eröffnung</h4>
+                            <p>Atmosphäre schaffen, Agenda besprechen</p>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-number">3</div>
+                            <h4>Durchführung</h4>
+                            <p>Aktiv zuhören, nachfragen, strukturieren</p>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-number">4</div>
+                            <h4>Abschluss</h4>
+                            <p>Ergebnisse zusammenfassen, nächste Schritte</p>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-number">5</div>
+                            <h4>Nachbereitung</h4>
+                            <p>Vereinbarungen dokumentieren, umsetzen</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <h4>💬 Gesprächstechniken für bessere Kommunikation:</h4>
+                    <ul>
+                        <li><strong>Aktives Zuhören:</strong> Aufmerksam sein, nachfragen, paraphrasieren</li>
+                        <li><strong>Ich-Botschaften:</strong> "Ich fühle mich..." statt "Du bist..."</li>
+                        <li><strong>Offene Fragen:</strong> W-Fragen stellen statt Ja/Nein-Fragen</li>
+                        <li><strong>Spiegeln:</strong> Gefühle und Inhalte wiedergeben</li>
+                        <li><strong>Zusammenfassen:</strong> Zwischenergebnisse festhalten</li>
+                    </ul>
+                </div>
+
+                <div class="table-container">
+                    <h4>🔄 Gewaltfreie Kommunikation - Beispiele:</h4>
+                    <table>
+                        <tr>
+                            <th>Problematisch</th>
+                            <th>Gewaltfrei</th>
+                        </tr>
+                        <tr>
+                            <td>"Du verstehst mich nie!"</td>
+                            <td>"Ich fühle mich nicht verstanden, wenn..."</td>
+                        </tr>
+                        <tr>
+                            <td>"Du bist immer zu spät!"</td>
+                            <td>"Mir ist Pünktlichkeit wichtig, weil..."</td>
+                        </tr>
+                        <tr>
+                            <td>"Du machst alles falsch!"</td>
+                            <td>"Ich sehe das anders und würde..."</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                🎙️ Rhetorik und Präsentation
+            </div>
+            <div class="section-content">
+                <div class="rhetoric-grid">
+                    <div class="rhetoric-card">
+                        <h3>🏛️ Klassische Rhetorik (Aristoteles)</h3>
+                        <p><strong>Drei Säulen der Überzeugung:</strong></p>
+                        <ul>
+                            <li><strong>Ethos:</strong> Glaubwürdigkeit des Redners</li>
+                            <li><strong>Pathos:</strong> Emotionale Ansprache</li>
+                            <li><strong>Logos:</strong> Logische Argumentation</li>
+                        </ul>
+                        <p><strong>Abitur-Relevanz:</strong> Perfekt für Redenanalyse!</p>
+                    </div>
+
+                    <div class="rhetoric-card">
+                        <h3>🎯 Aufbau einer Rede</h3>
+                        <ol>
+                            <li><strong>Exordium:</strong> Einleitung, Aufmerksamkeit wecken</li>
+                            <li><strong>Narratio:</strong> Sachverhalt darstellen</li>
+                            <li><strong>Argumentatio:</strong> Beweise und Argumente</li>
+                            <li><strong>Peroratio:</strong> Zusammenfassung und Appell</li>
+                        </ol>
+                    </div>
+
+                    <div class="rhetoric-card">
+                        <h3>🎭 Körpersprache und Stimme</h3>
+                        <ul>
+                            <li><strong>Gestik:</strong> Unterstützende Handbewegungen</li>
+                            <li><strong>Mimik:</strong> Ausdrucksstarke Gesichtszüge</li>
+                            <li><strong>Haltung:</strong> Selbstbewusst und offen</li>
+                            <li><strong>Stimme:</strong> Tempo, Lautstärke, Betonung</li>
+                            <li><strong>Blickkontakt:</strong> Publikum einbeziehen</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="table-container">
+                    <h4>🎨 Rhetorische Mittel in der Kommunikation:</h4>
+                    <table>
+                        <tr>
+                            <th>Rhetorisches Mittel</th>
+                            <th>Beispiel</th>
+                            <th>Wirkung</th>
+                        </tr>
+                        <tr>
+                            <td><strong>Rhetorische Frage</strong></td>
+                            <td>"Wollen wir das wirklich hinnehmen?"</td>
+                            <td>Aktivierung, Nachdenklichkeit</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Dreiergruppe (Trikolon)</strong></td>
+                            <td>"Schnell, einfach, effektiv"</td>
+                            <td>Einprägsamkeit, Vollständigkeit</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Antithese</strong></td>
+                            <td>"Nicht Worte, sondern Taten"</td>
+                            <td>Kontrastierung, Verstärkung</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Metapher</strong></td>
+                            <td>"Ein Sturm der Entrüstung"</td>
+                            <td>Veranschaulichung, Emotionalisierung</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Anapher</strong></td>
+                            <td>"Wir können... Wir müssen..."</td>
+                            <td>Betonung, Eindringlichkeit</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Klimax</strong></td>
+                            <td>"Gut, besser, am besten"</td>
+                            <td>Steigerung, Dramatisierung</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Parallelismus</strong></td>
+                            <td>"Ich kam, ich sah, ich siegte"</td>
+                            <td>Rhythmus, Eindringlichkeit</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="example-box">
+                    <h4>📺 Beispiel: Analyse einer politischen Rede</h4>
+                    <p><strong>Faust vs. Wagner (nach Goethe):</strong></p>
+                    <p><strong>Faust:</strong> Betont Bedeutung des Gefühls/Erlebens, lehnt Rhetorik ab, sucht wahre Erkenntnis</p>
+                    <p><strong>Wagner:</strong> Sucht rhetorische Wirkung, betreibt Buchwissenschaft, von Ehrgeiz angetrieben</p>
+                    <p><strong>Kontrastfunktion:</strong> Durch die Gegenüberstellung werden die charakteristischen Züge beider Figuren deutlicher.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                💭 Argumentation und Diskussion
+            </div>
+            <div class="section-content">
+                <div class="conversation-grid">
+                    <div class="conversation-card">
+                        <h3>📋 Argumentationsstrukturen</h3>
+                        <ul>
+                            <li><strong>These:</strong> Behauptung aufstellen</li>
+                            <li><strong>Argument:</strong> Begründung liefern</li>
+                            <li><strong>Beispiel:</strong> Veranschaulichung</li>
+                            <li><strong>Beleg:</strong> Faktische Untermauerung</li>
+                            <li><strong>Schlussfolgerung:</strong> Konsequenz ziehen</li>
+                        </ul>
+                    </div>
+
+                    <div class="conversation-card">
+                        <h3>⚖️ Argumentationstypen</h3>
+                        <ul>
+                            <li><strong>Faktenargument:</strong> Objektive Tatsachen</li>
+                            <li><strong>Autoritätsargument:</strong> Expertenaussagen</li>
+                            <li><strong>Analogieargument:</strong> Vergleiche ziehen</li>
+                            <li><strong>Normatives Argument:</strong> Werte und Normen</li>
+                            <li><strong>Indirektes Argument:</strong> Gegenposition widerlegen</li>
+                        </ul>
+                    </div>
+
+                    <div class="conversation-card">
+                        <h3>🔍 Argumentationsfehler erkennen</h3>
+                        <ul>
+                            <li><strong>Ad hominem:</strong> Person statt Sache angreifen</li>
+                            <li><strong>Strohmann:</strong> Verzerrte Gegenposition</li>
+                            <li><strong>Zirkelschluss:</strong> Begründung = Behauptung</li>
+                            <li><strong>Falsche Dichotomie:</strong> Nur zwei Optionen</li>
+                            <li><strong>Generalisierung:</strong> Einzelfall verallgemeinern</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    <h3>🎯 Diskussionsregeln für konstruktive Gespräche:</h3>
+                    <ol>
+                        <li><strong>Respektvoller Umgang:</strong> Andere Meinungen tolerieren</li>
+                        <li><strong>Sachlich bleiben:</strong> Argumente statt Emotionen</li>
+                        <li><strong>Ausreden lassen:</strong> Nicht unterbrechen</li>
+                        <li><strong>Nachfragen:</strong> Bei Unklarheiten um Erläuterung bitten</li>
+                        <li><strong>Kompromissbereitschaft:</strong> Gemeinsame Lösungen suchen</li>
+                        <li><strong>Zusammenfassen:</strong> Ergebnisse festhalten</li>
+                    </ol>
+                </div>
+
+                <div class="info-box">
+                    <h4>🎭 Abitur-Tipp: Rollendiskussion analysieren</h4>
+                    <p>Bei der Analyse von Diskussionen achte auf:</p>
+                    <ul>
+                        <li><strong>Rollen der Gesprächspartner:</strong> Wer hat welche Position?</li>
+                        <li><strong>Argumentationsstrategien:</strong> Wie wird überzeugt?</li>
+                        <li><strong>Kommunikationsstörungen:</strong> Was läuft schief?</li>
+                        <li><strong>Machtverhältnisse:</strong> Wer dominiert das Gespräch?</li>
+                        <li><strong>Ergebnis:</strong> Wird eine Lösung gefunden?</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                🎪 Kommunikation in der Literatur
+            </div>
+            <div class="section-content">
+                <div class="example-box">
+                    <h4>📚 Goethe's Faust - Kommunikationsanalyse</h4>
+                    <p><strong>Szene "Nacht" vs. "Vor dem Tor" - Kommunikative Situationen:</strong></p>
+                    
+                    <div class="table-container">
+                        <table>
+                            <tr>
+                                <th>Aspekt</th>
+                                <th>Szene "Nacht"</th>
+                                <th>Szene "Vor dem Tor"</th>
+                            </tr>
+                            <tr>
+                                <td><strong>Tageszeit</strong></td>
+                                <td>Nacht: dunkel</td>
+                                <td>Tag: hell</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Raum</strong></td>
+                                <td>Drinnen: Enge des Gemäuers</td>
+                                <td>Draußen: Weite der Natur</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Soziale Situation</strong></td>
+                                <td>Einsamkeit</td>
+                                <td>Sozialer Kontext: Gespräch mit Wagner</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Stimmung</strong></td>
+                                <td>Hilflosigkeit/Verzweiflung</td>
+                                <td>Heiterkeit, offen für Kommunikation</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <p><strong>Gesellschaftsgruppen "Vor dem Tor":</strong></p>
+                    <ul>
+                        <li><strong>Handwerksburschen, Dienstmädchen, Schüler:</strong> Streben nach Geselligkeit, Bier und Tanz</li>
+                        <li><strong>Bürger:</strong> Echauffieren sich über kommunalpolitische Themen</li>
+                        <li><strong>Soldat:</strong> Strebt nach militärischen und amourösen Eroberungen</li>
+                    </ul>
+                </div>
+
+                <div class="warning-box">
+                    <h4>⚠️ Abitur-Relevanz: Kommunikation als Charaktermerkmal</h4>
+                    <p>Analysiere in literarischen Texten, <strong>wie Figuren kommunizieren</strong>:</p>
+                    <ul>
+                        <li><strong>Kommunikationsstil:</strong> Direkt/indirekt, höflich/unhöflich</li>
+                        <li><strong>Sprachebene:</strong> Hochsprache, Umgangssprache, Dialekt</li>
+                        <li><strong>Nonverbale Kommunikation:</strong> Gestik, Mimik, Körpersprache</li>
+                        <li><strong>Machtstrukturen:</strong> Wer spricht wie mit wem?</li>
+                        <li><strong>Kommunikationsstörungen:</strong> Missverständnisse, Schweigen</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                ✅ Checkliste für die Abiturprüfung
+            </div>
+            <div class="section-content">
+                <div class="checklist">
+                    <h3>Kommunikationskompetenz entwickeln:</h3>
+                    <ul>
+                        <li>Kann ich die wichtigsten Kommunikationsmodelle erklären und anwenden?</li>
+                        <li>Erkenne ich verschiedene Gesprächsarten und ihre Merkmale?</li>
+                        <li>Kann ich Kommunikationsstörungen identifizieren und analysieren?</li>
+                        <li>Verstehe ich den Aufbau und die Wirkung von Reden?</li>
+                        <li>Kann ich rhetorische Mittel funktional einsetzen und analysieren?</li>
+                        <li>Beherrsche ich Techniken der Argumentation und Diskussion?</li>
+                        <li>Kann ich nonverbale Kommunikation deuten?</li>
+                        <li>Verstehe ich Kommunikation als literarisches Gestaltungsmittel?</li>
+                        <li>Kann ich Machtstrukturen in Gesprächen erkennen?</li>
+                        <li>Wende ich Gesprächstechniken situationsangemessen an?</li>
+                    </ul>
+                </div>
+
+                <div class="highlight-box">
+                    <h3>🎯 Abitur-Prüfungstipps für Kommunikation:</h3>
+                    <ul>
+                        <li><strong>Modelle funktional nutzen:</strong> Verwende Kommunikationsmodelle zur systematischen Textanalyse</li>
+                        <li><strong>Konkrete Beispiele:</strong> Belege deine Analyse mit Zitaten aus dem Text</li>
+                        <li><strong>Wirkung beschreiben:</strong> Erkläre die Funktion von Kommunikationsstrategien</li>
+                        <li><strong>Kontext berücksichtigen:</strong> Situation, Zeit, gesellschaftliche Bedingungen</li>
+                        <li><strong>Mehrperspektivisch denken:</strong> Sender- und Empfängerperspektive einbeziehen</li>
+                        <li><strong>Fachsprache verwenden:</strong> Präzise kommunikationswissenschaftliche Begriffe nutzen</li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <h4>📖 Wichtige Textsorten für die Kommunikationsanalyse:</h4>
+                    <ul>
+                        <li><strong>Politische Reden:</strong> Aristoteles' Rhetorik anwenden</li>
+                        <li><strong>Dialoge in Dramen:</strong> Vier-Seiten-Modell nutzen</li>
+                        <li><strong>Briefe/E-Mails:</strong> Sender-Empfänger-Modell</li>
+                        <li><strong>Gespräche in Prosa:</strong> Watzlawick'sche Axiome</li>
+                        <li><strong>Appellative Texte:</strong> Organon-Modell von Bühler</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
