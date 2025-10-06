@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performative Verben - Mehrsprachige Übersicht</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1400px;
+            margin: 20px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        h1 {
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2em;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        thead {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        th {
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.95em;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e0e0e0;
+            vertical-align: top;
+        }
+        tbody tr:hover {
+            background-color: #f8f9ff;
+            transition: background-color 0.2s;
+        }
+        .category-row {
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            font-weight: bold;
+            color: white;
+            text-align: center;
+            font-size: 1.1em;
+        }
+        .category-row td {
+            padding: 12px;
+            border-bottom: 3px solid #764ba2;
+        }
+        .category-row:hover {
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+        }
+        .verb-cell {
+            font-weight: bold;
+            color: #667eea;
+            min-width: 120px;
+        }
+        .usage-cell {
+            color: #555;
+            font-style: italic;
+            min-width: 150px;
+        }
+        .example-cell {
+            color: #333;
+            line-height: 1.5;
+        }
+        .lang-label {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 0.8em;
+            margin-right: 8px;
+            font-weight: 600;
+        }
+        .de { background: #000; }
+        .ru { background: #d52b1e; }
+        .en { background: #012169; }
+        .es { background: #c60b1e; }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            .container {
+                padding: 15px;
+            }
+            table {
+                font-size: 0.85em;
+            }
+            th, td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Performative Verben (Sprechakte)</h1>
+        <p class="subtitle">Mehrsprachige Übersicht mit Verwendungskontexten</p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Performatives Verb</th>
+                    <th>Verwendung / Kontext</th>
+                    <th>Beispiele in 4 Sprachen</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- KATEGORIE: POSITIVE BEWERTUNGEN -->
+                <tr class="category-row">
+                    <td colspan="3">✓ POSITIVE BEWERTUNGEN</td>
+                </tr>
+                <tr>
+                    <td class="verb-cell">loben</td>
+                    <td class="usage-cell">Positive Bewertung, Anerkennung</td>
+                    <td class="example-cell">
+                        <span class="lang-label de">DE</span> Sie lobt die Bemühungen des Teams.<br>
+                        <span class="lang-label ru">RU</span> Она хвалит усилия команды.<br>
+                        <span class="lang-label en">EN</span> She praises the team's efforts.<br>
+                        <span class="lang-label es">ES</span> Ella elogia los esfuerzos del equipo.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="verb-cell">würdigen</td>
+                    <td class="usage-cell">Anerkennung ausdrücken, ehren</td>
+                    <td class="example-cell">
+                        <span class="lang-label de">DE</span> Die Rednerin würdigt die Leistungen der Pioniere.<br>
+                        <span class="lang-label ru">RU</span> Оратор отдаёт должное достижениям первопроходцев.<br>
+                        <span class="lang-label en">EN</span> The speaker honors the achievements of the pioneers.<br>
+                        <span class="lang-label es">ES</span> La oradora rinde homenaje a los logros de los pioneros.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="verb-cell">hervorheben</td>
+                    <td class="usage-cell">Positive Aspekte besonders betonen</td>
+                    <td class="example-cell">
+                        <span class="lang-label de">DE</span> Der Bericht hebt die Erfolge des Projekts hervor.<br>
+                        <span class="lang-label ru">RU</span> Отчёт подчёркивает успехи проекта.<br>
+                        <span class="lang-label en">EN</span> The report highlights the project's successes.<br>
+                        <span class="lang-label es">ES</span> El informe destaca los éxitos del proyecto.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="verb-cell">befürworten</td>
+                    <td class="usage-cell">Zustimmung zu einem Vorschlag äußern</td>
+                    <td class="example-cell">
+                        <span class="lang-label de">DE</span> Die Partei befürwortet die Reform des Bildungssystems.<br>
+                        <span class="lang-label ru">RU</span> Партия поддерживает реформу образовательной системы.<br>
+                        <span class="lang-label en">EN</span> The party supports the reform of the education system.<br>
+                        <span class="lang-label es">ES</span> El partido apoya la reforma del sistema educativo.
+                    </td>
+                </tr>
+
+                <!-- KATEGORIE: NEGATIVE BEWERTUNGEN / KRITIK -->
+                <tr class="category-row">
+                    <td colspan="3">✗ NEGATIVE BEWERTUNGEN / KRITIK</td>
+                </tr>
+                <tr>
+                    <td class="verb-cell">kritisieren</td>
+                    <td class="usage-cell">Negative Bewertung einer Handlung/Aussage</td>
+                    <td class="example-cell">
+                        <span class="lang-label de">DE</span> Der Autor kritisiert das Verhalten der Regierung.<br>
+                        <span class="lang-label ru">RU</span> Автор критикует поведение правительства.<br>
+                        <span class="lang-label en">EN</span> The author criticizes the government's behavior.<br>
+                        <span class="lang-label es">ES</span> El autor critica el comportamiento del gobierno.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="verb-cell">bemängeln</td>
+                    <td class="usage-cell">Mängel aufzeigen, beanstanden</td>
+                    <td class="example-cell">
+                        <span class="lang-label de">DE</span> Die Experten bemängeln die fehlende Transparenz.<br>
+                        <span class="lang-label ru">RU</span> Эксперты критикуют отсутствие прозрачности.<br>
+                        <span class="lang-label en">EN</span> The experts criticize the lack of transparency.<br>
+                        <span class="lang-label es">ES</span> Los expertos critican la falta de transparencia.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="verb-cell">verurteilen</td>
+                    <td class="usage-cell">Scharf kritisieren, missbilligen</td>
+                    <td class="example-cell">
+                        <span class="lang-label de">DE</span> Die UN verurteilt die Gewalt gegen Zivilisten.<br>
+                        <span class="lang-label ru">RU</span> ООН осуждает насилие против гражданских лиц.<br>
+                        <span class="lang-label en">EN</span> The UN condemns the violence against civilians.<br>
+                        <span class="lang-label es">ES</span> La ONU condena la violencia contra civiles.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="verb-cell">monieren</td>
+                    <td class="usage-cell">Beanstanden, Kritik äußern</td>
+                    <td class="example-cell">
+                        <span class="lang-label de">DE</span> Die Verbraucherschützer monieren die unklaren AGBs.<br>
+                        <span class="lang-label ru">RU</span> Защитники прав потребителей жалуются на неясные условия.<br>
+                        <span class="lang-label en">EN</span> Consumer advocates complain about the unclear terms.<br>
+                        <span class="lang-label es">ES</span> Los defensores de los consumidores se quejan de las condiciones poco claras.
+                    </td>
+                </tr>
+
+                <!-- KATEGORIE: ZUSTIMMUNG / BESTÄTIGUNG -->
+                <tr class="category-row">
+                    <td colspan="3">✓ ZUSTIMMUNG / BESTÄTIGUNG</td>
+                </tr>
+                <tr>
+                    <td class="verb-cell">bestätigen</td>
+                    <td class="usage-cell">Zustimmung geben, bekräftigen</td>
+                    <td class="example-cell">
+                        <span class="lang-label de">DE</span> Die Studie bestätigt die vorherige Annahme.<br>
+                        <span class="lang-label ru">RU</span> Исследование подтверждает предыдущее предположение.<br>
+                        <span class="lang-label en">EN</span> The study confirms the previous assumption.<br>
+                        <span class="lang-label es">ES</span> El estudio confirma la suposición previa.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="verb-cell">bekräftigen</td>
+                    <td class="usage-cell">Nachdrücklich bestätigen</td>
+                    <td class="example-cell">
+                        <span class="lang-label de">DE</span> Der Präsident bekräftigt seine Position.<br>
+                        <span class="lang-label ru">RU</span> Президент подтверждает свою позицию.<br>
+                        <span class="lang-label en">EN</span> The president reaffirms his position.<br>
+                        <span class="lang-label es">ES</span> El presidente reafirma su posición.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="verb-cell">befürworten</td>
+                    <td class="usage-cell">Für etwas eintreten, unterstützen</td>
+                    <td class="example-cell">
+                        <span class="lang-label de">DE</span> Der Verband befürwortet strengere Kontrollen.<br>
+                        <span class="lang-label ru">RU</span> Ассоциация выступает за более строгий контроль.<br>
+                        <span class="lang-label en">EN</span> The association advocates for stricter controls.<br>
+                        <span class="lang-label es">ES</span> La asociación aboga por controles más estrictos.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="verb-cell">unterstützen</td>
+                    <td class="usage-cell">Zustimmung und Hilfe signalisieren</td>
+                    <td class="example-cell">
+                        <span class="lang-label de">DE</span> Die Organisation unterstützt die Initiative.<br>
+                        <span class="lang-label ru">RU</span> Организация поддерживает инициативу.<br>
+                        <span class="lang-label en">EN</span> The organization supports the initiative.<br>
+                        <span class="lang-label es">ES</span> La organización apoya la iniciativa.
+                    </td>
+                </tr>
+
+                <!-- KATEGORIE: ABLEHNUNG / WIDERSPRUCH -->
+                <tr class="category-row">
+                    <td colspan="3">✗ ABLEHNUNG / WIDERSPRUCH</td>
+                </tr>
+                <tr>
+                    <td class="verb-cell">ablehnen</td>
+                    <td class="usage-cell">Zurückweisen, verneinen</td>
+                    <td class="example-cell">
+                        <span class="lang-label de">DE</span> Der Politiker lehnt den Vorschlag kategorisch ab.<br>
+                        <span class="lang-label ru">RU</span> Политик категорически отклоняет предложение.<br>
+                        <span class="lang-label en">EN</span> The politician categorically rejects the proposal.<br>
+                        <span class="lang-label es">ES</span> El político rechaza categóricamente la propuesta.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="verb-cell">widersprechen</td>
+                    <td class="usage-cell">Gegensätzliche Meinung äußern</td>
+                    <td class="example-cell">
+                        <span class="lang-label de">DE</span> Die Expertin widerspricht dieser These.<br>
+                        <span class="lang-label ru">RU</span> Эксперт возражает против этого тезиса.<br>
+                        <span class="lang-label en">EN</span> The expert contradicts this thesis.<br>
+                        <span class="lang-label es">ES</span> La experta contradice esta tesis.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="verb-cell">anzweifeln</td>
+                    <td class="usage-cell">In Frage stellen, Skepsis äußern</td>
+                    <td class="example-cell">
+                        <span class="lang-label de">DE</span> Kritiker zweifeln die Ergebnisse der Umfrage an.<br>
+                        <span class="lang-label ru">RU</span> Критики подвергают сомнению результаты опроса.<br>
+                        <span class="lang-label en">EN</span> Critics question the results of the survey.<br>
+                        <span class="lang-label es">ES</span> Los críticos cuestionan los resultados de la encuesta.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="verb-cell">bestreiten</td>
+                    <td class="usage-cell">Die Richtigkeit abstreiten</td>
+                    <td class="example-cell">
+                        <span class="lang-label de">DE</span> Der Angeklagte bestreitet die Vorwürfe.<br>
+                        <span class="lang-label ru">RU</span> Обвиняемый отрицает обвинения.<br>
+                        <span class="lang-label en">EN</span> The defendant denies the accusations.<br>
+                        <span class="lang-label es">ES</span> El acusado niega las acusaciones.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="verb-cell">verneinen</td>
+                    <td class="usage-cell">Mit Nein antworten, abstreiten</td>
+                    <td class="example-cell">
+                        <span class="lang-label de">DE</span> Die Firma verneint jegliche Verantwortung.<br>
+                        <span class="lang-label ru">RU</span> Компания отрицает любую ответственность.<br>
+                        <span class="lang-label en">EN</span> The company denies any responsibility.<br>
+                        <span class="lang-label es">ES</span> La empresa niega toda responsabilidad.
+                    </td>
+                </tr>
+
+                <!-- KATEGORIE: BEHAUPTUNGEN / STELLUNGNAHMEN -->
+                <tr class="category-row">
+                    <td colspan="3">💬 BEHAUPTUNGEN / STELLUNGNAHMEN</td>
+                </tr>
+                <tr>
+                    <td class="verb-cell">behaupten</td>
+                    <td class="usage-cell">Etwas als wahr darstellen (ohne Beweis)</td>
+                    <td class="example-cell">
+                        <span class="lang-label de">DE</span> Er behauptet, die Lösung gefunden zu haben.<br>
+                        <span class="lang-label ru">RU</span> Он утверждает, что нашёл решение.<br>
+                        <span class="lang-label en">EN</span> He claims to have found the solution.<br>
+                        <span class="lang-label es">ES</span> Él afirma haber encontrado la solución.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="verb-cell">betonen</td>
+                    <td class="usage-cell">Etwas hervorheben, unterstreichen</td>
+                    <td class="example-cell">
+                        <span class="lang-label de">DE</span> Die Ministerin betont die Wichtigkeit der Bildung.<br>
+                        <span class="lang-label ru">RU</span> Министр подчёркивает важность образования.<br>
+                        <span class="lang-label en">EN</span> The minister emphasizes the importance of education.<br>
+                        <span class="lang-label es">ES</span> La ministra enfatiza la importancia de la educación.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="verb-cell">konstatieren</td>
+                    <td class="usage-cell">Feststellen, zur Kenntnis nehmen</td>
+                    <td class="example-cell">
+                        <span class="lang-label de">DE</span> Der Gutachter konstatiert erhebliche Mängel.<br>
+                        <span class="lang-label ru">RU</span> Эксперт констатирует значительные недостатки.<br>
+                        <span class="lang-label en">EN</span> The expert notes significant deficiencies.<br>
+                        <span class="lang-label es">ES</span> El perito constata deficiencias significativas.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="verb-cell">feststellen</td>
+                    <td class="usage-cell">Etwas als Tatsache erkennen</td>
+                    <td class="example-cell">
+                        <span class="lang-label de">DE</span> Die Forscher stellen einen Zusammenhang fest.<br>
+                        <span class="lang-label ru">RU</span> Исследователи устанавливают взаимосвязь.<br>
+                        <span class="lang-label en">EN</span> The researchers establish a connection.<br>
+                        <span class="lang-label es">ES</span> Los investigadores establecen una conexión.
+                    </td>
+                </tr>
+
+                <!-- KATEGORIE: ARGUMENTATIONEN / BEGRÜNDUNGEN -->
+                <tr class="category-row">
+                    <td colspan="3">📋 ARGUMENTATIONEN / BEGRÜNDUNGEN</td>
+                </tr>
+                <tr>
+                    <td class="verb-cell">begründen</td>
+                    <td class="usage-cell">Argumente/Gründe anführen</td>
+                    <td class="example-cell">
+                        <span class="lang-label de">DE</span> Sie begründet ihre Entscheidung mit neuen Erkenntnissen.<br>
+                        <span class="lang-label ru">RU</span> Она обосновывает своё решение новыми данными.<br>
+                        <span class="lang-label en">EN</span> She justifies her decision with new findings.<br>
+                        <span class="lang-label es">ES</span> Ella justifica su decisión con nuevos hallazgos.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="verb-cell">argumentieren</td>
+                    <td class="usage-cell">Mit Argumenten belegen</td>
+                    <td class="example-cell">
+                        <span class="lang-label de">DE</span> Die Anwältin argumentiert überzeugend für ihren Mandanten.<br>
+                        <span class="lang-label ru">RU</span> Адвокат убедительно аргументирует в пользу своего клиента.<br>
+                        <span class="lang-label en">EN</span> The lawyer argues convincingly for her client.<br>
+                        <span class="lang-label es">ES</span> La abogada argumenta convincentemente para su cliente.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="verb-cell">belegen</td>
+                    <td class="usage-cell">Mit Beweisen untermauern</td>
+                    <td class="example-cell">
+                        <span class="lang-label de">DE</span> Die Studie belegt die Wirksamkeit der Methode.<br>
+                        <span class="lang-label ru">RU</span> Исследование доказывает эффективность метода.<br>
+                        <span class="lang-label en">EN</span> The study proves the effectiveness of the method.<br>
+                        <span class="lang-label es">ES</span> El estudio demuestra la eficacia del método.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="verb-cell">nachweisen</td>
+                    <td class="usage-cell">Beweisen, dokumentieren</td>
+                    <td class="example-cell">
+                        <span class="lang-label de">DE</span> Die Wissenschaftler weisen den Effekt empirisch nach.<br>
+                        <span class="lang-label ru">RU</span> Учёные эмпирически доказывают эффект.<br>
+                        <span class="lang-label en">EN</span> The scientists empirically prove the effect.<br>
+                        <span class="lang-label es">ES</span> Los científicos prueban empíricamente el efecto.
+                    </td>
+                </tr>
+
+                <!-- KATEGORIE: ERKLÄRUNGEN / INFORMATIONEN -->
+                <tr class="category-row">
+                    <td colspan="3">💡 ERKLÄRUNGEN / INFORMATIONEN</td>
+                </tr>
+                <tr>
+                    <td class="verb-cell">erklären</td>
+                    <td class="usage-cell">Etwas verständlich machen</td>
+                    <td class="example-cell">
+                        <span class="lang-label de">DE</span> Der Lehrer erklärt das Konzept anhand von Beispielen.<br>
+                        <span class="lang-label ru">RU</span> Учитель объясняет концепцию на примерах.<br>
+                        <span class="lang-label en">EN</span> The teacher explains the concept using examples.<br>
+                        <span class="lang-label es">ES</span> El profesor explica el concepto con ejemplos.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="verb-cell">erläutern</td>
+                    <td class="usage-cell">Ausführlich erklären, darlegen</td>
+                    <td class="example-cell">
+                        <span class="lang-label de">DE</span> Die Ministerin erläutert die Details des Plans.<br>
+                        <span class="lang-label ru">RU</span> Министр подробно объясняет детали плана.<br>
+                        <span class="lang-label en">EN</span> The minister explains the details of the plan.<br>
+                        <span class="lang-label es">ES</span> La ministra explica los detalles del plan.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="verb-cell">definieren</td>
+                    <td class="usage-cell">Begriffe bestimmen, festlegen</td>
+                    <td class="example-cell">
+                        <span class="lang-label de">DE</span> Die Autorin definiert den Begriff "Nachhaltigkeit".<br>
+                        <span class="lang-label ru">RU</span> Автор определяет понятие "устойчивость".<br>
+                        <span class="lang-label en">EN</span> The author defines the term "sustainability".<br>
+                        <span class="lang-label es">ES</span> La autora define el término "sostenibilidad".
+                    </td>
+                </tr>
+                <tr>
+                    <td class="verb-cell">veranschaulichen</td>
+                    <td class="usage-cell">Durch Beispiele klarmachen</td>
+                    <td class="example-cell">
+                        <span class="lang-label de">DE</span> Der Dozent veranschaulicht die Theorie mit einem Experiment.<br>
+                        <span class="lang-label ru">RU</span> Преподаватель иллюстрирует теорию экспериментом.<br>
+                        <span class="lang-label en">EN</span> The lecturer illustrates the theory with an experiment.<br>
+                        <span class="lang-label es">ES</span> El profesor ilustra la teoría con un experimento.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="verb-cell">aufzeigen</td>
+                    <td class="usage-cell">Deutlich machen, darlegen</td>
+                    <td class="example-cell">
+                        <span class="lang-label de">DE</span> Der Bericht zeigt die Probleme im System auf.<br>
+                        <span class="lang-label ru">RU</span> Отчёт выявляет проблемы в системе.<br>
+                        <span class="lang-label en">EN</span> The report reveals the problems in the system.<br>
+                        <span class="lang-label es">ES</span> El informe revela los problemas en el sistema.
+                    </td>
+                </tr>
+
+                <!-- KATEGORIE: ANALYSEN / VERGLEICHE -->
+                <tr class="category-row">
+                    <td colspan="3">🔍 ANALYSEN / VERGLEICHE</td>
+                </tr>
+                <tr>
+                    <td class="verb-cell">vergleichen</td>
+                    <td class="usage-cell">Gemeinsamkeiten/Unterschiede aufzeigen</td>
+                    <td class="example-cell">
+                        <span class="lang-label de">DE</span> Der Autor vergleicht beide Systeme miteinander.<br>
+                        <span class="lang-label ru">RU</span> Автор сравнивает обе системы друг с другом.<br>
+                        <span class="lang-label en">EN</span> The author compares both systems with each other.<br>
+                        <span class="lang-label es">ES</span> El autor compara ambos sistemas entre sí.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="verb-cell">analysieren</td>
+                    <td class="usage-cell">Genau untersuchen, zergliedern</td>
+                    <td class="example-cell">
+                        <span class="lang-label de">DE</span> Die Experten analysieren die Ursachen der Krise.<br>
+                        <span class="lang-label ru">RU</span> Эксперты анализируют причины кризиса.<br>
+                        <span class="lang-label en">EN</span> The experts analyze the causes of the crisis.<br>
+                        <span class="lang-label es">ES</span> Los expertos analizan las causas de la crisis.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="verb-cell">interpretieren</td>
+                    <td class="usage-cell">Bedeutung auslegen, deuten</td>
+                    <td class="example-cell">
+                        <span class="lang-label de">DE</span> Der Forscher interpretiert die Daten vorsichtig.<br>
+                        <span class="lang-label ru">RU</span> Исследователь осторожно интерпретирует данные.<br>
+                        <span class="lang-label en">EN</span> The researcher interprets the data carefully.<br>
+                        <span class="lang-label es">ES</span> El investigador interpreta los datos con cuidado.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="verb-cell">gegenüberstellen</td>
+                    <td class="usage-cell">Direkt vergleichend darstellen</td>
+                    <td class="example-cell">
+                        <span class="lang-label de">DE</span> Die Studie stellt die Vor- und Nachteile gegenüber.<br>
+                        <span class="lang-label ru">RU</span> Исследование противопоставляет преимущества и недостатки.<br>
+                        <span class="lang-label en">EN</span> The study contrasts the advantages and disadvantages.<br>
+                        <span class="lang-label es">ES</span> El estudio contrasta las ventajas y desventajas.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="verb-cell">differenzieren</td>
+                    <td class="usage-cell">Unterschiede herausarbeiten</td>
+                    <td class="example-cell">
+                        <span class="lang-label de">DE</span> Der Philosoph differenziert zwischen Moral und Ethik.<br>
+                        <span class="lang-label ru">RU</span> Философ различает между моралью и этикой.<br>
+                        <span class="lang-label en">EN</span> The philosopher differentiates between morals and ethics.<br>
+                        <span class="lang-label es">ES</span> El filósofo diferencia entre moral y ética.
+                    </td>
+                </tr>
+
+                <!-- KATEGORIE: FORDERUNGEN / APPELLE -->
+                <tr class="category-row">
+                    <td colspan="3">📢 FORDERUNGEN / APPELLE</td>
+                </tr>
+                <tr>
+                    <td class="verb-cell">fordern</td>
+                    <td class="usage-cell">Verlangen, Anspruch erheben</td>
+                    <td class="example-cell">
+                        <span class="lang-label de">DE</span> Die Opposition fordert eine Neuwahl.<br>
+                        <span class="lang-label ru">RU</span> Оппозиция требует новых выборов.<br>
+                        <span class="lang-label en">EN</span> The opposition demands new elections.<br>
+                        <span class="lang-label es">ES</span> La oposición exige nuevas elecciones.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="verb-cell">appellieren</td>
+                    <td class="usage-cell">Eindringlich auffordern</td>
+                    <td class="example-cell">
+                        <span class="lang-label de">DE</span> Die Hilfsorganisation appelliert an die internationale Gemeinschaft.<br>
+                        <span class="lang-label ru">RU</span> Гуманитарная организация призывает международное сообщество.<br>
+                        <span class="lang-label en">EN</span> The aid organization appeals to the international community.<br>
+                        <span class="lang-label es">ES</span> La organización humanitaria apela a la comunidad internacional.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="verb-cell">mahnen</td>
+                    <td class="usage-cell">Zu etwas auffordern, ermahnen</td>
+                    <td class="example-cell">
+                        <span class="lang-label de">DE</span> Der Bundespräsident mahnt zu mehr Solidarität.<br>
+                        <span class="lang-label ru">RU</span> Федеральный президент призывает к большей солидарности.<br>
+                        <span class="lang-label en">EN</span> The Federal President calls for more solidarity.<br>
+                        <span class="lang-label es">ES</span> El presidente federal insta a más solidaridad.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="verb-cell">auffordern</td>
+                    <td class="usage-cell">Zu einer Handlung veranlassen</td>
+                    <td class="example-cell">
+                        <span class="lang-label de">DE</span> Der Bürgermeister fordert die Bürger zum Handeln auf.<br>
+                        <span class="lang-label ru">RU</span> Мэр призывает граждан к действию.<br>
+                        <span class="lang-label en">EN</span> The mayor calls on citizens to act.<br>
+                        <span class="lang-label es">ES</span> El alcalde llama a los ciudadanos a actuar.
+                    </td>
+                </tr>
+
+                <!-- KATEGORIE: VORSCHLÄGE / EMPFEHLUNGEN -->
+                <tr class="category-row">
+                    <td colspan="3">💡 VORSCHLÄGE / EMPFEHLUNGEN</td>
+                </tr>
+                <tr>
+                    <td class="verb-cell">vorschlagen</td>
+                    <td class="usage-cell">Eine Idee zur Diskussion stellen</td>
+                    <td class="example-cell">
+                        <span class="lang-label de">DE</span> Das Komitee schlägt eine neue Strategie vor.<br>
+                        <span class="lang-label ru">RU</span> Комитет предлагает новую стратегию.<br>
+                        <span class="lang-label en">EN</span> The committee proposes a new strategy.<br>
+                        <span class="lang-label es">ES</span> El comité propone una nueva estrategia.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="verb-cell">empfehlen</td>
+                    <td class="usage-cell">Einen Rat geben, nahelegen</td>
+                    <td class="example-cell">
+                        <span class="lang-label de">DE</span> Experten empfehlen vorsorgliche Maßnahmen.<br>
+                        <span class="lang-label ru">RU</span> Эксперты рекомендуют профилактические меры.<br>
+                        <span class="lang-label en">EN</span> Experts recommend preventive measures.<br>
+                        <span class="lang-label es">ES</span> Los expertos recomiendan medidas preventivas.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="verb-cell">anregen</td>
+                    <td class="usage-cell">Einen Impuls geben, vorschlagen</td>
+                    <td class="example-cell">
+                        <span class="lang-label de">DE</span> Die Initiative regt eine öffentliche Debatte an.<br>
+                        <span class="lang-label ru">RU</span> Инициатива инициирует публичные дебаты.<br>
+                        <span class="lang-label en">EN</span> The initiative stimulates a public debate.<br>
+                        <span class="lang-label es">ES</span> La iniciativa estimula un debate público.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="verb-cell">plädieren</td>
+                    <td class="usage-cell">Sich nachdrücklich für etwas aussprechen</td>
+                    <td class="example-cell">
+                        <span class="lang-label de">DE</span> Die Umweltschützer plädieren für strengere Gesetze.<br>
+                        <span class="lang-label ru">RU</span> Защитники окружающей среды выступают за более строгие законы.<br>
+                        <span class="lang-label en">EN</span> The environmentalists advocate for stricter laws.<br>
+                        <span class="lang-label es">ES</span> Los ambientalistas abogan por leyes más estrictas.
+                    </td>
+                </tr>
+
+                <!-- KATEGORIE: WARNUNGEN / HINWEISE -->
+                <tr class="category-row">
+                    <td colspan="3">⚠️ WARNUNGEN / HINWEISE</td>
+                </tr>
+                <tr>
+                    <td class="verb-cell">warnen</td>
+                    <td class="usage-cell">Auf Gefahr hinweisen</td>
+                    <td class="example-cell">
+                        <span class="lang-label de">DE</span> Die Wissenschaftler warnen vor den Folgen des Klimawandels.<br>
+                        <span class="lang-label ru">RU</span> Учёные предупреждают о последствиях изменения климата.<br>
+                        <span class="lang-label en">EN</span> The scientists warn about the consequences of climate change.<br>
+                        <span class="lang-label es">ES</span> Los científicos advierten sobre las consecuencias del cambio climático.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="verb-cell">hinweisen</td>
+                    <td class="usage-cell">Aufmerksamkeit lenken auf</td>
+                    <td class="example-cell">
+                        <span class="lang-label de">DE</span> Der Redner weist auf die Risiken hin.<br>
+                        <span class="lang-label ru">RU</span> Оратор указывает на риски.<br>
+                        <span class="lang-label en">EN</span> The speaker points out the risks.<br>
+                        <span class="lang-label es">ES</span> El orador señala los riesgos.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="verb-cell">mahnen</td>
+                    <td class="usage-cell">Warnend ermahnen</td>
+                    <td class="example-cell">
+                        <span class="lang-label de">DE</span> Die Zentralbank mahnt zur Vorsicht bei Investitionen.<br>
+                        <span class="lang-label ru">RU</span> Центральный банк призывает к осторожности при инвестициях.<br>
+                        <span class="lang-label en">EN</span> The central bank cautions about investments.<br>
+                        <span class="lang-label es">ES</span> El banco central advierte sobre las inversiones.
+                    </td>
+                </tr>
+
+                <!-- KATEGORIE: KONKRETISIERUNGEN -->
+                <tr class="category-row">
+                    <td colspan="3">🎯 KONKRETISIERUNGEN / SPEZIFIZIERUNGEN</td>
+                </tr>
+                <tr>
+                    <td class="verb-cell">konkretisieren</td>
+                    <td class="usage-cell">Genauer ausführen, spezifizieren</td>
+                    <td class="example-cell">
+                        <span class="lang-label de">DE</span> Die Regierung konkretisiert ihre Klimaziele.<br>
+                        <span class="lang-label ru">RU</span> Правительство конкретизирует свои климатические цели.<br>
+                        <span class="lang-label en">EN</span> The government specifies its climate goals.<br>
+                        <span class="lang-label es">ES</span> El gobierno concreta sus objetivos climáticos.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="verb-cell">präzisieren</td>
+                    <td class="usage-cell">Genauer bestimmen, präzisieren</td>
+                    <td class="example-cell">
+                        <span class="lang-label de">DE</span> Der Sprecher präzisiert seine Aussage.<br>
+                        <span class="lang-label ru">RU</span> Представитель уточняет своё заявление.<br>
+                        <span class="lang-label en">EN</span> The spokesperson clarifies his statement.<br>
+                        <span class="lang-label es">ES</span> El portavoz precisa su declaración.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="verb-cell">exemplifizieren</td>
+                    <td class="usage-cell">Durch Beispiele verdeutlichen</td>
+                    <td class="example-cell">
+                        <span class="lang-label de">DE</span> Die Professorin exemplifiziert ihre These anhand historischer Fälle.<br>
+                        <span class="lang-label ru">RU</span> Профессор иллюстрирует свой тезис историческими примерами.<br>
+                        <span class="lang-label en">EN</span> The professor exemplifies her thesis with historical cases.<br>
+                        <span class="lang-label es">ES</span> La profesora ejemplifica su tesis con casos históricos.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
