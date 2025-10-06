@@ -132,6 +132,59 @@
             background: #2980b9;
             transform: translateY(-2px);
         }
+        @media (max-width: 768px) {
+    /* Tabelle in Blöcke umwandeln */
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+    
+    /* Thead ausblenden */
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    
+    /* Jede Zeile wird zur Card */
+    tbody tr {
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 10px;
+    }
+    
+    /* Zellen untereinander stapeln */
+    td {
+        border: none;
+        position: relative;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    /* Labels vor den Inhalten einfügen */
+    td:nth-of-type(1):before { 
+        content: "Verb: ";
+        font-weight: bold;
+        color: #667eea;
+    }
+    td:nth-of-type(2):before { 
+        content: "Verwendung: ";
+        font-weight: bold;
+        color: #667eea;
+    }
+    td:nth-of-type(3):before { 
+        content: "Beispiele: ";
+        font-weight: bold;
+        color: #667eea;
+        display: block;
+        margin-bottom: 5px;
+    }
+    
+    /* Kategorie-Zeilen bleiben zentral */
+    .category-row td:before {
+        content: "";
+    }
+}
     </style>
 </head>
 <body>
