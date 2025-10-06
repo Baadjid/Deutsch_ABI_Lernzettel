@@ -46,7 +46,6 @@
             text-align: left;
             font-weight: 600;
             font-size: 0.95em;
-            position: sticky;
             top: 0;
             z-index: 10;
         }
@@ -116,9 +115,27 @@
                 padding: 8px;
             }
         }
+
+        .back-button {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .back-button:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
     </style>
 </head>
 <body>
+    <a href="index.html" class="back-button">← Zurück zur Hauptseite</a>
     <div class="container">
         <h1>Performative Verben (Sprechakte)</h1>
         <p class="subtitle">Mehrsprachige Übersicht mit Verwendungskontexten</p>
