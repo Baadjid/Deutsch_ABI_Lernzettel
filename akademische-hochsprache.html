@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akademische Hochsprache - Gehobenes Vokabular</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            padding: 20px;
+            line-height: 1.8;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: #fdfeff;
+            border-radius: 15px;
+            padding: 50px;
+            box-shadow: 0 25px 70px rgba(0,0,0,0.4);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #1e3c72;
+            margin-bottom: 15px;
+            font-size: 3em;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #555;
+            margin-bottom: 50px;
+            font-size: 1.2em;
+            font-style: italic;
+        }
+        
+        .category {
+            margin-bottom: 45px;
+            background: linear-gradient(to right, #f8f9fa 0%, #ffffff 100%);
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 6px solid #2a5298;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        
+        .category h2 {
+            color: #1e3c72;
+            margin-bottom: 25px;
+            font-size: 2em;
+            font-weight: 600;
+            border-bottom: 2px solid #2a5298;
+            padding-bottom: 12px;
+        }
+        
+        .terms {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .term {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #e0e0e0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .term::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background: linear-gradient(to bottom, #2a5298, #1e3c72);
+            transition: height 0.3s ease;
+        }
+        
+        .term:hover::before {
+            height: 100%;
+        }
+        
+        .term:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(30, 60, 114, 0.2);
+            border-color: #2a5298;
+        }
+        
+        .term strong {
+            color: #1e3c72;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.2em;
+            font-weight: 700;
+        }
+        
+        .term .definition {
+            color: #333;
+            font-size: 1em;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+        
+        .term .example {
+            color: #666;
+            font-size: 0.9em;
+            font-style: italic;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px dashed #ddd;
+        }
+        
+        .level-indicator {
+            display: inline-block;
+            padding: 4px 10px;
+            background: #2a5298;
+            color: white;
+            border-radius: 12px;
+            font-size: 0.75em;
+            margin-left: 8px;
+            font-weight: normal;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 25px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .terms {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📖 Akademische Hochsprache</h1>
+        <p class="subtitle">Gehobenes Vokabular für wissenschaftliche Diskurse</p>
+        
+        <div class="category">
+            <h2>Argumentation & Rhetorik</h2>
+            <div class="terms">
+                <div class="term">
+                    <strong>Apodiktisch <span class="level-indicator">C2</span></strong>
+                    <div class="definition">Unwiderlegbar, unumstößlich gewiss; keinen Widerspruch duldend</div>
+                    <div class="example">Seine apodiktischen Aussagen ließen keinen Raum für alternative Interpretationen.</div>
+                </div>
+                <div class="term">
+                    <strong>Dichotomie <span class="level-indicator">C1</span></strong>
+                    <div class="definition">Zweiteilung, strikte Trennung in zwei gegensätzliche Bereiche</div>
+                    <div class="example">Die Dichotomie zwischen Theorie und Praxis wurde in der Studie aufgelöst.</div>
+                </div>
+                <div class="term">
+                    <strong>Sophistik <span class="level-indicator">C2</span></strong>
+                    <div class="definition">Scheinbar logische, aber tatsächlich irreführende Argumentation</div>
+                    <div class="example">Seine Sophistik konnte die Kernproblematik nicht verschleiern.</div>
+                </div>
+                <div class="term">
+                    <strong>Axiomatisch <span class="level-indicator">C2</span></strong>
+                    <div class="definition">Als Grundsatz geltend, keines Beweises bedürfend</div>
+                    <div class="example">Die axiomatische Annahme bildete das Fundament der gesamten Theorie.</div>
+                </div>
+                <div class="term">
+                    <strong>Syllogismus <span class="level-indicator">C2</span></strong>
+                    <div class="definition">Logischer Schluss aus zwei Prämissen auf eine Konklusion</div>
+                    <div class="example">Der aristotelische Syllogismus dient als klassisches Beispiel deduktiven Denkens.</div>
+                </div>
+                <div class="term">
+                    <strong>Kontradiktorisch <span class="level-indicator">C2</span></strong>
+                    <div class="definition">Sich gegenseitig ausschließend, widersprüchlich</div>
+                    <div class="example">Die beiden Hypothesen waren kontradiktorisch und konnten nicht gleichzeitig wahr sein.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2>Wissenschaftliche Methodik</h2>
+            <div class="terms">
+                <div class="term">
+                    <strong>Heuristisch <span class="level-indicator">C1</span></strong>
+                    <div class="definition">Auf Auffindung und Entdeckung ausgerichtet; problemlösend durch Probieren</div>
+                    <div class="example">Die heuristische Methode führte zu unerwarteten Erkenntnissen.</div>
+                </div>
+                <div class="term">
+                    <strong>Epistemologisch <span class="level-indicator">C2</span></strong>
+                    <div class="definition">Die Erkenntnistheorie betreffend; Fragen des Wissens und seiner Begründung</div>
+                    <div class="example">Die epistemologischen Implikationen der Quantenphysik sind weitreichend.</div>
+                </div>
+                <div class="term">
+                    <strong>Hermeneutik <span class="level-indicator">C2</span></strong>
+                    <div class="definition">Lehre vom Verstehen und Auslegen von Texten und Sinnzusammenhängen</div>
+                    <div class="example">Die hermeneutische Analyse des Textes offenbarte verborgene Bedeutungsebenen.</div>
+                </div>
+                <div class="term">
+                    <strong>Induktiv <span class="level-indicator">C1</span></strong>
+                    <div class="definition">Vom Besonderen zum Allgemeinen schließend</div>
+                    <div class="example">Die induktive Forschungsmethode basierte auf empirischen Einzelbeobachtungen.</div>
+                </div>
+                <div class="term">
+                    <strong>Deduktiv <span class="level-indicator">C1</span></strong>
+                    <div class="definition">Vom Allgemeinen zum Besonderen schließend</div>
+                    <div class="example">Die deduktive Vorgehensweise erlaubte präzise Vorhersagen.</div>
+                </div>
+                <div class="term">
+                    <strong>Paradigmatisch <span class="level-indicator">C2</span></strong>
+                    <div class="definition">Mustergültig, beispielhaft für ein wissenschaftliches Weltbild</div>
+                    <div class="example">Die Relativitätstheorie markierte einen paradigmatischen Wandel in der Physik.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2>Psychologie & Kognition</h2>
+            <div class="terms">
+                <div class="term">
+                    <strong>Perseverativ <span class="level-indicator">C2</span></strong>
+                    <div class="definition">Krankhaft beharrend, sich wiederholend; an etwas festhaltend</div>
+                    <div class="example">Das perseverative Verhalten des Patienten deutete auf eine frontale Dysfunktion hin.</div>
+                </div>
+                <div class="term">
+                    <strong>Kognitiv dissonant <span class="level-indicator">C1</span></strong>
+                    <div class="definition">Widersprüchliche Gedanken oder Überzeugungen gleichzeitig haltend</div>
+                    <div class="example">Die kognitiv dissonante Situation führte zu psychischem Unbehagen.</div>
+                </div>
+                <div class="term">
+                    <strong>Introspektiv <span class="level-indicator">C1</span></strong>
+                    <div class="definition">Nach innen gerichtet, selbstbeobachtend</div>
+                    <div class="example">Die introspektive Methode war in der frühen Psychologie zentral.</div>
+                </div>
+                <div class="term">
+                    <strong>Konativ <span class="level-indicator">C2</span></strong>
+                    <div class="definition">Das Streben und Wollen betreffend; handlungsbezogen</div>
+                    <div class="example">Die konative Komponente der Einstellung beeinflusst das tatsächliche Verhalten.</div>
+                </div>
+                <div class="term">
+                    <strong>Propositional <span class="level-indicator">C2</span></strong>
+                    <div class="definition">Aussagebezogen, in Form von Behauptungen formuliert</div>
+                    <div class="example">Das propositionale Wissen ließ sich sprachlich explizit machen.</div>
+                </div>
+                <div class="term">
+                    <strong>Metakognitiv <span class="level-indicator">C1</span></strong>
+                    <div class="definition">Das Nachdenken über das eigene Denken betreffend</div>
+                    <div class="example">Metakognitive Strategien verbessern den Lernprozess erheblich.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2>Philosophie & Ontologie</h2>
+            <div class="terms">
+                <div class="term">
+                    <strong>Ontologisch <span class="level-indicator">C2</span></strong>
+                    <div class="definition">Das Sein und die Existenz betreffend</div>
+                    <div class="example">Die ontologische Frage nach der Natur der Realität bleibt umstritten.</div>
+                </div>
+                <div class="term">
+                    <strong>Teleologisch <span class="level-indicator">C2</span></strong>
+                    <div class="definition">Zweck- oder zielgerichtet; auf ein Endziel ausgerichtet</div>
+                    <div class="example">Eine teleologische Erklärung setzt intentionale Ziele voraus.</div>
+                </div>
+                <div class="term">
+                    <strong>Dialektisch <span class="level-indicator">C2</span></strong>
+                    <div class="definition">Auf dem Prinzip von These, Antithese und Synthese beruhend</div>
+                    <div class="example">Die dialektische Methode Hegels prägte die Philosophiegeschichte nachhaltig.</div>
+                </div>
+                <div class="term">
+                    <strong>Phänomenologisch <span class="level-indicator">C2</span></strong>
+                    <div class="definition">Die Erscheinungen und das unmittelbare Bewusstsein betreffend</div>
+                    <div class="example">Die phänomenologische Reduktion ermöglichte einen neuen Zugang zur Erfahrung.</div>
+                </div>
+                <div class="term">
+                    <strong>Transzendental <span class="level-indicator">C2</span></strong>
+                    <div class="definition">Die Bedingungen der Möglichkeit von Erkenntnis betreffend</div>
+                    <div class="example">Kants transzendentale Ästhetik untersucht die Formen der Anschauung.</div>
+                </div>
+                <div class="term">
+                    <strong>Immanent <span class="level-indicator">C2</span></strong>
+                    <div class="definition">Innewohnend, wesensgemäß enthalten</div>
+                    <div class="example">Die immanente Kritik analysiert Widersprüche innerhalb eines Systems selbst.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2>Sozialwissenschaften</h2>
+            <div class="terms">
+                <div class="term">
+                    <strong>Hegemoniell <span class="level-indicator">C2</span></strong>
+                    <div class="definition">Vorherrschend, dominierend im Sinne kultureller oder politischer Macht</div>
+                    <div class="example">Die hegemonielle Stellung der westlichen Diskurse wurde kritisch hinterfragt.</div>
+                </div>
+                <div class="term">
+                    <strong>Diskursiv <span class="level-indicator">C1</span></strong>
+                    <div class="definition">Sprachlich-soziale Praktiken betreffend; im Diskurs verhandelt</div>
+                    <div class="example">Geschlecht wird als diskursiv konstruierte Kategorie verstanden.</div>
+                </div>
+                <div class="term">
+                    <strong>Praxeologisch <span class="level-indicator">C2</span></strong>
+                    <div class="definition">Die soziale Praxis und Handlungstheorie betreffend</div>
+                    <div class="example">Der praxeologische Ansatz Bourdieus verbindet Struktur und Handlung.</div>
+                </div>
+                <div class="term">
+                    <strong>Intersektional <span class="level-indicator">C1</span></strong>
+                    <div class="definition">Mehrfache, sich überschneidende Diskriminierungsformen betreffend</div>
+                    <div class="example">Die intersektionale Analyse berücksichtigt verschiedene Unterdrückungsmechanismen gleichzeitig.</div>
+                </div>
+                <div class="term">
+                    <strong>Habituell <span class="level-indicator">C2</span></strong>
+                    <div class="definition">Den verinnerlichten Habitus betreffend; durch soziale Prägung entstanden</div>
+                    <div class="example">Habituelles Verhalten reproduziert oft unbewusst soziale Ungleichheiten.</div>
+                </div>
+                <div class="term">
+                    <strong>Liminal <span class="level-indicator">C2</span></strong>
+                    <div class="definition">An der Schwelle befindlich, einen Übergangsraum bezeichnend</div>
+                    <div class="example">Liminale Phasen in Ritualen markieren den Übergang zwischen sozialen Zuständen.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2>Literatur & Textanalyse</h2>
+            <div class="terms">
+                <div class="term">
+                    <strong>Intertextuell <span class="level-indicator">C1</span></strong>
+                    <div class="definition">Bezüge zwischen Texten herstellend; auf andere Texte verweisend</div>
+                    <div class="example">Die intertextuelle Vernetzung des Romans offenbart sich erst bei genauer Analyse.</div>
+                </div>
+                <div class="term">
+                    <strong>Metanarratisch <span class="level-indicator">C2</span></strong>
+                    <div class="definition">Die Erzählung selbst reflektierend; über das Erzählen erzählend</div>
+                    <div class="example">Der metanarratische Kommentar durchbricht die Illusion der Fiktion.</div>
+                </div>
+                <div class="term">
+                    <strong>Palimpsest <span class="level-indicator">C2</span></strong>
+                    <div class="definition">Mehrfach überschriebener Text; Überlagerung verschiedener Textschichten</div>
+                    <div class="example">Der Roman funktioniert als kulturelles Palimpsest mit vielen Bedeutungsebenen.</div>
+                </div>
+                <div class="term">
+                    <strong>Diegetisch <span class="level-indicator">C2</span></strong>
+                    <div class="definition">Zur erzählten Welt gehörend; innerhalb der Handlung</div>
+                    <div class="example">Die diegetische Musik entspringt der Filmhandlung selbst.</div>
+                </div>
+                <div class="term">
+                    <strong>Ekphrastisch <span class="level-indicator">C2</span></strong>
+                    <div class="definition">Sprachliche Beschreibung visueller Kunstwerke</div>
+                    <div class="example">Die ekphrastische Passage evoziert das Gemälde mit präzisen Worten.</div>
+                </div>
+                <div class="term">
+                    <strong>Polyvalent <span class="level-indicator">C2</span></strong>
+                    <div class="definition">Mehrwertig, mehrdeutig; verschiedene Interpretationen zulassend</div>
+                    <div class="example">Das polyvalente Symbol reichert den Text mit Bedeutungstiefe an.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2>Recht & Ethik</h2>
+            <div class="terms">
+                <div class="term">
+                    <strong>Deontologisch <span class="level-indicator">C2</span></strong>
+                    <div class="definition">Pflichtethisch; auf moralischen Prinzipien basierend</div>
+                    <div class="example">Die deontologische Ethik Kants stellt die Pflicht über den Nutzen.</div>
+                </div>
+                <div class="term">
+                    <strong>Konsequentialistisch <span class="level-indicator">C2</span></strong>
+                    <div class="definition">Handlungen nach ihren Folgen bewertend</div>
+                    <div class="example">Eine konsequentialistische Position berücksichtigt primär die Resultate.</div>
+                </div>
+                <div class="term">
+                    <strong>Normativ <span class="level-indicator">C1</span></strong>
+                    <div class="definition">Regeln und Werte setzend; vorschreibend</div>
+                    <div class="example">Die normative Kraft der Verfassung prägt das Rechtssystem.</div>
+                </div>
+                <div class="term">
+                    <strong>Deskriptiv <span class="level-indicator">C1</span></strong>
+                    <div class="definition">Beschreibend ohne Wertung; tatsachenfeststellend</div>
+                    <div class="example">Die deskriptive Ethik untersucht faktische moralische Überzeugungen.</div>
+                </div>
+                <div class="term">
+                    <strong>Judikativ <span class="level-indicator">C2</span></strong>
+                    <div class="definition">Die Rechtsprechung betreffend; richterlich</div>
+                    <div class="example">Die judikative Gewalt bildet die dritte Säule der Gewaltenteilung.</div>
+                </div>
+                <div class="term">
+                    <strong>Präskriptiv <span class="level-indicator">C2</span></strong>
+                    <div class="definition">Vorschreibend, Regeln aufstellend</div>
+                    <div class="example">Die präskriptive Grammatik gibt normative Sprachregeln vor.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2>Sprachwissenschaft</h2>
+            <div class="terms">
+                <div class="term">
+                    <strong>Pragmatisch (ling.) <span class="level-indicator">C2</span></strong>
+                    <div class="definition">Den Sprachgebrauch im Kontext betreffend</div>
+                    <div class="example">Die pragmatische Analyse untersucht Sprechakte in sozialen Situationen.</div>
+                </div>
+                <div class="term">
+                    <strong>Morphologisch <span class="level-indicator">C2</span></strong>
+                    <div class="definition">Die Formenlehre betreffend; Wortstrukturen analysierend</div>
+                    <div class="example">Die morphologische Komplexität des Verbs variiert sprachübergreifend erheblich.</div>
+                </div>
+                <div class="term">
+                    <strong>Phonologisch <span class="level-indicator">C2</span></strong>
+                    <div class="definition">Das Lautsystem einer Sprache betreffend</div>
+                    <div class="example">Phonologische Regeln bestimmen die Lautveränderungen in Wortformen.</div>
+                </div>
+                <div class="term">
+                    <strong>Semantisch <span class="level-indicator">C1</span></strong>
+                    <div class="definition">Die Bedeutungslehre betreffend</div>
+                    <div class="example">Semantische Verschiebungen dokumentieren den Bedeutungswandel über Jahrhunderte.</div>
+                </div>
+                <div class="term">
+                    <strong>Syntaktisch <span class="level-indicator">C1</span></strong>
+                    <div class="definition">Die Satzlehre betreffend; grammatische Strukturen</div>
+                    <div class="example">Die syntaktische Analyse offenbart die hierarchische Satzstruktur.</div>
+                </div>
+                <div class="term">
+                    <strong>Diachron <span class="level-indicator">C2</span></strong>
+                    <div class="definition">Zeitlich verlaufend; die historische Entwicklung betreffend</div>
+                    <div class="example">Die diachrone Linguistik untersucht Sprachwandelprozesse.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2>Weitere gehobene Begriffe</h2>
+            <div class="terms">
+                <div class="term">
+                    <strong>Exegetisch <span class="level-indicator">C2</span></strong>
+                    <div class="definition">Auslegend, erklärend; besonders in Bezug auf heilige Texte</div>
+                    <div class="example">Die exegetische Tradition bietet verschiedene Interpretationsansätze.</div>
+                </div>
+                <div class="term">
+                    <strong>Prokrastination <span class="level-indicator">C1</span></strong>
+                    <div class="definition">Pathologisches Aufschiebeverhalten</div>
+                    <div class="example">Prokrastination stellt ein weitverbreitetes Problem im akademischen Kontext dar.</div>
+                </div>
+                <div class="term">
+                    <strong>Redundant <span class="level-indicator">C1</span></strong>
+                    <div class="definition">Überflüssig, sich wiederholend; mehr als notwendig</div>
+                    <div class="example">Redundante Informationen wurden aus der Analyse eliminiert.</div>
+                </div>
+                <div class="term">
+                    <strong>Idiosynkratisch <span class="level-indicator">C2</span></strong>
+                    <div class="definition">Eigentümlich, individuell abweichend</div>
+                    <div class="example">Sein idiosynkratischer Schreibstil machte ihn sofort erkennbar.</div>
+                </div>
+                <div class="term">
+                    <strong>Ubiquitär <span class="level-indicator">C2</span></strong>
+                    <div class="definition">Allgegenwärtig, überall vorhanden</div>
+                    <div class="example">Mikroplastik ist ubiquitär in marinen Ökosystemen nachweisbar.</div>
+                </div>
+                <div class="term">
+                    <strong>Äquivalent <span class="level-indicator">C1</span></strong>
+                    <div class="definition">Gleichwertig, entsprechend</div>
+                    <div class="example">Die beiden Formulierungen sind semantisch äquivalent.</div>
+                </div>
+                <div class="term">
+                    <strong>Anachronistisch <span class="level-indicator">C2</span></strong>
+                    <div class="definition">Zeitlich unpassend, in falsche Zeit eingeordnet</div>
+                    <div class="example">Die anachronistische Darstellung im Film störte die historische Authentizität.</div>
+                </div>
+                <div class="term">
+                    <strong>Homogen <span class="level-indicator">C1</span></strong>
+                    <div class="definition">Gleichartig, einheitlich zusammengesetzt</div>
+                    <div class="example">Die Stichprobe war hinsichtlich sozioökonomischer Faktoren homogen.</div>
+                </div>
+                <div class="term">
+                    <strong>Heterogen <span class="level-indicator">C1</span></strong>
+                    <div class="definition">Ungleichartig, verschiedenartig zusammengesetzt</div>
+                    <div class="example">Die heterogene Zusammensetzung der Gruppe bereicherte die Diskussion.</div>
+                </div>
+                <div class="term">
+                    <strong>Plausibel <span class="level-indicator">C1</span></strong>
+                    <div class="definition">Einleuchtend, glaubhaft, nachvollziehbar</div>
+                    <div class="example">Die Hypothese erschien zunächst plausibel, erwies sich aber als falsch.</div>
+                </div>
+                <div class="term">
+                    <strong>Exemplarisch <span class="level-indicator">C1</span></strong>
+                    <div class="definition">Beispielhaft, mustergültig</div>
+                    <div class="example">Die Studie dient als exemplarischer Fall für qualitative Forschung.</div>
+                </div>
+                <div class="term">
+                    <strong>Ambivalent <span class="level-indicator">C1</span></strong>
+                    <div class="definition">Zwiespältig, widersprüchliche Gefühle/Haltungen aufweisend</div>
+                    <div class="example">Seine ambivalente Haltung zur Technologie spiegelt gesellschaftliche Unsicherheit wider.</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
