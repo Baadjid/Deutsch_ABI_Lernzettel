@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kurzgeschichtenanalyse - Lernzettel</title>
+    <title>Kurzgeschichtenanalyse - Erweitert</title>
     <style>
         * {
             margin: 0;
@@ -185,30 +185,25 @@
             font-weight: 600;
         }
         
-        .rhetorische-mittel {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 15px;
-            margin: 20px 0;
-        }
-        
-        .mittel-card {
+        .step-box {
             background: white;
-            border: 2px solid #e0e0e0;
+            border: 2px solid #667eea;
             border-radius: 8px;
-            padding: 15px;
-            transition: all 0.3s;
+            padding: 20px;
+            margin: 15px 0;
         }
         
-        .mittel-card:hover {
-            border-color: #667eea;
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
-            transform: translateY(-3px);
-        }
-        
-        .mittel-card h4 {
-            color: #667eea;
-            margin-bottom: 8px;
+        .step-number {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            font-weight: bold;
+            margin-right: 10px;
         }
         
         @media (max-width: 768px) {
@@ -240,94 +235,355 @@
                 padding-left: 15px;
                 margin-bottom: 30px;
             }
-            
-            table {
-                font-size: 0.9em;
-            }
-            
-            th, td {
-                padding: 10px 8px;
-            }
-            
-            .aufbau-schema li {
-                padding: 12px;
-                padding-left: 50px;
-                font-size: 0.95em;
-            }
-            
-            .aufbau-schema li::before {
-                width: 30px;
-                height: 30px;
-                font-size: 1em;
-                left: 10px;
-            }
-            
-            .merkmale-box, .wichtig, .tipp, .beispiel {
-                padding: 15px;
-                font-size: 0.95em;
-            }
-            
-            ul, ol {
-                margin-left: 20px;
-            }
-            
-            li {
-                margin-bottom: 8px;
-                font-size: 0.95em;
-                line-height: 1.6;
-            }
-            
-            p {
-                font-size: 0.95em;
-                line-height: 1.6;
-            }
-            
-            .mittel-card {
-                padding: 12px;
-                font-size: 0.95em;
-            }
-            
-            .mittel-card h4 {
-                font-size: 1em;
-            }
-            
-            /* Tabellen horizontal scrollbar auf Handy */
-            .table-container {
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-            }
-        }
-          .back-button {
-            display: inline-block;
-            background: #3498db;
-            color: white;
-            padding: 12px 24px;
-            border-radius: 25px;
-            text-decoration: none;
-            margin: 20px 5px 20px 5px;
-            transition: all 0.3s ease;
-            font-weight: 500;
-        }
-
-        .back-button:hover {
-            background: #2980b9;
-            transform: translateY(-2px);
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>📚 Kurzgeschichtenanalyse</h1>
-            <p>Lernzettel für das Abitur (15 Punkte-Niveau)</p>
-            <a href="index.html" class="back-button">← Zurück zur Hauptseite</a> 
-            <a href="textproduktion.html" class="back-button">← Zurück zur ✍️ Textproduktion</a>
-
-            
+            <h1>📚 Kurzgeschichtenanalyse - Erweitert</h1>
+            <p>Umfassender Lernzettel für das Abitur (15 Punkte-Niveau)</p>
+            <p style="font-size: 0.9em; margin-top: 10px; opacity: 0.8;">Integriert: Zehn Schritte der Interpretation + Erweiterte Struktur</p>
         </header>
         
         <div class="content">
             
+            <!-- NEU: AUFGABENSTELLUNG VERSTEHEN -->
+            <div class="section">
+                <h2>📋 Die Aufgabenstellung verstehen</h2>
+                
+                <div class="wichtig">
+                    <h3>Typische Aufgabenstellung im Abitur:</h3>
+                    <p><strong>Beispiel:</strong> "Interpretieren Sie die folgende Kurzgeschichte." (ca. 80%)</p>
+                    <p><strong>Zweiter Teil (falls vorhanden):</strong> "Zeigen Sie ausgehend von Ihren Ergebnissen vergleichend auf..." (ca. 20%)</p>
+                </div>
+                
+                <div class="tipp">
+                    <h3>Was Sie tun müssen:</h3>
+                    <ul>
+                        <li>✓ <strong>Aufgabenstellung genau lesen</strong> und wichtige Begriffe markieren</li>
+                        <li>✓ <strong>Operator beachten:</strong> "Interpretieren Sie" bedeutet: Analyse + Deutung</li>
+                        <li>✓ <strong>Prozentzahl berücksichtigen</strong> bei der Zeiteinteilung</li>
+                        <li>✓ <strong>Anmerkungen zum Text</strong> lesen – keine wichtigen Hinweise übersehen</li>
+                        <li>✓ <strong>Zweiten Aufgabenteil</strong> (falls vorhanden) beachten – kann bei der Interpretation helfen</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ÜBERARBEITETE STRUKTUR -->
+            <div class="section">
+                <h2>🏗️ Struktur der Kurzgeschichtenanalyse (Abitur)</h2>
+                
+                <div class="merkmale-box">
+                    <h3>Die optimierte Gliederung:</h3>
+                    <ol>
+                        <li><strong>1. Einleitung</strong> (Basissatz + Deutungshypothese)</li>
+                        <li><strong>2. Inhaltsangabe</strong> (kurz und prägnant)</li>
+                        <li><strong>3. Analyse + Interpretation</strong> (abschnittsweise, integriert mit sprachlichen Mitteln)</li>
+                        <li><strong>4. Schluss</strong> (nur bei vollständiger Interpretation ohne zweiten Aufgabenteil)</li>
+                    </ol>
+                </div>
+                
+                <div class="wichtig">
+                    <p><strong>Wichtig:</strong> Falls ein zweiter Aufgabenteil existiert (z.B. Vergleich), entfällt der Schluss nach der ersten Aufgabe. Der Gesamtschluss folgt erst nach Bearbeitung der zweiten Aufgabe!</p>
+                </div>
+            </div>
+
+            <!-- ZEHN SCHRITTE DER INTERPRETATION -->
+            <div class="section">
+                <h2>📝 Die Zehn Schritte der Interpretation (nach RAABE)</h2>
+                
+                <div class="step-box">
+                    <h3><span class="step-number">1</span>Aufgabenstellung, Texterfassung und Abschnitteinteilung</h3>
+                    <ul>
+                        <li><strong>Aufgabenstellung genau lesen</strong> und wichtige Begriffe markieren</li>
+                        <li><strong>Anmerkungen zum Text beachten</strong> – keine Hinweise übersehen</li>
+                        <li><strong>Text aufmerksam durchlesen</strong></li>
+                        <li><strong>Text in sinnvolle inhaltliche Abschnitte einteilen</strong> (nicht zu kleinteilig!)</li>
+                    </ul>
+                    <div class="tipp">
+                        <strong>💡 Tipp:</strong> Ein Abschnitt kann wenige Zeilen umfassen, dies ist aber nicht die Regel. Achten Sie auf inhaltliche Brüche oder Themenwechsel.
+                    </div>
+                </div>
+                
+                <div class="step-box">
+                    <h3><span class="step-number">2</span>Vorinformationen zur Analyse sammeln</h3>
+                    <p><strong>Machen Sie sich Notizen zu folgenden Fragen:</strong></p>
+                    <ul>
+                        <li>Ist der Text ein Ausschnitt aus einem längeren Werk oder ein Ganzes? Welche Gattung?</li>
+                        <li>Welche Personen agieren wann und wo miteinander?</li>
+                        <li>Aus welcher Perspektive ist der Text erzählt? (auktorial, personal, Ich-Erzähler, neutral)</li>
+                        <li>Ist der Text grundsätzlich chronologisch erzählt?</li>
+                        <li>Gibt es Zusatzinformationen in der Aufgabenstellung?</li>
+                        <li>Auf welchem Sprachniveau ist der Text verfasst? (hochsprachlich, Alltagssprache, Umgangssprache, Dialekt)</li>
+                        <li>In wie viele Abschnitte haben Sie den Text eingeteilt?</li>
+                    </ul>
+                </div>
+                
+                <div class="step-box">
+                    <h3><span class="step-number">3</span>Inhaltliche Grundfragen zur Erschließung</h3>
+                    <div class="wichtig">
+                        <p><strong>Die Grundfrage in einem epischen Text ist:</strong></p>
+                        <p style="font-size: 1.2em; text-align: center; margin: 15px 0;"><strong>Was wird über wen oder was erzählt?</strong></p>
+                        <p>Verlieren Sie in den Details nicht den Blick für diese Frage. Alle weiteren Aspekte der Textbetrachtung finden Sie in Schritt 4 und 8.</p>
+                    </div>
+                </div>
+                
+                <div class="step-box">
+                    <h3><span class="step-number">4</span>Sprachliche Gestaltung und erzählerische Mittel</h3>
+                    <p><strong>Untersuchen Sie den Text systematisch auf:</strong></p>
+                    
+                    <h4 style="color: #667eea; margin-top: 15px;">A) Aspekte der Erzählperspektive:</h4>
+                    <ul>
+                        <li><strong>Auktorialer Erzähler:</strong> handlungsleitend, allwissend, kommentierend, evtl. Leseransprache</li>
+                        <li><strong>Personaler Erzähler:</strong> handlungsbegleitend, aus Sicht einer/mehrerer Personen (teilwissend)</li>
+                        <li><strong>Neutraler Erzähler:</strong> Außensicht, sagt weniger als Figuren wissen, wertet nicht, scheinbare Objektivität</li>
+                        <li><strong>Ich-Erzähler:</strong> erzählendes oder erlebendes Ich</li>
+                    </ul>
+                    
+                    <div class="tipp">
+                        <strong>Achten Sie auf:</strong> Evtl. Perspektivwechsel, Haltung des Erzählers zu den Figuren (Indifferenz, Ablehnung, Anteilnahme, Ironie)
+                    </div>
+                    
+                    <h4 style="color: #667eea; margin-top: 15px;">B) Möglichkeiten der Figurenrede:</h4>
+                    <ul>
+                        <li><strong>Direkte Rede:</strong> Sie fragte sich: „Muss ich wirklich gehen?"</li>
+                        <li><strong>Indirekte Rede:</strong> Sie fragte sich, ob sie wirklich gehen müsse.</li>
+                        <li><strong>Erlebte Rede:</strong> Musste sie wirklich gehen?</li>
+                        <li><strong>Innerer Monolog:</strong> Muss ich wirklich gehen?</li>
+                    </ul>
+                    
+                    <h4 style="color: #667eea; margin-top: 15px;">C) Aspekte der Zeitgestaltung:</h4>
+                    <p><strong>Verhältnis von Erzählzeit und erzählter Zeit:</strong></p>
+                    <ul>
+                        <li><strong>Zeitdehnung:</strong> Erzählzeit > erzählte Zeit (z.B. bei Beschreibungen, Detail)</li>
+                        <li><strong>Zeitdeckung:</strong> Dauer entspricht Wiedergabe (z.B. wörtliche Rede)</li>
+                        <li><strong>Zeitraffung:</strong> Erzählzeit < erzählte Zeit (z.B. Raffung von Geschehnissen)</li>
+                        <li><strong>Zeitsprung, Rückblicke, Vorausdeutungen</strong></li>
+                    </ul>
+                    <p><strong>Wirkung:</strong> Setzung von Schwerpunkten, Tempo bzw. Langsamkeit des Geschehens</p>
+                    
+                    <h4 style="color: #667eea; margin-top: 15px;">D) Aspekte der Personengestaltung:</h4>
+                    <ul>
+                        <li>Was erfahren wir über die dargestellten Personen?</li>
+                        <li>Wie erfahren wir es? (Direkt durch Beschreibung? Indirekt durch Handlungen/Worte? Gedanken? Innerer Monolog? Bewusstseinsstrom?)</li>
+                    </ul>
+                    
+                    <h4 style="color: #667eea; margin-top: 15px;">E) Aspekte der Raumgestaltung:</h4>
+                    <ul>
+                        <li><strong>Ambiente:</strong> Wohnraum als Fortsetzung der äußeren Erscheinung einer Figur, gesellschaftlicher Status</li>
+                        <li><strong>Soziales Milieu:</strong> Umgebung als prägende Macht</li>
+                        <li><strong>Atmosphärische Kulisse:</strong> Gemütszustände durch Witterung untermalt (Glück–Sonne; Unglück–Regen)</li>
+                        <li><strong>Symbolische Kulisse:</strong> Thematik in symbolischen Bildebegriffen</li>
+                    </ul>
+                    
+                    <h4 style="color: #667eea; margin-top: 15px;">F) Erzählerische Besonderheiten:</h4>
+                    <ul>
+                        <li><strong>Leitmotive:</strong> Wiederholung führt zu Wesentlichem (Handlungselement, Geste, Melodie, Geräusch, Geruch)</li>
+                        <li>Schlüsselbegriffe, Kontraste, Symbolik, Ironie</li>
+                        <li>Gattungsmerkmale (z.B. offener Schluss bei Kurzgeschichten)</li>
+                    </ul>
+                    
+                    <div class="wichtig">
+                        <strong>Praxis-Tipp:</strong> Schreiben Sie die sprachlichen Mittel direkt neben die Zeile im Text. Machen Sie sich Randnotizen zu erzählerischen Mitteln!
+                    </div>
+                </div>
+                
+                <div class="step-box">
+                    <h3><span class="step-number">5</span>Verfassen einer Einleitung</h3>
+                    <p><strong>Die Einleitung soll folgende Elemente enthalten:</strong></p>
+                    <ol>
+                        <li><strong>Einleitungsgedanke:</strong> Zum Thema passend über Autor, Epoche oder Thematik (max. 4 Sätze)</li>
+                        <li><strong>Textaufnahme:</strong> Autor, Titel (in Anführungszeichen, groß), Gattung, Jahr, ggf. Ort</li>
+                        <li><strong>Basissatz zum Inhalt</strong> des Textes</li>
+                        <li><strong>Deutungshypothese:</strong> Worum geht es im Kern?</li>
+                    </ol>
+                    
+                    <div class="beispiel">
+                        <h4>Beispiel-Einleitung:</h4>
+                        <p>"In der Nachkriegszeit etablierte sich die Kurzgeschichte als literarische Form, die alltägliche Krisensituationen in verdichteter Weise darstellt. Die Kurzgeschichte 'Hauptsache weit' von Sibylle Berg, erschienen 2001, thematisiert die Einsamkeit eines jungen Backpackers in Asien, der trotz globaler Mobilität keine echte Verbindung zu seiner Umwelt herstellen kann. Die Geschichte legt nahe, dass digitale Kommunikation die existenzielle Isolation des modernen Menschen nicht überwinden kann."</p>
+                    </div>
+                </div>
+                
+                <div class="step-box">
+                    <h3><span class="step-number">6</span>Verfassen der Vorinformationen</h3>
+                    <p><strong>Verfassen Sie aus Ihren Notizen (Schritt 2) einen zusammenhängenden Text.</strong></p>
+                    
+                    <div class="beispiel">
+                        <h4>Formulierungstipps:</h4>
+                        <ul>
+                            <li>"Der vorliegende Text stammt aus dem … Kapitel des Romans …"</li>
+                            <li>"Schauplatz des Textes ist … (ggf. Handlungszeit anfügen)"</li>
+                            <li>"Die Hauptfigur des Textes ist … ; daneben treten noch … und … auf."</li>
+                            <li>"Im Zentrum des Textes steht/stehen …"</li>
+                            <li>"Der Text ist durchgehend in gehobener Prosa verfasst."</li>
+                            <li>"In der direkten Rede finden sich Elemente von Umgangssprache bzw. Dialekt."</li>
+                            <li>"Der Text ist insgesamt (nicht) chronologisch verfasst."</li>
+                            <li>"Erzählt wird (vorwiegend) aus der Perspektive eines auktorialen (personalen, Ich-) Erzählers."</li>
+                            <li>"Der Text lässt sich insgesamt in x Abschnitte einteilen."</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="wichtig">
+                        <p><strong>Wichtig:</strong> Geben Sie bei den Personen an, wer diese sind (z.B. "Botho von Rienäcker, Baron und Offizier"). Vergessen Sie keine Person!</p>
+                        <p><strong>Zahlen:</strong> Zahlen von eins bis zwölf ausschreiben.</p>
+                    </div>
+                </div>
+                
+                <div class="step-box">
+                    <h3><span class="step-number">7</span>Verfassen der Analyse / Erschließung</h3>
+                    <p><strong>Dies ist der umfangreichste Teil der Arbeit. Gehen Sie abschnittsweise vor.</strong></p>
+                    
+                    <h4 style="color: #667eea; margin-top: 15px;">Jeder Abschnitt umfasst:</h4>
+                    
+                    <ol>
+                        <li>
+                            <strong>Inhalts-Satz:</strong> 
+                            <ul>
+                                <li>Kurz wiedergeben, worum es im Abschnitt inhaltlich geht</li>
+                                <li>Regeln der Inhaltsangabe beachten (Präsens, keine Zitate, eigenständige Formulierung)</li>
+                                <li>Zeilenangabe in Klammern</li>
+                            </ul>
+                            <p><em>Beispiel: Im ersten Abschnitt (Z. 1–6) geht es um …</em></p>
+                        </li>
+                        
+                        <li>
+                            <strong>Analyse:</strong>
+                            <ul>
+                                <li>Erkenntnisse aus Schritt 4 zu zusammenhängendem Gedankengang verarbeiten</li>
+                                <li>Sprachliche Mittel einbeziehen: Funktion + Wirkung + Bezug zum Inhalt</li>
+                                <li>Sprachliche Mittel wörtlich zitieren mit Zeilennummer</li>
+                                <li>Bei Unsicherheit: "möglicherweise", "vielleicht", "es scheint, als ob"</li>
+                                <li>Zwei Deutungsmöglichkeiten anbieten, wenn beide sinnvoll sind</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    
+                    <div class="wichtig">
+                        <h4>⚠️ Häufige Fehler vermeiden:</h4>
+                        <ul>
+                            <li>❌ <strong>Nicht nur zitieren</strong> ohne sprachliches Mittel zu benennen – sonst schreiben Sie den Text nur ab!</li>
+                            <li>❌ <strong>Textparaphrasen vermeiden:</strong> Formulierungen des Textes nicht wörtlich verwenden</li>
+                            <li>❌ <strong>Nicht nacherzählen:</strong> Analysieren Sie!</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="beispiel">
+                        <h4>Beispiel für gelungene Abschnittsanalyse:</h4>
+                        <p><strong>Inhaltssatz:</strong> "Im ersten Abschnitt (Z. 1-8) wird der abrupte Aufbruch des Protagonisten in medias res dargestellt."</p>
+                        <p><strong>Analyse:</strong> "Der Einstieg 'Und weg' (Z. 1) exemplifiziert das gattungstypische Merkmal des unmittelbaren Beginns. Die elliptische Struktur evoziert Dynamik und spiegelt den Fluchtimpuls wider. Die Konjunktion 'Und' suggeriert, dass bereits etwas vorangegangen ist, etabliert jedoch eine Leerstelle. Die anschließende Formulierung 'hatte er gedacht' (Z. 1) markiert durch das Plusquamperfekt eine zeitliche Distanz zwischen Denken und Handeln, wodurch die Diskrepanz zwischen Erwartung und Realität angelegt wird."</p>
+                    </div>
+                </div>
+                
+                <div class="step-box">
+                    <h3><span class="step-number">8</span>Verfassen der Interpretation</h3>
+                    <p><strong>Verfassen Sie auf Basis der Analyseergebnisse eine zusammenfassende Interpretation.</strong></p>
+                    <p>Hier geht es um eine <strong>Gesamtdeutung</strong> des Textes.</p>
+                    
+                    <div class="tipp">
+                        <h4>Fragen für die Interpretation:</h4>
+                        <ol>
+                            <li><strong>Personen & Entwicklung:</strong> Was haben wir über die Personen erfahren? Gibt es eine Entwicklung? Hat sich eine Person oder Beziehung verändert?</li>
+                            <li><strong>Erzählerische Mittel:</strong> Welche stehen im Vordergrund? Was bewirken sie?</li>
+                            <li><strong>Zusatzaspekt:</strong> Falls in der Aufgabenstellung genannt – besonders beachten</li>
+                            <li><strong>Epochenwissen einbeziehen:</strong> Was passt von meinem Epochenwissen zum Text? Auf bestimmte Begriffe achten!</li>
+                            <li><strong>Intention:</strong>
+                                <ul>
+                                    <li>Was wird ausgesagt, obwohl es nicht direkt gesagt wird? (zwischen den Zeilen lesen)</li>
+                                    <li>Was ist möglicherweise die Intention des Autors?</li>
+                                    <li>Gibt es etwas Typisches für menschliches Verhalten?</li>
+                                </ul>
+                            </li>
+                            <li><strong>Titel:</strong> Bei abgeschlossener Erzählung – Was sagt der Titel aus?</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="step-box">
+                    <h3><span class="step-number">9</span>Einen Schluss verfassen</h3>
+                    <div class="wichtig">
+                        <p><strong>Wichtig:</strong> Falls es einen zweiten Aufgabenteil gibt, bearbeiten Sie zunächst diesen und formulieren erst ganz am Ende einen Schluss!</p>
+                    </div>
+                    
+                    <p><strong>Der Schluss besteht aus wenigen Sätzen mit einem Abschlussgedanken:</strong></p>
+                    <ul>
+                        <li>Wiederaufnahme des Einleitungsgedankens</li>
+                        <li>Aussagen zur Aktualität des Textes</li>
+                        <li>Persönliche Stellungnahme</li>
+                        <li>Weiterführung des Themas (z.B. Zukunftswunsch, Appell)</li>
+                    </ul>
+                </div>
+                
+                <div class="step-box">
+                    <h3><span class="step-number">10</span>Schreiben der Gliederung und Überarbeitung</h3>
+                    <ul>
+                        <li><strong>Gliederung:</strong> Schreiben Sie Ihre Gliederung in ordentlicher Form auf ein gesondertes Blatt</li>
+                        <li><strong>Überarbeitung:</strong> Wenn noch Zeit vorhanden:
+                            <ul>
+                                <li>Rechtschreibung & Grammatik prüfen</li>
+                                <li>Präsens durchgängig?</li>
+                                <li>Alle Zitate mit Zeilennummer?</li>
+                                <li>Fachbegriffe korrekt?</li>
+                            </ul>
+                        </li>
+                        <li><strong>Einfügungen:</strong> Mit Ziffern arbeiten, auf eigene Seite oder ans Ende</li>
+                        <li><strong>Niemals auf den Korrekturrand schreiben!</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- PRAKTISCHE ANWENDUNG -->
+            <div class="section">
+                <h2>🎯 Praktische Anwendung: Struktur im Fließtext</h2>
+                
+                <div class="aufbau-schema">
+                    <h3>So sieht Ihre fertige Analyse aus:</h3>
+                    
+                    <div style="background: white; padding: 20px; border-radius: 8px; margin-top: 15px;">
+                        <h4 style="color: #667eea;">1. EINLEITUNG (mit Basissatz + Deutungshypothese)</h4>
+                        <p style="margin-left: 20px; font-size: 0.95em; line-height: 1.6;">
+                            [Einleitungsgedanke über Autor/Epoche/Thema]<br>
+                            Die Kurzgeschichte "[TITEL]" von [AUTOR], erschienen [JAHR], thematisiert [THEMA]. [Basissatz zum Inhalt]. Die Geschichte legt nahe, dass [Deutungshypothese].
+                        </p>
+                        
+                        <h4 style="color: #667eea; margin-top: 20px;">2. VORINFORMATIONEN</h4>
+                        <p style="margin-left: 20px; font-size: 0.95em; line-height: 1.6;">
+                            Schauplatz ist [ORT/ZEIT]. Im Zentrum steht [FIGUR], der/die [SITUATION]. Der Text ist in [gehobener Prosa / Umgangssprache] verfasst und wird aus der Perspektive eines [ERZÄHLERTYP] erzählt. Der Text lässt sich in [ANZAHL] Abschnitte einteilen.
+                        </p>
+                        
+                        <h4 style="color: #667eea; margin-top: 20px;">3. INHALTSANGABE (kurz!)</h4>
+                        <p style="margin-left: 20px; font-size: 0.95em; line-height: 1.6;">
+                            [3-4 Sätze im Präsens, die das Wesentliche zusammenfassen, ohne Details]
+                        </p>
+                        
+                        <h4 style="color: #667eea; margin-top: 20px;">4. ANALYSE + INTERPRETATION (abschnittsweise, integriert)</h4>
+                        <p style="margin-left: 20px; font-size: 0.95em; line-height: 1.6;">
+                            <strong>Abschnitt 1 (Z. 1-8):</strong><br>
+                            [Inhaltssatz] Im ersten Abschnitt geht es um...<br>
+                            [Analyse mit sprachlichen Mitteln + Wirkung + Interpretation]<br><br>
+                            
+                            <strong>Abschnitt 2 (Z. 9-15):</strong><br>
+                            [Inhaltssatz + Analyse + Interpretation]<br><br>
+                            
+                            <strong>Abschnitt 3 (Z. 16-23):</strong><br>
+                            [Inhaltssatz + Analyse + Interpretation]<br><br>
+                            
+                            [etc. für alle Abschnitte]
+                        </p>
+                        
+                        <h4 style="color: #667eea; margin-top: 20px;">5. ZUSAMMENFASSENDE INTERPRETATION</h4>
+                        <p style="margin-left: 20px; font-size: 0.95em; line-height: 1.6;">
+                            [Gesamtdeutung: Was haben wir über die Personen erfahren? Welche Entwicklung? Welche erzählerischen Mittel dominieren? Epochenbezug? Intention des Autors? Zeitlose Aussage?]
+                        </p>
+                        
+                        <h4 style="color: #667eea; margin-top: 20px;">6. SCHLUSS (falls kein zweiter Aufgabenteil)</h4>
+                        <p style="margin-left: 20px; font-size: 0.95em; line-height: 1.6;">
+                            [Wenige Sätze: Zusammenfassung, Rückbezug zur Deutungshypothese, persönliche Wertung oder Aktualitätsbezug]
+                        </p>
+                    </div>
+                </div>
+            </div>
+
             <!-- DEFINITION -->
             <div class="section">
                 <h2>📖 Definition der Kurzgeschichte</h2>
@@ -375,77 +631,180 @@
                 </div>
             </div>
 
-            <!-- ANALYSE-AUFBAU -->
+            <!-- ZEITMANAGEMENT -->
             <div class="section">
-                <h2>📝 Aufbau einer Kurzgeschichtenanalyse</h2>
+                <h2>⏱️ Zeitmanagement: 90 Minuten effektiv nutzen</h2>
                 
                 <div class="aufbau-schema">
-                    <ol>
-                        <li>
-                            <strong>Einleitung</strong>
+                    <h3>Zeitplan für eine Klausur:</h3>
+                    <ol style="list-style: none; margin-left: 0;">
+                        <li style="background: #fff3cd; border-left: 5px solid #ffc107;"><strong>0-15 Min: Texterschließung</strong>
                             <ul>
-                                <li><strong>Basissatz:</strong> Titel, Autor, Textsorte, Erscheinungsjahr, Thema</li>
-                                <li><strong>Beispiel:</strong> "Die Kurzgeschichte 'Fünfzehn' von Reiner Kunze, erschienen 1976 im Erzählband 'Die wunderbaren Jahre', thematisiert den Generationskonflikt zwischen einem Vater und seiner 15-jährigen Tochter in der DDR."</li>
-                                <li>Kurze <strong>Inhaltsangabe</strong> (2-4 Sätze im Präsens)</li>
-                                <li>Optional: <strong>Deutungshypothese</strong> (vorläufige Interpretation)</li>
+                                <li>Aufgabenstellung genau lesen und markieren</li>
+                                <li>Text 2x gründlich lesen</li>
+                                <li>Beim 2. Lesen: Markieren (Schlüsselstellen, Auffälligkeiten)</li>
+                                <li>Randnotizen machen</li>
+                                <li>Figuren + Konflikte notieren</li>
+                                <li>Text in Abschnitte einteilen</li>
                             </ul>
                         </li>
-                        
-                        <li>
-                            <strong>Hauptteil: Analyse</strong>
+                        <li style="background: #d1ecf1; border-left: 5px solid #17a2b8;"><strong>15-25 Min: Planung & Notizen</strong>
                             <ul>
-                                <li><strong>Inhaltliche Analyse:</strong>
-                                    <ul>
-                                        <li>Handlungsverlauf detailliert beschreiben</li>
-                                        <li>Figuren charakterisieren (direkt/indirekt)</li>
-                                        <li>Figurenkonstellation und Beziehungen</li>
-                                        <li>Konflikt/Problemstellung herausarbeiten</li>
-                                        <li>Zentrale Motive identifizieren</li>
-                                    </ul>
-                                </li>
-                                <li><strong>Formale Analyse (Form-Inhalt-Bezug!):</strong>
-                                    <ul>
-                                        <li>Erzählperspektive und Erzählverhalten</li>
-                                        <li>Erzählzeit und erzählte Zeit</li>
-                                        <li>Zeitgestaltung (Raffung, Dehnung, Zeitdeckung)</li>
-                                        <li>Aufbau und Struktur</li>
-                                        <li>Anfang und Ende analysieren</li>
-                                    </ul>
-                                </li>
-                                <li><strong>Sprachliche Analyse:</strong>
-                                    <ul>
-                                        <li>Sprachebene (gehoben, umgangssprachlich)</li>
-                                        <li>Satzbau (Parataxe, Hypotaxe)</li>
-                                        <li>Rhetorische Mittel und ihre Wirkung</li>
-                                        <li>Wortwahl und Bedeutungsebenen</li>
-                                        <li>Symbole und Leitmotive</li>
-                                    </ul>
-                                </li>
+                                <li>Vorinformationen notieren (Schritt 2)</li>
+                                <li>Gliederung erstellen (Abschnitte!)</li>
+                                <li>Textbelege/Zeilenzahlen notieren</li>
+                                <li>Welche Stilmittel? Mit Wirkung notieren</li>
+                                <li>Epochenzuordnung überlegen</li>
+                                <li>Deutungshypothese formulieren</li>
                             </ul>
                         </li>
-                        
-                        <li>
-                            <strong>Hauptteil: Interpretation</strong>
+                        <li style="background: #d4edda; border-left: 5px solid #28a745;"><strong>25-30 Min: Einleitung + Vorinformationen</strong>
                             <ul>
-                                <li>Textaussage herausarbeiten</li>
-                                <li>Intention des Autors deuten</li>
-                                <li>Symbolik und Metaphorik interpretieren</li>
-                                <li>Bezug zum historischen/gesellschaftlichen Kontext</li>
-                                <li>Epochale Einordnung (z.B. Nachkriegsliteratur, Postmoderne)</li>
-                                <li><strong>Wichtig:</strong> Immer am Text belegen!</li>
+                                <li>Einleitungsgedanke</li>
+                                <li>Basissatz</li>
+                                <li>Deutungshypothese</li>
+                                <li>Vorinformationen aus Notizen</li>
                             </ul>
                         </li>
-                        
-                        <li>
-                            <strong>Schluss</strong>
+                        <li style="background: #f8d7da; border-left: 5px solid #dc3545;"><strong>30-35 Min: Kurze Inhaltsangabe</strong>
                             <ul>
-                                <li>Zusammenfassung der Analyseergebnisse</li>
+                                <li>3-4 Sätze im Präsens</li>
+                                <li>Nur das Wesentliche</li>
+                            </ul>
+                        </li>
+                        <li style="background: #e2e3e5; border-left: 5px solid #6c757d;"><strong>35-75 Min: Analyse + Interpretation (40 Minuten!)</strong>
+                            <ul>
+                                <li>Abschnitt für Abschnitt</li>
+                                <li>Inhaltssatz + Analyse + Interpretation integriert</li>
+                                <li>Sprachliche Mittel mit Wirkung</li>
+                                <li>Am Schluss: Zusammenfassende Interpretation</li>
+                            </ul>
+                        </li>
+                        <li style="background: #cfe2ff; border-left: 5px solid #0d6efd;"><strong>75-80 Min: Schluss (falls kein 2. Teil)</strong>
+                            <ul>
+                                <li>Zusammenfassung</li>
                                 <li>Rückbezug zur Deutungshypothese</li>
-                                <li>Persönliche Wertung (begründet!)</li>
-                                <li>Optional: Aktualitätsbezug oder übergeordnete Reflexion</li>
+                                <li>Persönliche Wertung</li>
+                            </ul>
+                        </li>
+                        <li style="background: #d1ecf1; border-left: 5px solid #17a2b8;"><strong>80-90 Min: Überarbeitung</strong>
+                            <ul>
+                                <li>Rechtschreibung & Grammatik</li>
+                                <li>Zeilenangaben vollständig?</li>
+                                <li>Übergänge verbessern</li>
+                                <li>Gliederung sauber aufschreiben</li>
                             </ul>
                         </li>
                     </ol>
+                </div>
+            </div>
+
+            <!-- OPERATOREN -->
+            <div class="section">
+                <h2>🔤 Wichtige Operatoren verstehen</h2>
+                
+                <table>
+                    <tr>
+                        <th>Operator</th>
+                        <th>Bedeutung</th>
+                        <th>Was Sie tun müssen</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Interpretieren</strong></td>
+                        <td>Analysieren + Deuten</td>
+                        <td>Inhalt + Form + Sprache mit Textbelegen + Funktion/Wirkung + Gesamtdeutung</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Analysieren</strong></td>
+                        <td>Systematisch untersuchen</td>
+                        <td>Inhalt + Form + Sprache mit Textbelegen + Funktion/Wirkung (ohne tiefe Deutung)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Erläutern</strong></td>
+                        <td>Verständlich machen</td>
+                        <td>Sachverhalt erklären mit Beispielen und Zusammenhängen</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Charakterisieren</strong></td>
+                        <td>Merkmale herausarbeiten</td>
+                        <td>Figur beschreiben: Aussehen, Verhalten, Sprache, Beziehungen</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Untersuchen</strong></td>
+                        <td>Gezielt prüfen</td>
+                        <td>Einen bestimmten Aspekt herausarbeiten (z.B. nur Sprache)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Vergleichen</strong></td>
+                        <td>Gemeinsamkeiten/Unterschiede</td>
+                        <td>Kriteriengeleiteter Vergleich mit Textbelegen</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- FORMULIERUNGSHILFEN ERWEITERT -->
+            <div class="section">
+                <h2>💬 Formulierungshilfen (erweitert aus PDF)</h2>
+                
+                <h3>Einleitung</h3>
+                <div class="beispiel">
+                    <ul>
+                        <li>"Die Kurzgeschichte '[TITEL]' von [AUTOR], erschienen [JAHR], thematisiert..."</li>
+                        <li>"Im Mittelpunkt der Erzählung steht..."</li>
+                        <li>"Die Geschichte handelt von..."</li>
+                        <li>"Der vorliegende Text stammt aus dem … Kapitel des Romans …"</li>
+                    </ul>
+                </div>
+                
+                <h3>Vorinformationen</h3>
+                <div class="beispiel">
+                    <ul>
+                        <li>"Schauplatz des Textes ist … (Handlungszeit: …)"</li>
+                        <li>"Die Hauptfigur des Textes ist …; daneben treten noch … und … auf."</li>
+                        <li>"Im Zentrum des Textes steht/stehen …"</li>
+                        <li>"Der Text ist durchgehend in gehobener Prosa verfasst."</li>
+                        <li>"In der direkten Rede finden sich Elemente von Umgangssprache bzw. Dialekt."</li>
+                        <li>"Der Text ist insgesamt (nicht) chronologisch verfasst."</li>
+                        <li>"Erzählt wird (vorwiegend) aus der Perspektive eines auktorialen (personalen, Ich-) Erzählers."</li>
+                        <li>"Der Text lässt sich insgesamt in x Abschnitte einteilen."</li>
+                    </ul>
+                </div>
+                
+                <h3>Abschnittsanalyse</h3>
+                <div class="beispiel">
+                    <ul>
+                        <li>"Im ersten Abschnitt (Z. 1–6) geht es um …"</li>
+                        <li>"Der zweite Abschnitt (Z. 7-12) fokussiert …"</li>
+                        <li>"Dieser Abschnitt thematisiert …"</li>
+                    </ul>
+                </div>
+                
+                <h3>Analyse</h3>
+                <div class="beispiel">
+                    <ul>
+                        <li>"Der Autor verwendet ..., um zu verdeutlichen, dass..."</li>
+                        <li>"Die Metapher ... lässt sich interpretieren als..."</li>
+                        <li>"Durch die Verwendung von ... wird ... hervorgehoben/verstärkt..."</li>
+                        <li>"Der personale Erzähler ermöglicht einen Einblick in..."</li>
+                        <li>"Die knappe, elliptische Sprache spiegelt... wider"</li>
+                        <li>"Das Symbol ... kann gedeutet werden als..."</li>
+                        <li>"Möglicherweise deutet dies auf … hin"</li>
+                        <li>"Es scheint, als ob …"</li>
+                        <li>"Dies lässt zwei Deutungen zu: Einerseits …, andererseits …"</li>
+                    </ul>
+                </div>
+                
+                <h3>Interpretation</h3>
+                <div class="beispiel">
+                    <ul>
+                        <li>"Dies lässt sich interpretieren als..."</li>
+                        <li>"Der Autor kritisiert/verdeutlicht damit..."</li>
+                        <li>"Die Geschichte zeigt exemplarisch..."</li>
+                        <li>"Im historischen Kontext betrachtet..."</li>
+                        <li>"Vor dem Hintergrund der Epoche …"</li>
+                        <li>"Die Intention des Autors liegt möglicherweise darin, …"</li>
+                        <li>"Zwischen den Zeilen wird deutlich, dass …"</li>
+                    </ul>
                 </div>
             </div>
 
@@ -473,7 +832,7 @@
                     <tr>
                         <td><strong>Vergleich</strong></td>
                         <td>Bildlicher Vergleich mit "wie" oder "als"</td>
-                        <td>"wie man zu Tisch Tisch sagt" (Borchert)</td>
+                        <td>"wie man zu Tisch Tisch sagt"</td>
                         <td>Verdeutlichung, Emotionalisierung</td>
                     </tr>
                     <tr>
@@ -527,214 +886,6 @@
                 </table>
             </div>
 
-            <!-- ERZÄHLTECHNIK -->
-            <div class="section">
-                <h2>👁️ Erzählperspektive & Erzählverhalten</h2>
-                
-                <h3>Erzählperspektiven</h3>
-                <ul>
-                    <li><strong>Ich-Erzähler:</strong> Subjektive Sicht, eingeschränkte Perspektive</li>
-                    <li><strong>Personaler Erzähler:</strong> Aus Sicht einer Figur (Er/Sie), Innenperspektive</li>
-                    <li><strong>Auktorialer Erzähler:</strong> Allwissend, kann kommentieren und bewerten</li>
-                    <li><strong>Neutraler Erzähler:</strong> Außenperspektive, nur Beobachtung, keine Innensicht</li>
-                </ul>
-                
-                <h3>Erzählverhalten</h3>
-                <ul>
-                    <li><strong>Auktorial:</strong> Allwissend, kommentierend, wertend</li>
-                    <li><strong>Personal:</strong> Aus Figurenperspektive, eingeschränkt</li>
-                    <li><strong>Neutral:</strong> Objektiv beobachtend, "Kamera-Perspektive"</li>
-                </ul>
-                
-                <h3>Darbietungsformen</h3>
-                <ul>
-                    <li><strong>Erzählbericht:</strong> Erzähler berichtet</li>
-                    <li><strong>Direkte Rede:</strong> Wörtliche Figurenrede</li>
-                    <li><strong>Indirekte Rede:</strong> Wiedergegebene Figurenrede</li>
-                    <li><strong>Erlebte Rede:</strong> Gedanken/Gefühle in 3. Person, aber aus Figurensicht</li>
-                    <li><strong>Innerer Monolog:</strong> Gedankenfluss einer Figur</li>
-                    <li><strong>Bewusstseinsstrom:</strong> Ungefilterte Bewusstseinsinhalte</li>
-                </ul>
-            </div>
-
-            <!-- ZEITGESTALTUNG -->
-            <div class="section">
-                <h2>⏰ Zeitgestaltung</h2>
-                
-                <ul>
-                    <li><strong>Erzählzeit:</strong> Zeit, die das Lesen dauert</li>
-                    <li><strong>Erzählte Zeit:</strong> Zeitspanne, die die Handlung umfasst</li>
-                </ul>
-                
-                <h3>Verhältnis Erzählzeit zu erzählter Zeit</h3>
-                <ul>
-                    <li><strong>Zeitraffung:</strong> Erzählzeit < erzählte Zeit (z.B. "Drei Jahre vergingen")</li>
-                    <li><strong>Zeitdeckung:</strong> Erzählzeit = erzählte Zeit (Dialog, Szene)</li>
-                    <li><strong>Zeitdehnung:</strong> Erzählzeit > erzählte Zeit (detaillierte Beschreibung eines Moments)</li>
-                    <li><strong>Ellipse:</strong> Aussparung von Zeitabschnitten</li>
-                </ul>
-            </div>
-
-            <!-- CHECKLISTE -->
-            <div class="section">
-                <h2>✅ Analyse-Checkliste</h2>
-                
-                <div class="wichtig">
-                    <h3>Vor dem Schreiben:</h3>
-                    <ul>
-                        <li>✓ Text mindestens 2x aufmerksam lesen</li>
-                        <li>✓ Wichtige Textstellen markieren</li>
-                        <li>✓ Auffälligkeiten notieren (Sprache, Struktur, Symbole)</li>
-                        <li>✓ Figuren und ihre Beziehungen skizzieren</li>
-                        <li>✓ Struktur der Analyse planen</li>
-                    </ul>
-                </div>
-                
-                <div class="wichtig">
-                    <h3>Beim Schreiben:</h3>
-                    <ul>
-                        <li>✓ Präsens verwenden (außer bei Vorzeitigkeit)</li>
-                        <li>✓ Sachlich und analytisch formulieren</li>
-                        <li>✓ Textbelege verwenden (Zitate + Zeilenangabe)</li>
-                        <li>✓ Form-Inhalt-Bezug herstellen</li>
-                        <li>✓ Fachbegriffe korrekt verwenden</li>
-                        <li>✓ Nicht nacherzählen, sondern analysieren!</li>
-                        <li>✓ Übergänge zwischen Absätzen schaffen</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- FORMULIERUNGSHILFEN -->
-            <div class="section">
-                <h2>💬 Formulierungshilfen</h2>
-                
-                <h3>Einleitung</h3>
-                <ul>
-                    <li>"Die Kurzgeschichte ... von ... thematisiert..."</li>
-                    <li>"Im Mittelpunkt der Erzählung steht..."</li>
-                    <li>"Die Geschichte handelt von..."</li>
-                </ul>
-                
-                <h3>Analyse</h3>
-                <ul>
-                    <li>"Der Autor verwendet ..., um zu verdeutlichen, dass..."</li>
-                    <li>"Die Metapher ... lässt sich interpretieren als..."</li>
-                    <li>"Durch die Verwendung von ... wird ... hervorgehoben/verstärkt..."</li>
-                    <li>"Der personale Erzähler ermöglicht einen Einblick in..."</li>
-                    <li>"Die knappe, elliptische Sprache spiegelt... wider"</li>
-                    <li>"Das Symbol ... kann gedeutet werden als..."</li>
-                </ul>
-                
-                <h3>Interpretation</h3>
-                <ul>
-                    <li>"Dies lässt sich interpretieren als..."</li>
-                    <li>"Der Autor kritisiert/verdeutlicht damit..."</li>
-                    <li>"Die Geschichte zeigt exemplarisch..."</li>
-                    <li>"Im historischen Kontext betrachtet..."</li>
-                </ul>
-                
-                <h3>Schluss</h3>
-                <ul>
-                    <li>"Zusammenfassend lässt sich festhalten..."</li>
-                    <li>"Die Analyse zeigt, dass..."</li>
-                    <li>"Der offene Schluss regt zum Nachdenken über... an"</li>
-                </ul>
-            </div>
-
-            <!-- TIPPS FÜR 15 PUNKTE -->
-            <div class="section">
-                <h2>🌟 Tipps für 15 Punkte</h2>
-                
-                <div class="tipp">
-                    <h3>Das macht den Unterschied:</h3>
-                    <ul>
-                        <li><strong>Tiefgründige Interpretation:</strong> Nicht oberflächlich bleiben, Mehrdeutigkeit erkennen</li>
-                        <li><strong>Präzise Textbelege:</strong> Konkrete Zitate mit Zeilenangabe</li>
-                        <li><strong>Form-Inhalt-Bezug:</strong> Nicht nur "was", sondern "wie" und "warum"</li>
-                        <li><strong>Eigenständige Deutung:</strong> Nicht nur Offensichtliches wiedergeben</li>
-                        <li><strong>Kontextualisierung:</strong> Epochenbezug, historischer Hintergrund</li>
-                        <li><strong>Sprachliche Qualität:</strong> Variierter Satzbau, präziser Ausdruck</li>
-                        <li><strong>Stringente Argumentation:</strong> Roter Faden, logischer Aufbau</li>
-                        <li><strong>Differenzierte Wertung:</strong> Reflektierte eigene Position im Schluss</li>
-                    </ul>
-                </div>
-                
-                <div class="beispiel">
-                    <h3>Beispiel für qualitativ hochwertige Analyse:</h3>
-                    <p><strong>Schwach (10 Punkte):</strong> "Der Autor verwendet eine Metapher."</p>
-                    <p><strong>Stark (15 Punkte):</strong> "Die Metapher des 'weichen Bettes' (Z. 41) für den Computerbildschirm verdeutlicht die Fluchtfunktion der digitalen Welt für den einsamen Protagonisten. Sie symbolisiert Geborgenheit und Sicherheit, die er in der realen, fremden Umgebung nicht findet. Zugleich ironisiert der Autor damit die oberflächliche Ersatzbefriedigung durch digitale Kommunikation, die das existenzielle Alleinsein nicht aufheben kann."</p>
-                </div>
-            </div>
-
-            <!-- EPOCHEN -->
-            <div class="section">
-                <h2>📅 Epochen der Kurzgeschichte (ab 1945)</h2>
-                
-                <div class="merkmale-box">
-                    <p><strong>Wichtig:</strong> Die Kurzgeschichte als Gattung etablierte sich im deutschsprachigen Raum erst <strong>nach 1945</strong>. Vorher gab es ähnliche Formen (Anekdote, Kalendergeschichte), aber die moderne Kurzgeschichte ist ein Produkt der Nachkriegszeit.</p>
-                </div>
-                
-                <h3>1. Trümmerliteratur / Kahlschlagliteratur (1945-1949)</h3>
-                <ul>
-                    <li><strong>Historischer Kontext:</strong> Unmittelbare Nachkriegszeit, "Stunde Null"</li>
-                    <li><strong>Merkmale:</strong> Knappe, "kahle" Sprache; Themen: Krieg, Zerstörung, Heimkehr, Neuanfang</li>
-                    <li><strong>Autoren:</strong> Wolfgang Borchert ("Draußen vor der Tür"), Heinrich Böll, Günter Eich</li>
-                    <li><strong>Beispiel-Formulierung:</strong> "Die Kurzgeschichte ist der Trümmerliteratur zuzuordnen, was sich in der reduzierten, elliptischen Sprache und der Thematisierung von Kriegstraumata manifestiert."</li>
-                </ul>
-                
-                <h3>2. Literatur des Wiederaufbaus (1949-1966)</h3>
-                <ul>
-                    <li><strong>Historischer Kontext:</strong> Wirtschaftswunder, "Adenauer-Ära", Verdrängung der NS-Zeit</li>
-                    <li><strong>Merkmale:</strong> Kritische Auseinandersetzung mit Wohlstandsgesellschaft und Vergangenheitsbewältigung</li>
-                    <li><strong>Autoren:</strong> Heinrich Böll ("Anekdote zur Senkung der Arbeitsmoral"), Siegfried Lenz, Wolfdietrich Schnurre</li>
-                    <li><strong>Beispiel-Formulierung:</strong> "Der Text reflektiert die gesellschaftliche Stimmung der Wiederaufbauzeit, indem er die Diskrepanz zwischen materiellem Wohlstand und emotionaler Leere thematisiert."</li>
-                </ul>
-                
-                <h3>3. Literatur des gesellschaftlichen Wandels (1966-1980)</h3>
-                <ul>
-                    <li><strong>Historischer Kontext:</strong> Studentenbewegung 1968, RAF-Terrorismus, politischer Aktivismus</li>
-                    <li><strong>Merkmale:</strong> Politisierung der Literatur, Gesellschaftskritik, neue Subjektivität</li>
-                    <li><strong>Autoren:</strong> Heinrich Böll ("Die verlorene Ehre der Katharina Blum"), Gabriele Wohmann, Marie Luise Kaschnitz</li>
-                    <li><strong>Beispiel-Formulierung:</strong> "Die Geschichte trägt deutliche Züge der politisierten Literatur der 68er-Bewegung, erkennbar an der expliziten Systemkritik und dem Engagement für gesellschaftlichen Wandel."</li>
-                </ul>
-                
-                <h3>4. Postmoderne (1980-2001)</h3>
-                <ul>
-                    <li><strong>Historischer Kontext:</strong> Fall der Mauer, Ende des Kalten Krieges, Globalisierung</li>
-                    <li><strong>Merkmale:</strong> Stilpluralität, Ironie, Intertextualität, Auflösung fester Strukturen</li>
-                    <li><strong>Autoren:</strong> Patrick Süskind, Sibylle Berg, Ingo Schulze</li>
-                    <li><strong>Beispiel-Formulierung:</strong> "Die postmoderne Erzählweise zeigt sich in der spielerischen Vermischung von Realität und Fiktion sowie der ironischen Brechung traditioneller Erzählmuster."</li>
-                </ul>
-                
-                <h3>5. Gegenwartsliteratur / Metamoderne (ab 2001)</h3>
-                <ul>
-                    <li><strong>Historischer Kontext:</strong> 9/11, Digitalisierung, Flüchtlingskrise, Klimawandel</li>
-                    <li><strong>Merkmale:</strong> Neuer Realismus, Wiederentdeckung ethischer Fragestellungen, Diversität</li>
-                    <li><strong>Autoren:</strong> Juli Zeh, Judith Hermann, Karen Köhler</li>
-                    <li><strong>Beispiel-Formulierung:</strong> "Als Teil der Gegenwartsliteratur reflektiert der Text zeitgenössische Phänomene wie digitale Entfremdung und die Suche nach Authentizität in einer globalisierten Welt."</li>
-                </ul>
-            </div>
-
-            <!-- NACHWEIS KURZGESCHICHTE -->
-            <div class="section">
-                <h2>🔍 Merkmale der Kurzgeschichte nachweisen</h2>
-                
-                <div class="beispiel">
-                    <h3>So weist du nach, dass es sich um eine Kurzgeschichte handelt:</h3>
-                    
-                    <p><strong>Beispielformulierung (komplett):</strong></p>
-                    <p>"Bei dem vorliegenden Text handelt es sich um eine Kurzgeschichte, was sich an mehreren charakteristischen Merkmalen festmachen lässt. Die <strong>Kürze</strong> der Erzählung (nur 3 Seiten) sowie der <strong>unmittelbare Einstieg</strong> in medias res – „Und weg, hatte er gedacht" (Z. 1) – ohne vorherige Exposition sind typisch für die Gattung. Die Geschichte konzentriert sich auf <strong>einen begrenzten Zeitraum</strong> und <strong>eine zentrale Konfliktsituation</strong>: die Einsamkeit des Protagonisten auf seiner Asienreise. Der <strong>offene, unbestimmte Schluss</strong> – „in der heißen Nacht weit weg von zu Hause" (Z. 43) – lässt bewusst offen, wie die weitere Entwicklung verläuft, und fordert den Leser zur eigenständigen Deutung auf. Zudem werden nur <strong>wenige Figuren</strong> (der Junge, kurz erwähnte Mädchen und eine Serviererin) eingeführt, die kaum ausführlich charakterisiert werden. Die <strong>alltägliche Situation</strong> einer Backpacker-Reise und die <strong>realistische Darstellung</strong> eines inneren Konflikts sind ebenfalls gattungstypisch."</p>
-                </div>
-                
-                <h3>Schrittweise Vorgehensweise:</h3>
-                <ol>
-                    <li><strong>Formale Merkmale benennen:</strong> "Der Text weist eine Länge von nur ... Seiten auf und..."</li>
-                    <li><strong>Mit Textbeleg belegen:</strong> "Der unmittelbare Einstieg wird durch ... (Z. ...) deutlich."</li>
-                    <li><strong>Funktion erklären:</strong> "Dies ermöglicht einen direkten Zugang zur Konfliktsituation ohne..."</li>
-                    <li><strong>Mehrere Merkmale verknüpfen:</strong> "Neben ... zeigt sich auch ..., was zusammen..."</li>
-                </ol>
-            </div>
-
             <!-- PERFORMATIVE VERBEN -->
             <div class="section">
                 <h2>📝 Performative Verben für analytisches Schreiben</h2>
@@ -751,941 +902,108 @@
                     </tr>
                     <tr>
                         <td><strong>Darstellen/Zeigen</strong></td>
-                        <td>verdeutlichen, veranschaulichen, illustrieren, visualisieren, konkretisieren, exemplifizieren</td>
+                        <td>verdeutlichen, veranschaulichen, illustrieren, konkretisieren, exemplifizieren</td>
                         <td>"Der Autor <strong>verdeutlicht</strong> die Einsamkeit durch..."</td>
                     </tr>
                     <tr>
                         <td><strong>Hervorheben</strong></td>
-                        <td>betonen, akzentuieren, unterstreichen, herausstellen, pointieren, fokussieren</td>
+                        <td>betonen, unterstreichen, herausstellen, pointieren, fokussieren</td>
                         <td>"Die Wiederholung <strong>unterstreicht</strong> die Monotonie..."</td>
                     </tr>
                     <tr>
                         <td><strong>Bewirken</strong></td>
-                        <td>evozieren, hervorrufen, bewirken, erzeugen, auslösen, initiieren</td>
+                        <td>evozieren, hervorrufen, bewirken, erzeugen, auslösen</td>
                         <td>"Die Metapher <strong>evoziert</strong> Assoziationen von..."</td>
                     </tr>
                     <tr>
                         <td><strong>Kritisieren</strong></td>
-                        <td>kritisieren, hinterfragen, problematisieren, infragestellen, dekonstruieren</td>
+                        <td>kritisieren, hinterfragen, problematisieren, infragestellen</td>
                         <td>"Der Text <strong>problematisiert</strong> den Umgang mit..."</td>
                     </tr>
                     <tr>
                         <td><strong>Kontrastieren</strong></td>
-                        <td>kontrastieren, gegenüberstellen, opponieren, konfrontieren</td>
+                        <td>kontrastieren, gegenüberstellen, konfrontieren</td>
                         <td>"Berg <strong>kontrastiert</strong> Erwartung und Realität..."</td>
                     </tr>
                     <tr>
                         <td><strong>Implizieren</strong></td>
-                        <td>implizieren, andeuten, suggerieren, insinuieren, konnotieren</td>
+                        <td>implizieren, andeuten, suggerieren, konnotieren</td>
                         <td>"Die Wortwahl <strong>impliziert</strong> eine ablehnende Haltung..."</td>
                     </tr>
-                    <tr>
-                        <td><strong>Charakterisieren</strong></td>
-                        <td>charakterisieren, kennzeichnen, spezifizieren, definieren</td>
-                        <td>"Die Erzählweise <strong>kennzeichnet</strong> die Distanz..."</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Strukturieren</strong></td>
-                        <td>strukturieren, gliedern, organisieren, anordnen, komponieren</td>
-                        <td>"Kunze <strong>gliedert</strong> den Text in drei Abschnitte..."</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Reflektieren</strong></td>
-                        <td>reflektieren, thematisieren, verhandeln, diskutieren</td>
-                        <td>"Die Geschichte <strong>reflektiert</strong> gesellschaftliche Normen..."</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Vermitteln</strong></td>
-                        <td>vermitteln, transportieren, kommunizieren, artikulieren</td>
-                        <td>"Durch die Symbolik <strong>vermittelt</strong> der Autor..."</td>
-                    </tr>
                 </table>
-                
-                <div class="beispiel">
-                    <h3>Vergleich: Umgangssprache vs. Analyssprache</h3>
-                    <p>❌ <strong>Umgangssprachlich:</strong> "Der Autor will zeigen, dass der Junge traurig ist."</p>
-                    <p>✅ <strong>Analytisch:</strong> "Berg <strong>verdeutlicht</strong> die emotionale Isolation des Protagonisten durch die Metapher des Bildschirms als 'weiches Bett' (Z. 41), die <strong>impliziert</strong>, dass digitale Kommunikation zur Ersatzbefriedigung wird. Die repetitive Struktur <strong>unterstreicht</strong> die Monotonie seiner Erfahrung und <strong>evoziert</strong> ein Gefühl der Ausweglosigkeit."</p>
-                </div>
             </div>
 
-            <!-- FIGURENKONSTELLATION -->
-            <div class="section">
-                <h2>👥 Figurenkonstellation analysieren</h2>
-                
-                <h3>Was ist eine Figurenkonstellation?</h3>
-                <p>Die Figurenkonstellation beschreibt das <strong>Beziehungsgeflecht</strong> zwischen den Figuren: Wer steht zu wem in welcher Beziehung? Welche Machtverhältnisse, Konflikte oder Abhängigkeiten bestehen?</p>
-                
-                <h3>Schrittweise Analyse:</h3>
-                <div class="aufbau-schema">
-                    <ol style="list-style: decimal; margin-left: 20px;">
-                        <li><strong>Figuren identifizieren:</strong> Wer tritt auf? Haupt-/Nebenfiguren unterscheiden</li>
-                        <li><strong>Beziehungen bestimmen:</strong> Wie stehen die Figuren zueinander?</li>
-                        <li><strong>Machtverhältnisse erkennen:</strong> Wer ist dominant, wer unterlegen?</li>
-                        <li><strong>Konflikte herausarbeiten:</strong> Wo gibt es Spannungen?</li>
-                        <li><strong>Entwicklung beschreiben:</strong> Verändern sich Beziehungen im Textverlauf?</li>
-                    </ol>
-                </div>
-                
-                <h3>Formulierungen für Figurenkonstellation:</h3>
-                <div class="beispiel">
-                    <p><strong>Einleitung der Konstellation:</strong></p>
-                    <ul>
-                        <li>"Die Figurenkonstellation ist durch ... geprägt."</li>
-                        <li>"Im Zentrum der Erzählung steht die Beziehung zwischen X und Y, die sich durch ... auszeichnet."</li>
-                        <li>"Die Konstellation umfasst drei Hauptfiguren, deren Verhältnis durch ... bestimmt wird."</li>
-                    </ul>
-                    
-                    <p><strong>Beziehungen beschreiben:</strong></p>
-                    <ul>
-                        <li>"X steht in einem <strong>asymmetrischen Machtverhältnis</strong> zu Y, was sich in ... manifestiert."</li>
-                        <li>"Die Beziehung zwischen X und Y ist durch <strong>gegenseitige Entfremdung</strong> gekennzeichnet, die ... deutlich wird."</li>
-                        <li>"Zwischen X und Y besteht ein <strong>latenter Konflikt</strong>, der sich in ... äußert."</li>
-                        <li>"X fungiert als <strong>Antagonist</strong> zu Y, indem er/sie ..."</li>
-                    </ul>
-                    
-                    <p><strong>Konkrete Beispielformulierung (Kunze "Fünfzehn"):</strong></p>
-                    <p>"Die Figurenkonstellation wird durch das <strong>hierarchische Vater-Tochter-Verhältnis</strong> dominiert, das durch <strong>gegenseitiges Unverständnis</strong> geprägt ist. Der Ich-Erzähler (Vater) nimmt eine <strong>ambivalente Position</strong> ein: Einerseits bemüht er sich um Verständnis für seine Tochter („Ich weiß, diese Lautstärke bedeutet für sie Lustgewinn", Z. 10f.), andererseits offenbart sich seine <strong>Hilflosigkeit</strong> gegenüber ihrem Verhalten („Wie also könnte ich sie verstehen – bei diesem Nervensystem?", Z. 13f.). Die Tochter bleibt weitgehend <strong>passiv und indirekt charakterisiert</strong>, erscheint jedoch als <strong>selbstbestimmte Figur</strong>, die die „Meinung uralter Leute" (Z. 8) ablehnt. Das Machtverhältnis erscheint verschoben: Während der Vater formal die Autorität innehat, dominiert die Tochter durch ihre <strong>rebellische Verweigerungshaltung</strong> die familiäre Dynamik."</p>
-                </div>
-            </div>
-
-            <!-- ERZÄHLVERHALTEN ERKENNEN -->
-            <div class="section">
-                <h2>👁️ Erzählverhalten im Text erkennen & formulieren</h2>
-                
-                <h3>1. Auktorialer Erzähler</h3>
-                <div class="merkmale-box">
-                    <p><strong>Erkennungsmerkmale im Text:</strong></p>
-                    <ul>
-                        <li>Kommentare des Erzählers: "Man muss wissen, dass..."</li>
-                        <li>Wertungen: "Leider...", "Zum Glück..."</li>
-                        <li>Vorausdeutungen: "Noch ahnte er nicht, dass..."</li>
-                        <li>Allwissenheit: Einblick in mehrere Figuren, Zukunft, Vergangenheit</li>
-                        <li>Direkte Leseransprache: "Der Leser wird sich fragen..."</li>
-                    </ul>
-                    
-                    <p><strong>Beispielformulierungen:</strong></p>
-                    <ul>
-                        <li>"Der auktoriale Erzähler <strong>offenbart seine Allwissenheit</strong>, indem er sowohl die Gedanken von X als auch von Y kennt und kommentiert."</li>
-                        <li>"Die wertende Haltung des Erzählers zeigt sich in Formulierungen wie '...' (Z. ...), die <strong>eine klare moralische Positionierung</strong> erkennen lassen."</li>
-                        <li>"Durch Kommentare wie '...' (Z. ...) <strong>durchbricht der Erzähler die Illusion</strong> und tritt als <strong>vermittelnde Instanz</strong> zwischen Geschichte und Leser hervor."</li>
-                    </ul>
-                </div>
-                
-                <h3>2. Personaler Erzähler</h3>
-                <div class="merkmale-box">
-                    <p><strong>Erkennungsmerkmale im Text:</strong></p>
-                    <ul>
-                        <li>Beschränkung auf eine Figur: nur ihre Wahrnehmungen</li>
-                        <li>Erlebte Rede: "Das konnte nicht wahr sein!"</li>
-                        <li>Keine Kommentare von außen</li>
-                        <li>Er/Sie-Form, aber subjektive Perspektive</li>
-                        <li>Nur zugänglich: was die Fokalisierungsfigur sieht, denkt, fühlt</li>
-                    </ul>
-                    
-                    <p><strong>Beispielformulierungen:</strong></p>
-                    <ul>
-                        <li>"Der personale Erzähler <strong>beschränkt sich auf die Innenperspektive</strong> des Protagonisten, wodurch der Leser <strong>unmittelbar an dessen Wahrnehmung</strong> teilhat."</li>
-                        <li>"Die konsequente Fokalisierung auf X <strong>schafft Identifikation</strong> und lässt den Leser die Ereignisse <strong>ungefiltert durch dessen subjektive Sicht</strong> erleben."</li>
-                        <li>"Durch die personale Erzählweise bleiben die Motive der anderen Figuren <strong>im Dunkeln</strong>, was <strong>Spannung erzeugt</strong> und die <strong>Isolation</strong> des Protagonisten unterstreicht."</li>
-                        <li>"Die erlebte Rede in '...' (Z. ...) <strong>signalisiert</strong> den personalen Modus, indem Gedanken in dritter Person, aber aus Figurenperspektive wiedergegeben werden."</li>
-                    </ul>
-                </div>
-                
-                <h3>3. Neutraler Erzähler</h3>
-                <div class="merkmale-box">
-                    <p><strong>Erkennungsmerkmale im Text:</strong></p>
-                    <ul>
-                        <li>Rein äußerliche Beschreibung: nur Sichtbares</li>
-                        <li>Keine Gedanken oder Gefühle der Figuren</li>
-                        <li>Keine Kommentare oder Wertungen</li>
-                        <li>Distanzierte "Kamera-Perspektive"</li>
-                        <li>Häufig: Dialoge und Handlungsbeschreibungen</li>
-                    </ul>
-                    
-                    <p><strong>Beispielformulierungen:</strong></p>
-                    <ul>
-                        <li>"Der neutrale Erzähler fungiert als <strong>distanzierte Beobachtungsinstanz</strong>, die ausschließlich äußerlich Wahrnehmbares schildert."</li>
-                        <li>"Die Beschränkung auf äußere Vorgänge <strong>zwingt den Leser zur eigenständigen Interpretation</strong> der Figurenmotive."</li>
-                        <li>"Durch die neutrale, <strong>'kamerahafte' Erzählweise</strong> entsteht eine <strong>objektive Distanz</strong>, die <strong>Emotionalisierung vermeidet</strong> und <strong>analytisches Lesen</strong> fördert."</li>
-                    </ul>
-                </div>
-                
-                <h3>4. Ich-Erzähler</h3>
-                <div class="merkmale-box">
-                    <p><strong>Erkennungsmerkmale:</strong></p>
-                    <ul>
-                        <li>Erste Person: "Ich sah...", "Ich dachte..."</li>
-                        <li>Subjektive Wahrnehmung</li>
-                        <li>Unterscheidung: erlebendes vs. erzählendes Ich</li>
-                        <li>Eingeschränkte Perspektive</li>
-                    </ul>
-                    
-                    <p><strong>Beispielformulierungen:</strong></p>
-                    <ul>
-                        <li>"Der Ich-Erzähler <strong>gewährt unmittelbaren Einblick</strong> in seine Gedankenwelt und <strong>schafft Nähe</strong> zum Leser."</li>
-                        <li>"Die Ich-Perspektive <strong>impliziert Subjektivität</strong>, wodurch die Darstellung als <strong>potentiell unzuverlässig</strong> erscheint."</li>
-                        <li>"Die Diskrepanz zwischen <strong>erlebendem Ich</strong> (damals) und <strong>erzählendem Ich</strong> (jetzt) wird in '...' (Z. ...) deutlich und <strong>eröffnet eine reflexive Ebene</strong>."</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- ZEITMANAGEMENT -->
-            <div class="section">
-                <h2>⏱️ Zeitmanagement: 90 Minuten effektiv nutzen</h2>
-                
-                <div class="aufbau-schema">
-                    <h3>Zeitplan für eine Klausur:</h3>
-                    <ol style="list-style: none; margin-left: 0;">
-                        <li style="background: #fff3cd; border-left: 5px solid #ffc107;"><strong>0-15 Min: Texterschließung</strong>
-                            <ul>
-                                <li>Text 2x gründlich lesen</li>
-                                <li>Beim 2. Lesen: Markieren (Schlüsselstellen, Auffälligkeiten)</li>
-                                <li>Randnotizen machen</li>
-                                <li>Figuren + Konflikte notieren</li>
-                            </ul>
-                        </li>
-                        <li style="background: #d1ecf1; border-left: 5px solid #17a2b8;"><strong>15-25 Min: Planung & Gliederung</strong>
-                            <ul>
-                                <li>Gliederung erstellen (Stichpunkte!)</li>
-                                <li>Textbelege/Zeilenzahlen notieren</li>
-                                <li>Welche Stilmittel? Notieren mit Wirkung</li>
-                                <li>Epochenzuordnung überlegen</li>
-                                <li>Deutungshypothese formulieren</li>
-                            </ul>
-                        </li>
-                        <li style="background: #d4edda; border-left: 5px solid #28a745;"><strong>25-30 Min: Einleitung schreiben</strong>
-                            <ul>
-                                <li>Basissatz</li>
-                                <li>Kurze Inhaltsangabe (max. 4 Sätze)</li>
-                                <li>Deutungshypothese</li>
-                            </ul>
-                        </li>
-                        <li style="background: #f8d7da; border-left: 5px solid #dc3545;"><strong>30-70 Min: Hauptteil (40 Minuten!)</strong>
-                            <ul>
-                                <li>Inhaltliche Analyse (10 Min)</li>
-                                <li>Formale Analyse (10 Min)</li>
-                                <li>Sprachliche Analyse (10 Min)</li>
-                                <li>Interpretation (10 Min)</li>
-                                <li><strong>Tipp:</strong> Nicht zu detailliert! Aufs Wesentliche konzentrieren</li>
-                            </ul>
-                        </li>
-                        <li style="background: #e2e3e5; border-left: 5px solid #6c757d;"><strong>70-80 Min: Schluss</strong>
-                            <ul>
-                                <li>Zusammenfassung</li>
-                                <li>Bewertung/eigene Position</li>
-                                <li>Epochenbezug/Aktualität</li>
-                            </ul>
-                        </li>
-                        <li style="background: #cfe2ff; border-left: 5px solid #0d6efd;"><strong>80-90 Min: Überarbeitung</strong>
-                            <ul>
-                                <li>Rechtschreibung & Grammatik</li>
-                                <li>Formulierungen glätten</li>
-                                <li>Fehlende Textbelege ergänzen</li>
-                                <li>Übergänge verbessern</li>
-                            </ul>
-                        </li>
-                    </ol>
-                </div>
-                
-                <div class="tipp">
-                    <h3>⚡ Effizienz-Tipps:</h3>
-                    <ul>
-                        <li><strong>Vorbereitung ist alles:</strong> Formulierungen auswendig lernen spart Zeit!</li>
-                        <li><strong>Standardformulierungen parat haben:</strong> Einleitungssätze, Überleitungen, Verben</li>
-                        <li><strong>Nicht perfekt formulieren:</strong> Hauptsache verständlich und analytisch</li>
-                        <li><strong>Abkürzungen beim Planen:</strong> z.B. "EZ" = Erzählzeit, "Meta" = Metapher</li>
-                        <li><strong>Nicht zu viele Stilmittel:</strong> Lieber 3-4 gut analysiert als 10 oberflächlich</li>
-                        <li><strong>Template-Sätze nutzen:</strong> "X verdeutlicht..., indem..." - einfach Lücken füllen!</li>
-                    </ul>
-                </div>
-                
-                <div class="beispiel">
-                    <h3>🚀 Speed-Formulierungen (Copy-Paste-Vorlagen):</h3>
-                    <p><strong>Einleitung (2 Minuten):</strong></p>
-                    <p>"Die Kurzgeschichte '[TITEL]' von [AUTOR], erschienen [JAHR] im/in [QUELLE], thematisiert [THEMA]. [FIGUR] erlebt [EREIGNIS], wodurch [KONFLIKT] deutlich wird. Im Folgenden wird analysiert, wie [AUTOR] durch [SPRACHMITTEL/STRUKTUR] die [AUSSAGE] verdeutlicht."</p>
-                    
-                    <p><strong>Merkmal der KG nachweisen (1 Minute):</strong></p>
-                    <p>"Der vorliegende Text weist charakteristische Merkmale der Kurzgeschichte auf: Der <strong>unmittelbare Einstieg</strong> in medias res durch '[ZITAT]' (Z. ...), die <strong>Konzentration auf einen Moment</strong>, der <strong>offene Schluss</strong> sowie die <strong>alltägliche Situation</strong> entsprechen der Gattung."</p>
-                    
-                    <p><strong>Erzählperspektive benennen (1 Minute):</strong></p>
-                    <p>"Der Text wird aus [personaler/auktorialer/neutraler] Erzählperspektive geschildert, was sich an [MERKMAL] zeigt. Dies bewirkt [WIRKUNG]."</p>
-                    
-                    <p><strong>Stilmittel + Wirkung (2 Minuten pro Mittel):</strong></p>
-                    <p>"Die [Metapher/...] '[ZITAT]' (Z. ...) [verdeutlicht/unterstreicht/evoziert] [BEDEUTUNG] und [bewirkt/erzeugt] [WIRKUNG], wodurch [INTERPRETATION]."</p>
-                    
-                    <p><strong>Epochenzuordnung (1 Minute):</strong></p>
-                    <p>"Die Geschichte lässt sich der [EPOCHE] zuordnen, was sich an [MERKMAL] sowie der Thematisierung von [THEMA] manifestiert. Der historische Kontext [EREIGNIS] spiegelt sich in [TEXTSTELLE] wider."</p>
-                </div>
-            </div>
-
-            <!-- WIRKUNG -->
-            <div class="section">
-                <h2>💥 Wirkung der Kurzgeschichte analysieren</h2>
-                
-                <div class="merkmale-box">
-                    <h3>Was ist mit "Wirkung" gemeint?</h3>
-                    <p>Die Wirkung beschreibt, welchen <strong>Effekt</strong> der Text auf den Leser hat – emotional, intellektuell, moralisch. Es geht um die <strong>Intention des Autors</strong> und darum, was der Text beim Leser <strong>auslösen</strong> soll.</p>
-                </div>
-                
-                <h3>Arten von Wirkung:</h3>
-                
-                <div class="rhetorische-mittel">
-                    <div class="mittel-card">
-                        <h4>1. Emotionale Wirkung</h4>
-                        <p><strong>Was:</strong> Gefühle, die beim Leser ausgelöst werden</p>
-                        <p><strong>Beispiele:</strong> Mitleid, Betroffenheit, Unbehagen, Melancholie, Beklemmung</p>
-                        <p><strong>Formulierung:</strong> "Die detaillierte Schilderung der Einsamkeit (Z. ...) <strong>evoziert Empathie</strong> und lässt den Leser die Isolation des Protagonisten <strong>nachvollziehen</strong>."</p>
-                    </div>
-                    
-                    <div class="mittel-card">
-                        <h4>2. Appellative Wirkung</h4>
-                        <p><strong>Was:</strong> Aufruf zum Nachdenken oder Handeln</p>
-                        <p><strong>Beispiele:</strong> Gesellschaftskritik, Bewusstseinsbildung, Aufrüttelung</p>
-                        <p><strong>Formulierung:</strong> "Der offene Schluss <strong>fordert den Leser zur Reflexion</strong> über [THEMA] auf und <strong>regt an</strong>, die eigene Position zu [THEMA] zu hinterfragen."</p>
-                    </div>
-                    
-                    <div class="mittel-card">
-                        <h4>3. Erkenntnisfördernde Wirkung</h4>
-                        <p><strong>Was:</strong> Neue Perspektiven, Einsichten</p>
-                        <p><strong>Beispiele:</strong> Verständnis für andere, Systemkritik</p>
-                        <p><strong>Formulierung:</strong> "Durch die Fokalisierung auf [FIGUR] <strong>ermöglicht</strong> der Text <strong>Einblick in</strong> eine fremde Lebenswelt und <strong>sensibilisiert</strong> für [THEMA]."</p>
-                    </div>
-                    
-                    <div class="mittel-card">
-                        <h4>4. Ästhetische Wirkung</h4>
-                        <p><strong>Was:</strong> Sprachliche Qualität, literarischer Genuss</p>
-                        <p><strong>Beispiele:</strong> Sprachkunst, Symbolkraft, Verdichtung</p>
-                        <p><strong>Formulierung:</strong> "Die metaphorische Verdichtung <strong>verleiht</strong> dem Text eine <strong>poetische Qualität</strong>, die über die bloße Handlungsebene hinausweist."</p>
-                    </div>
-                    
-                    <div class="mittel-card">
-                        <h4>5. Irritierende/Verstörende Wirkung</h4>
-                        <p><strong>Was:</strong> Verunsicherung, Infragestellung von Normen</p>
-                        <p><strong>Beispiele:</strong> Offenheit, Ambivalenz, Tabubruch</p>
-                        <p><strong>Formulierung:</strong> "Die unaufgelöste Spannung am Ende <strong>irritiert</strong> den Leser und <strong>verweigert</strong> eine eindeutige Deutung, wodurch <strong>Unsicherheit</strong> entsteht."</p>
-                    </div>
-                    
-                    <div class="mittel-card">
-                        <h4>6. Identifikatorische Wirkung</h4>
-                        <p><strong>Was:</strong> Nähe zur Figur, Wiedererkennungseffekt</p>
-                        <p><strong>Beispiele:</strong> Alltagsnähe, universelle Themen</p>
-                        <p><strong>Formulierung:</strong> "Die alltägliche Konfliktsituation <strong>ermöglicht Identifikation</strong>, da [THEMA] als <strong>universelle menschliche Erfahrung</strong> erscheint."</p>
-                    </div>
-                </div>
-                
-                <h3>Wirkung konkret analysieren - Formulierungsbeispiele:</h3>
-                <div class="beispiel">
-                    <p><strong>Emotionale Ebene:</strong></p>
-                    <ul>
-                        <li>"Die knappe, elliptische Sprache <strong>erzeugt ein Gefühl von Hektik</strong> und <strong>vermittelt</strong> die innere Unruhe des Protagonisten."</li>
-                        <li>"Durch die detaillierte Beschreibung der Einsamkeit <strong>wird Empathie evoziert</strong>, sodass der Leser die Isolation <strong>nachempfinden</strong> kann."</li>
-                        <li>"Die Wiederholung 'nichts, nichts, nichts' (Z. ...) <strong>intensiviert</strong> das Gefühl der Leere und <strong>überträgt</strong> die Frustration auf den Rezipienten."</li>
-                    </ul>
-                    
-                    <p><strong>Kognitive Ebene:</strong></p>
-                    <ul>
-                        <li>"Der offene Schluss <strong>zwingt zur aktiven Deutung</strong> und <strong>fordert den Leser heraus</strong>, selbst Position zu beziehen."</li>
-                        <li>"Die mehrdeutige Symbolik <strong>ermöglicht verschiedene Interpretationsebenen</strong> und <strong>regt zur Reflexion</strong> über [THEMA] an."</li>
-                        <li>"Durch die Kontrastierung von Erwartung und Realität <strong>dekonstruiert</strong> der Text romantisierte Vorstellungen und <strong>führt zu einer Desillusionierung</strong>."</li>
-                    </ul>
-                    
-                    <p><strong>Gesellschaftskritische Ebene:</strong></p>
-                    <ul>
-                        <li>"Die satirische Überzeichnung <strong>entlarvt</strong> gesellschaftliche Missstände und <strong>provoziert</strong> eine kritische Auseinandersetzung mit [THEMA]."</li>
-                        <li>"Indem [AUTOR] die Absurdität der Situation <strong>offenlegt</strong>, <strong>kritisiert</strong> er implizit [GESELLSCHAFTLICHES PHÄNOMEN]."</li>
-                    </ul>
-                    
-                    <p><strong>Gesamtwirkung zusammenfassen:</strong></p>
-                    <p>"Insgesamt <strong>entfaltet</strong> die Kurzgeschichte eine <strong>vielschichtige Wirkung</strong>: Auf emotionaler Ebene <strong>evoziert</strong> sie [GEFÜHL], während sie kognitiv zur <strong>kritischen Reflexion</strong> über [THEMA] <strong>anregt</strong>. Die sprachliche Gestaltung <strong>verstärkt</strong> diese Wirkung, indem [STILMITTEL] [EFFEKT] <strong>bewirkt</strong>. Damit <strong>gelingt</strong> es [AUTOR], [INTENTION] und den Leser nachhaltig <strong>zu sensibilisieren</strong> für [THEMA]."</p>
-                </div>
-            </div>
-
-            <!-- SACHLICH FORMULIEREN -->
-            <div class="section">
-                <h2>📊 Sachlich und analytisch formulieren</h2>
-                
-                <h3>Grundprinzipien:</h3>
-                <div class="merkmale-box">
-                    <ul>
-                        <li>✅ <strong>Präsens verwenden</strong> (außer bei Vorzeitigkeit: Plusquamperfekt)</li>
-                        <li>✅ <strong>Distanz wahren:</strong> "der Autor", "der Text", nicht "man fühlt"</li>
-                        <li>✅ <strong>Fachsprachlich:</strong> Performative Verben, Fachbegriffe</li>
-                        <li>✅ <strong>Objektiv bleiben:</strong> "Dies lässt sich interpretieren als..." statt "Ich finde..."</li>
-                        <li>✅ <strong>Konjunktiv bei Deutungen:</strong> "könnte", "ließe sich verstehen als"</li>
-                        <li>✅ <strong>Textbelege:</strong> Jede Behauptung mit Zitat (Z. ...) belegen</li>
-                    </ul>
-                </div>
-                
-                <h3>Vergleich: Umgangssprachlich ↔ Analytisch</h3>
-                <table>
-                    <tr>
-                        <th>❌ Umgangssprachlich</th>
-                        <th>✅ Analytisch-sachlich</th>
-                    </tr>
-                    <tr>
-                        <td>"Der Autor will zeigen, dass..."</td>
-                        <td>"Der Autor <strong>verdeutlicht</strong> / <strong>illustriert</strong>, dass..."</td>
-                    </tr>
-                    <tr>
-                        <td>"Ich finde, dass die Metapher zeigt..."</td>
-                        <td>"Die Metapher <strong>impliziert</strong> / <strong>lässt sich deuten als</strong>..."</td>
-                    </tr>
-                    <tr>
-                        <td>"Das macht den Leser traurig."</td>
-                        <td>"Dies <strong>evoziert</strong> beim Rezipienten Melancholie / <strong>bewirkt eine emotionale Betroffenheit</strong>."</td>
-                    </tr>
-                    <tr>
-                        <td>"Man sieht, dass er einsam ist."</td>
-                        <td>"Die Darstellung <strong>offenbart</strong> die Isolation des Protagonisten."</td>
-                    </tr>
-                    <tr>
-                        <td>"Er ist total verzweifelt."</td>
-                        <td>"Die Figur <strong>wird charakterisiert durch</strong> existenzielle Verzweiflung, die sich in ... <strong>manifestiert</strong>."</td>
-                    </tr>
-                    <tr>
-                        <td>"Das ist ein Vergleich."</td>
-                        <td>"Der Vergleich '...' (Z. ...) <strong>veranschaulicht</strong> ... und <strong>unterstreicht</strong> ..."</td>
-                    </tr>
-                    <tr>
-                        <td>"Der Text ist spannend geschrieben."</td>
-                        <td>"Die Textgestaltung <strong>erzeugt Suspense</strong> durch ... und <strong>intensiviert</strong> die Leserwirkung."</td>
-                    </tr>
-                    <tr>
-                        <td>"Am Anfang passiert..."</td>
-                        <td>"Der Einstieg in medias res <strong>charakterisiert</strong> ... / <strong>etabliert</strong> unmittelbar..."</td>
-                    </tr>
-                    <tr>
-                        <td>"Dann kommt raus, dass..."</td>
-                        <td>"Es <strong>offenbart sich</strong> / <strong>wird ersichtlich</strong>, dass..."</td>
-                    </tr>
-                    <tr>
-                        <td>"Das zeigt, wie schlimm das ist."</td>
-                        <td>"Dies <strong>akzentuiert</strong> die Problematik / <strong>pointiert</strong> die kritische Dimension von..."</td>
-                    </tr>
-                </table>
-                
-                <h3>Musterformulierungen für jeden Analyseteil:</h3>
-                <div class="beispiel">
-                    <p><strong>Inhalt beschreiben:</strong></p>
-                    <ul>
-                        <li>"Der Text <strong>fokussiert</strong> / <strong>thematisiert</strong> / <strong>verhandelt</strong> ..."</li>
-                        <li>"Im Zentrum steht die Auseinandersetzung mit..."</li>
-                        <li>"Die Handlung <strong>kulminiert</strong> in / <strong>konzentriert sich auf</strong> ..."</li>
-                    </ul>
-                    
-                    <p><strong>Form analysieren:</strong></p>
-                    <ul>
-                        <li>"Die Struktur <strong>ist gekennzeichnet durch</strong> / <strong>zeichnet sich aus durch</strong> ..."</li>
-                        <li>"Der Autor <strong>bedient sich</strong> der [Technik], um zu..."</li>
-                        <li>"Durch die Verwendung von ... <strong>wird erzielt</strong> / <strong>entsteht</strong> ..."</li>
-                    </ul>
-                    
-                    <p><strong>Sprache analysieren:</strong></p>
-                    <ul>
-                        <li>"Die Wortwahl <strong>konnotiert</strong> / <strong>impliziert</strong> ..."</li>
-                        <li>"Die Metapher <strong>etabliert eine Bildebene</strong>, die ... <strong>symbolisiert</strong>."</li>
-                        <li>"Der parataktische Satzbau <strong>spiegelt wider</strong> / <strong>korrespondiert mit</strong> ..."</li>
-                    </ul>
-                    
-                    <p><strong>Interpretieren:</strong></p>
-                    <ul>
-                        <li>"Dies <strong>lässt sich interpretieren als</strong> / <strong>könnte gedeutet werden als</strong> ..."</li>
-                        <li>"Vor dem Hintergrund von ... <strong>erweist sich</strong> ... als..."</li>
-                        <li>"Die Aussage <strong>zielt ab auf</strong> / <strong>intendiert</strong> ..."</li>
-                        <li>"Im übertragenen Sinne <strong>steht ... für</strong> / <strong>repräsentiert</strong> ..."</li>
-                    </ul>
-                    
-                    <p><strong>Wirkung beschreiben:</strong></p>
-                    <ul>
-                        <li>"Dies <strong>bewirkt</strong> / <strong>evoziert</strong> / <strong>generiert</strong> ..."</li>
-                        <li>"Beim Rezipienten <strong>entsteht der Eindruck</strong> / <strong>etabliert sich das Gefühl</strong> ..."</li>
-                        <li>"Die Darstellung <strong>sensibilisiert für</strong> / <strong>lenkt die Aufmerksamkeit auf</strong> ..."</li>
-                    </ul>
-                    
-                    <p><strong>Zusammenhänge herstellen:</strong></p>
-                    <ul>
-                        <li>"Dies <strong>korrespondiert mit</strong> / <strong>steht in Wechselwirkung zu</strong> ..."</li>
-                        <li>"Analog zu ... <strong>manifestiert sich</strong> auch hier..."</li>
-                        <li>"Im Kontrast dazu / <strong>Kontrastiv hierzu</strong> ..."</li>
-                        <li>"Darüber hinaus / <strong>Ferner</strong> / <strong>Überdies</strong> ..."</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- KONKRETE ANALYSEBEISPIELE -->
-            <div class="section">
-                <h2>📋 Konkrete Analysebeispiele (15-Punkte-Niveau)</h2>
-                
-                <h3>Beispiel 1: Anfang analysieren</h3>
-                <div class="beispiel">
-                    <p><strong>Text:</strong> "Und weg, hatte er gedacht." (Sibylle Berg, "Hauptsache weit")</p>
-                    
-                    <p><strong>Schwache Analyse (8-10 Punkte):</strong></p>
-                    <p>"Die Geschichte fängt an mit 'Und weg'. Das ist ein Einstieg in medias res. Der Protagonist will weg."</p>
-                    
-                    <p><strong>Starke Analyse (14-15 Punkte):</strong></p>
-                    <p>"Der abrupte Einstieg 'Und weg' (Z. 1) <strong>exemplifiziert</strong> das gattungstypische Merkmal des unmittelbaren Beginns in medias res. Die <strong>elliptische Struktur</strong> – das Fehlen von Subjekt und Prädikat – <strong>evoziert</strong> Dynamik und <strong>spiegelt wider</strong> den Fluchtimpuls des Protagonisten. Die Konjunktion 'Und' am Satzanfang <strong>suggeriert</strong>, dass bereits etwas vorangegangen ist, <strong>etabliert</strong> jedoch gleichzeitig eine Leerstelle, die den Leser zur aktiven Rekonstruktion des Kontexts <strong>auffordert</strong>. Die anschließende Formulierung 'hatte er gedacht' <strong>markiert</strong> durch das Plusquamperfekt eine zeitliche Distanz zwischen Denken und Handeln, wodurch bereits im ersten Satz die <strong>Diskrepanz zwischen Erwartung und Realität</strong> angelegt wird, die sich als zentrales Motiv durch die gesamte Erzählung zieht. Der Nachsatz '<strong>weg</strong>' fungiert als <strong>Leitmotiv</strong> und <strong>antizipiert</strong> die Thematik der Flucht und Selbstfindung."</p>
-                </div>
-                
-                <h3>Beispiel 2: Metapher analysieren</h3>
-                <div class="beispiel">
-                    <p><strong>Text:</strong> "der Bildschirm [...] der ist wie ein weiches Bett" (Berg, Z. 41f.)</p>
-                    
-                    <p><strong>Schwach:</strong></p>
-                    <p>"Das ist ein Vergleich. Der Bildschirm wird mit einem Bett verglichen. Das zeigt, dass er sich wohlfühlt."</p>
-                    
-                    <p><strong>Stark (15 Punkte):</strong></p>
-                    <p>"Der Vergleich des Bildschirms mit einem 'weichen Bett' (Z. 41f.) <strong>verdichtet</strong> mehrere Bedeutungsebenen. Auf denotativer Ebene <strong>konnotiert</strong> das Bett Geborgenheit, Sicherheit und Intimität – Qualitäten, die der Protagonist in der realen, fremden Umgebung <strong>entbehrt</strong>. Die metaphorische Gleichsetzung <strong>impliziert</strong> jedoch auch eine problematische Fluchtbewegung: Das 'Eintauchen' in den Bildschirm (Z. 41) <strong>markiert</strong> einen Rückzug aus der Realität in eine virtuelle Ersatzwelt. Berg <strong>ironisiert</strong> damit subtil die Illusion digitaler Nähe, die das existenzielle Alleinsein nur überdeckt, nicht aufhebt. Die Wahl des Adjektivs 'weich' <strong>intensiviert</strong> die Assoziation von Komfort und Passivität, <strong>suggeriert</strong> aber zugleich mangelnde Substanz – ein weiches Bett bietet keine Stabilität. Damit <strong>entlarvt</strong> der Text die Oberflächlichkeit der digitalen Kompensation. Im Kontext der Nachkriegsliteratur (Erscheinungsjahr 2001) <strong>reflektiert</strong> diese Metapher zudem die beginnende Dominanz digitaler Kommunikation und <strong>problematisiert</strong> deren Auswirkungen auf zwischenmenschliche Beziehungen."</p>
-                </div>
-                
-                <h3>Beispiel 3: Offenen Schluss deuten</h3>
-                <div class="beispiel">
-                    <p><strong>Text:</strong> "in der heißen Nacht weit weg von zu Hause" (Berg, Schluss)</p>
-                    
-                    <p><strong>Schwach:</strong></p>
-                    <p>"Das Ende ist offen. Man weiß nicht, was passiert. Das ist typisch für Kurzgeschichten."</p>
-                    
-                    <p><strong>Stark (15 Punkte):</strong></p>
-                    <p>"Der finale Satz 'in der heißen Nacht weit weg von zu Hause' (Z. 43) <strong>exemplifiziert</strong> den gattungstypischen offenen Schluss, der bewusst auf eine eindeutige Auflösung <strong>verzichtet</strong>. Die räumliche Distanz ('weit weg von zu Hause') <strong>erhält</strong> durch die Schlussposition symbolische Qualität: Sie <strong>manifestiert</strong> nicht nur die geografische, sondern auch die existenzielle Entfremdung des Protagonisten. Die Wiederaufnahme des Ortsbezugs <strong>rahmt</strong> die Erzählung und <strong>unterstreicht</strong> die Stagnation – trotz temporärer digitaler 'Heimkehr' bleibt die fundamentale Isolation <strong>unaufgelöst</strong>. Das Adjektiv 'heiß' <strong>konnotiert</strong> Unbehagen und Unwohlsein, wodurch die Nacht nicht als bergende Sphäre, sondern als bedrückender Zustand <strong>erscheint</strong>. Die Offenheit <strong>fordert</strong> den Rezipienten zur Extrapolation: Wird der Protagonist seine Reise fortsetzen oder abbrechen? Kann digitale Kommunikation als dauerhafte Strategie gegen Einsamkeit funktionieren? Indem Berg diese Fragen <strong>unbeantwortet lässt</strong>, <strong>verlagert</strong> sie die Verantwortung der Deutung auf den Leser und <strong>etabliert</strong> eine kritische Distanz, die zur Reflexion über die Grenzen digitaler Vernetzung <strong>anregt</strong>. Der Schluss <strong>impliziert</strong> somit eine pessimistische Perspektive: Die fundamentale menschliche Einsamkeit bleibt auch in Zeiten globaler Konnektivität bestehen."</p>
-                </div>
-            </div>
-
-            <!-- CHECKLISTE ERWEITERT -->
+            <!-- CHECKLISTE -->
             <div class="section">
                 <h2>✅ Erweiterte Analyse-Checkliste</h2>
                 
                 <div class="wichtig">
                     <h3>Vor dem Schreiben:</h3>
                     <ul>
-                        <li>✓ Text <strong>mindestens 2x</strong> aufmerksam lesen (1x Überblick, 2x analytisch)</li>
-                        <li>✓ <strong>Farbcode beim Markieren:</strong> z.B. Gelb = Stilmittel, Grün = Charakterisierung, Blau = Schlüsselstellen</li>
-                        <li>✓ <strong>Randnotizen</strong> mit Stichworten (nicht ganze Sätze!)</li>
-                        <li>✓ Figuren skizzieren: Namen, Eigenschaften, Beziehungen</li>
-                        <li>✓ <strong>Zeitstrahl</strong> erstellen (wenn komplex)</li>
-                        <li>✓ <strong>Kernkonflikt</strong> in einem Satz formulieren</li>
-                        <li>✓ <strong>Epochenmerkmale</strong> checken: Wann erschienen? Welche historischen Bezüge?</li>
-                        <li>✓ Gliederung mit <strong>konkreten Zeilenangaben</strong> erstellen</li>
+                        <li>✓ <strong>Aufgabenstellung</strong> genau lesen und markieren</li>
+                        <li>✓ <strong>Anmerkungen zum Text</strong> beachten</li>
+                        <li>✓ Text <strong>mindestens 2x</strong> aufmerksam lesen</li>
+                        <li>✓ <strong>Text in Abschnitte einteilen</strong></li>
+                        <li>✓ Wichtige Textstellen markieren</li>
+                        <li>✓ Auffälligkeiten notieren (Sprache, Struktur, Symbole)</li>
+                        <li>✓ Figuren und ihre Beziehungen skizzieren</li>
+                        <li>✓ <strong>Vorinformationen</strong> notieren (Schritt 2)</li>
+                        <li>✓ Struktur der Analyse planen</li>
                     </ul>
                 </div>
                 
                 <div class="wichtig">
-                    <h3>Beim Schreiben - Einleitung:</h3>
+                    <h3>Beim Schreiben:</h3>
                     <ul>
-                        <li>✓ <strong>Basissatz:</strong> Alle W-Fragen beantwortet?</li>
-                        <li>✓ <strong>Inhaltsangabe:</strong> Nur das Wesentliche! 3-4 Sätze maximum</li>
-                        <li>✓ <strong>Präsens</strong> konsequent verwenden</li>
-                        <li>✓ <strong>Keine Details</strong> aus dem Hauptteil vorwegnehmen</li>
-                        <li>✓ Deutungshypothese: Nicht zu konkret, Raum für Differenzierung lassen</li>
+                        <li>✓ Präsens verwenden (außer bei Vorzeitigkeit)</li>
+                        <li>✓ Sachlich und analytisch formulieren</li>
+                        <li>✓ Textbelege verwenden (Zitate + Zeilenangabe)</li>
+                        <li>✓ <strong>Sprachliche Mittel wörtlich zitieren</strong></li>
+                        <li>✓ <strong>Nicht zitieren ohne Mittel zu benennen</strong></li>
+                        <li>✓ <strong>Textparaphrasen vermeiden</strong></li>
+                        <li>✓ Form-Inhalt-Bezug herstellen</li>
+                        <li>✓ Fachbegriffe korrekt verwenden</li>
+                        <li>✓ <strong>Performative Verben</strong> nutzen</li>
+                        <li>✓ Nicht nacherzählen, sondern analysieren!</li>
+                        <li>✓ Übergänge zwischen Absätzen schaffen</li>
+                        <li>✓ Bei Unsicherheit: "möglicherweise", "vielleicht" verwenden</li>
                     </ul>
                 </div>
                 
                 <div class="wichtig">
-                    <h3>Beim Schreiben - Hauptteil:</h3>
+                    <h3>Bei der Überarbeitung:</h3>
                     <ul>
-                        <li>✓ <strong>Jeder Absatz = ein Aspekt</strong> (z.B. ein Stilmittel, eine Figur)</li>
-                        <li>✓ <strong>Textbelege</strong> bei jeder Behauptung: "..." (Z. ...)</li>
-                        <li>✓ <strong>Nie nur benennen:</strong> Immer Funktion + Wirkung + Interpretation</li>
-                        <li>✓ <strong>Form-Inhalt-Bezug:</strong> Nicht "Was?" sondern "Wie?" und "Warum?"</li>
-                        <li>✓ <strong>Übergänge</strong> zwischen Absätzen: "Darüber hinaus...", "In diesem Zusammenhang..."</li>
-                        <li>✓ <strong>Fachbegriffe</strong> korrekt verwenden</li>
-                        <li>✓ <strong>Performative Verben</strong> statt "zeigt", "macht"</li>
-                        <li>✓ <strong>Nicht nacherzählen!</strong> Analytisch bleiben</li>
-                        <li>✓ <strong>Zitate einbetten:</strong> Nicht isoliert stehen lassen</li>
-                    </ul>
-                </div>
-                
-                <div class="wichtig">
-                    <h3>Beim Schreiben - Interpretation:</h3>
-                    <ul>
-                        <li>✓ <strong>Am Text belegen:</strong> Keine wilden Spekulationen</li>
-                        <li>✓ <strong>Konjunktiv nutzen:</strong> "könnte", "ließe sich deuten"</li>
-                        <li>✓ <strong>Mehrschichtigkeit</strong> erkennen: Symbol kann mehrere Bedeutungen haben</li>
-                        <li>✓ <strong>Historischen Kontext</strong> einbeziehen</li>
-                        <li>✓ <strong>Epochenmerkmale</strong> konkret nachweisen</li>
-                        <li>✓ <strong>Autorkonvention</strong> vs. <strong>Textintention</strong> unterscheiden</li>
-                    </ul>
-                </div>
-                
-                <div class="wichtig">
-                    <h3>Beim Schreiben - Schluss:</h3>
-                    <ul>
-                        <li>✓ <strong>Knappe Zusammenfassung</strong> der Kernerkenntnisse</li>
-                        <li>✓ <strong>Rückbezug zur Deutungshypothese:</strong> Bestätigt? Modifiziert?</li>
-                        <li>✓ <strong>Persönliche Wertung</strong> – aber begründet und sachlich!</li>
-                        <li>✓ <strong>Keine neuen Aspekte</strong> mehr einführen</li>
-                        <li>✓ Optional: <strong>Aktualitätsbezug</strong> oder <strong>übergreifende Reflexion</strong></li>
-                    </ul>
-                </div>
-                
-                <div class="wichtig">
-                    <h3>Überarbeitung (10 Minuten!):</h3>
-                    <ul>
-                        <li>✓ <strong>Rechtschreibung & Grammatik</strong> prüfen</li>
-                        <li>✓ <strong>Präsens durchgängig?</strong></li>
-                        <li>✓ <strong>Alle Zitate</strong> mit Zeilenangabe versehen?</li>
-                        <li>✓ <strong>Übergänge</strong> zwischen Absätzen vorhanden?</li>
-                        <li>✓ <strong>Fachbegriffe</strong> korrekt verwendet?</li>
-                        <li>✓ <strong>Wiederholungen</strong> vermieden? (nicht 5x "zeigt"!)</li>
-                        <li>✓ <strong>Logische Stringenz:</strong> Folgt alles einem roten Faden?</li>
-                        <li>✓ <strong>Länge angemessen?</strong> Nicht zu kurz, nicht zu ausschweifend</li>
+                        <li>✓ Rechtschreibung & Grammatik</li>
+                        <li>✓ Präsens durchgängig?</li>
+                        <li>✓ Alle Zitate mit Zeilennummer?</li>
+                        <li>✓ Fachbegriffe korrekt?</li>
+                        <li>✓ <strong>Gliederung sauber aufschreiben</strong></li>
+                        <li>✓ <strong>Einfügungen übersichtlich</strong> (Ziffern, eigene Seite)</li>
+                        <li>✓ <strong>Nicht auf Korrekturrand schreiben!</strong></li>
                     </ul>
                 </div>
             </div>
 
-            <!-- TYPISCHE KLAUSURFRAGEN -->
+            <!-- TIPPS FÜR 15 PUNKTE -->
             <div class="section">
-                <h2>❓ Typische Klausuraufgaben & Operatoren</h2>
-                
-                <h3>Operatoren verstehen:</h3>
-                <table>
-                    <tr>
-                        <th>Operator</th>
-                        <th>Bedeutung</th>
-                        <th>Was du tun musst</th>
-                    </tr>
-                    <tr>
-                        <td><strong>Analysieren</strong></td>
-                        <td>Systematisch untersuchen</td>
-                        <td>Inhalt + Form + Sprache mit Textbelegen + Funktion/Wirkung</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Interpretieren</strong></td>
-                        <td>Deuten, Bedeutung erschließen</td>
-                        <td>Tiefere Bedeutungsebenen herausarbeiten, Symbolik, Intention</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Erläutern</strong></td>
-                        <td>Verständlich machen</td>
-                        <td>Sachverhalt erklären mit Beispielen und Zusammenhängen</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Charakterisieren</strong></td>
-                        <td>Merkmale herausarbeiten</td>
-                        <td>Figur beschreiben: Aussehen, Verhalten, Sprache, Beziehungen</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Untersuchen</strong></td>
-                        <td>Gezielt prüfen</td>
-                        <td>Einen bestimmten Aspekt herausarbeiten (z.B. nur Sprache)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Vergleichen</strong></td>
-                        <td>Gemeinsamkeiten/Unterschiede</td>
-                        <td>Kriteriengeleiteter Vergleich mit Textbelegen</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Beurteilen/Bewerten</strong></td>
-                        <td>Wertende Stellungnahme</td>
-                        <td>Begründete eigene Position mit Argumenten</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Erörtern</strong></td>
-                        <td>Pro/Contra abwägen</td>
-                        <td>Verschiedene Perspektiven darstellen und gewichten</td>
-                    </tr>
-                </table>
-                
-                <h3>Häufige Aufgabenstellungen:</h3>
-                <div class="beispiel">
-                    <p><strong>1. "Analysieren und interpretieren Sie die Kurzgeschichte."</strong></p>
-                    <p>→ Vollständige Analyse: Inhalt, Form, Sprache + Deutung der Gesamtaussage</p>
-                    
-                    <p><strong>2. "Untersuchen Sie die sprachlich-stilistischen Mittel und ihre Wirkung."</strong></p>
-                    <p>→ Fokus auf Sprache: Stilmittel benennen, Funktion erklären, Wirkung beschreiben</p>
-                    
-                    <p><strong>3. "Charakterisieren Sie die Hauptfigur."</strong></p>
-                    <p>→ Direkte + indirekte Charakterisierung mit Textbelegen</p>
-                    
-                    <p><strong>4. "Analysieren Sie den Anfang/Schluss der Geschichte."</strong></p>
-                    <p>→ Detailanalyse des spezifischen Textabschnitts, Funktion für Gesamttext</p>
-                    
-                    <p><strong>5. "Ordnen Sie den Text epochal ein."</strong></p>
-                    <p>→ Epoche benennen, historischer Kontext, typische Merkmale nachweisen</p>
-                    
-                    <p><strong>6. "Erörtern Sie, inwiefern der Text aktuell ist."</strong></p>
-                    <p>→ Analyse erst, dann: Bezug zur Gegenwart, Relevanz heute</p>
-                </div>
-            </div>
-
-            <!-- HÄUFIGE FEHLER ERWEITERT -->
-            <div class="section">
-                <h2>⚠️ Häufige Fehler vermeiden (erweitert)</h2>
-                
-                <div class="wichtig">
-                    <h3>Inhaltliche Fehler:</h3>
-                    <ul>
-                        <li>❌ <strong>Nacherzählen statt analysieren</strong> – "Dann macht er..." → ✅ "Die Handlung kulminiert in..."</li>
-                        <li>❌ <strong>Autor = Erzähler verwechseln</strong> – "Kunze sagt..." → ✅ "Der Ich-Erzähler/Die Figur äußert..."</li>
-                        <li>❌ <strong>Figur = reale Person</strong> – "Beckmann ist depressiv" → ✅ "Die Figur Beckmann wird als depressiv charakterisiert"</li>
-                        <li>❌ <strong>Eigene Meinung als Fakt</strong> – "Das ist traurig" → ✅ "Dies evoziert Melancholie beim Rezipienten"</li>
-                        <li>❌ <strong>Interpretation ohne Textbezug</strong> – "Er liebt sie" → ✅ "Die Wortwahl 'zärtlich' (Z. ...) impliziert Zuneigung"</li>
-                        <li>❌ <strong>Überinterpretation</strong> – "Die blaue Farbe symbolisiert die Depression und die verlorene Kindheit und..." → ✅ Realistische, am Text belegbare Deutung</li>
-                        <li>❌ <strong>Zu oberflächlich</strong> – "Es gibt Metaphern" → ✅ Konkret benennen, analysieren, deuten</li>
-                    </ul>
-                </div>
-                
-                <div class="wichtig">
-                    <h3>Formale Fehler:</h3>
-                    <ul>
-                        <li>❌ <strong>Zeitformwechsel</strong> – "Er ging (Präteritum) und denkt (Präsens)" → ✅ Durchgängig Präsens</li>
-                        <li>❌ <strong>Fehlende Textbelege</strong> → ✅ Jede Behauptung mit "..." (Z. ...) belegen</li>
-                        <li>❌ <strong>Zu lange Zitate</strong> – Halbe Seite abschreiben → ✅ Kurze, prägnante Zitate</li>
-                        <li>❌ <strong>Zitate nicht eingebettet</strong> – "Zitat". Neue Satz. → ✅ "Durch '...' (Z. ...) wird deutlich, dass..."</li>
-                        <li>❌ <strong>Keine Zeilenangaben</strong> → ✅ Immer: (Z. ...) oder (vgl. Z. ...)</li>
-                        <li>❌ <strong>Falsche Zitierweise</strong> – [...] bei Auslassungen vergessen</li>
-                    </ul>
-                </div>
-                
-                <div class="wichtig">
-                    <h3>Sprachliche Fehler:</h3>
-                    <ul>
-                        <li>❌ <strong>Umgangssprache</strong> – "voll krass", "irgendwie" → ✅ Fachsprachlich präzise</li>
-                        <li>❌ <strong>Ich-Form in Analyse</strong> – "Ich denke..." → ✅ "Es lässt sich konstatieren..."</li>
-                        <li>❌ <strong>Wiederholungen</strong> – 10x "zeigt" → ✅ Performative Verben variieren</li>
-                        <li>❌ <strong>Füllwörter</strong> – "ziemlich", "etwas", "relativ" → ✅ Präzise Formulierungen</li>
-                        <li>❌ <strong>Nominalstil übertreiben</strong> – "Die Durchführung der Analyse der Interpretation..." → ✅ Verbalstil bevorzugen</li>
-                        <li>❌ <strong>Zu kompliziert</strong> – Verschachtelte Bandwurmsätze → ✅ Klar und verständlich</li>
-                    </ul>
-                </div>
-                
-                <div class="wichtig">
-                    <h3>Strukturelle Fehler:</h3>
-                    <ul>
-                        <li>❌ <strong>Kein roter Faden</strong> – Wirre Gedankensprünge → ✅ Logischer Aufbau, Übergänge</li>
-                        <li>❌ <strong>Zu kurze Einleitung</strong> – Nur Basissatz → ✅ + Inhaltsangabe + Deutungshypothese</li>
-                        <li>❌ <strong>Schluss fehlt oder zu kurz</strong> → ✅ Zusammenfassung + Wertung</li>
-                        <li>❌ <strong>Nur Analyse, keine Interpretation</strong> → ✅ Beides verbinden</li>
-                        <li>❌ <strong>Nur inhaltlich, Form fehlt</strong> → ✅ Form-Inhalt-Bezug essentiell!</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- NOTFALLPLAN -->
-            <div class="section">
-                <h2>🆘 Notfallplan: Was tun wenn...</h2>
+                <h2>🌟 Tipps für 15 Punkte</h2>
                 
                 <div class="tipp">
-                    <h3>...du den Text nicht verstehst?</h3>
+                    <h3>Das macht den Unterschied:</h3>
                     <ul>
-                        <li>✅ <strong>Keine Panik!</strong> Konzentriere dich auf das, was du verstehst</li>
-                        <li>✅ <strong>Basisfakten sichern:</strong> Wer? Was? Wo? Wann?</li>
-                        <li>✅ <strong>Kernkonflikt identifizieren:</strong> Was ist das Problem?</li>
-                        <li>✅ <strong>Form analysieren:</strong> Auch ohne Tiefenverständnis möglich (Stilmittel, Struktur)</li>
-                        <li>✅ <strong>Mit Konjunktiv arbeiten:</strong> "könnte darauf hindeuten...", "lässt sich interpretieren als..."</li>
+                        <li><strong>Zehn Schritte konsequent befolgen</strong></li>
+                        <li><strong>Abschnittsweise vorgehen:</strong> Inhaltssatz + Analyse + Interpretation</li>
+                        <li><strong>Tiefgründige Interpretation:</strong> Nicht oberflächlich bleiben, Mehrdeutigkeit erkennen</li>
+                        <li><strong>Präzise Textbelege:</strong> Konkrete Zitate mit Zeilenangabe</li>
+                        <li><strong>Sprachliche Mittel wörtlich zitieren</strong> und nie isoliert nennen</li>
+                        <li><strong>Form-Inhalt-Bezug:</strong> Nicht nur "was", sondern "wie" und "warum"</li>
+                        <li><strong>Eigenständige Deutung:</strong> Nicht nur Offensichtliches wiedergeben</li>
+                        <li><strong>Kontextualisierung:</strong> Epochenbezug, historischer Hintergrund</li>
+                        <li><strong>Sprachliche Qualität:</strong> Performative Verben, präziser Ausdruck</li>
+                        <li><strong>Stringente Argumentation:</strong> Roter Faden, logischer Aufbau</li>
+                        <li><strong>Differenzierte Wertung:</strong> Reflektierte eigene Position</li>
+                        <li><strong>Vorinformationen nicht vergessen!</strong> (Schritt 6)</li>
                     </ul>
-                </div>
-                
-                <div class="tipp">
-                    <h3>...dir keine Deutung einfällt?</h3>
-                    <ul>
-                        <li>✅ <strong>Basics abarbeiten:</strong> Welche Gattungsmerkmale? Welche Epoche?</li>
-                        <li>✅ <strong>Auf Sprache fokussieren:</strong> Stilmittel detailliert analysieren</li>
-                        <li>✅ <strong>Offensichtliches nutzen:</strong> Was steht explizit im Text?</li>
-                        <li>✅ <strong>Kontraste suchen:</strong> Gegensätze, Widersprüche → oft interpretierbar</li>
-                        <li>✅ <strong>Titel einbeziehen:</strong> Was bedeutet er? Bezug zum Inhalt?</li>
-                    </ul>
-                </div>
-                
-                <div class="tipp">
-                    <h3>...die Zeit knapp wird?</h3>
-                    <ul>
-                        <li>✅ <strong>Prioritäten setzen:</strong> Lieber weniger, aber gründlich</li>
-                        <li>✅ <strong>Schluss nicht vergessen!</strong> Lieber Hauptteil kürzen</li>
-                        <li>✅ <strong>Stichpunkte statt Fließtext</strong> im Notfall (besser als nichts!)</li>
-                        <li>✅ <strong>Keine neuen Aspekte</strong> mehr anfangen</li>
-                        <li>✅ <strong>Überarbeitung reduzieren:</strong> Nur grobe Fehler korrigieren</li>
-                    </ul>
-                </div>
-                
-                <div class="tipp">
-                    <h3>...du bei einem Stilmittel unsicher bist?</h3>
-                    <ul>
-                        <li>✅ <strong>Funktion beschreiben</strong> statt Namen raten: "Die Wiederholung unterstreicht..."</li>
-                        <li>✅ <strong>Allgemeiner formulieren:</strong> "sprachliches Mittel", "stilistische Auffälligkeit"</li>
-                        <li>✅ <strong>Wirkung ist wichtiger</strong> als korrekter Fachbegriff!</li>
-                        <li>✅ <strong>Nicht erfinden!</strong> Lieber weglassen als falsch benennen</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- MUSTERGLIEDERUNG -->
-            <div class="section">
-                <h2>📐 Mustergliederung mit Zeitangaben</h2>
-                
-                <div class="aufbau-schema">
-                    <h3>Detaillierte Gliederung (90 Min):</h3>
-                    
-                    <p><strong>I. Einleitung (5 Min / ca. 1/2 Seite)</strong></p>
-                    <ul style="margin-left: 20px;">
-                        <li>1. Basissatz (Autor, Titel, Textsorte, Jahr, Thema)</li>
-                        <li>2. Inhaltsangabe (3-4 Sätze, Präsens, nur Wesentliches)</li>
-                        <li>3. Deutungshypothese (optional, aber empfohlen)</li>
-                    </ul>
-                    
-                    <p><strong>II. Hauptteil (35-40 Min / ca. 3-4 Seiten)</strong></p>
-                    
-                    <p style="margin-left: 20px;"><em>II.1 Inhaltliche Analyse (10 Min)</em></p>
-                    <ul style="margin-left: 40px;">
-                        <li>a) Handlungsaufbau (Exposition, Wendepunkt, Ende)</li>
-                        <li>b) Figuren (Charakterisierung, Konstellation, Entwicklung)</li>
-                        <li>c) Zentraler Konflikt</li>
-                        <li>d) Motive (Einsamkeit, Entfremdung, etc.)</li>
-                    </ul>
-                    
-                    <p style="margin-left: 20px;"><em>II.2 Formale Analyse (10 Min)</em></p>
-                    <ul style="margin-left: 40px;">
-                        <li>a) Gattungsmerkmale nachweisen (unmittelbarer Beginn, offener Schluss, etc.)</li>
-                        <li>b) Erzählperspektive & Erzählverhalten (mit Textbeleg + Wirkung)</li>
-                        <li>c) Zeitgestaltung (Erzählzeit vs. erzählte Zeit, Raffung/Dehnung)</li>
-                        <li>d) Aufbau/Struktur (Absätze, Gliederung, Rahmen)</li>
-                    </ul>
-                    
-                    <p style="margin-left: 20px;"><em>II.3 Sprachliche Analyse (10 Min)</em></p>
-                    <ul style="margin-left: 40px;">
-                        <li>a) Sprachebene (Alltags-/Hochsprache, Dialekt)</li>
-                        <li>b) Satzbau (Parataxe/Hypotaxe, Ellipsen)</li>
-                        <li>c) Rhetorische Mittel (3-5 Stück detailliert: Metapher, Vergleich, Symbol, etc.)</li>
-                        <li>→ <strong>Wichtig:</strong> Nicht nur benennen, sondern: Textbeleg + Funktion + Wirkung + Interpretation!</li>
-                    </ul>
-                    
-                    <p style="margin-left: 20px;"><em>II.4 Interpretation (10 Min)</em></p>
-                    <ul style="margin-left: 40px;">
-                        <li>a) Aussage/Intention des Autors</li>
-                        <li>b) Symbolik & tiefere Bedeutungsebenen</li>
-                        <li>c) Historisch-gesellschaftlicher Kontext</li>
-                        <li>d) Epochale Einordnung (mit konkreten Merkmalen)</li>
-                        <li>e) Wirkung auf den Leser</li>
-                    </ul>
-                    
-                    <p><strong>III. Schluss (5-8 Min / ca. 1/2 Seite)</strong></p>
-                    <ul style="margin-left: 20px;">
-                        <li>1. Zusammenfassung der zentralen Erkenntnisse</li>
-                        <li>2. Rückbezug zur Deutungshypothese (bestätigt/modifiziert?)</li>
-                        <li>3. Persönliche, begründete Wertung</li>
-                        <li>4. Optional: Aktualitätsbezug, übergreifende Reflexion</li>
-                    </ul>
-                    
-                    <p><strong>IV. Überarbeitung (10 Min)</strong></p>
-                    <ul style="margin-left: 20px;">
-                        <li>→ Rechtschreibung, Grammatik, Zeilenangaben, Übergänge</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- FORMULIERUNGSVORLAGEN KOMPAKT -->
-            <div class="section">
-                <h2>💬 Kompakte Formulierungsvorlagen (zum Auswendiglernen!)</h2>
-                
-                <div class="beispiel">
-                    <h3>🎯 Essentials - Diese 20 Sätze musst du können:</h3>
-                    
-                    <p><strong>Einleitung:</strong></p>
-                    <ol>
-                        <li>"Die Kurzgeschichte '[TITEL]' von [AUTOR], erschienen [JAHR], thematisiert [THEMA]."</li>
-                        <li>"Im Zentrum steht [FIGUR], der/die mit [KONFLIKT] konfrontiert wird."</li>
-                    </ol>
-                    
-                    <p><strong>Gattung nachweisen:</strong></p>
-                    <ol start="3">
-                        <li>"Der Text weist charakteristische Merkmale der Kurzgeschichte auf, insbesondere den unmittelbaren Einstieg durch '[ZITAT]' (Z. ...) sowie den offenen Schluss."</li>
-                    </ol>
-                    
-                    <p><strong>Erzählperspektive:</strong></p>
-                    <ol start="4">
-                        <li>"Der personale Erzähler beschränkt sich auf die Innenperspektive von [FIGUR], wodurch [WIRKUNG] entsteht."</li>
-                        <li>"Die erlebte Rede in '[ZITAT]' (Z. ...) signalisiert den personalen Modus."</li>
-                    </ol>
-                    
-                    <p><strong>Stilmittel analysieren:</strong></p>
-                    <ol start="6">
-                        <li>"Die Metapher '[ZITAT]' (Z. ...) verdichtet [BEDEUTUNG] und evoziert [WIRKUNG]."</li>
-                        <li>"Durch die Wiederholung '[ZITAT]' (Z. ...) wird [ASPEKT] unterstrichen und [EFFEKT] intensiviert."</li>
-                        <li>"Der Vergleich '[ZITAT]' (Z. ...) veranschaulicht [SACHVERHALT] und impliziert [BEDEUTUNG]."</li>
-                    </ol>
-                    
-                    <p><strong>Charakterisierung:</strong></p>
-                    <ol start="9">
-                        <li>"Die Figur wird charakterisiert durch [MERKMAL], was sich in '[ZITAT]' (Z. ...) manifestiert."</li>
-                        <li>"Das Verhältnis zwischen X und Y ist geprägt durch [MERKMAL], erkennbar an [TEXTBELEG]."</li>
-                    </ol>
-                    
-                    <p><strong>Interpretation:</strong></p>
-                    <ol start="11">
-                        <li>"Dies lässt sich interpretieren als [DEUTUNG], da [BEGRÜNDUNG]."</li>
-                        <li>"Im übertragenen Sinne symbolisiert [X] [BEDEUTUNG]."</li>
-                        <li>"Vor dem historischen Hintergrund von [KONTEXT] reflektiert der Text [THEMA]."</li>
-                    </ol>
-                    
-                    <p><strong>Epochenzuordnung:</strong></p>
-                    <ol start="14">
-                        <li>"Die Geschichte lässt sich der [EPOCHE] zuordnen, was sich an [MERKMAL] sowie der Thematisierung von [THEMA] manifestiert."</li>
-                    </ol>
-                    
-                    <p><strong>Wirkung:</strong></p>
-                    <ol start="15">
-                        <li>"Dies evoziert beim Rezipienten [GEFÜHL] und bewirkt [EFFEKT]."</li>
-                        <li>"Der offene Schluss fordert zur Reflexion über [THEMA] auf."</li>
-                    </ol>
-                    
-                    <p><strong>Übergänge:</strong></p>
-                    <ol start="17">
-                        <li>"Darüber hinaus zeigt sich..."</li>
-                        <li>"In diesem Zusammenhang ist bemerkenswert, dass..."</li>
-                        <li>"Kontrastiv hierzu..."</li>
-                    </ol>
-                    
-                    <p><strong>Schluss:</strong></p>
-                    <ol start="20">
-                        <li>"Zusammenfassend lässt sich konstatieren, dass [AUTOR] durch [MITTEL] die [AUSSAGE] verdeutlicht und damit [INTENTION] erreicht."</li>
-                    </ol>
-                </div>
-            </div>
-
-            <!-- ABSCHLIESSENDE TIPPS -->
-            <div class="section">
-                <h2>🌟 Abschließende Tipps für 15 Punkte</h2>
-                
-                <div class="tipp">
-                    <h3>Das unterscheidet 15 von 10 Punkten:</h3>
-                    
-                    <table>
-                        <tr>
-                            <th>10 Punkte</th>
-                            <th>15 Punkte</th>
-                        </tr>
-                        <tr>
-                            <td>"Die Metapher zeigt die Einsamkeit."</td>
-                            <td>"Die Metapher des 'weichen Betts' (Z. 41) verdichtet mehrere Bedeutungsebenen: Sie konnotiert Geborgenheit, impliziert jedoch auch problematische Flucht in eine virtuelle Ersatzwelt, wodurch Berg subtil die Illusion digitaler Nähe ironisiert."</td>
-                        </tr>
-                        <tr>
-                            <td>"Der Text hat einen offenen Schluss."</td>
-                            <td>"Der offene Schluss verzichtet bewusst auf Auflösung, verlagert die Deutungsverantwortung auf den Rezipienten und impliziert eine pessimistische Perspektive: Die fundamentale Einsamkeit bleibt auch in Zeiten globaler Konnektivität bestehen."</td>
-                        </tr>
-                        <tr>
-                            <td>"Es ist Trümmerliteratur."</td>
-                            <td>"Der Text weist charakteristische Merkmale der Trümmerliteratur auf: Die reduzierte, elliptische Sprache ('Aufwachen. Bitte nicht.') spiegelt die existenzielle Desorientierung der Nachkriegszeit wider, während die Thematisierung von Heimkehr und Verlust die kollektive Traumatisierung verhandelt."</td>
-                        </tr>
-                        <tr>
-                            <td>Oberflächlich, deskriptiv</td>
-                            <td>Tiefgründig, mehrschichtig, kontextualisiert</td>
-                        </tr>
-                    </table>
-                </div>
-                
-                <div class="wichtig">
-                    <h3>Die 10 Gebote der 15-Punkte-Analyse:</h3>
-                    <ol>
-                        <li><strong>Du sollst nie nur benennen,</strong> sondern immer analysieren und interpretieren</li>
-                        <li><strong>Du sollst am Text belegen,</strong> jede Behauptung mit Zitat und Zeilenangabe</li>
-                        <li><strong>Du sollst Form und Inhalt verknüpfen,</strong> nie isoliert betrachten</li>
-                        <li><strong>Du sollst mehrschichtig denken,</strong> Symbolik hat oft mehrere Bedeutungen</li>
-                        <li><strong>Du sollst kontextualisieren,</strong> historisch, epochal, gesellschaftlich</li>
-                        <li><strong>Du sollst performative Verben nutzen,</strong> verdeutlichen, implizieren, evozieren...</li>
-                        <li><strong>Du sollst Wirkung beschreiben,</strong> was passiert beim Leser?</li>
-                        <li><strong>Du sollst eigenständig deuten,</strong> nicht nur Offensichtliches wiedergeben</li>
-                        <li><strong>Du sollst präzise formulieren,</strong> keine Umgangssprache, keine Füllwörter</li>
-                        <li><strong>Du sollst den roten Faden halten,</strong> logisch aufbauen, Übergänge schaffen</li>
-                    </ol>
                 </div>
             </div>
 
@@ -1695,7 +1013,12 @@
                 
                 <div class="wichtig">
                     <ul>
+                        <li>❌ Aufgabenstellung nicht genau gelesen</li>
+                        <li>❌ Text nicht in Abschnitte eingeteilt</li>
+                        <li>❌ Vorinformationen vergessen oder unvollständig</li>
                         <li>❌ Nacherzählen statt analysieren</li>
+                        <li>❌ Zitate ohne Benennung von sprachlichen Mitteln</li>
+                        <li>❌ Textparaphrasen (Text mehr oder weniger abschreiben)</li>
                         <li>❌ Stilmittel nur benennen ohne Wirkung zu erklären</li>
                         <li>❌ Keine Textbelege verwenden</li>
                         <li>❌ Zeitform wechseln (immer Präsens!)</li>
@@ -1705,9 +1028,31 @@
                         <li>❌ Interpretation ohne Textbezug</li>
                         <li>❌ Zu oberflächlich bleiben</li>
                         <li>❌ Form und Inhalt nicht verbinden</li>
-                        <li>❌ Keine Epochenzuordnung</li>
-                        <li>❌ Wirkung vergessen</li>
+                        <li>❌ Keine zusammenfassende Interpretation am Ende</li>
+                        <li>❌ Gliederung nicht sauber aufgeschrieben</li>
                     </ul>
+                </div>
+            </div>
+
+            <!-- ZUSAMMENFASSUNG -->
+            <div class="section">
+                <h2>🎯 Zusammenfassung: Der optimale Ablauf</h2>
+                
+                <div class="aufbau-schema">
+                    <ol>
+                        <li><strong>Aufgabenstellung genau lesen</strong> und wichtige Begriffe markieren</li>
+                        <li><strong>Text 2x lesen</strong>, beim 2. Mal markieren und <strong>in Abschnitte einteilen</strong></li>
+                        <li><strong>Notizen zu Vorinformationen</strong> machen (Schritt 2: Personen, Perspektive, Sprachniveau, etc.)</li>
+                        <li><strong>Sprachliche Mittel und erzählerische Mittel</strong> notieren (Schritt 4)</li>
+                        <li><strong>Einleitung schreiben:</strong> Einleitungsgedanke + Textaufnahme + Basissatz + Deutungshypothese</li>
+                        <li><strong>Vorinformationen</strong> aus Notizen zu Fließtext verarbeiten</li>
+                        <li><strong>Kurze Inhaltsangabe</strong> (3-4 Sätze, Präsens)</li>
+                        <li><strong>Analyse abschnittsweise:</strong> Für jeden Abschnitt: Inhaltssatz + Analyse (mit sprachlichen Mitteln) + Interpretation</li>
+                        <li><strong>Zusammenfassende Interpretation:</strong> Gesamtdeutung, Epochenbezug, Intention</li>
+                        <li><strong>Schluss</strong> (falls kein zweiter Aufgabenteil)</li>
+                        <li><strong>Gliederung sauber aufschreiben</strong></li>
+                        <li><strong>Überarbeiten:</strong> Rechtschreibung, Grammatik, Zeilenangaben, Übergänge</li>
+                    </ol>
                 </div>
             </div>
 
@@ -1715,4 +1060,3 @@
     </div>
 </body>
 </html>
-                    
