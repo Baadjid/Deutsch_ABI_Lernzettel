@@ -33,6 +33,26 @@
             color: white;
             padding: 40px;
             text-align: center;
+            position: relative;
+        }
+        
+        .back-link {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        
+        .back-link:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateX(-5px);
         }
         
         header h1 {
@@ -71,6 +91,12 @@
             margin: 20px 0 15px 0;
             border-bottom: 2px solid #f0f0f0;
             padding-bottom: 8px;
+        }
+        
+        h4 {
+            color: #667eea;
+            font-size: 1.1em;
+            margin: 15px 0 10px 0;
         }
         
         .merkmale-box {
@@ -113,6 +139,31 @@
             padding: 15px;
             margin: 15px 0;
             border-radius: 5px;
+        }
+        
+        .beispiel-analyse {
+            background: #e7f3ff;
+            border-left: 5px solid #0066cc;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .beispiel-text {
+            background: #f5f5f5;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            font-style: italic;
+            border-left: 3px solid #999;
+        }
+        
+        .analyse-text {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-left: 3px solid #0066cc;
         }
         
         table {
@@ -219,6 +270,12 @@
                 padding: 25px 20px;
             }
             
+            .back-link {
+                position: static;
+                display: inline-block;
+                margin-bottom: 15px;
+            }
+            
             header h1 {
                 font-size: 1.8em;
             }
@@ -241,6 +298,7 @@
 <body>
     <div class="container">
         <header>
+            <a href="index.html" class="back-link">← Zurück zur Hauptseite</a>
             <h1>📚 Kurzgeschichtenanalyse - Erweitert</h1>
             <p>Umfassender Lernzettel für das Abitur (15 Punkte-Niveau)</p>
             <p style="font-size: 0.9em; margin-top: 10px; opacity: 0.8;">Integriert: Zehn Schritte der Interpretation + Erweiterte Struktur</p>
@@ -280,12 +338,11 @@
                         <li><strong>1. Einleitung</strong> (Basissatz + Deutungshypothese)</li>
                         <li><strong>2. Inhaltsangabe</strong> (kurz und prägnant)</li>
                         <li><strong>3. Analyse + Interpretation</strong> (abschnittsweise, integriert mit sprachlichen Mitteln)</li>
-                        <li><strong>4. Schluss</strong> (nur bei vollständiger Interpretation ohne zweiten Aufgabenteil)</li>
                     </ol>
                 </div>
                 
                 <div class="wichtig">
-                    <p><strong>Wichtig:</strong> Falls ein zweiter Aufgabenteil existiert (z.B. Vergleich), entfällt der Schluss nach der ersten Aufgabe. Der Gesamtschluss folgt erst nach Bearbeitung der zweiten Aufgabe!</p>
+                    <p><strong>Wichtig:</strong> Falls ein zweiter Aufgabenteil existiert (z.B. Vergleich), folgt dieser nach der Analyse. Kein separater Schluss erforderlich – die zusammenfassende Interpretation am Ende der Analyse reicht aus!</p>
                 </div>
             </div>
 
@@ -333,7 +390,7 @@
                     <h3><span class="step-number">4</span>Sprachliche Gestaltung und erzählerische Mittel</h3>
                     <p><strong>Untersuchen Sie den Text systematisch auf:</strong></p>
                     
-                    <h4 style="color: #667eea; margin-top: 15px;">A) Aspekte der Erzählperspektive:</h4>
+                    <h4>A) Aspekte der Erzählperspektive:</h4>
                     <ul>
                         <li><strong>Auktorialer Erzähler:</strong> handlungsleitend, allwissend, kommentierend, evtl. Leseransprache</li>
                         <li><strong>Personaler Erzähler:</strong> handlungsbegleitend, aus Sicht einer/mehrerer Personen (teilwissend)</li>
@@ -341,11 +398,51 @@
                         <li><strong>Ich-Erzähler:</strong> erzählendes oder erlebendes Ich</li>
                     </ul>
                     
+                    <div class="beispiel-analyse">
+                        <h4>📖 Beispiel: Auktorialer Erzähler</h4>
+                        <div class="beispiel-text">
+                            "Maria betrat das Café, ohne zu ahnen, dass dies ihr Leben verändern würde. Der Mann am Fenster, der sie beobachtete, war ihr Bruder – den sie für tot gehalten hatte."
+                        </div>
+                        <div class="analyse-text">
+                            <strong>Analyse:</strong> Der auktoriale Erzähler (Z. 1-3) verfügt über Allwissenheit und gibt dem Leser Informationen, die der Protagonistin verborgen bleiben. Die Vorausdeutung "ohne zu ahnen, dass dies ihr Leben verändern würde" (Z. 1-2) erzeugt Spannung und lenkt die Aufmerksamkeit auf die Bedeutsamkeit des Moments. Der Erzähler greift lenkend in das Geschehen ein, indem er die wahre Identität des Mannes offenbart, was Maria selbst noch nicht erkennt. Diese Diskrepanz zwischen Leser- und Figurenwissen intensiviert die dramatische Ironie der Szene.
+                        </div>
+                    </div>
+                    
+                    <div class="beispiel-analyse">
+                        <h4>📖 Beispiel: Personaler Erzähler</h4>
+                        <div class="beispiel-text">
+                            "Das Klingeln zerriss die Stille. Sofort spürte er, wie sein Herz schneller schlug. War es die Polizei? Oder doch nur der Postbote? Seine Hände zitterten, als er zur Tür ging."
+                        </div>
+                        <div class="analyse-text">
+                            <strong>Analyse:</strong> Der personale Erzähler (Z. 1-4) beschränkt sich konsequent auf die Innenperspektive der Figur. Die Innensicht ermöglicht einen unmittelbaren Zugang zu den physischen Reaktionen ("sein Herz schlug schneller", Z. 2) und den ängstlichen Gedanken des Protagonisten. Die beiden Fragen (Z. 2-3) spiegeln die innere Unsicherheit wider, ohne dass der Erzähler eine Antwort liefert. Durch die Fokalisierung auf den Protagonisten wird die Atmosphäre der Bedrohung und Paranoia intensiviert. Die begrenzte Perspektive lässt den Leser ebenso im Ungewissen wie die Figur selbst.
+                        </div>
+                    </div>
+                    
+                    <div class="beispiel-analyse">
+                        <h4>📖 Beispiel: Neutraler Erzähler</h4>
+                        <div class="beispiel-text">
+                            "Er stand auf. Ging zum Fenster. Öffnete es. Lehnte sich hinaus. Dann schloss er es wieder und setzte sich."
+                        </div>
+                        <div class="analyse-text">
+                            <strong>Analyse:</strong> Der neutrale Erzähler (Z. 1-5) schildert ausschließlich von außen beobachtbare Handlungen, ohne Zugang zu Gedanken oder Gefühlen der Figur zu gewähren. Die parataktische Aneinanderreihung der Handlungen bleibt wertfrei und kommentarlos. Die scheinbare Objektivität täuscht über die tatsächlichen Motive und die innere Verfassung der Figur hinweg. Durch die Außenperspektive bleibt unklar, ob die Figur Suizid erwägt oder lediglich frische Luft sucht. Die emotionale Distanz erzeugt eine beklemmende Atmosphäre der Ungewissheit.
+                        </div>
+                    </div>
+                    
+                    <div class="beispiel-analyse">
+                        <h4>📖 Beispiel: Ich-Erzähler</h4>
+                        <div class="beispiel-text">
+                            "Ich erinnere mich genau an jenen Abend. Damals dachte ich, es sei das Ende. Wie naiv ich war!"
+                        </div>
+                        <div class="analyse-text">
+                            <strong>Analyse:</strong> Der Ich-Erzähler (Z. 1-3) berichtet aus zeitlicher Distanz von vergangenen Ereignissen. Die Unterscheidung zwischen erzählendem und erlebendem Ich wird deutlich in der selbstreflexiven Bemerkung "Wie naiv ich war!" (Z. 3), die eine Bewertung aus späterer Perspektive darstellt. Das erzählende Ich verfügt über mehr Wissen als das damalige erlebende Ich ("Damals dachte ich, es sei das Ende", Z. 2), was eine ironische Brechung erzeugt. Die Ich-Perspektive erzeugt Authentizität und Nähe zum Leser, ermöglicht aber zugleich eine reflektierte Distanz zum eigenen Erleben.
+                        </div>
+                    </div>
+                    
                     <div class="tipp">
                         <strong>Achten Sie auf:</strong> Evtl. Perspektivwechsel, Haltung des Erzählers zu den Figuren (Indifferenz, Ablehnung, Anteilnahme, Ironie)
                     </div>
                     
-                    <h4 style="color: #667eea; margin-top: 15px;">B) Möglichkeiten der Figurenrede:</h4>
+                    <h4>B) Möglichkeiten der Figurenrede:</h4>
                     <ul>
                         <li><strong>Direkte Rede:</strong> Sie fragte sich: „Muss ich wirklich gehen?"</li>
                         <li><strong>Indirekte Rede:</strong> Sie fragte sich, ob sie wirklich gehen müsse.</li>
@@ -353,7 +450,37 @@
                         <li><strong>Innerer Monolog:</strong> Muss ich wirklich gehen?</li>
                     </ul>
                     
-                    <h4 style="color: #667eea; margin-top: 15px;">C) Aspekte der Zeitgestaltung:</h4>
+                    <div class="beispiel-analyse">
+                        <h4>💬 Beispiel: Direkte Rede</h4>
+                        <div class="beispiel-text">
+                            "Ich kann nicht mehr", flüsterte sie. "Verstehst du das nicht?" Er schwieg.
+                        </div>
+                        <div class="analyse-text">
+                            <strong>Analyse:</strong> Die direkte Rede "Ich kann nicht mehr" (Z. 1) verleiht der Verzweiflung der Figur Unmittelbarkeit und Authentizität. Der Wortwechsel zwischen den Figuren offenbart die Kommunikationsstörung: Während sie emotional aufgewühlt ist (Fragesatz Z. 1), bleibt er stumm. Durch die wörtliche Wiedergabe wird die Asymmetrie der Beziehung spürbar. Das Verb "flüstern" (Z. 1) signalisiert Erschöpfung und unterstreicht die Dramatik der Situation.
+                        </div>
+                    </div>
+                    
+                    <div class="beispiel-analyse">
+                        <h4>💬 Beispiel: Erlebte Rede</h4>
+                        <div class="beispiel-text">
+                            "Sie starrte auf den Brief. Was sollte das bedeuten? Er hatte ihr also doch die Wahrheit verschwiegen."
+                        </div>
+                        <div class="analyse-text">
+                            <strong>Analyse:</strong> Die erlebte Rede (Z. 2-3) verbindet Innen- und Außenperspektive und ermöglicht einen unmittelbaren Zugang zu den Gedanken der Figur. Die rhetorische Frage "Was sollte das bedeuten?" (Z. 2) wirkt wie ein innerer Monolog, wird aber nicht durch Anführungszeichen markiert. Die Grenzen zwischen Erzähler und Figur verschwimmen, was eine enge Verbindung zum inneren Erleben der Protagonistin herstellt. Die Feststellung "Er hatte ihr also doch die Wahrheit verschwiegen" (Z. 3) präsentiert ihre Schlussfolgerung als Tatsache, ohne dass der Erzähler diese bestätigt oder relativiert.
+                        </div>
+                    </div>
+                    
+                    <div class="beispiel-analyse">
+                        <h4>💬 Beispiel: Innerer Monolog</h4>
+                        <div class="beispiel-text">
+                            "Gehen oder bleiben? Wenn ich jetzt gehe, ist es vorbei. Für immer. Aber kann ich noch bleiben? Nach allem?"
+                        </div>
+                        <div class="analyse-text">
+                            <strong>Analyse:</strong> Der innere Monolog (Z. 1-3) gewährt ungefilterten Einblick in die innere Zerrissenheit der Figur. Die Gedankenströme offenbaren den Konflikt zwischen dem Wunsch nach Flucht und der Bindung durch die Beziehung. Die fragmentarischen Fragen und Satzabbrüche simulieren den unmittelbaren Denkprozess und erzeugen Authentizität. Die Wiederholung der Alternative "Gehen oder bleiben?" (Z. 1) markiert die zentrale Entscheidungssituation. Durch die direkte Präsentation der Gedanken ohne erzählerische Vermittlung entsteht maximale Nähe zur Figur.
+                        </div>
+                    </div>
+                    
+                    <h4>C) Aspekte der Zeitgestaltung:</h4>
                     <p><strong>Verhältnis von Erzählzeit und erzählter Zeit:</strong></p>
                     <ul>
                         <li><strong>Zeitdehnung:</strong> Erzählzeit > erzählte Zeit (z.B. bei Beschreibungen, Detail)</li>
@@ -361,15 +488,46 @@
                         <li><strong>Zeitraffung:</strong> Erzählzeit < erzählte Zeit (z.B. Raffung von Geschehnissen)</li>
                         <li><strong>Zeitsprung, Rückblicke, Vorausdeutungen</strong></li>
                     </ul>
+                    
+                    <div class="beispiel-analyse">
+                        <h4>⏱️ Beispiel: Zeitdehnung</h4>
+                        <div class="beispiel-text">
+                            "Sie griff nach der Klinke. Das Metall fühlte sich kalt an, glatt, poliert von tausend Händen vor ihr. Ihre Fingerkuppen spürten jede winzige Unebenheit. Langsam, ganz langsam drückte sie sie hinunter."
+                        </div>
+                        <div class="analyse-text">
+                            <strong>Analyse:</strong> Die ausführliche Beschreibung (Z. 1-4) erzeugt eine extreme Zeitdehnung. Die detaillierte Schilderung der taktilen Wahrnehmung ("kalt", "glatt", "poliert", Z. 2) verlangsamt den Erzählfluss massiv und transformiert eine Sekundenhandlung in einen bedeutsamen Moment. Durch die Dehnung wird die innere Anspannung und Zögerlichkeit der Figur spürbar. Die dreifache Charakterisierung des Metalls und die explizite Betonung der Langsamkeit ("Langsam, ganz langsam", Z. 4) unterstreichen die Schwere der bevorstehenden Handlung.
+                        </div>
+                    </div>
+                    
+                    <div class="beispiel-analyse">
+                        <h4>⏱️ Beispiel: Zeitraffung</h4>
+                        <div class="beispiel-text">
+                            "Die nächsten drei Jahre vergingen wie im Flug. Er studierte, sie arbeitete, sie sahen sich selten."
+                        </div>
+                        <div class="analyse-text">
+                            <strong>Analyse:</strong> Die raffende Darstellung (Z. 1-2) komprimiert einen Zeitraum von drei Jahren in zwei Sätze. Durch die Raffung werden die Jahre als nebensächlich markiert – die Routine des Alltags verdient keine detaillierte Schilderung. Die komprimierte Wiedergabe signalisiert die emotionale Leere dieser Phase: Es passierte nichts Bedeutsames. Der Vergleich "wie im Flug" (Z. 1) verstärkt den Eindruck der Flüchtigkeit und Belanglosigkeit. Die parataktische Aneinanderreihung ("er studierte, sie arbeitete, sie sahen sich selten", Z. 2) spiegelt die mechanische, unverbundene Parallelität ihrer Leben wider.
+                        </div>
+                    </div>
+                    
+                    <div class="beispiel-analyse">
+                        <h4>⏱️ Beispiel: Zeitsprung</h4>
+                        <div class="beispiel-text">
+                            "Er schlug die Tür zu. Jahre später würde er sich an diesen Moment erinnern – als den Anfang vom Ende. Damals jedoch dachte er nur: Endlich frei."
+                        </div>
+                        <div class="analyse-text">
+                            <strong>Analyse:</strong> Der Zeitsprung (Z. 2) markiert einen Bruch im Geschehen und öffnet eine zweite zeitliche Ebene. Die Prolepse ("Jahre später würde er...", Z. 2) verdeutlicht die langfristige Bedeutung eines scheinbar trivialen Moments und erzeugt dramatische Ironie. Der Kontrast zwischen der späteren Erkenntnis "den Anfang vom Ende" (Z. 2) und dem damaligen Triumphgefühl "Endlich frei" (Z. 3) offenbart die Fehleinschätzung der Situation. Durch den Zeitsprung gewinnt der Leser eine Perspektive, die über die der Figur im Moment der Handlung hinausgeht.
+                        </div>
+                    </div>
+                    
                     <p><strong>Wirkung:</strong> Setzung von Schwerpunkten, Tempo bzw. Langsamkeit des Geschehens</p>
                     
-                    <h4 style="color: #667eea; margin-top: 15px;">D) Aspekte der Personengestaltung:</h4>
+                    <h4>D) Aspekte der Personengestaltung:</h4>
                     <ul>
                         <li>Was erfahren wir über die dargestellten Personen?</li>
                         <li>Wie erfahren wir es? (Direkt durch Beschreibung? Indirekt durch Handlungen/Worte? Gedanken? Innerer Monolog? Bewusstseinsstrom?)</li>
                     </ul>
                     
-                    <h4 style="color: #667eea; margin-top: 15px;">E) Aspekte der Raumgestaltung:</h4>
+                    <h4>E) Aspekte der Raumgestaltung:</h4>
                     <ul>
                         <li><strong>Ambiente:</strong> Wohnraum als Fortsetzung der äußeren Erscheinung einer Figur, gesellschaftlicher Status</li>
                         <li><strong>Soziales Milieu:</strong> Umgebung als prägende Macht</li>
@@ -377,12 +535,59 @@
                         <li><strong>Symbolische Kulisse:</strong> Thematik in symbolischen Bildebegriffen</li>
                     </ul>
                     
-                    <h4 style="color: #667eea; margin-top: 15px;">F) Erzählerische Besonderheiten:</h4>
+                    <div class="beispiel-analyse">
+                        <h4>🏛️ Beispiel: Atmosphärische Kulisse</h4>
+                        <div class="beispiel-text">
+                            "Draußen regnete es in Strömen. Das Wasser lief die grauen Hauswände hinab wie Tränen. Die Straßen waren leer, verlassen, trostlos."
+                        </div>
+                        <div class="analyse-text">
+                            <strong>Analyse:</strong> Die Beschreibung des Wetters (Z. 1-3) spiegelt die Gemütslage der Figur wider und etabliert eine pathetic fallacy. Die düstere Atmosphäre korrespondiert mit der inneren Verzweiflung der Protagonistin. Der Vergleich "wie Tränen" (Z. 2) anthropomorphisiert die Umgebung und projiziert menschliche Trauer auf die Architektur. Die Dreifachsteigerung "leer, verlassen, trostlos" (Z. 3) verstärkt das Gefühl der Isolation. Der Kontrast zwischen dem strömenden Regen außen und der mutmaßlichen Enge des Innenraums symbolisiert die ausweglose Situation der Figur.
+                        </div>
+                    </div>
+                    
+                    <div class="beispiel-analyse">
+                        <h4>🏛️ Beispiel: Soziales Milieu</h4>
+                        <div class="beispiel-text">
+                            "Die Wohnung im fünften Stock hatte keine Heizung. Schimmel zog sich die Wände hoch. Auf dem Herd stand ein einziger Topf."
+                        </div>
+                        <div class="analyse-text">
+                            <strong>Analyse:</strong> Der Handlungsort (Z. 1-3) charakterisiert unmissverständlich das soziale Milieu der Figur: Armut und prekäre Lebensbedingungen. Die räumliche Enge wird durch die Fokussierung auf wenige Details evoziert ("ein einziger Topf", Z. 3), was die materielle Not unterstreicht. Die Beschreibung des Schimmels (Z. 2) signalisiert Verwahrlosung und mangelnde Lebensqualität. Der fünfte Stock ohne Heizung (Z. 1) verweist auf ein sozial schwaches Milieu und körperliche Strapazen. Die knappe, nüchterne Darstellung verstärkt die Trostlosigkeit der Situation.
+                        </div>
+                    </div>
+                    
+                    <div class="beispiel-analyse">
+                        <h4>🏛️ Beispiel: Symbolische Kulisse</h4>
+                        <div class="beispiel-text">
+                            "Der Bahnhof lag zwischen zwei Welten: Hinter ihm die Stadt mit ihren Lichtern, vor ihm nur Dunkelheit und Felder."
+                        </div>
+                        <div class="analyse-text">
+                            <strong>Analyse:</strong> Der Raum (Z. 1-2) fungiert als Symbol für die Schwellensituation der Figur. Die topographische Gestaltung mit der Opposition "Stadt mit ihren Lichtern" versus "Dunkelheit und Felder" (Z. 2) versinnbildlicht die Wahl zwischen Vertrautheit und Ungewissheit. Der Bahnhof als Transitort symbolisiert den Moment der Entscheidung – er ist weder Ankunft noch Abfahrt, sondern Zwischenstation. Die Formulierung "zwischen zwei Welten" (Z. 1) expliziert die symbolische Dimension: Es geht nicht nur um geographische, sondern um existenzielle Räume. Die Lichter repräsentieren Sicherheit und Zivilisation, die Dunkelheit steht für das Unbekannte und möglicherweise Bedrohliche.
+                        </div>
+                    </div>
+                    
+                    <h4>F) Erzählerische Besonderheiten:</h4>
                     <ul>
                         <li><strong>Leitmotive:</strong> Wiederholung führt zu Wesentlichem (Handlungselement, Geste, Melodie, Geräusch, Geruch)</li>
                         <li>Schlüsselbegriffe, Kontraste, Symbolik, Ironie</li>
                         <li>Gattungsmerkmale (z.B. offener Schluss bei Kurzgeschichten)</li>
                     </ul>
+                    
+                    <h4>G) Satzbau und Satzlänge:</h4>
+                    <ul>
+                        <li><strong>Parataxe (HS + HS):</strong> Kurze, aneinandergereihte Hauptsätze → Tempo, Knappheit, Eindringlichkeit</li>
+                        <li><strong>Hypotaxe (HS + NS):</strong> Lange, verschachtelte Sätze → Komplexität, Reflexion, Differenziertheit</li>
+                        <li><strong>Ellipsen:</strong> Unvollständige Sätze → Hektik, Authentizität, gesprochene Sprache</li>
+                    </ul>
+                    
+                    <div class="beispiel-analyse">
+                        <h4>📐 Beispiel: Parataxe</h4>
+                        <div class="beispiel-text">
+                            "Er stand auf. Ging zur Tür. Öffnete sie. Draußen regnete es."
+                        </div>
+                        <div class="analyse-text">
+                            <strong>Analyse:</strong> Die parataktische Struktur mit vier kurzen Hauptsätzen (Z. 1-4) erzeugt ein rasches Erzähltempo und evoziert eine mechanische, emotionslose Handlungsweise. Die knappen Sätze spiegeln die innere Leere der Figur wider und verstärken die Atmosphäre der Resignation. Die elliptische Verknappung ("Ging zur Tür", Z. 2) ohne Subjektnennung unterstreicht die Routiniertheit der Bewegungen.
+                        </div>
+                    </div>
                     
                     <div class="wichtig">
                         <strong>Praxis-Tipp:</strong> Schreiben Sie die sprachlichen Mittel direkt neben die Zeile im Text. Machen Sie sich Randnotizen zu erzählerischen Mitteln!
@@ -418,7 +623,7 @@
                             <li>"Im Zentrum des Textes steht/stehen …"</li>
                             <li>"Der Text ist durchgehend in gehobener Prosa verfasst."</li>
                             <li>"In der direkten Rede finden sich Elemente von Umgangssprache bzw. Dialekt."</li>
-                            <li>"Der Text ist insgesamt (nicht) chronologisch verfasst."</li>
+                            <li>"Der Text folgt einer chronologischen Struktur mit stellenweisen Raffungen."</li>
                             <li>"Erzählt wird (vorwiegend) aus der Perspektive eines auktorialen (personalen, Ich-) Erzählers."</li>
                             <li>"Der Text lässt sich insgesamt in x Abschnitte einteilen."</li>
                         </ul>
@@ -434,7 +639,7 @@
                     <h3><span class="step-number">7</span>Verfassen der Analyse / Erschließung</h3>
                     <p><strong>Dies ist der umfangreichste Teil der Arbeit. Gehen Sie abschnittsweise vor.</strong></p>
                     
-                    <h4 style="color: #667eea; margin-top: 15px;">Jeder Abschnitt umfasst:</h4>
+                    <h4>Jeder Abschnitt umfasst:</h4>
                     
                     <ol>
                         <li>
@@ -500,22 +705,7 @@
                 </div>
                 
                 <div class="step-box">
-                    <h3><span class="step-number">9</span>Einen Schluss verfassen</h3>
-                    <div class="wichtig">
-                        <p><strong>Wichtig:</strong> Falls es einen zweiten Aufgabenteil gibt, bearbeiten Sie zunächst diesen und formulieren erst ganz am Ende einen Schluss!</p>
-                    </div>
-                    
-                    <p><strong>Der Schluss besteht aus wenigen Sätzen mit einem Abschlussgedanken:</strong></p>
-                    <ul>
-                        <li>Wiederaufnahme des Einleitungsgedankens</li>
-                        <li>Aussagen zur Aktualität des Textes</li>
-                        <li>Persönliche Stellungnahme</li>
-                        <li>Weiterführung des Themas (z.B. Zukunftswunsch, Appell)</li>
-                    </ul>
-                </div>
-                
-                <div class="step-box">
-                    <h3><span class="step-number">10</span>Schreiben der Gliederung und Überarbeitung</h3>
+                    <h3><span class="step-number">9</span>Schreiben der Gliederung und Überarbeitung</h3>
                     <ul>
                         <li><strong>Gliederung:</strong> Schreiben Sie Ihre Gliederung in ordentlicher Form auf ein gesondertes Blatt</li>
                         <li><strong>Überarbeitung:</strong> Wenn noch Zeit vorhanden:
@@ -574,11 +764,6 @@
                         <h4 style="color: #667eea; margin-top: 20px;">5. ZUSAMMENFASSENDE INTERPRETATION</h4>
                         <p style="margin-left: 20px; font-size: 0.95em; line-height: 1.6;">
                             [Gesamtdeutung: Was haben wir über die Personen erfahren? Welche Entwicklung? Welche erzählerischen Mittel dominieren? Epochenbezug? Intention des Autors? Zeitlose Aussage?]
-                        </p>
-                        
-                        <h4 style="color: #667eea; margin-top: 20px;">6. SCHLUSS (falls kein zweiter Aufgabenteil)</h4>
-                        <p style="margin-left: 20px; font-size: 0.95em; line-height: 1.6;">
-                            [Wenige Sätze: Zusammenfassung, Rückbezug zur Deutungshypothese, persönliche Wertung oder Aktualitätsbezug]
                         </p>
                     </div>
                 </div>
@@ -680,14 +865,7 @@
                                 <li>Am Schluss: Zusammenfassende Interpretation</li>
                             </ul>
                         </li>
-                        <li style="background: #cfe2ff; border-left: 5px solid #0d6efd;"><strong>75-80 Min: Schluss (falls kein 2. Teil)</strong>
-                            <ul>
-                                <li>Zusammenfassung</li>
-                                <li>Rückbezug zur Deutungshypothese</li>
-                                <li>Persönliche Wertung</li>
-                            </ul>
-                        </li>
-                        <li style="background: #d1ecf1; border-left: 5px solid #17a2b8;"><strong>80-90 Min: Überarbeitung</strong>
+                        <li style="background: #d1ecf1; border-left: 5px solid #17a2b8;"><strong>75-90 Min: Überarbeitung</strong>
                             <ul>
                                 <li>Rechtschreibung & Grammatik</li>
                                 <li>Zeilenangaben vollständig?</li>
@@ -744,7 +922,7 @@
 
             <!-- FORMULIERUNGSHILFEN ERWEITERT -->
             <div class="section">
-                <h2>💬 Formulierungshilfen (erweitert aus PDF)</h2>
+                <h2>💬 Formulierungshilfen</h2>
                 
                 <h3>Einleitung</h3>
                 <div class="beispiel">
@@ -764,7 +942,7 @@
                         <li>"Im Zentrum des Textes steht/stehen …"</li>
                         <li>"Der Text ist durchgehend in gehobener Prosa verfasst."</li>
                         <li>"In der direkten Rede finden sich Elemente von Umgangssprache bzw. Dialekt."</li>
-                        <li>"Der Text ist insgesamt (nicht) chronologisch verfasst."</li>
+                        <li>"Der Text folgt einer chronologischen Struktur mit stellenweisen Raffungen."</li>
                         <li>"Erzählt wird (vorwiegend) aus der Perspektive eines auktorialen (personalen, Ich-) Erzählers."</li>
                         <li>"Der Text lässt sich insgesamt in x Abschnitte einteilen."</li>
                     </ul>
@@ -882,6 +1060,18 @@
                         <td>Gleicher Satzbau</td>
                         <td>"Wir handeln nicht. Wir spielen nicht."</td>
                         <td>Rhythmus, Eindringlichkeit</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Parataxe</strong></td>
+                        <td>Aneinanderreihung von Hauptsätzen</td>
+                        <td>"Er stand auf. Er ging. Er kam nicht zurück."</td>
+                        <td>Tempo, Knappheit, Eindringlichkeit</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Hypotaxe</strong></td>
+                        <td>Verschachtelung von Haupt- und Nebensätzen</td>
+                        <td>"Er ging, weil er wusste, dass..."</td>
+                        <td>Komplexität, Reflexion, Differenziertheit</td>
                     </tr>
                 </table>
             </div>
@@ -1001,8 +1191,9 @@
                         <li><strong>Kontextualisierung:</strong> Epochenbezug, historischer Hintergrund</li>
                         <li><strong>Sprachliche Qualität:</strong> Performative Verben, präziser Ausdruck</li>
                         <li><strong>Stringente Argumentation:</strong> Roter Faden, logischer Aufbau</li>
-                        <li><strong>Differenzierte Wertung:</strong> Reflektierte eigene Position</li>
+                        <li><strong>Differenzierte Wertung:</strong> Reflektierte eigene Position in der Interpretation</li>
                         <li><strong>Vorinformationen nicht vergessen!</strong> (Schritt 6)</li>
+                        <li><strong>Satzbau analysieren:</strong> Parataxe, Hypotaxe, Ellipsen mit Wirkung</li>
                     </ul>
                 </div>
             </div>
@@ -1049,7 +1240,6 @@
                         <li><strong>Kurze Inhaltsangabe</strong> (3-4 Sätze, Präsens)</li>
                         <li><strong>Analyse abschnittsweise:</strong> Für jeden Abschnitt: Inhaltssatz + Analyse (mit sprachlichen Mitteln) + Interpretation</li>
                         <li><strong>Zusammenfassende Interpretation:</strong> Gesamtdeutung, Epochenbezug, Intention</li>
-                        <li><strong>Schluss</strong> (falls kein zweiter Aufgabenteil)</li>
                         <li><strong>Gliederung sauber aufschreiben</strong></li>
                         <li><strong>Überarbeiten:</strong> Rechtschreibung, Grammatik, Zeilenangaben, Übergänge</li>
                     </ol>
