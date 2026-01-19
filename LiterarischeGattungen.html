@@ -1,0 +1,1514 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Literarische Gattungen und Sachtexte - Deutsch Lernzettel</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --bg-color: #ecf0f1;
+            --card-bg: #ffffff;
+            --text-color: #2c3e50;
+            --border-color: #bdc3c7;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--bg-color) 0%, #d5dbdb 100%);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #000000, #DD0000, #FFCE00);
+        }
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        .back-button:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+        .header h1 {
+            color: var(--primary-color);
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .section {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--secondary-color);
+        }
+        .section h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+        .section h3 {
+            color: var(--secondary-color);
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+        .section h4 {
+            color: var(--primary-color);
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        .section p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        .section ul, .section ol {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+        .section li {
+            margin-bottom: 8px;
+        }
+        .key-term {
+            background: #e3f2fd;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+        .important-note {
+            background: #fff3cd;
+            border-left: 4px solid var(--warning-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .quote {
+            background: #f8f9fa;
+            border-left: 4px solid var(--accent-color);
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 5px;
+        }
+        /* Navigation Menu */
+        .nav-container {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 20px;
+            z-index: 100;
+        }
+        .nav-container h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+        .nav-link {
+            background: linear-gradient(45deg, var(--secondary-color), #2980b9);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+        .nav-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+            background: linear-gradient(45deg, #2980b9, var(--secondary-color));
+        }
+        /* Scroll to Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(45deg, var(--accent-color), #c0392b);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+        }
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
+        }
+        /* Collapsible Sections */
+        .collapsible-header {
+            background: linear-gradient(135deg, var(--secondary-color), #2980b9);
+            color: white;
+            padding: 15px 20px;
+            cursor: pointer;
+            border-radius: 10px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+        .collapsible-header:hover {
+            background: linear-gradient(135deg, #2980b9, var(--secondary-color));
+            transform: translateX(5px);
+        }
+        .collapsible-header h3 {
+            margin: 0;
+            color: white;
+            font-size: 1.3em;
+        }
+        .collapsible-icon {
+            font-size: 1.5em;
+            transition: transform 0.3s ease;
+        }
+        .collapsible-header.active .collapsible-icon {
+            transform: rotate(180deg);
+        }
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        .collapsible-content.active {
+            max-height: 20000px;
+        }
+        .collapsible-inner {
+            padding: 20px 0;
+        }
+        .model-card {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid var(--secondary-color);
+        }
+        .model-card h4 {
+            color: var(--secondary-color);
+            margin-top: 0;
+        }
+        .example-box {
+            background: #e8f5e9;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid var(--success-color);
+        }
+        .info-box {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid var(--secondary-color);
+        }
+        .warning-box {
+            background: #fff3e0;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid var(--warning-color);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background: var(--secondary-color);
+            color: white;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        .gattung-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .gattung-card {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid var(--secondary-color);
+            transition: transform 0.3s ease;
+        }
+        .gattung-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            .header h1 {
+                font-size: 2em;
+            }
+            .section {
+                padding: 20px;
+            }
+            .section h2 {
+                font-size: 1.5em;
+            }
+            .nav-grid {
+                grid-template-columns: 1fr;
+            }
+            .scroll-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+            }
+            .nav-container {
+                position: relative;
+                top: 0;
+            }
+            .gattung-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">← Zurück zur Hauptseite</a>
+        
+        <div class="header">
+            <h1>📚 Literarische Gattungen & Sachtexte</h1>
+            <p>Epik • Dramatik • Lyrik • Sachtextanalyse • Interpretation</p>
+        </div>
+
+        <!-- Navigation -->
+        <div class="nav-container">
+            <h3>📑 Themenübersicht</h3>
+            <div class="nav-grid">
+                <a href="#epik" class="nav-link">2.1.1 Epik</a>
+                <a href="#dramatik" class="nav-link">2.1.2 Dramatik</a>
+                <a href="#lyrik" class="nav-link">2.1.3 Lyrik</a>
+                <a href="#sachtexte" class="nav-link">2.2 Sachtexte</a>
+                <a href="#reden" class="nav-link">2.3 Reden</a>
+                <a href="#analyse" class="nav-link">2.4 Analyse</a>
+            </div>
+        </div>
+
+        <!-- Einführung -->
+        <div class="section">
+            <h2>📖 Die drei literarischen Gattungen</h2>
+            
+            <p>Die drei Grundformen der Literatur <span class="key-term">Epik</span>, <span class="key-term">Dramatik</span> und <span class="key-term">Lyrik</span> werden auch als literarische Gattungen bezeichnet. Diese Gattungen weisen spezifische Merkmale auf und unterscheiden sich voneinander durch Stil, Wortart, Aufbau, Entstehungszusammenhang und Rezeption durch Leser.</p>
+            
+            <p>Literarisch-poetische Texte dienen nicht nur – wie Sachtexte – der praktischen Verwendung: sie haben, da sie nach künstlerischen Maßstäben gestaltet sind, einen eigenen ästhetischen Wert und verweisen auf spezifische Bedeutungszusammenhänge. Literarische Texte erfordern vom Leser besonders große Aufmerksamkeit, unter anderem auch die Fähigkeit, sich mit mehrdeutigen Aussagen auseinandersetzen zu können.</p>
+
+            <div class="gattung-grid">
+                <div class="gattung-card">
+                    <h3>📜 Epik (Erzählende Texte)</h3>
+                    <p><strong>Grundmerkmale:</strong></p>
+                    <ul>
+                        <li><strong>Erzähler:</strong> Vermittelt das Geschehen</li>
+                        <li><strong>Erzählperspektiven:</strong> Ich-, Er/Sie-Erzähler</li>
+                        <li><strong>Zeit- und Raumgestaltung:</strong> Chronologie, Rückblenden</li>
+                        <li><strong>Figurencharakterisierung:</strong> Direkt und indirekt</li>
+                    </ul>
+                </div>
+
+                <div class="gattung-card">
+                    <h3>🎭 Dramatik (Bühnentexte)</h3>
+                    <p><strong>Grundmerkmale:</strong></p>
+                    <ul>
+                        <li><strong>Dialog und Monolog:</strong> Direkte Figurenrede</li>
+                        <li><strong>Regieanweisungen:</strong> Bühnenbild, Gestik</li>
+                        <li><strong>Aufbau:</strong> Akte und Szenen</li>
+                        <li><strong>Konfliktdarstellung:</strong> Dramatische Spannung</li>
+                    </ul>
+                </div>
+
+                <div class="gattung-card">
+                    <h3>🎵 Lyrik (Gedichte)</h3>
+                    <p><strong>Grundmerkmale:</strong></p>
+                    <ul>
+                        <li><strong>Verdichtete Sprache:</strong> Metaphern, Symbole</li>
+                        <li><strong>Formale Gestaltung:</strong> Metrum, Reim, Strophen</li>
+                        <li><strong>Lyrisches Ich:</strong> Sprechinstanz im Gedicht</li>
+                        <li><strong>Emotionale Intensität:</strong> Stimmung, Gefühle</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2.1.1 EPIK -->
+        <div id="epik" class="section">
+            <h2>📜 2.1.1 Kennzeichen epischer Texte</h2>
+            
+            <p>Epische Texte (Erzählung, Novelle, Roman, Kurzgeschichte, Parabel) sind <span class="key-term">erzählende Texte</span>, in denen ein Erzähler von Ereignissen, Personen, Handlungen und Gedanken berichtet.</p>
+
+            <div class="collapsible-header">
+                <h3>📖 Der Erzähler</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p>Der <span class="key-term">Erzähler</span> ist eine fiktive Erzählerfigur, nicht zu verwechseln mit dem Autor. Die Erzählerfigur ist vom Autor geschaffen und soll als Vermittler zwischen Autor und Stoff das Geschehen steuern; auch Standpunkte und Wertungen des Erzählers kennzeichnen seine fiktive Welt.</p>
+                    
+                    <p>Der Erzähler kann das Geschehen aus großer Distanz, unter eingeschränktem Blickwinkel, aus großer Nähe wahrnehmen.</p>
+
+                    <h4>Erzählformen / Erzählverhalten</h4>
+
+                    <div class="model-card">
+                        <h4>1. Ich-Erzähler</h4>
+                        <p>Erzählt als Figur der Handlung, was er denkt und fühlt (auktorial oder personal).</p>
+                        <p><strong>Merkmale:</strong></p>
+                        <ul>
+                            <li>Verwendet die Ich-Form</li>
+                            <li>Ist Teil der erzählten Welt</li>
+                            <li>Begrenzte Perspektive (weiß nur, was er selbst erlebt)</li>
+                            <li>Subjektive Darstellung</li>
+                        </ul>
+                        <p><strong>Beispiel:</strong> "Ich ging die Straße entlang und bemerkte die Veränderung sofort."</p>
+                    </div>
+
+                    <div class="model-card">
+                        <h4>2. Er/Sie-Erzähler</h4>
+                        <p>Handelnde und erzählende Figur sind nicht identisch (auktorial, personal oder neutral).</p>
+                        <p><strong>Merkmale:</strong></p>
+                        <ul>
+                            <li>Verwendet die dritte Person (er/sie)</li>
+                            <li>Steht außerhalb der erzählten Welt</li>
+                            <li>Verschiedene Perspektiven möglich</li>
+                        </ul>
+                    </div>
+
+                    <h4>Erzählperspektiven</h4>
+
+                    <div class="model-card">
+                        <h4>🔭 Auktorialer (allwissender) Erzähler</h4>
+                        <p>Der Erzähler nimmt einen Standort außerhalb des Geschehens ein und greift in den Erzählvorgang ein.</p>
+                        <p><strong>Merkmale:</strong></p>
+                        <ul>
+                            <li>Allwissend (kennt Vergangenheit, Gegenwart, Zukunft)</li>
+                            <li>Kennt die Gedanken und Gefühle aller Figuren</li>
+                            <li>Kommentiert das Geschehen</li>
+                            <li>Wendet sich direkt an den Leser</li>
+                            <li>Wertet und beurteilt</li>
+                        </ul>
+                        <p><strong>Mittel:</strong> Erzählerkommentare, Vorausdeutungen, Rückblicke, Leseranreden</p>
+                        <p><strong>Wirkung:</strong> Distanz zum Geschehen, Überblick, Orientierungshilfe für den Leser</p>
+                        <div class="example-box">
+                            <p><strong>Beispiel:</strong> "Der arme Karl ahnte nicht, welches Unglück ihn am nächsten Tag erwarten würde. Wir wollen ihm noch eine ruhige Nacht gönnen."</p>
+                        </div>
+                    </div>
+
+                    <div class="model-card">
+                        <h4>👤 Personaler Erzähler</h4>
+                        <p>Der Erzähler schlüpft in eine oder mehrere Figuren und erzählt aus deren Perspektive.</p>
+                        <p><strong>Merkmale:</strong></p>
+                        <ul>
+                            <li>Sieht die Welt durch die Augen einer Figur</li>
+                            <li>Kennt nur die Gedanken und Gefühle dieser Figur</li>
+                            <li>Keine Kommentare</li>
+                            <li>Begrenzte Perspektive</li>
+                            <li>Erlebte Rede häufig</li>
+                        </ul>
+                        <p><strong>Wirkung:</strong> Nähe zur Figur, Identifikation, subjektive Weltsicht</p>
+                        <div class="example-box">
+                            <p><strong>Beispiel:</strong> "Maria blickte aus dem Fenster. Sollte sie gehen oder bleiben? Die Entscheidung quälte sie."</p>
+                        </div>
+                    </div>
+
+                    <div class="model-card">
+                        <h4>🎥 Neutraler Erzähler</h4>
+                        <p>Der Erzähler beschreibt nur das äußerlich Wahrnehmbare, ohne Einblick in Gedanken und Gefühle.</p>
+                        <p><strong>Merkmale:</strong></p>
+                        <ul>
+                            <li>Wie eine Kamera: nur äußere Vorgänge</li>
+                            <li>Keine Innensicht</li>
+                            <li>Keine Wertungen</li>
+                            <li>Objektivität</li>
+                        </ul>
+                        <p><strong>Wirkung:</strong> Distanz, Objektivität, Leser muss selbst interpretieren</p>
+                        <div class="example-box">
+                            <p><strong>Beispiel:</strong> "Er stand auf. Sie verließ den Raum. Die Tür fiel ins Schloss."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>👥 Figur der Handlung und Figurenkonstellation</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Charakterisierung von Figuren</h4>
+                    
+                    <div class="model-card">
+                        <h4>Direkte Charakterisierung</h4>
+                        <p>Der Erzähler oder andere Figuren beschreiben direkt die Eigenschaften einer Figur.</p>
+                        <p><strong>Beispiel:</strong> "Karl war ein ehrlicher, aber naiver junger Mann."</p>
+                    </div>
+
+                    <div class="model-card">
+                        <h4>Indirekte Charakterisierung</h4>
+                        <p>Der Leser erschließt die Eigenschaften aus:</p>
+                        <ul>
+                            <li><strong>Handlungen:</strong> Was tut die Figur?</li>
+                            <li><strong>Aussehen:</strong> Kleidung, Körpersprache</li>
+                            <li><strong>Sprache:</strong> Wie spricht die Figur?</li>
+                            <li><strong>Gedanken:</strong> Innere Monologe</li>
+                            <li><strong>Reaktionen anderer:</strong> Wie reagieren andere auf die Figur?</li>
+                        </ul>
+                    </div>
+
+                    <h4>Figurentypen</h4>
+                    <table>
+                        <tr>
+                            <th>Typ</th>
+                            <th>Merkmale</th>
+                            <th>Beispiel</th>
+                        </tr>
+                        <tr>
+                            <td><strong>Protagonist</strong></td>
+                            <td>Hauptfigur, Held der Geschichte</td>
+                            <td>Faust in "Faust I"</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Antagonist</strong></td>
+                            <td>Gegenspieler des Protagonisten</td>
+                            <td>Mephisto in "Faust I"</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Statische Figur</strong></td>
+                            <td>Verändert sich nicht</td>
+                            <td>Nebenfiguren, Typen</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Dynamische Figur</strong></td>
+                            <td>Durchläuft Entwicklung</td>
+                            <td>Bildungsroman-Helden</td>
+                        </tr>
+                    </table>
+
+                    <h4>Figurenkonstellation</h4>
+                    <p>Die <span class="key-term">Figurenkonstellation</span> beschreibt die Beziehungen zwischen den Figuren:</p>
+                    <ul>
+                        <li><strong>Konflikte:</strong> Wer steht gegen wen?</li>
+                        <li><strong>Hierarchien:</strong> Wer hat Macht über wen?</li>
+                        <li><strong>Sympathieträger:</strong> Für wen soll der Leser Partei ergreifen?</li>
+                        <li><strong>Kontrastfiguren:</strong> Figuren, die sich gegenseitig hervorheben</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>⏰ Zeit: Zeitdeckung, Zeitdehnung, Zeitraffung</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p>Das <span class="key-term">Erzähltempo</span> beschreibt das Verhältnis zwischen erzählter Zeit (Zeitspanne der Handlung) und Erzählzeit (Zeit des Lesens/Erzählens).</p>
+
+                    <table>
+                        <tr>
+                            <th>Erzähltempo</th>
+                            <th>Verhältnis</th>
+                            <th>Wirkung</th>
+                            <th>Beispiel</th>
+                        </tr>
+                        <tr>
+                            <td><strong>Zeitdeckung</strong></td>
+                            <td>Erzählzeit = erzählte Zeit</td>
+                            <td>Unmittelbarkeit, Spannung</td>
+                            <td>Dialog, dramatische Szene</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Zeitdehnung</strong></td>
+                            <td>Erzählzeit > erzählte Zeit</td>
+                            <td>Betonung, Verlangsamung</td>
+                            <td>Detaillierte Beschreibung eines Moments</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Zeitraffung</strong></td>
+                            <td>Erzählzeit < erzählte Zeit</td>
+                            <td>Tempo, Überblick</td>
+                            <td>"Drei Jahre vergingen..."</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ellipse</strong></td>
+                            <td>Auslassung von Zeit</td>
+                            <td>Aussparung, Spannung</td>
+                            <td>"Als er erwachte..." (Was war dazwischen?)</td>
+                        </tr>
+                    </table>
+
+                    <h4>Zeitstruktur / Bauform</h4>
+                    <div class="model-card">
+                        <p><strong>Chronologisch:</strong> Die Ereignisse werden in zeitlicher Reihenfolge erzählt.</p>
+                        <p><strong>Nichtchronologisch:</strong> Die Zeitfolge wird durchbrochen durch:</p>
+                        <ul>
+                            <li><strong>Rückblende (Analepse):</strong> Sprung in die Vergangenheit</li>
+                            <li><strong>Vorausschau (Prolepse):</strong> Verweis auf zukünftige Ereignisse</li>
+                            <li><strong>In medias res:</strong> Einstieg mitten ins Geschehen</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>🏞️ Zusammenhang von Handlung und Raum</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p>Der <span class="key-term">Raum</span> in epischen Texten ist nicht nur Hintergrund, sondern hat oft symbolische Bedeutung und beeinflusst die Handlung.</p>
+
+                    <h4>Funktionen des Raums</h4>
+                    <ul>
+                        <li><strong>Handlungsraum:</strong> Ort, an dem die Handlung stattfindet</li>
+                        <li><strong>Stimmungsraum:</strong> Raum erzeugt Atmosphäre (düster, freundlich)</li>
+                        <li><strong>Symbolraum:</strong> Raum hat symbolische Bedeutung</li>
+                        <li><strong>Kontrastraum:</strong> Gegensätzliche Räume (Stadt vs. Land, Innen vs. Außen)</li>
+                    </ul>
+
+                    <div class="example-box">
+                        <h4>Beispiele für symbolische Räume</h4>
+                        <ul>
+                            <li><strong>Wald:</strong> Verwilderung, Gefahren, aber auch Freiheit</li>
+                            <li><strong>Stadt:</strong> Zivilisation, Anonymität, Hektik</li>
+                            <li><strong>Meer:</strong> Unendlichkeit, Freiheit, Gefahr</li>
+                            <li><strong>Zimmer:</strong> Privatsphäre, Einsamkeit, Schutz</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2.1.2 DRAMATIK -->
+        <div id="dramatik" class="section">
+            <h2>🎭 2.1.2 Kennzeichen dramatischer Texte</h2>
+            
+            <p>Dramatische Texte sind für die Aufführung auf einer Bühne geschrieben. Das Drama ist die Kunstform, in der Konflikte zwischen Menschen in direkter Rede dargestellt werden.</p>
+
+            <div class="collapsible-header">
+                <h3>🎬 Grundmerkmale des Dramas</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <ul>
+                        <li><strong>Dialog und Monolog:</strong> Die Handlung wird durch Gespräche der Figuren vermittelt</li>
+                        <li><strong>Regieanweisungen (Didascalia):</strong> Anweisungen für Bühne, Gestik, Mimik</li>
+                        <li><strong>Aufbau in Akte und Szenen:</strong> Gliederung der Handlung</li>
+                        <li><strong>Kein Erzähler:</strong> Das Geschehen wird direkt dargestellt</li>
+                        <li><strong>Einheit von Zeit und Raum:</strong> Begrenzt durch die Aufführung</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>💬 Dialog und Monolog</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="model-card">
+                        <h4>Dialog</h4>
+                        <p>Gespräch zwischen zwei oder mehreren Figuren.</p>
+                        <p><strong>Funktionen:</strong></p>
+                        <ul>
+                            <li>Informationsvermittlung</li>
+                            <li>Konfliktdarstellung</li>
+                            <li>Charakterisierung</li>
+                            <li>Handlungsförderung</li>
+                        </ul>
+                    </div>
+
+                    <div class="model-card">
+                        <h4>Monolog</h4>
+                        <p>Eine Figur spricht allein (oder glaubt, allein zu sein).</p>
+                        <p><strong>Formen:</strong></p>
+                        <ul>
+                            <li><strong>Selbstgespräch:</strong> Figur spricht mit sich selbst</li>
+                            <li><strong>Beiseite:</strong> Publikum hört, andere Figuren nicht</li>
+                            <li><strong>Reflexionsmonolog:</strong> Nachdenken über Situation</li>
+                        </ul>
+                        <p><strong>Funktion:</strong> Einblick in Gedanken und Gefühle</p>
+                    </div>
+
+                    <div class="model-card">
+                        <h4>Besondere Formen</h4>
+                        <ul>
+                            <li><strong>Stichomythie:</strong> Schneller Schlagabtausch (ein Vers pro Redner)</li>
+                            <li><strong>Botenbericht:</strong> Figur berichtet von Ereignissen außerhalb der Bühne</li>
+                            <li><strong>Mauerschau:</strong> Beschreibung von Geschehnissen, die man sieht</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>📐 Handlung und Aufbau</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Aristotelische Bauform des Dramas (Geschlossenes Drama)</h4>
+                    <p>Das klassische fünfaktige Drama folgt einem strengen Aufbau:</p>
+
+                    <div class="model-card">
+                        <h4>1. Akt: Exposition</h4>
+                        <p>Einführung in die Ausgangssituation, Vorstellung der Figuren, Andeutung des Konflikts</p>
+                    </div>
+
+                    <div class="model-card">
+                        <h4>2. Akt: Steigende Handlung (Komplikation)</h4>
+                        <p>Der Konflikt entwickelt sich, Spannung steigt</p>
+                    </div>
+
+                    <div class="model-card">
+                        <h4>3. Akt: Höhepunkt (Klimax, Peripetie)</h4>
+                        <p>Wendepunkt der Handlung, höchste Spannung</p>
+                    </div>
+
+                    <div class="model-card">
+                        <h4>4. Akt: Fallende Handlung (retardierendes Moment)</h4>
+                        <p>Verzögerung, letzte Hoffnung, aber Katastrophe unausweichlich</p>
+                    </div>
+
+                    <div class="model-card">
+                        <h4>5. Akt: Katastrophe / Lösung</h4>
+                        <p>Auflösung des Konflikts, meist tragisches Ende</p>
+                    </div>
+
+                    <div class="important-note">
+                        <h4>⚠️ Merkmale des geschlossenen Dramas</h4>
+                        <ul>
+                            <li>Einheit von Handlung, Zeit und Ort</li>
+                            <li>Linearer, kausaler Handlungsverlauf</li>
+                            <li>Ständeklausel (Trennung von Tragödie und Komödie)</li>
+                            <li>Fünfaktige Struktur</li>
+                            <li>Geschlossene Form</li>
+                        </ul>
+                    </div>
+
+                    <h4>Offenes Drama</h4>
+                    <div class="model-card">
+                        <p>Im Gegensatz zum geschlossenen Drama (Brecht, modernes Theater):</p>
+                        <ul>
+                            <li>Keine strengen Einheiten</li>
+                            <li>Episodenstruktur, Sprünge in Zeit und Raum</li>
+                            <li>Viele Handlungsstränge</li>
+                            <li>Kein klarer Held</li>
+                            <li>Offenes Ende</li>
+                            <li>Verfremdungseffekte</li>
+                        </ul>
+                        <p><strong>Beispiel:</strong> Brechts episches Theater, "Woyzeck" (Büchner)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>🎪 Dramatische Gattungen</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="model-card">
+                        <h4>Tragödie</h4>
+                        <p>Dramatisch-dichterische Gestaltung der Tragik bei einer untragischen Lösung des Konflikts.</p>
+                        <p><strong>Merkmale:</strong></p>
+                        <ul>
+                            <li>Held in auswegloser Situation</li>
+                            <li>Schuld und Sühne</li>
+                            <li>Katastrophe am Ende (meist Tod)</li>
+                            <li>Mitleid und Furcht beim Zuschauer</li>
+                            <li>Katharsis (Läuterung)</li>
+                        </ul>
+                        <p><strong>Beispiel:</strong> Sophokles "Antigone", Lessings "Emilia Galotti"</p>
+                    </div>
+
+                    <div class="model-card">
+                        <h4>Komödie / Lustspiel</h4>
+                        <p>Bühnenstück mit komischem Inhalt.</p>
+                        <p><strong>Merkmale:</strong></p>
+                        <ul>
+                            <li>Verspottung menschlicher Unzulänglichkeiten</li>
+                            <li>Mittel des Humors und der Satire</li>
+                            <li>Happy End</li>
+                            <li>Lachen beim Zuschauer</li>
+                        </ul>
+                        <p><strong>Beispiel:</strong> Molière, Shakespeare ("Ein Sommernachtstraum")</p>
+                    </div>
+
+                    <div class="model-card">
+                        <h4>Tragikomödie</h4>
+                        <p>Verschmelzung von Tragischem und Komischem.</p>
+                        <p><strong>Beispiel:</strong> Dürrenmatt "Die Physiker"</p>
+                    </div>
+
+                    <div class="model-card">
+                        <h4>Bürgerliches Trauerspiel</h4>
+                        <p>Tragödie mit bürgerlichen Figuren (statt Adeliger).</p>
+                        <p><strong>Beispiel:</strong> Lessing "Emilia Galotti", Schiller "Kabale und Liebe"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2.1.3 LYRIK -->
+        <div id="lyrik" class="section">
+            <h2>🎵 2.1.3 Kennzeichen lyrischer Texte</h2>
+            
+            <p>Lyrik (von griech.: lyra = Leier; diese ist das Attribut Apolls, des Gottes der Dichtkunst). Lyrik zeichnet sich im Vergleich zu epischen und dramatischen Texten vor allem durch <span class="key-term">Konzentration und Intensität</span> aus.</p>
+
+            <p>In sprachlicher Hinsicht sind vor allem <span class="key-term">Symbol</span> (Zeichen, das etwas nicht Wahrnehmbares veranschaulicht und eine tiefere Bedeutung besitzt) und <span class="key-term">sprachliche Bilder</span> (Metapher, Vergleich, Personifikation) kennzeichnend. Daher bedarf ein Gedicht in ganz besonderer Weise der Deutung.</p>
+
+            <div class="collapsible-header">
+                <h3>📝 Lyrischer Sprecher (lyrisches Ich)</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p>Hiermit ist der vom Autor erfundene fiktive Sprecher, ein Rollen-Ich gemeint (vergleichbar dem fiktiven Erzähler in epischen Texten). Das lyrische Ich ist nicht identisch mit dem Autor!</p>
+                    
+                    <div class="model-card">
+                        <h4>Formen des lyrischen Sprechers</h4>
+                        <ul>
+                            <li><strong>Lyrisches Ich:</strong> Spricht in der 1. Person ("Ich")</li>
+                            <li><strong>Lyrisches Du:</strong> Ansprache an ein Gegenüber</li>
+                            <li><strong>Lyrisches Wir:</strong> Kollektive Perspektive</li>
+                            <li><strong>Rollengedicht:</strong> Sprecher in einer bestimmten Rolle</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>📏 Vers, Strophe, Reim</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Vers</h4>
+                    <p>Eine Zeile eines Gedichts wird als <span class="key-term">Vers</span> bezeichnet.</p>
+
+                    <h4>Strophe</h4>
+                    <p>Eine Gruppe von Versen bildet eine <span class="key-term">Strophe</span>.</p>
+                    <p><strong>Häufige Strophenformen:</strong></p>
+                    <ul>
+                        <li><strong>Zweizeiler (Distichon)</strong></li>
+                        <li><strong>Vierzeiler (Quartett)</strong> - häufigste Form</li>
+                        <li><strong>Terzine (drei Verse)</strong></li>
+                        <li><strong>Quintett (fünf Verse)</strong></li>
+                        <li><strong>Sextett (sechs Verse)</strong></li>
+                    </ul>
+
+                    <h4>Reim</h4>
+                    <p>Übereinstimmung im Klang ab dem letzten betonten Vokal.</p>
+
+                    <table>
+                        <tr>
+                            <th>Reimschema</th>
+                            <th>Muster</th>
+                            <th>Beispiel</th>
+                        </tr>
+                        <tr>
+                            <td><strong>Paarreim</strong></td>
+                            <td>aa bb</td>
+                            <td>Vers 1 reimt auf Vers 2, Vers 3 auf 4</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Kreuzreim</strong></td>
+                            <td>ab ab</td>
+                            <td>Vers 1 reimt auf 3, Vers 2 auf 4</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Umarmender Reim</strong></td>
+                            <td>ab ba</td>
+                            <td>Vers 1 reimt auf 4, Vers 2 auf 3</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Schweifreim</strong></td>
+                            <td>aa b cc b</td>
+                            <td>Kombinierte Form</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Freie Verse</strong></td>
+                            <td>-</td>
+                            <td>Ohne festes Reimschema</td>
+                        </tr>
+                    </table>
+
+                    <h4>Reimarten</h4>
+                    <ul>
+                        <li><strong>Reiner Reim:</strong> Vollständige Übereinstimmung (Haus - Maus)</li>
+                        <li><strong>Unreiner Reim:</strong> Nur ähnliche Laute (Haus - raus)</li>
+                        <li><strong>Männlicher Reim:</strong> Einsilbig, betont (Haus - Maus)</li>
+                        <li><strong>Weiblicher Reim:</strong> Zweisilbig, unbetont endend (laufen - kaufen)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>🎼 Rhythmus und Metrum</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p>Das <span class="key-term">Metrum</span> ist das regelmäßige Muster von betonten und unbetonten Silben.</p>
+
+                    <table>
+                        <tr>
+                            <th>Metrum</th>
+                            <th>Betonung</th>
+                            <th>Beispiel</th>
+                            <th>Wirkung</th>
+                        </tr>
+                        <tr>
+                            <td><strong>Jambus</strong></td>
+                            <td>x X (unbetont-betont)</td>
+                            <td>Ge-DICHT</td>
+                            <td>Leicht, beschwingt, fließend</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Trochäus</strong></td>
+                            <td>X x (betont-unbetont)</td>
+                            <td>LE-ben</td>
+                            <td>Fallend, bestimmt</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Daktylus</strong></td>
+                            <td>X x x (betont-unbetont-unbetont)</td>
+                            <td>MÜ-he-los</td>
+                            <td>Fallend, elegisch</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Anapäst</strong></td>
+                            <td>x x X (unbetont-unbetont-betont)</td>
+                            <td>pa-ra-DIES</td>
+                            <td>Steigend, drängend</td>
+                        </tr>
+                    </table>
+
+                    <div class="example-box">
+                        <h4>Beispiel: Jambus</h4>
+                        <p>Es WAR ein KÖ-nig IN Thu-LE</p>
+                        <p>ge-TREU bis IN das GRAB</p>
+                        <p>(Goethe: "Der König in Thule")</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>🎨 Klanggestalt und sprachliche Bilder</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Lautliche Ebene (Klangfiguren)</h4>
+                    <ul>
+                        <li><strong>Alliteration:</strong> Gleicher Anfangslaut (Wind und Wetter)</li>
+                        <li><strong>Assonanz:</strong> Gleiche Vokale (Tal und Nacht)</li>
+                        <li><strong>Onomatopoesie:</strong> Lautmalerei (summen, rauschen)</li>
+                    </ul>
+
+                    <h4>Sprachliche Bilder</h4>
+                    <div class="model-card">
+                        <h4>Metapher</h4>
+                        <p>Bildhafte Übertragung, Vergleich ohne "wie"</p>
+                        <p><strong>Beispiel:</strong> "Das Feuer der Liebe" (Liebe = Feuer)</p>
+                    </div>
+
+                    <div class="model-card">
+                        <h4>Vergleich</h4>
+                        <p>Verknüpfung mit "wie", "gleich", "als"</p>
+                        <p><strong>Beispiel:</strong> "Er ist stark wie ein Löwe"</p>
+                    </div>
+
+                    <div class="model-card">
+                        <h4>Personifikation</h4>
+                        <p>Vermenschlichung von Dingen oder Abstrakta</p>
+                        <p><strong>Beispiel:</strong> "Die Sonne lacht"</p>
+                    </div>
+
+                    <div class="model-card">
+                        <h4>Symbol</h4>
+                        <p>Sinnbild mit tieferer Bedeutung</p>
+                        <p><strong>Beispiel:</strong> "Taube" = Frieden, "Rose" = Liebe</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>📖 Gedichtformen</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="model-card">
+                        <h4>Sonett</h4>
+                        <p>14 Verse, 2 Quartette + 2 Terzette, festes Reimschema</p>
+                        <p><strong>Themen:</strong> Liebe, Vergänglichkeit, philosophische Fragen</p>
+                        <p><strong>Epoche:</strong> Barock, Romantik</p>
+                    </div>
+
+                    <div class="model-card">
+                        <h4>Ballade</h4>
+                        <p>Erzählgedicht mit dramatischen Elementen</p>
+                        <p><strong>Merkmale:</strong> Handlung, Dialog, Strophen</p>
+                        <p><strong>Beispiel:</strong> Goethe "Der Erlkönig"</p>
+                    </div>
+
+                    <div class="model-card">
+                        <h4>Ode</h4>
+                        <p>Feierliches, erhabenes Gedicht</p>
+                        <p><strong>Themen:</strong> Große Gegenstände (Helden, Götter, Vaterland)</p>
+                    </div>
+
+                    <div class="model-card">
+                        <h4>Elegie</h4>
+                        <p>Klagender, schwermütiger Ton</p>
+                        <p><strong>Themen:</strong> Verlust, Trauer, Sehnsucht</p>
+                    </div>
+
+                    <div class="model-card">
+                        <h4>Hymne</h4>
+                        <p>Preisendes, feierliches Lied</p>
+                        <p><strong>Form:</strong> Oft freie Verse</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2.2 SACHTEXTE -->
+        <div id="sachtexte" class="section">
+            <h2>📰 2.2 Sachtexte</h2>
+            
+            <p><span class="key-term">Sachtexte</span> (auch: pragmatische Texte, Gebrauchstexte) vermitteln Informationen, Meinungen oder Aufforderungen. Sie dienen praktischen Zwecken und sind nicht primär künstlerisch gestaltet.</p>
+
+            <div class="collapsible-header">
+                <h3>📋 Arten von Sachtexten</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="model-card">
+                        <h4>Informierende Texte</h4>
+                        <p><strong>Ziel:</strong> Objektive Wissensvermittlung</p>
+                        <ul>
+                            <li><strong>Bericht:</strong> Sachliche Darstellung von Ereignissen</li>
+                            <li><strong>Beschreibung:</strong> Detaillierte Wiedergabe</li>
+                            <li><strong>Dokumentation:</strong> Systematische Aufzeichnung</li>
+                            <li><strong>Nachricht:</strong> Kurze, aktuelle Information</li>
+                        </ul>
+                        <p><strong>Merkmale:</strong> Sachlich, objektiv, Präsens, 3. Person</p>
+                    </div>
+
+                    <div class="model-card">
+                        <h4>Ausdruckstexte</h4>
+                        <p><strong>Ziel:</strong> Ausdruck persönlicher Befindlichkeit</p>
+                        <ul>
+                            <li><strong>Tagebuch:</strong> Private Aufzeichnungen</li>
+                            <li><strong>Brief:</strong> Persönliche Mitteilung</li>
+                        </ul>
+                        <p><strong>Merkmale:</strong> Subjektiv, 1. Person, emotional</p>
+                    </div>
+
+                    <div class="model-card">
+                        <h4>Appellative Texte</h4>
+                        <p><strong>Ziel:</strong> Meinungsbildung und Handlungsaufforderung</p>
+                        <ul>
+                            <li><strong>Aufruf:</strong> Direkte Aufforderung zum Handeln</li>
+                            <li><strong>Flugblatt:</strong> Politische Information und Mobilisierung</li>
+                            <li><strong>Wahlrede:</strong> Überzeugen von politischen Positionen</li>
+                            <li><strong>Werbetext:</strong> Verkaufsförderung</li>
+                        </ul>
+                        <p><strong>Merkmale:</strong> Persuasiv, rhetorische Mittel, Imperative</p>
+                    </div>
+
+                    <div class="model-card">
+                        <h4>Argumentierende Texte</h4>
+                        <p><strong>Ziel:</strong> Überzeugen durch Argumente</p>
+                        <ul>
+                            <li><strong>Erörterung:</strong> Pro- und Contra-Abwägung</li>
+                            <li><strong>Kommentar:</strong> Bewertende Stellungnahme</li>
+                            <li><strong>Rezension:</strong> Kritische Besprechung</li>
+                            <li><strong>Rede:</strong> Mündlicher Vortrag mit Argumentation</li>
+                        </ul>
+                        <p><strong>Merkmale:</strong> Strukturierte Argumentation, Belege, Beispiele</p>
+                    </div>
+
+                    <div class="model-card">
+                        <h4>Normierende Texte</h4>
+                        <p><strong>Ziel:</strong> Regelungen festlegen</p>
+                        <ul>
+                            <li><strong>Anordnung:</strong> Verbindliche Vorgabe</li>
+                            <li><strong>Gesetz:</strong> Rechtliche Regelung</li>
+                            <li><strong>Satzung:</strong> Organisatorische Vorschrift</li>
+                        </ul>
+                        <p><strong>Merkmale:</strong> Präzise, Fachsprache, Indikativ/Imperativ</p>
+                    </div>
+
+                    <div class="model-card">
+                        <h4>Ästhetisch-kreative Texte</h4>
+                        <p><strong>Ziel:</strong> Unterhalten und zum Nachdenken anregen</p>
+                        <ul>
+                            <li><strong>Essay:</strong> Geistreiche Abhandlung</li>
+                            <li><strong>Glosse:</strong> Satirische Stellungnahme</li>
+                            <li><strong>Feuilleton:</strong> Kulturjournalistische Betrachtung</li>
+                        </ul>
+                        <p><strong>Merkmale:</strong> Subjektiv, stilistisch anspruchsvoll, ironisch</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2.3 REDEN -->
+        <div id="reden" class="section">
+            <h2>🗨️ 2.3 Reden</h2>
+            
+            <p>Eine <span class="key-term">Rede</span> ist ein mündlicher Vortrag vor Publikum, der überzeugen, informieren oder emotional berühren soll.</p>
+
+            <div class="collapsible-header">
+                <h3>🎯 Arten von Reden</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="model-card">
+                        <h4>Die Feier- oder Festrede</h4>
+                        <p>Anlässlich besonderer Ereignisse (Geburtstag, Jubiläum, Hochzeit)</p>
+                        <p><strong>Merkmale:</strong> Lobend, würdigend, persönlich</p>
+                    </div>
+
+                    <div class="model-card">
+                        <h4>Die Gerichtsrede</h4>
+                        <p>Verteidigung oder Anklage vor Gericht</p>
+                        <p><strong>Merkmale:</strong> Argumentativ, sachlich, rhetorisch präzise</p>
+                    </div>
+
+                    <div class="model-card">
+                        <h4>Die politische Rede</h4>
+                        <p>Überzeugen von politischen Positionen, Mobilisierung</p>
+                        <p><strong>Merkmale:</strong> Appellativ, rhetorische Mittel, emotionalisierend</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>🏛️ Klassische Rhetorik (Aristoteles)</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Drei Säulen der Überzeugung</h4>
+
+                    <div class="model-card">
+                        <h4>Ethos (Glaubwürdigkeit)</h4>
+                        <p>Der Redner muss vertrauenswürdig und kompetent erscheinen.</p>
+                        <p><strong>Mittel:</strong> Expertise betonen, Charakter zeigen, Sympathie erzeugen</p>
+                    </div>
+
+                    <div class="model-card">
+                        <h4>Pathos (Emotionale Ansprache)</h4>
+                        <p>Gefühle des Publikums ansprechen.</p>
+                        <p><strong>Mittel:</strong> Bildsprache, Beispiele, Identifikation ermöglichen</p>
+                    </div>
+
+                    <div class="model-card">
+                        <h4>Logos (Logische Argumentation)</h4>
+                        <p>Überzeugen durch Vernunft und Argumente.</p>
+                        <p><strong>Mittel:</strong> Fakten, Statistiken, logische Schlussfolgerungen</p>
+                    </div>
+
+                    <h4>Aufbau einer Rede</h4>
+                    <ol>
+                        <li><strong>Exordium (Einleitung):</strong> Aufmerksamkeit wecken, Thema einführen</li>
+                        <li><strong>Narratio (Sachverhalt):</strong> Hintergrund und Kontext darstellen</li>
+                        <li><strong>Argumentatio (Argumentation):</strong> Beweise, Argumente, Beispiele</li>
+                        <li><strong>Peroratio (Schluss):</strong> Zusammenfassung, Appell, emotionaler Höhepunkt</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>🎨 Rhetorische Mittel (Auswahl)</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <table>
+                        <tr>
+                            <th>Mittel</th>
+                            <th>Definition</th>
+                            <th>Wirkung</th>
+                        </tr>
+                        <tr>
+                            <td><strong>Anapher</strong></td>
+                            <td>Wiederholung am Satzanfang</td>
+                            <td>Betonung, Eindringlichkeit</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Rhetorische Frage</strong></td>
+                            <td>Frage ohne erwartete Antwort</td>
+                            <td>Aktivierung, Zustimmung suggerieren</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Klimax</strong></td>
+                            <td>Steigerung</td>
+                            <td>Dramatisierung</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Antithese</strong></td>
+                            <td>Gegenüberstellung</td>
+                            <td>Kontrast verdeutlichen</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Metapher</strong></td>
+                            <td>Bildliche Übertragung</td>
+                            <td>Veranschaulichung</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Parallelismus</strong></td>
+                            <td>Gleicher Satzbau</td>
+                            <td>Rhythmus, Eindringlichkeit</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Trikolon</strong></td>
+                            <td>Dreiergruppe</td>
+                            <td>Einprägsamkeit</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2.4 ANALYSE/INTERPRETATION -->
+        <div id="analyse" class="section">
+            <h2>🔍 2.4 Analyse/Interpretation von Texten</h2>
+            
+            <p>Die Begriffe <span class="key-term">Analyse</span> und <span class="key-term">Interpretation</span> werden oft synonym gebraucht; es gibt jedoch geringfügige Bedeutungsunterschiede.</p>
+
+            <div class="info-box">
+                <h4>Unterschied Analyse vs. Interpretation</h4>
+                <p><strong>Analyse:</strong> Herausarbeiten von spezifischen Elementen, Strukturmerkmalen und anderen Zusammenhängen</p>
+                <p><strong>Interpretation:</strong> Gesamtdeutung von textimmanenten und textexternen Gesichtspunkten im Sinne eines kritisch-hermeneutischen Verstehensprozesses</p>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>📖 Analyse literarischer Texte</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Schritte der Textanalyse</h4>
+                    <ol>
+                        <li><strong>Texterfassung:</strong> Textart, Thema, erste Eindrücke</li>
+                        <li><strong>Textbeschreibung:</strong> Formale und inhaltliche Merkmale</li>
+                        <li><strong>Textdeutung:</strong> Wechselbezug von Textstruktur, sprachlich-stilistischen und rhetorischen Elementen sowie ihrer Funktion und Wirkung</li>
+                        <li><strong>Beurteilung/Wertung:</strong> Eigene Position, Einordnung</li>
+                    </ol>
+
+                    <h4>Aspekte der literarischen Textanalyse</h4>
+                    <ul>
+                        <li>Erzählperspektive und Erzählverhalten (Epik)</li>
+                        <li>Figurencharakterisierung und -konstellation</li>
+                        <li>Raum und Zeit</li>
+                        <li>Handlungsaufbau und Konfliktstruktur</li>
+                        <li>Sprache und Stil</li>
+                        <li>Motive und Symbolik</li>
+                        <li>Epochenbezug</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>📰 Analyse von Sachtexten</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Schritte der Sachtextanalyse</h4>
+                    <ol>
+                        <li><strong>Texterfassung:</strong> Textsorte, Thema, Kernaussage</li>
+                        <li><strong>Kontextanalyse:</strong> Autor, Publikationskontext, Adressaten</li>
+                        <li><strong>Strukturanalyse:</strong> Aufbau, Gedankengang, Argumentationsstruktur</li>
+                        <li><strong>Sprachanalyse:</strong> Stilmittel, Wortwahl, Satzbau</li>
+                        <li><strong>Wirkungsanalyse:</strong> Überzeugungskraft, Intention</li>
+                        <li><strong>Kritische Stellungnahme:</strong> Bewertung, eigene Position</li>
+                    </ol>
+
+                    <h4>Aspekte der Sachtextanalyse</h4>
+                    <ul>
+                        <li>Argumentation: These, Argumente, Belege</li>
+                        <li>Rhetorische Strategien</li>
+                        <li>Sprachebene und Register</li>
+                        <li>Objektivität vs. Subjektivität</li>
+                        <li>Zielgruppenansprache</li>
+                        <li>Intentionen des Verfassers</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>📝 Wichtige stilistisch-rhetorische Mittel</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p>Die wichtigsten stilistisch-rhetorischen Mittel (Figuren) wurden bereits in der Antike entwickelt, die Wirkung der Rede verstärken sollen.</p>
+
+                    <div class="warning-box">
+                        <h4>⚠️ Wichtig für die Analyse</h4>
+                        <p>Benenne rhetorische Mittel niemals nur! Erkläre immer ihre <strong>Funktion und Wirkung</strong> im Kontext des Textes.</p>
+                        <p><strong>Falsch:</strong> "Der Autor verwendet eine Metapher."</p>
+                        <p><strong>Richtig:</strong> "Durch die Metapher 'Feuer der Leidenschaft' (Z. 5) verdeutlicht der Autor die Intensität der Gefühle und erzeugt ein bildliches, emotionales Verständnis beim Leser."</p>
+                    </div>
+
+                    <table>
+                        <tr>
+                            <th>Mittel</th>
+                            <th>Definition</th>
+                            <th>Beispiel</th>
+                            <th>Wirkung</th>
+                        </tr>
+                        <tr>
+                            <td><strong>Alliteration</strong></td>
+                            <td>Gleicher Anlaut</td>
+                            <td>Wind und Wetter</td>
+                            <td>Rhythmus, Einprägsamkeit</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Anapher</strong></td>
+                            <td>Wiederholung am Anfang</td>
+                            <td>Ich sehe... Ich höre...</td>
+                            <td>Betonung, Eindringlichkeit</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Antithese</strong></td>
+                            <td>Gegensatzbildung</td>
+                            <td>Liebe und Hass</td>
+                            <td>Kontrast verdeutlichen</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Chiasmus</strong></td>
+                            <td>Überkreuzstellung</td>
+                            <td>Die Kunst ist lang, das Leben kurz</td>
+                            <td>Symmetrie, Prägnanz</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ellipse</strong></td>
+                            <td>Auslassung</td>
+                            <td>Je schneller, desto besser</td>
+                            <td>Knappheit, Tempo</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Hyperbel</strong></td>
+                            <td>Übertreibung</td>
+                            <td>Todmüde</td>
+                            <td>Verstärkung, Dramatik</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Metapher</strong></td>
+                            <td>Bildliche Übertragung</td>
+                            <td>Feuer der Liebe</td>
+                            <td>Veranschaulichung</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Personifikation</strong></td>
+                            <td>Vermenschlichung</td>
+                            <td>Die Sonne lacht</td>
+                            <td>Lebendigkeit</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Rhetorische Frage</strong></td>
+                            <td>Scheinbare Frage</td>
+                            <td>Wer wünscht das nicht?</td>
+                            <td>Aktivierung, Zustimmung</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Symbol</strong></td>
+                            <td>Sinnbild</td>
+                            <td>Taube = Frieden</td>
+                            <td>Verdichtung von Bedeutung</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Vergleich</strong></td>
+                            <td>Verknüpfung mit "wie"</td>
+                            <td>Stark wie ein Löwe</td>
+                            <td>Veranschaulichung</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>🔄 Vergleichende Interpretation</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p>Bei der vergleichenden Interpretation werden zwei Texte systematisch analysiert und ihre Gemeinsamkeiten und Unterschiede herausgearbeitet.</p>
+
+                    <h4>Vorgehensweise</h4>
+                    <ol>
+                        <li><strong>Beide Texte einzeln analysieren</strong></li>
+                        <li><strong>Vergleichskriterien festlegen:</strong> Thema, Form, Sprache, Epoche</li>
+                        <li><strong>Gemeinsamkeiten herausarbeiten</strong></li>
+                        <li><strong>Unterschiede aufzeigen</strong></li>
+                        <li><strong>Wertung und Fazit:</strong> Welcher Text ist eindrucksvoller? Warum?</li>
+                    </ol>
+
+                    <div class="warning-box">
+                        <h4>🎯 Abitur-Tipp</h4>
+                        <p>Vermeide eine getrennte Analyse (erst Text A komplett, dann Text B komplett). Besser ist eine <strong>aspektorientierte</strong> Vorgehensweise: Vergleiche beide Texte jeweils unter einem Aspekt.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll to Top Button -->
+        <div id="scrollTop" class="scroll-top">↑</div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Collapsible sections
+            const collapsibleHeaders = document.querySelectorAll('.collapsible-header');
+            
+            collapsibleHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    const content = this.nextElementSibling;
+                    content.classList.toggle('active');
+                });
+            });
+            // Smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+            // Scroll to top button
+            const scrollTopButton = document.getElementById('scrollTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollTopButton.classList.add('visible');
+                } else {
+                    scrollTopButton.classList.remove('visible');
+                }
+            });
+            
+            scrollTopButton.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+            // Keyboard shortcut: Press 'T' to scroll to top
+            document.addEventListener('keydown', function(e) {
+                if ((e.key === 't' || e.key === 'T') && !e.ctrlKey && !e.altKey) {
+                    const active = document.activeElement;
+                    if (active.tagName !== 'INPUT' && active.tagName !== 'TEXTAREA') {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                }
+            });
+            // Highlight active navigation link
+            const sections = document.querySelectorAll('.section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            const observerOptions = {
+                root: null,
+                rootMargin: '-20% 0px -80% 0px',
+                threshold: 0
+            };
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.style.background = 'linear-gradient(45deg, var(--secondary-color), #2980b9)';
+                        });
+                        
+                        const id = entry.target.getAttribute('id');
+                        const activeLink = document.querySelector(`.nav-link[href="#${id}"]`);
+                        if (activeLink) {
+                            activeLink.style.background = 'linear-gradient(45deg, var(--accent-color), #c0392b)';
+                        }
+                    }
+                });
+            }, observerOptions);
+            sections.forEach(section => observer.observe(section));
+            console.log('✅ Literarische Gattungen loaded! Press T to scroll to top.');
+        });
+    </script>
+</body>
+</html>
