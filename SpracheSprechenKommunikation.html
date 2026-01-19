@@ -1,0 +1,1452 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprache, Sprechen, Kommunikation - Deutsch Lernzettel</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --bg-color: #ecf0f1;
+            --card-bg: #ffffff;
+            --text-color: #2c3e50;
+            --border-color: #bdc3c7;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--bg-color) 0%, #d5dbdb 100%);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #000000, #DD0000, #FFCE00);
+        }
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        .back-button:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+        .header h1 {
+            color: var(--primary-color);
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .section {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--secondary-color);
+        }
+        .section h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+        .section h3 {
+            color: var(--secondary-color);
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+        .section h4 {
+            color: var(--primary-color);
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        .section p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        .section ul, .section ol {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+        .section li {
+            margin-bottom: 8px;
+        }
+        .key-term {
+            background: #e3f2fd;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+        .important-note {
+            background: #fff3cd;
+            border-left: 4px solid var(--warning-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .quote {
+            background: #f8f9fa;
+            border-left: 4px solid var(--accent-color);
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 5px;
+        }
+        .timeline {
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 20px;
+            margin: 20px 0;
+        }
+        .timeline-item {
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -27px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            background: var(--secondary-color);
+            border-radius: 50%;
+            border: 3px solid white;
+        }
+        .timeline-year {
+            font-weight: bold;
+            color: var(--accent-color);
+            font-size: 1.1em;
+        }
+        /* Navigation Menu */
+        .nav-container {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 20px;
+            z-index: 100;
+        }
+        .nav-container h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+        .nav-link {
+            background: linear-gradient(45deg, var(--secondary-color), #2980b9);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+        .nav-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+            background: linear-gradient(45deg, #2980b9, var(--secondary-color));
+        }
+        /* Scroll to Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(45deg, var(--accent-color), #c0392b);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+        }
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
+        }
+        /* Collapsible Sections */
+        .collapsible-header {
+            background: linear-gradient(135deg, var(--secondary-color), #2980b9);
+            color: white;
+            padding: 15px 20px;
+            cursor: pointer;
+            border-radius: 10px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+        .collapsible-header:hover {
+            background: linear-gradient(135deg, #2980b9, var(--secondary-color));
+            transform: translateX(5px);
+        }
+        .collapsible-header h3 {
+            margin: 0;
+            color: white;
+            font-size: 1.3em;
+        }
+        .collapsible-icon {
+            font-size: 1.5em;
+            transition: transform 0.3s ease;
+        }
+        .collapsible-header.active .collapsible-icon {
+            transform: rotate(180deg);
+        }
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        .collapsible-content.active {
+            max-height: 10000px;
+        }
+        .collapsible-inner {
+            padding: 20px 0;
+        }
+        .model-card {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid var(--secondary-color);
+        }
+        .model-card h4 {
+            color: var(--secondary-color);
+            margin-top: 0;
+        }
+        .example-box {
+            background: #e8f5e9;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid var(--success-color);
+        }
+        .info-box {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid var(--secondary-color);
+        }
+        .warning-box {
+            background: #fff3e0;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid var(--warning-color);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background: var(--secondary-color);
+            color: white;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            .header h1 {
+                font-size: 2em;
+            }
+            .section {
+                padding: 20px;
+            }
+            .section h2 {
+                font-size: 1.5em;
+            }
+            .nav-grid {
+                grid-template-columns: 1fr;
+            }
+            .scroll-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+            }
+            .nav-container {
+                position: relative;
+                top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">← Zurück zur Hauptseite</a>
+        
+        <div class="header">
+            <h1>🗣️ Sprache, Sprechen, Kommunikation</h1>
+            <p>Grundlagen der Sprache • Kommunikationsmodelle • Sprachvarietäten • Sprachwandel</p>
+        </div>
+
+        <!-- Navigation -->
+        <div class="nav-container">
+            <h3>📑 Themenübersicht</h3>
+            <div class="nav-grid">
+                <a href="#was-ist-sprache" class="nav-link">1.1 Was ist Sprache?</a>
+                <a href="#leistung-funktion" class="nav-link">1.2 Leistung & Funktion</a>
+                <a href="#sprachvarietaeten" class="nav-link">1.3 Sprachvarietäten</a>
+                <a href="#sprachwandel" class="nav-link">1.4 Sprachwandel</a>
+            </div>
+        </div>
+
+        <!-- 1.1 Was ist Sprache? -->
+        <div id="was-ist-sprache" class="section">
+            <h2>1.1 Was ist Sprache? – Erklärungsansätze</h2>
+            
+            <div class="collapsible-header">
+                <h3>📖 Sprache als künstliches System von Zeichen</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p>Sprache ist ein <span class="key-term">künstliches, von Menschen geschaffenes Zeichensystem</span>, das zur Verständigung dient. Im Gegensatz zu natürlichen Zeichen (wie Rauch für Feuer) sind sprachliche Zeichen durch Konvention entstanden.</p>
+                    
+                    <h4>Merkmale sprachlicher Zeichen</h4>
+                    <ul>
+                        <li><strong>Arbitrarität:</strong> Die Beziehung zwischen Lautform (Signifikant) und Bedeutung (Signifikat) ist willkürlich. Es gibt keinen natürlichen Grund, warum ein Baum "Baum" heißt.</li>
+                        <li><strong>Konventionalität:</strong> Sprachzeichen beruhen auf gesellschaftlicher Übereinkunft. Alle Sprecher einer Sprachgemeinschaft akzeptieren die gleichen Zeichen.</li>
+                        <li><strong>Systematik:</strong> Sprache folgt Regeln (Grammatik), die das Kombinieren von Zeichen ermöglichen.</li>
+                        <li><strong>Produktivität:</strong> Mit endlich vielen Zeichen können unendlich viele Äußerungen gebildet werden.</li>
+                        <li><strong>Doppelte Gliederung:</strong> Sprache besteht aus bedeutungslosen Einheiten (Lauten) und bedeutungstragenden Einheiten (Wörtern).</li>
+                    </ul>
+
+                    <div class="example-box">
+                        <h4>💡 Beispiel: Das Zeichen "Hund"</h4>
+                        <p><strong>Signifikant (Lautform):</strong> /hunt/ (wie wir es aussprechen)</p>
+                        <p><strong>Signifikat (Bedeutung):</strong> vierbeiniges Haustier, bellt, ist treu</p>
+                        <p><strong>Referent:</strong> der konkrete Hund in der Realität</p>
+                        <p>Die Verbindung zwischen Lautform und Bedeutung ist willkürlich – in anderen Sprachen heißt das Tier "dog", "chien", "perro" usw.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>💬 Sprache als Mittel der Verständigung und des sozialen Handelns</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p>Sprache ist nicht nur ein abstraktes System, sondern vor allem ein <span class="key-term">Werkzeug zur Kommunikation und zum sozialen Handeln</span>. Durch Sprache können wir:</p>
+                    
+                    <ul>
+                        <li><strong>Informationen austauschen:</strong> Wissen weitergeben, Sachverhalte darstellen</li>
+                        <li><strong>Beziehungen gestalten:</strong> Nähe oder Distanz schaffen, soziale Rollen ausdrücken</li>
+                        <li><strong>Handlungen vollziehen:</strong> Versprechen, Befehle, Bitten (Sprechakte)</li>
+                        <li><strong>Identität ausdrücken:</strong> Zugehörigkeit zu sozialen Gruppen zeigen</li>
+                        <li><strong>Emotionen ausdrücken:</strong> Gefühle mitteilen, Stimmungen erzeugen</li>
+                    </ul>
+
+                    <h4>Sprechakttheorie nach Austin und Searle</h4>
+                    <p>Sprechen ist Handeln. Jede Äußerung vollzieht drei Akte gleichzeitig:</p>
+                    
+                    <div class="model-card">
+                        <h4>1. Lokutionärer Akt</h4>
+                        <p>Das Aussprechen von Wörtern mit bestimmter Bedeutung</p>
+                        <p><em>Beispiel: "Die Tür ist offen."</em></p>
+                    </div>
+
+                    <div class="model-card">
+                        <h4>2. Illokutionärer Akt</h4>
+                        <p>Die beabsichtigte Handlung (Bitte, Befehl, Warnung, Versprechen)</p>
+                        <p><em>Bedeutung: "Schließ bitte die Tür!" (Aufforderung)</em></p>
+                    </div>
+
+                    <div class="model-card">
+                        <h4>3. Perlokutionärer Akt</h4>
+                        <p>Die tatsächliche Wirkung der Äußerung</p>
+                        <p><em>Wirkung: Der Angesprochene schließt die Tür (oder auch nicht)</em></p>
+                    </div>
+
+                    <div class="important-note">
+                        <strong>⚠️ Wichtig für die Textanalyse:</strong> Achte in literarischen Texten und Sachtexten darauf, was Figuren oder Autoren mit ihren Äußerungen beabsichtigen (illokutionärer Akt) und welche Wirkung sie erzielen (perlokutionärer Akt).
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>🧠 Sprache und Denken</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p>Das Verhältnis von Sprache und Denken ist eines der zentralen Themen der Sprachwissenschaft. Zwei Hauptthesen stehen sich gegenüber:</p>
+                    
+                    <h4>Sapir-Whorf-Hypothese (Linguistisches Relativitätsprinzip)</h4>
+                    <div class="model-card">
+                        <p><strong>These:</strong> Die Sprache, die wir sprechen, beeinflusst oder bestimmt, wie wir die Welt wahrnehmen und denken.</p>
+                        <p><strong>Starke Version:</strong> Sprache determiniert Denken vollständig</p>
+                        <p><strong>Schwache Version:</strong> Sprache beeinflusst Denken teilweise</p>
+                        
+                        <div class="example-box">
+                            <h4>Beispiele:</h4>
+                            <ul>
+                                <li>Eskimo-Sprachen haben viele Wörter für "Schnee" → differenziertere Wahrnehmung von Schnee</li>
+                                <li>Sprachen ohne Zukunftsform (z.B. Chinesisch) → anderes Zeitverständnis</li>
+                                <li>Gendergerechte Sprache → Bewusstsein für Geschlechterrollen</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h4>Gegenposition: Denken vor Sprache</h4>
+                    <div class="model-card">
+                        <p><strong>These:</strong> Denken ist unabhängig von Sprache. Sprache ist nur ein Werkzeug, um Gedanken auszudrücken.</p>
+                        <p><strong>Argumente:</strong></p>
+                        <ul>
+                            <li>Auch Tiere ohne Sprache können denken und Probleme lösen</li>
+                            <li>Vorsprachliche Kinder zeigen kognitives Verständnis</li>
+                            <li>Menschen können Konzepte denken, für die sie keine Worte haben</li>
+                        </ul>
+                    </div>
+
+                    <div class="warning-box">
+                        <h4>🎯 Abitur-Relevanz</h4>
+                        <p>Die Debatte über Sprache und Denken ist besonders relevant für Themen wie:</p>
+                        <ul>
+                            <li>Gendergerechte Sprache</li>
+                            <li>Politische Sprache und Manipulation</li>
+                            <li>Mehrsprachigkeit und Identität</li>
+                            <li>Bedeutung von Sprachbildung</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 1.2 Leistung und kommunikative Funktion von Sprache -->
+        <div id="leistung-funktion" class="section">
+            <h2>1.2 Leistung und kommunikative Funktion von Sprache</h2>
+            
+            <div class="collapsible-header">
+                <h3>🔧 Sprache als Organon/Werkzeug (Karl Bühler)</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p>Karl Bühler entwickelte 1934 das <span class="key-term">Organon-Modell</span>, das Sprache als Werkzeug (griech. "organon") beschreibt. Nach Bühler hat jede sprachliche Äußerung drei Funktionen:</p>
+                    
+                    <div class="model-card">
+                        <h4>📊 1. Darstellungsfunktion (Symbolfunktion)</h4>
+                        <p><strong>Bezug:</strong> Gegenstände und Sachverhalte (Welt)</p>
+                        <p><strong>Funktion:</strong> Information über die Wirklichkeit vermitteln</p>
+                        <p><strong>Beispiel:</strong> "Die Temperatur beträgt 20 Grad."</p>
+                        <p>Diese Funktion dominiert in Sachtexten, wissenschaftlichen Texten, Berichten.</p>
+                    </div>
+
+                    <div class="model-card">
+                        <h4>😊 2. Ausdrucksfunktion (Symptomfunktion)</h4>
+                        <p><strong>Bezug:</strong> Sender (Sprecher)</p>
+                        <p><strong>Funktion:</strong> Innere Zustände, Gefühle, Einstellungen des Senders ausdrücken</p>
+                        <p><strong>Beispiel:</strong> "Ach, wie schön ist es hier!"</p>
+                        <p>Diese Funktion dominiert in lyrischen Texten, Tagebüchern, persönlichen Briefen.</p>
+                    </div>
+
+                    <div class="model-card">
+                        <h4>📢 3. Appellfunktion (Signalfunktion)</h4>
+                        <p><strong>Bezug:</strong> Empfänger (Hörer)</p>
+                        <p><strong>Funktion:</strong> Den Empfänger zu einem bestimmten Verhalten bewegen</p>
+                        <p><strong>Beispiel:</strong> "Öffne das Fenster!"</p>
+                        <p>Diese Funktion dominiert in Werbung, politischen Reden, Anleitungen.</p>
+                    </div>
+
+                    <div class="info-box">
+                        <h4>💡 Abitur-Tipp</h4>
+                        <p>Das Organon-Modell eignet sich perfekt zur Analyse von:</p>
+                        <ul>
+                            <li>Politischen Reden (starke Appellfunktion)</li>
+                            <li>Kommentaren (Ausdrucks- und Appellfunktion)</li>
+                            <li>Lyrischen Texten (Ausdrucksfunktion)</li>
+                            <li>Sachtexten (Darstellungsfunktion)</li>
+                        </ul>
+                        <p><strong>Wichtig:</strong> In jedem Text sind alle drei Funktionen vorhanden, aber eine dominiert!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>🟩 Das Vier-Seiten-Modell (Schulz von Thun)</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p>Friedemann Schulz von Thun erweiterte Bühlers Modell und entwickelte das <span class="key-term">Vier-Seiten-Modell</span> (auch: Kommunikationsquadrat). Nach diesem Modell hat jede Nachricht vier Aspekte:</p>
+                    
+                    <div class="model-card">
+                        <h4>1️⃣ Sachinhalt</h4>
+                        <p><strong>Frage:</strong> Worüber informiere ich?</p>
+                        <p><strong>Aspekt:</strong> Die sachliche Information, die Daten, Fakten</p>
+                        <p><strong>Kriterien:</strong> Wahr/unwahr, relevant/irrelevant, ausreichend/unzureichend</p>
+                    </div>
+
+                    <div class="model-card">
+                        <h4>2️⃣ Selbstkundgabe</h4>
+                        <p><strong>Frage:</strong> Was gebe ich von mir preis?</p>
+                        <p><strong>Aspekt:</strong> Was der Sender über sich selbst, seine Gefühle, Werte, Motive mitteilt</p>
+                        <p><strong>Hinweis:</strong> Oft implizit und unbewusst</p>
+                    </div>
+
+                    <div class="model-card">
+                        <h4>3️⃣ Beziehung</h4>
+                        <p><strong>Frage:</strong> Wie stehe ich zu dir? Was halte ich von dir?</p>
+                        <p><strong>Aspekt:</strong> Wie der Sender zum Empfänger steht, welche Beziehung er ausdrückt</p>
+                        <p><strong>Ausdrucksmittel:</strong> Formulierung, Tonfall, Mimik, Gestik</p>
+                    </div>
+
+                    <div class="model-card">
+                        <h4>4️⃣ Appell</h4>
+                        <p><strong>Frage:</strong> Was will ich erreichen? Wozu will ich dich veranlassen?</p>
+                        <p><strong>Aspekt:</strong> Die Absicht, den Empfänger zu einem bestimmten Handeln zu bewegen</p>
+                        <p><strong>Formen:</strong> Offen (Befehl) oder verdeckt (Manipulation)</p>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>💡 Klassisches Beispiel: "Die Ampel ist grün!"</h4>
+                        <table>
+                            <tr>
+                                <th>Seite</th>
+                                <th>Bedeutung</th>
+                            </tr>
+                            <tr>
+                                <td><strong>Sachinhalt</strong></td>
+                                <td>Die Ampel zeigt grünes Licht</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Selbstkundgabe</strong></td>
+                                <td>Ich bin aufmerksam / Ich bin ungeduldig</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Beziehung</strong></td>
+                                <td>Du solltest aufmerksamer sein / Ich bin hier der Besserwisser</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Appell</strong></td>
+                                <td>Fahr endlich los! / Gib Gas!</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="important-note">
+                        <strong>⚠️ Ursachen für Missverständnisse:</strong>
+                        <ul>
+                            <li>Der Sender legt andere Bedeutung in die Nachricht als der Empfänger heraushört</li>
+                            <li>Der Empfänger achtet auf die "falsche" Seite der Nachricht</li>
+                            <li>Implizite Botschaften werden unterschiedlich verstanden</li>
+                            <li>Beziehungsebene wird nicht beachtet ("Es kommt nicht darauf an, was du sagst, sondern wie du es sagst")</li>
+                        </ul>
+                    </div>
+
+                    <div class="warning-box">
+                        <h4>🎯 Anwendung in der Textanalyse</h4>
+                        <p>Das Vier-Seiten-Modell ist besonders nützlich für die Analyse von:</p>
+                        <ul>
+                            <li><strong>Dialogen in Dramen:</strong> Beziehungsdynamik zwischen Figuren</li>
+                            <li><strong>Gesprächen in epischen Texten:</strong> Versteckte Botschaften erkennen</li>
+                            <li><strong>Argumentativen Texten:</strong> Appellebene und Selbstdarstellung des Autors</li>
+                            <li><strong>Kommunikationskonflikten:</strong> Missverständnisse aufdecken</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>📞 Sender-Empfänger-Modell (Shannon/Weaver)</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p>Das <span class="key-term">Sender-Empfänger-Modell</span> ist ein technisches Kommunikationsmodell, das ursprünglich für die Nachrichtentechnik entwickelt wurde.</p>
+                    
+                    <h4>Komponenten des Modells</h4>
+                    <ul>
+                        <li><strong>Sender:</strong> Kodiert die Nachricht (wandelt Gedanken in Zeichen um)</li>
+                        <li><strong>Kanal:</strong> Übertragungsweg (Schall, Schrift, digital)</li>
+                        <li><strong>Empfänger:</strong> Dekodiert die Nachricht (deutet die Zeichen)</li>
+                        <li><strong>Störungen (Rauschen):</strong> Beeinträchtigen die Übertragung</li>
+                        <li><strong>Feedback:</strong> Rückmeldung des Empfängers</li>
+                    </ul>
+
+                    <div class="example-box">
+                        <h4>Beispiel: Telefongespräch</h4>
+                        <p><strong>Sender:</strong> Person A spricht (Kodierung: Gedanken → Worte)</p>
+                        <p><strong>Kanal:</strong> Telefonnetz</p>
+                        <p><strong>Störung:</strong> Schlechte Verbindung, Hintergrundgeräusche</p>
+                        <p><strong>Empfänger:</strong> Person B hört zu (Dekodierung: Worte → Gedanken)</p>
+                        <p><strong>Feedback:</strong> "Hast du mich verstanden?" - "Ja, alles klar!"</p>
+                    </div>
+
+                    <h4>Arten von Kommunikationsstörungen</h4>
+                    <table>
+                        <tr>
+                            <th>Ebene</th>
+                            <th>Problem</th>
+                            <th>Beispiel</th>
+                        </tr>
+                        <tr>
+                            <td><strong>Technisch</strong></td>
+                            <td>Übertragung gestört</td>
+                            <td>Schlechte Telefonverbindung, unleserliche Handschrift</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Semantisch</strong></td>
+                            <td>Bedeutung unklar</td>
+                            <td>Fremdwörter, Mehrdeutigkeiten, Fachbegriffe</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Pragmatisch</strong></td>
+                            <td>Wirkung verfehlt</td>
+                            <td>Ironie nicht verstanden, falsche Interpretation</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Psychologisch</strong></td>
+                            <td>Beziehungsprobleme</td>
+                            <td>Vorurteile, Antipathie, emotionale Blockaden</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>🎭 Kommunikationsaxiome (Paul Watzlawick)</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p>Paul Watzlawick formulierte fünf <span class="key-term">Grundregeln der menschlichen Kommunikation</span> (Axiome), die immer gelten:</p>
+                    
+                    <div class="model-card">
+                        <h4>1. Man kann nicht nicht kommunizieren</h4>
+                        <p>Jedes Verhalten ist Kommunikation. Auch Schweigen, Wegschauen oder Ignorieren sendet eine Botschaft.</p>
+                        <p><strong>Beispiel:</strong> Jemand wird angesprochen, antwortet aber nicht → kommuniziert Desinteresse, Ablehnung oder Überforderung</p>
+                    </div>
+
+                    <div class="model-card">
+                        <h4>2. Jede Kommunikation hat einen Inhalts- und einen Beziehungsaspekt</h4>
+                        <p>Der Inhaltsaspekt enthält die Sachinformation, der Beziehungsaspekt zeigt, wie die Beziehung verstanden wird. Der Beziehungsaspekt bestimmt, wie der Inhalt zu verstehen ist.</p>
+                        <p><strong>Beispiel:</strong> "Mach das Fenster zu!" kann freundlich gebeten oder barsch befohlen werden → gleicher Inhalt, andere Beziehung</p>
+                    </div>
+
+                    <div class="model-card">
+                        <h4>3. Kommunikation ist kreisförmig strukturiert (Interpunktion)</h4>
+                        <p>Jede/r Kommunikationspartner/in interpretiert das eigene Verhalten als Reaktion auf das des anderen. Es gibt keinen objektiven Anfang.</p>
+                        <p><strong>Beispiel:</strong> "Ich ziehe mich zurück, weil du nörgelst!" vs. "Ich nörgle, weil du dich zurückziehst!"</p>
+                    </div>
+
+                    <div class="model-card">
+                        <h4>4. Menschliche Kommunikation bedient sich digitaler und analoger Modalitäten</h4>
+                        <p><strong>Digital:</strong> Verbale Kommunikation mit eindeutigen Zeichen (Wörter)</p>
+                        <p><strong>Analog:</strong> Nonverbale Kommunikation (Mimik, Gestik, Tonfall)</p>
+                        <p><strong>Problem:</strong> Widersprüche zwischen verbaler und nonverbaler Ebene führen zu Missverständnissen</p>
+                        <p><strong>Beispiel:</strong> "Mir geht's gut!" mit trauriger Mimik</p>
+                    </div>
+
+                    <div class="model-card">
+                        <h4>5. Kommunikation ist symmetrisch oder komplementär</h4>
+                        <p><strong>Symmetrisch:</strong> Gleichberechtigung, Ebenbürtigkeit (z.B. Freundschaft)</p>
+                        <p><strong>Komplementär:</strong> Hierarchie, Über-/Unterordnung (z.B. Eltern-Kind, Chef-Mitarbeiter)</p>
+                        <p><strong>Konflikte:</strong> Entstehen, wenn Partner unterschiedliche Erwartungen haben</p>
+                    </div>
+
+                    <div class="warning-box">
+                        <h4>🎯 Abitur-Relevanz</h4>
+                        <p>Watzlawicks Axiome sind besonders wichtig für:</p>
+                        <ul>
+                            <li>Analyse von Kommunikationskonflikten in literarischen Texten</li>
+                            <li>Interpretation von Figurenbeziehungen</li>
+                            <li>Verständnis von Machtstrukturen in Gesprächen</li>
+                            <li>Erkennen von Missverständnissen und ihren Ursachen</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 1.3 Sprachvarietäten -->
+        <div id="sprachvarietaeten" class="section">
+            <h2>1.3 Sprachvarietäten und ihre Reichweite</h2>
+            
+            <p>Sprache ist nicht einheitlich. Je nach Region, sozialer Gruppe, Situation und Fachgebiet verwenden Menschen unterschiedliche <span class="key-term">Sprachvarietäten</span>. Diese Vielfalt ist kein Zeichen von "Sprachverfall", sondern natürlicher Ausdruck der Lebendigkeit von Sprache.</p>
+
+            <div class="collapsible-header">
+                <h3>🏛️ Standardsprache / Hochsprache / Gemeinsprache</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="model-card">
+                        <h4>Definition und Merkmale</h4>
+                        <p>Die <span class="key-term">Standardsprache</span> (auch Hochsprache oder Hochdeutsch) ist die normierte, überregionale Form des Deutschen.</p>
+                        
+                        <p><strong>Merkmale:</strong></p>
+                        <ul>
+                            <li>Überregional verständlich</li>
+                            <li>Kodifiziert in Wörterbüchern und Grammatiken (Duden)</li>
+                            <li>In Bildungseinrichtungen gelehrt</li>
+                            <li>In offiziellen Kontexten verwendet</li>
+                            <li>Prestigevarietät (hohes Ansehen)</li>
+                        </ul>
+
+                        <p><strong>Verwendung:</strong></p>
+                        <ul>
+                            <li>Schule, Universität, Behörden</li>
+                            <li>Öffentliche Reden, Vorträge</li>
+                            <li>Zeitungen, Fachliteratur</li>
+                            <li>Offizielle Anlässe</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-box">
+                        <h4>📚 Historische Entwicklung</h4>
+                        <p>Die deutsche Standardsprache entwickelte sich im 16. Jahrhundert, maßgeblich durch:</p>
+                        <ul>
+                            <li>Martin Luthers Bibelübersetzung (1522-1534)</li>
+                            <li>Den Buchdruck (Verbreitung einheitlicher Schreibweisen)</li>
+                            <li>Kanzleisprachen (Verwaltungssprache)</li>
+                            <li>Normierungsbestrebungen im 18./19. Jahrhundert</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>🗣️ Dialekt / Mundart</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="model-card">
+                        <h4>Definition und Merkmale</h4>
+                        <p>Ein <span class="key-term">Dialekt</span> (Mundart) ist eine räumlich begrenzte Sprachvarietät mit eigenen Regeln in Aussprache, Wortschatz und Grammatik.</p>
+                        
+                        <p><strong>Merkmale:</strong></p>
+                        <ul>
+                            <li>Regional begrenzt (z.B. Bairisch, Schwäbisch, Plattdeutsch)</li>
+                            <li>Mündlich tradiert</li>
+                            <li>Identitätsstiftend (Heimatgefühl)</li>
+                            <li>Oft geringe Reichweite (nur regional verständlich)</li>
+                            <li>Meist im privaten Bereich verwendet</li>
+                        </ul>
+
+                        <p><strong>Große deutsche Dialektgruppen:</strong></p>
+                        <ul>
+                            <li><strong>Niederdeutsch:</strong> Plattdeutsch, Mecklenburgisch</li>
+                            <li><strong>Mitteldeutsch:</strong> Berlinisch, Sächsisch, Hessisch</li>
+                            <li><strong>Oberdeutsch:</strong> Bairisch, Schwäbisch, Alemannisch</li>
+                        </ul>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>💡 Beispiele für dialektale Unterschiede</h4>
+                        <table>
+                            <tr>
+                                <th>Standarddeutsch</th>
+                                <th>Bairisch</th>
+                                <th>Schwäbisch</th>
+                                <th>Plattdeutsch</th>
+                            </tr>
+                            <tr>
+                                <td>Ich habe keine Zeit</td>
+                                <td>I hob koa Zeit</td>
+                                <td>I han koi Zeit</td>
+                                <td>Ik heff keen Tied</td>
+                            </tr>
+                            <tr>
+                                <td>Das ist schön</td>
+                                <td>Des is schee</td>
+                                <td>Des isch schö</td>
+                                <td>Dat is schöön</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="warning-box">
+                        <h4>⚖️ Dialekt und Prestige</h4>
+                        <p>Dialekte werden unterschiedlich bewertet:</p>
+                        <ul>
+                            <li><strong>Positiv:</strong> Authentizität, Heimatverbundenheit, Sympathie</li>
+                            <li><strong>Negativ:</strong> Bildungsferne, Provinzialität (Vorurteil!)</li>
+                            <li><strong>Wichtig:</strong> Dialekte sind linguistisch gleichwertig zur Standardsprache!</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>🌆 (Regionale) Umgangssprache</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="model-card">
+                        <h4>Definition und Merkmale</h4>
+                        <p>Die <span class="key-term">Umgangssprache</span> ist eine Varietät zwischen Dialekt und Standardsprache.</p>
+                        
+                        <p><strong>Merkmale:</strong></p>
+                        <ul>
+                            <li>Weniger streng normiert als Standardsprache</li>
+                            <li>Regional gefärbt, aber überregional verständlicher als Dialekt</li>
+                            <li>Spontan, alltagsnah, informell</li>
+                            <li>Verkürzte Sätze, Ellipsen, Füllwörter</li>
+                            <li>Meist mündlich</li>
+                        </ul>
+
+                        <p><strong>Beispiele für umgangssprachliche Merkmale:</strong></p>
+                        <ul>
+                            <li>Assimilation: "hast du" → "haste"</li>
+                            <li>Verschmelzungen: "in dem" → "im", "an dem" → "am"</li>
+                            <li>Füllwörter: "halt", "eben", "irgendwie"</li>
+                            <li>Vereinfachungen: "wegen dem" statt "wegen des"</li>
+                            <li>Dialektreste: "gucken" (norddeutsch) vs. "schauen" (süddeutsch)</li>
+                        </ul>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>Vergleich: Standardsprache vs. Umgangssprache</h4>
+                        <table>
+                            <tr>
+                                <th>Standardsprache</th>
+                                <th>Umgangssprache</th>
+                            </tr>
+                            <tr>
+                                <td>Ich habe keine Zeit, um das zu tun.</td>
+                                <td>Ich hab keine Zeit dafür. / Hab keine Zeit.</td>
+                            </tr>
+                            <tr>
+                                <td>Wir wollen ins Kino gehen.</td>
+                                <td>Wir wolln ins Kino. / Wir gehen ins Kino.</td>
+                            </tr>
+                            <tr>
+                                <td>Hast du das verstanden?</td>
+                                <td>Haste das verstanden? / Verstanden?</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>👥 Gruppensprache und soziale Integration</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="model-card">
+                        <h4>Definition: Soziolekt</h4>
+                        <p>Ein <span class="key-term">Soziolekt</span> ist eine Sprachvarietät, die von einer bestimmten sozialen Gruppe verwendet wird.</p>
+                        
+                        <p><strong>Funktionen:</strong></p>
+                        <ul>
+                            <li><strong>Identitätsstiftung:</strong> Zugehörigkeit zur Gruppe zeigen</li>
+                            <li><strong>Abgrenzung:</strong> Sich von anderen Gruppen unterscheiden</li>
+                            <li><strong>Geheimhaltung:</strong> Außenstehende ausschließen</li>
+                            <li><strong>Kreativität:</strong> Sprachliche Innovation</li>
+                        </ul>
+                    </div>
+
+                    <h4>Jugendsprache</h4>
+                    <div class="model-card">
+                        <p><strong>Merkmale der Jugendsprache:</strong></p>
+                        <ul>
+                            <li>Schneller Wandel (neue Ausdrücke jede Generation)</li>
+                            <li>Provokation, Übertreibung, Ironie</li>
+                            <li>Anglizismen: "cool", "nice", "cringe"</li>
+                            <li>Intensivierungen: "voll krass", "mega", "ultra"</li>
+                            <li>Verkürzungen: "digga", "bro", "LOL"</li>
+                            <li>Bedeutungsverschiebungen: "geil", "krass" (positiv)</li>
+                        </ul>
+
+                        <div class="example-box">
+                            <h4>Beispiele Jugendsprache im Wandel</h4>
+                            <table>
+                                <tr>
+                                    <th>2000er</th>
+                                    <th>2010er</th>
+                                    <th>2020er</th>
+                                </tr>
+                                <tr>
+                                    <td>geil, krass, fett</td>
+                                    <td>episch, lit, swag</td>
+                                    <td>sus, cringe, sheesh</td>
+                                </tr>
+                                <tr>
+                                    <td>Alter, digga</td>
+                                    <td>bro, yolo</td>
+                                    <td>bruh, no cap</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="warning-box">
+                        <h4>🎯 Bewertung von Jugendsprache</h4>
+                        <p><strong>Kritik (oft übertrieben):</strong></p>
+                        <ul>
+                            <li>Sprachverfall</li>
+                            <li>Verarmung des Wortschatzes</li>
+                            <li>Unhöflichkeit</li>
+                        </ul>
+                        
+                        <p><strong>Verteidigung:</strong></p>
+                        <ul>
+                            <li>Jugendsprache ist kreativ und spielerisch</li>
+                            <li>Jugendliche beherrschen mehrere Register (Code-Switching)</li>
+                            <li>Natürlicher Teil der Identitätsfindung</li>
+                            <li>Bereichert die Sprache (manche Wörter werden übernommen)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>⚙️ Fachsprache und ihre Merkmale</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="model-card">
+                        <h4>Definition und Funktionen</h4>
+                        <p>Eine <span class="key-term">Fachsprache</span> ist die Sprache einer bestimmten Berufs- oder Wissenschaftsgruppe.</p>
+                        
+                        <p><strong>Funktionen:</strong></p>
+                        <ul>
+                            <li>Präzision: Exakte Bezeichnung von Sachverhalten</li>
+                            <li>Effizienz: Verkürzte Kommunikation unter Fachleuten</li>
+                            <li>Eindeutigkeit: Vermeidung von Missverständnissen</li>
+                        </ul>
+
+                        <p><strong>Merkmale:</strong></p>
+                        <ul>
+                            <li>Fachwortschatz (Termini technici)</li>
+                            <li>Definitionen und Normierung</li>
+                            <li>Sachlicher, unpersönlicher Stil</li>
+                            <li>Komplexe Satzstrukturen</li>
+                            <li>Nominalisierungen</li>
+                            <li>Passivkonstruktionen</li>
+                        </ul>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>Beispiele für Fachsprachen</h4>
+                        <table>
+                            <tr>
+                                <th>Fachbereich</th>
+                                <th>Fachbegriffe</th>
+                            </tr>
+                            <tr>
+                                <td><strong>Medizin</strong></td>
+                                <td>Diagnose, Anamnese, Symptom, Therapie, Myokardinfarkt</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Recht</strong></td>
+                                <td>Kläger, Beklagter, Urteil, Berufung, Revision</td>
+                            </tr>
+                            <tr>
+                                <td><strong>IT</strong></td>
+                                <td>Server, Algorithmus, Debugging, Interface, Framework</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Linguistik</strong></td>
+                                <td>Phonem, Morphem, Syntax, Semantik, Pragmatik</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="important-note">
+                        <h4>⚠️ Problem: Fachsprache und Verständlichkeit</h4>
+                        <p>Fachsprachen können Außenstehende ausschließen. Deshalb ist wichtig:</p>
+                        <ul>
+                            <li><strong>Popularisierung:</strong> Fachwissen verständlich machen</li>
+                            <li><strong>Metaphern:</strong> Komplexes anschaulich erklären</li>
+                            <li><strong>Glossare:</strong> Fachbegriffe erläutern</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>🌍 Weitere Varianten des Sprachgebrauchs</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Register (situative Varietäten)</h4>
+                    <p>Die Anpassung der Sprache an die Kommunikationssituation:</p>
+                    <ul>
+                        <li><strong>Förmlich:</strong> Amtssprache, offizielle Anlässe</li>
+                        <li><strong>Neutral:</strong> Alltagskommunikation</li>
+                        <li><strong>Informell:</strong> Unter Freunden, Familie</li>
+                        <li><strong>Intim:</strong> In engen Beziehungen</li>
+                    </ul>
+
+                    <h4>Mediolekt</h4>
+                    <p>Die medial bedingte Sprachvarietät:</p>
+                    <ul>
+                        <li><strong>Geschriebene Sprache:</strong> Geplant, korrigierbar, monologisch</li>
+                        <li><strong>Gesprochene Sprache:</strong> Spontan, dialogisch, mit Pausen und Korrekturen</li>
+                        <li><strong>Digitale Kommunikation:</strong> Mischformen (Chats: geschrieben, aber konzeptionell mündlich)</li>
+                    </ul>
+
+                    <h4>Denglisch / Anglizismen</h4>
+                    <div class="model-card">
+                        <p><strong>Anglizismen</strong> sind Entlehnungen aus dem Englischen:</p>
+                        <ul>
+                            <li><strong>Direkte Übernahmen:</strong> Computer, Internet, Handy</li>
+                            <li><strong>Hybridbildungen:</strong> downloaden, gescreenshotet</li>
+                            <li><strong>Scheinentlehnungen:</strong> "Handy" (im Englischen: mobile/cell phone)</li>
+                        </ul>
+
+                        <p><strong>Gründe für Anglizismen:</strong></p>
+                        <ul>
+                            <li>Internationale Verständigung</li>
+                            <li>Prestige und Modernität</li>
+                            <li>Bezeichnung neuer Phänomene (v.a. Technologie)</li>
+                            <li>Kürze und Prägnanz</li>
+                        </ul>
+
+                        <div class="warning-box">
+                            <h4>Debatte: Bereicherung oder Bedrohung?</h4>
+                            <p><strong>Pro Anglizismen:</strong> Bereicherung, Internationalität, Flexibilität</p>
+                            <p><strong>Contra Anglizismen:</strong> Verdrängung deutscher Wörter, Unverständlichkeit für Ältere</p>
+                            <p><strong>Fazit:</strong> Maßvoller Gebrauch, situationsangemessen</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 1.4 Sprachgeschichte und Sprachwandel -->
+        <div id="sprachwandel" class="section">
+            <h2>1.4 Sprachgeschichte und Sprachwandel</h2>
+            
+            <p>Sprache ist nicht statisch, sondern verändert sich ständig. <span class="key-term">Sprachwandel</span> ist ein natürlicher Prozess, der alle Ebenen der Sprache betrifft: Laute, Wortschatz, Grammatik, Bedeutungen.</p>
+
+            <div class="collapsible-header">
+                <h3>🏰 Althochdeutsche Sprache (um 750-1050)</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="timeline-item">
+                        <span class="timeline-year">Zeitraum: ca. 750-1050</span>
+                        <p><strong>Historischer Kontext:</strong> Zeit Karls des Großen, Christianisierung, erste schriftliche Überlieferungen</p>
+                    </div>
+
+                    <p><strong>Merkmale:</strong></p>
+                    <ul>
+                        <li>Erste deutsche Schriftsprache (vorher nur Latein)</li>
+                        <li>Starke regionale Unterschiede (keine Einheitssprache)</li>
+                        <li>Komplexe Flexion (viele Endungen)</li>
+                        <li>Einfluss des Lateinischen (durch Christianisierung)</li>
+                        <li>Vier Fälle (wie heute), aber andere Endungen</li>
+                    </ul>
+
+                    <div class="example-box">
+                        <h4>💡 Berühmte althochdeutsche Texte</h4>
+                        <ul>
+                            <li><strong>Hildebrandslied</strong> (um 820): Ältestes deutsches Heldenlied</li>
+                            <li><strong>Merseburger Zaubersprüche</strong> (10. Jh.): Heidnische Beschwörungsformeln</li>
+                            <li><strong>Wessobrunner Gebet</strong> (um 790): Christliches Schöpfungsgedicht</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>⚔️ Mittelhochdeutsch (um 1050-1350)</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="timeline-item">
+                        <span class="timeline-year">Zeitraum: ca. 1050-1350</span>
+                        <p><strong>Historischer Kontext:</strong> Blütezeit des Rittertums, Kreuzzüge, höfische Kultur</p>
+                    </div>
+
+                    <p><strong>Merkmale:</strong></p>
+                    <ul>
+                        <li>Blütezeit der mittelalterlichen Dichtung</li>
+                        <li>Höfische Literatur (Minnesang, Heldendichtung)</li>
+                        <li>Vereinheitlichung der Sprache beginnt</li>
+                        <li>Immer noch komplexe Grammatik</li>
+                        <li>Einfluss des Französischen (höfische Kultur)</li>
+                    </ul>
+
+                    <div class="example-box">
+                        <h4>Wichtige Autoren und Werke</h4>
+                        <ul>
+                            <li><strong>Walther von der Vogelweide:</strong> Minnesänger</li>
+                            <li><strong>Wolfram von Eschenbach:</strong> "Parzival"</li>
+                            <li><strong>Hartmann von Aue:</strong> "Der arme Heinrich"</li>
+                            <li><strong>Das Nibelungenlied:</strong> Nationales Heldenepos</li>
+                        </ul>
+                    </div>
+
+                    <div class="model-card">
+                        <h4>Mittelhochdeutsch vs. Neuhochdeutsch</h4>
+                        <table>
+                            <tr>
+                                <th>Mittelhochdeutsch</th>
+                                <th>Neuhochdeutsch</th>
+                            </tr>
+                            <tr>
+                                <td>guot</td>
+                                <td>gut</td>
+                            </tr>
+                            <tr>
+                                <td>liep</td>
+                                <td>lieb</td>
+                            </tr>
+                            <tr>
+                                <td>vriunt</td>
+                                <td>Freund</td>
+                            </tr>
+                            <tr>
+                                <td>wîp</td>
+                                <td>Weib (heute: Frau)</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>📖 Frühneuhochdeutsch (um 1350-1650)</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="timeline-item">
+                        <span class="timeline-year">Zeitraum: ca. 1350-1650</span>
+                        <p><strong>Historischer Kontext:</strong> Renaissance, Reformation, Buchdruck</p>
+                    </div>
+
+                    <p><strong>Wichtigste Entwicklungen:</strong></p>
+                    <ul>
+                        <li><strong>Buchdruck (1450):</strong> Verbreitung geschriebener Texte</li>
+                        <li><strong>Luthers Bibelübersetzung (1522-1534):</strong> Grundlage der deutschen Standardsprache</li>
+                        <li><strong>Vereinheitlichung:</strong> Verschiedene Dialekte nähern sich an</li>
+                        <li><strong>Rechtschreibung:</strong> Erste Ansätze zur Normierung</li>
+                    </ul>
+
+                    <div class="important-note">
+                        <h4>⭐ Martin Luthers Bedeutung für die deutsche Sprache</h4>
+                        <p>Luther übersetzte die Bibel ins Deutsche und orientierte sich an der "ostmitteldeutschen Kanzleisprache". Seine Übersetzung wurde zum Vorbild für die deutsche Standardsprache:</p>
+                        <ul>
+                            <li>Verständlich für Nord- und Süddeutsche</li>
+                            <li>Volksnah, aber gehoben</li>
+                            <li>Schuf viele bis heute gebräuchliche Ausdrücke ("Herzenslust", "Feuertaufe")</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>📚 Neuhochdeutsch (um 1650-1900)</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="timeline-item">
+                        <span class="timeline-year">Zeitraum: ca. 1650-1900</span>
+                        <p><strong>Historischer Kontext:</strong> Aufklärung, Klassik, Romantik, Industrialisierung</p>
+                    </div>
+
+                    <p><strong>Entwicklungen:</strong></p>
+                    <ul>
+                        <li><strong>Normierung der Rechtschreibung:</strong> Konrad Duden (1880)</li>
+                        <li><strong>Grammatikregeln:</strong> Festlegung einheitlicher Normen</li>
+                        <li><strong>Literatursprache:</strong> Goethe, Schiller als Vorbilder</li>
+                        <li><strong>Nationalsprache:</strong> Deutsch als Sprache der Nation</li>
+                        <li><strong>Schulpflicht:</strong> Verbreitung der Standardsprache</li>
+                    </ul>
+
+                    <div class="example-box">
+                        <h4>Konrad Duden (1880)</h4>
+                        <p>"Orthographisches Wörterbuch der deutschen Sprache" – erste einheitliche Rechtschreibung</p>
+                        <p><strong>Ziel:</strong> "Schreibe, wie du sprichst" → Orientierung an der Aussprache</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>🌐 Deutsch von heute – allgemeine Tendenzen</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p>Die deutsche Sprache verändert sich auch heute kontinuierlich. Aktuelle Tendenzen:</p>
+
+                    <h4>1. Anglizismen und Internationalismen</h4>
+                    <div class="model-card">
+                        <p><strong>Ursachen:</strong></p>
+                        <ul>
+                            <li>Globalisierung und internationale Kommunikation</li>
+                            <li>Dominanz des Englischen in Wirtschaft, Wissenschaft, Technologie</li>
+                            <li>Prestige und Modernität</li>
+                        </ul>
+                        <p><strong>Beispiele:</strong> "Meeting", "chillen", "App", "Download", "Influencer"</p>
+                    </div>
+
+                    <h4>2. Digitale Kommunikation</h4>
+                    <div class="model-card">
+                        <p><strong>Neue Kommunikationsformen:</strong></p>
+                        <ul>
+                            <li>Messenger-Kommunikation (WhatsApp, Telegram)</li>
+                            <li>Soziale Medien (Twitter, Instagram, TikTok)</li>
+                            <li>Emojis als Ergänzung zur Schriftsprache</li>
+                            <li>Abkürzungen: "LOL", "OMG", "ASAP", "FYI"</li>
+                        </ul>
+                        <p><strong>Merkmale:</strong> Konzeptionell mündlich, aber medial schriftlich – Mischform</p>
+                    </div>
+
+                    <h4>3. Gendergerechte Sprache</h4>
+                    <div class="model-card">
+                        <p><strong>Ziel:</strong> Alle Geschlechter sichtbar machen, Diskriminierung vermeiden</p>
+                        <p><strong>Formen:</strong></p>
+                        <ul>
+                            <li><strong>Paarform:</strong> "Lehrerinnen und Lehrer"</li>
+                            <li><strong>Binnen-I:</strong> "LehrerInnen"</li>
+                            <li><strong>Genderstern:</strong> "Lehrer*innen"</li>
+                            <li><strong>Doppelpunkt:</strong> "Lehrer:innen"</li>
+                            <li><strong>Neutrale Formen:</strong> "Lehrende", "Lehrkraft"</li>
+                        </ul>
+
+                        <div class="warning-box">
+                            <h4>Debatte</h4>
+                            <p><strong>Pro:</strong> Gerechtigkeit, Sichtbarkeit, Bewusstseinsbildung</p>
+                            <p><strong>Contra:</strong> Sprachfluss gestört, Lesbarkeit beeinträchtigt, Überregulierung</p>
+                            <p><strong>Kompromiss:</strong> Situationsabhängiger Gebrauch, Toleranz für verschiedene Formen</p>
+                        </div>
+                    </div>
+
+                    <h4>4. Vereinfachung</h4>
+                    <div class="model-card">
+                        <p><strong>Tendenzen:</strong></p>
+                        <ul>
+                            <li>Abbau des Genitivs ("wegen dem" statt "wegen des")</li>
+                            <li>Verlust des Konjunktivs ("wenn ich du wäre" statt "wenn ich du wäre")</li>
+                            <li>Vereinfachung komplexer Satzstrukturen</li>
+                        </ul>
+                    </div>
+
+                    <h4>5. Mehrsprachigkeit</h4>
+                    <div class="model-card">
+                        <p>Deutschland ist ein Einwanderungsland. Viele Menschen wachsen mehrsprachig auf:</p>
+                        <ul>
+                            <li><strong>Kiezdeutsch:</strong> Jugendsprache mit Einflüssen aus dem Türkischen und Arabischen</li>
+                            <li><strong>Code-Switching:</strong> Wechsel zwischen verschiedenen Sprachen</li>
+                            <li><strong>Herkunftssprachen:</strong> Türkisch, Russisch, Arabisch neben Deutsch</li>
+                        </ul>
+                        <p><strong>Beispiele:</strong> "Ich schwöre", "Wallah", "Yalla"</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>📊 Sprachverfall oder Sprachwandel?</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p>Immer wieder wird beklagt, die deutsche Sprache "verfalle". Doch ist das wirklich so?</p>
+
+                    <div class="model-card">
+                        <h4>❌ Sprachverfallsthese</h4>
+                        <p><strong>Argumente:</strong></p>
+                        <ul>
+                            <li>Jugendliche können nicht mehr richtig schreiben</li>
+                            <li>Zu viele Anglizismen</li>
+                            <li>Grammatikfehler nehmen zu</li>
+                            <li>Wortschatz verarmt</li>
+                            <li>Digitale Kommunikation schadet der Sprache</li>
+                        </ul>
+                    </div>
+
+                    <div class="model-card">
+                        <h4>✅ Sprachwandelthese</h4>
+                        <p><strong>Gegenargumente:</strong></p>
+                        <ul>
+                            <li>Sprachwandel ist natürlich und war schon immer so</li>
+                            <li>Jede Generation klagt über die nächste</li>
+                            <li>Jugendsprache ist kreativ, nicht verfallen</li>
+                            <li>Neue Kommunikationsformen erweitern sprachliche Möglichkeiten</li>
+                            <li>Jugendliche beherrschen verschiedene Register (Schule, Freunde, Familie)</li>
+                            <li>Sprache passt sich neuen Lebensbedingungen an</li>
+                        </ul>
+                    </div>
+
+                    <div class="important-note">
+                        <h4>🎯 Sprachwissenschaftliche Position</h4>
+                        <p>Die Mehrheit der Sprachwissenschaftler lehnt die Sprachverfallsthese ab:</p>
+                        <ul>
+                            <li>Sprache verändert sich, wird aber nicht "schlechter"</li>
+                            <li>Es gibt keinen objektiven Maßstab für "gutes" oder "schlechtes" Deutsch</li>
+                            <li>Wichtig ist <strong>Angemessenheit</strong>: die richtige Varietät in der richtigen Situation</li>
+                            <li>Sprachliche Vielfalt ist Reichtum, nicht Verfall</li>
+                        </ul>
+                    </div>
+
+                    <div class="warning-box">
+                        <h4>⚠️ Aber: Sprachkompetenz ist wichtig!</h4>
+                        <p>Auch wenn Sprachwandel natürlich ist, bleibt wichtig:</p>
+                        <ul>
+                            <li>Beherrschung der Standardsprache für Bildung und Beruf</li>
+                            <li>Fähigkeit zum <strong>Code-Switching</strong> (situationsangemessene Sprachwahl)</li>
+                            <li>Bewusstsein für verschiedene Sprachebenen</li>
+                            <li>Reflexion über eigenen Sprachgebrauch</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll to Top Button -->
+        <div id="scrollTop" class="scroll-top">↑</div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Collapsible sections
+            const collapsibleHeaders = document.querySelectorAll('.collapsible-header');
+            
+            collapsibleHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    const content = this.nextElementSibling;
+                    content.classList.toggle('active');
+                });
+            });
+            // Smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+            // Scroll to top button
+            const scrollTopButton = document.getElementById('scrollTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollTopButton.classList.add('visible');
+                } else {
+                    scrollTopButton.classList.remove('visible');
+                }
+            });
+            
+            scrollTopButton.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+            // Keyboard shortcut: Press 'T' to scroll to top
+            document.addEventListener('keydown', function(e) {
+                if ((e.key === 't' || e.key === 'T') && !e.ctrlKey && !e.altKey) {
+                    const active = document.activeElement;
+                    if (active.tagName !== 'INPUT' && active.tagName !== 'TEXTAREA') {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                }
+            });
+            // Highlight active navigation link
+            const sections = document.querySelectorAll('.section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            const observerOptions = {
+                root: null,
+                rootMargin: '-20% 0px -80% 0px',
+                threshold: 0
+            };
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.style.background = 'linear-gradient(45deg, var(--secondary-color), #2980b9)';
+                        });
+                        
+                        const id = entry.target.getAttribute('id');
+                        const activeLink = document.querySelector(`.nav-link[href="#${id}"]`);
+                        if (activeLink) {
+                            activeLink.style.background = 'linear-gradient(45deg, var(--accent-color), #c0392b)';
+                        }
+                    }
+                });
+            }, observerOptions);
+            sections.forEach(section => observer.observe(section));
+            console.log('✅ Sprache, Sprechen, Kommunikation loaded! Press T to scroll to top.');
+        });
+    </script>
+</body>
+</html>
