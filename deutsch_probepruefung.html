@@ -3,60 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Musterlösungen - Probeabitur Deutsch gAN</title>
+    <title>Probeprüfung - Deutsch Lernzettel</title>
     <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --bg-color: #ecf0f1;
+            --card-bg: #ffffff;
+            --text-color: #2c3e50;
+            --border-color: #bdc3c7;
+        }
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--bg-color) 0%, #d5dbdb 100%);
+            color: var(--text-color);
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            padding: 20px;
         }
-
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            background: white;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: var(--card-bg);
+            padding: 30px;
             border-radius: 15px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
             overflow: hidden;
         }
-
-        .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 40px;
-            text-align: center;
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #000000, #DD0000, #FFCE00);
         }
-
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        .back-button:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
         .header h1 {
+            color: var(--primary-color);
             font-size: 2.5em;
             margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
-
         .header p {
-            font-size: 1.2em;
-            opacity: 0.9;
+            color: #7f8c8d;
+            font-size: 1.1em;
         }
-
         .nav-buttons {
             display: flex;
             gap: 15px;
             justify-content: center;
             flex-wrap: wrap;
             padding: 20px;
-            background: #f8f9fa;
-            border-bottom: 3px solid #667eea;
+            background: var(--card-bg);
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
         }
-
         .btn {
             padding: 12px 24px;
             border: none;
@@ -69,1033 +98,466 @@
             transition: all 0.3s ease;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
-
         .btn-primary {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, var(--secondary-color), #2980b9);
             color: white;
         }
-
         .btn-primary:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 12px rgba(0,0,0,0.2);
         }
-
-        .btn-secondary {
-            background: #6c757d;
-            color: white;
-        }
-
-        .btn-secondary:hover {
-            background: #5a6268;
-            transform: translateY(-2px);
-        }
-
         .btn-success {
-            background: #28a745;
+            background: var(--success-color);
             color: white;
         }
-
         .btn-success:hover {
-            background: #218838;
+            background: #229954;
             transform: translateY(-2px);
         }
-
-        .content {
-            padding: 40px;
+        .pdf-container {
+            display: none;
+            padding: 20px;
+            background: var(--card-bg);
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
         }
-
-        .aufgabe-section {
-            margin-bottom: 50px;
+        .pdf-container h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .pdf-wrapper {
+            position: relative;
+            width: 100%;
+            padding-top: 141.42%;
+        }
+        .pdf-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--secondary-color);
+            border-radius: 8px;
+        }
+        .section {
+            background: var(--card-bg);
+            border-radius: 15px;
             padding: 30px;
-            background: #f8f9fa;
-            border-radius: 10px;
-            border-left: 5px solid #667eea;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--secondary-color);
         }
-
-        .aufgabe-section h2 {
-            color: #667eea;
+        .section h2 {
+            color: var(--primary-color);
             margin-bottom: 20px;
-            font-size: 2em;
-            border-bottom: 2px solid #667eea;
+            font-size: 1.8em;
+            border-bottom: 2px solid var(--border-color);
             padding-bottom: 10px;
         }
-
-        .aufgabe-section h3 {
-            color: #764ba2;
+        .section h3 {
+            color: var(--secondary-color);
             margin-top: 25px;
             margin-bottom: 15px;
-            font-size: 1.5em;
+            font-size: 1.4em;
         }
-
-        .aufgabe-section h4 {
-            color: #495057;
+        .section h4 {
+            color: var(--primary-color);
             margin-top: 20px;
             margin-bottom: 10px;
             font-size: 1.2em;
         }
-
-        .aufgabe-section p {
+        .section p {
             margin-bottom: 15px;
             text-align: justify;
         }
-
-        .aufgabe-section ul, .aufgabe-section ol {
+        .section ul, .section ol {
             margin-left: 30px;
             margin-bottom: 15px;
         }
-
-        .aufgabe-section li {
-            margin-bottom: 10px;
+        .section li {
+            margin-bottom: 8px;
         }
-
         .wichtig {
             background: #fff3cd;
-            border-left: 4px solid #ffc107;
+            border-left: 4px solid var(--warning-color);
             padding: 15px;
             margin: 20px 0;
             border-radius: 5px;
         }
-
         .zitat {
             background: #e7f3ff;
-            border-left: 4px solid #2196F3;
+            border-left: 4px solid var(--secondary-color);
             padding: 15px;
             margin: 20px 0;
             font-style: italic;
             border-radius: 5px;
         }
-
         .analyse-box {
             background: #e8f5e9;
-            border: 2px solid #4caf50;
+            border: 2px solid var(--success-color);
             padding: 20px;
             margin: 20px 0;
             border-radius: 8px;
         }
-
-        .footer {
-            background: #343a40;
-            color: white;
-            text-align: center;
-            padding: 20px;
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
         }
-
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background: var(--secondary-color);
+            color: white;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(45deg, var(--accent-color), #c0392b);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+        }
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
+        }
         @media (max-width: 768px) {
-            .header h1 {
-                font-size: 1.8em;
+            .container {
+                padding: 15px;
             }
-            
-            .content {
+            .header h1 {
+                font-size: 2em;
+            }
+            .section {
                 padding: 20px;
             }
-            
-            .aufgabe-section {
-                padding: 15px;
+            .section h2 {
+                font-size: 1.5em;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .scroll-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <a href="index.html" class="back-button">← Zurück zur Hauptseite</a>
+        
         <div class="header">
-            <h1>📚 Musterlösungen</h1>
-            <p>Probeabitur Deutsch gAN - 22.02.2025</p>
+            <h1>📚 Probeprüfung Deutsch</h1>
+            <p>Musterlösungen und Analysen • Gymnasium Baden-Württemberg</p>
         </div>
 
         <div class="nav-buttons">
-            <a href="https://baadjid.github.io/Deutsch_ABI_Lernzettel/index.html" class="btn btn-secondary">← Zurück zur Startseite</a>
+            <button class="btn btn-primary" onclick="togglePDF()">👁️ Prüfung anzeigen/ausblenden</button>
             <a href="https://github.com/Baadjid/Deutsch_ABI_Lernzettel/releases/tag/Probepruefung_Deutsch" class="btn btn-success" target="_blank">⬇️ Download (GitHub)</a>
-            <button class="btn btn-primary" onclick="togglePDF()">👁️ Prüfung hier anzeigen/ausblenden</button>
         </div>
 
-        <!-- PDF Viewer Section -->
-        <div id="pdfViewer" style="display: none; padding: 20px; background: #f8f9fa; border-bottom: 3px solid #667eea;">
-            <div style="background: white; border-radius: 10px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                <h3 style="color: #667eea; margin-bottom: 15px; text-align: center;">📄 Probeabitur Deutsch gAN - Aufgabenstellung</h3>
-                <div style="position: relative; width: 100%; padding-top: 141.42%; /* A4 aspect ratio (1:1.4142) */">
-                    <iframe 
-                        src="https://drive.google.com/file/d/1OdRLrakDbC9ExIWBtN7vJdUJCT_JUgQR/preview" 
-                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 2px solid #667eea; border-radius: 8px;"
-                        allow="autoplay">
-                    </iframe>
-                </div>
+        <!-- PDF Viewer -->
+        <div id="pdfViewer" class="pdf-container">
+            <h3>📄 Probeabitur Deutsch gAN - Aufgabenstellung</h3>
+            <div class="pdf-wrapper">
+                <iframe 
+                    src="https://drive.google.com/file/d/1OdRLrakDbC9ExIWBtN7vJdUJCT_JUgQR/preview" 
+                    allow="autoplay">
+                </iframe>
             </div>
         </div>
 
-        <script>
-            function togglePDF() {
-                const pdfViewer = document.getElementById('pdfViewer');
-                if (pdfViewer.style.display === 'none') {
-                    pdfViewer.style.display = 'block';
-                    pdfViewer.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                } else {
-                    pdfViewer.style.display = 'none';
-                }
-            }
-        </script>
-
-        <div class="content">
-            <!-- AUFGABE I -->
-            <div class="aufgabe-section">
-                <h2>Aufgabe I: Literarische Interpretation - Georg Büchner: Woyzeck (Szene 9)</h2>
-                
-                <h3>1. Einordnung und Interpretation der Textstelle (ca. 50%)</h3>
-                
-                <h4>Einleitung</h4>
-                <p>Die vorliegende Szene 9 aus Georg Büchners Dramenfragment "Woyzeck" (1836/37) thematisiert die existenzielle Verzweiflung und soziale Ausgrenzung des Protagonisten Franz Woyzeck. Das Fragment, das erst posthum veröffentlicht wurde, gilt als eines der ersten Sozialdramen der deutschen Literatur und basiert auf dem realen Kriminalfall des Johann Christian Woyzeck, der 1821 seine Geliebte ermordete.</p>
-                
-                <h4>Inhaltliche Einordnung</h4>
-                <p>Die Szene findet in einem fortgeschrittenen Stadium der Handlung statt, nachdem Woyzeck bereits die Affäre zwischen Marie und dem Tambourmajor entdeckt hat. Seine psychische Destabilisierung durch die medizinischen Experimente des Doktors und seine prekäre soziale Lage haben bereits begonnen, ihn zu zermürben. In dieser Szene offenbart sich seine innere Zerrissenheit in einem Gespräch mit dem Hauptmann und dem Doktor.</p>
-                
-                <h4>Detaillierte Interpretation</h4>
-                
-                <div class="analyse-box">
-                    <h4>Demütigung und Spott</h4>
-                    <p>Die Szene beginnt mit der erniedrigenden Anrede des Hauptmanns: "Ha Woyzeck, was hetzt er sich so an mir vorbei." Die Verwendung der dritten Person ("er") statt der direkten Anrede zeigt bereits die herabwürdige Haltung des Hauptmanns. Der Vergleich Woyzecks mit einem "offnen Rasiermesser" deutet einerseits auf Woyzecks Rastlosigkeit hin, enthält aber auch eine unbewusste Vorahnung der späteren Tat.</p>
-                </div>
-
-                <div class="zitat">
-                    <p>"He er versteht mich doch, ein Haar von einem Menschen, vom Bart eines Sapeur, eines Unteroffizier, eines - eines Tambourmajor? He Woyzeck?"</p>
-                </div>
-
-                <p>Diese Passage offenbart die perfide Grausamkeit des Hauptmanns. Durch die aufsteigende Klimax ("Sapeur", "Unteroffizier", "Tambourmajor") spielt er gezielt auf die Affäre Maries mit dem Tambourmajor an, ohne es direkt auszusprechen. Die Pausen (Gedankenstriche) suggerieren eine gespielt nachdenkliche Haltung, die die Demütigung noch verstärkt.</p>
-
-                <div class="analyse-box">
-                    <h4>Soziale Hierarchie und Menschenwürde</h4>
-                    <p>Die Replik "Aber Er hat eine brave Frau. Geht ihm nicht wie andern" ist doppelt perfide: Sie scheint zunächst ein Kompliment zu sein, dient aber tatsächlich dazu, Woyzeck vor der Enthüllung in falscher Sicherheit zu wiegen. Der Hauptmann genießt sichtlich seine Überlegenheit.</p>
-                </div>
-
-                <p>Woyzecks Reaktion - "Was wollen Sie sagen Herr Hauptmann?" - zeigt seine Ahnung, aber auch seine Hilflosigkeit. Die höfliche Anrede "Herr Hauptmann" kontrastiert scharf mit der respektlosen Anrede "Kerl" durch den Hauptmann und unterstreicht die ungleichen Machtverhältnisse.</p>
-
-                <div class="wichtig">
-                    <h4>Woyzecks Verzweiflung</h4>
-                    <p>Der zentrale Ausbruch Woyzecks "Herr Hauptmann, ich bin ein armer Teufel, - und hab sonst nichts - auf der Welt" ist von existenzieller Bedeutung. Das Wort "Teufel" verweist auf seine Ausgestoßenheit aus der Gesellschaft. Marie und das gemeinsame Kind sind sein einziger Halt, seine einzige Quelle von Identität und Würde.</p>
-                </div>
-
-                <div class="analyse-box">
-                    <h4>Medizinische Pathologisierung</h4>
-                    <p>Der Doktor betrachtet Woyzeck nicht als Menschen, sondern als medizinisches Objekt: "Den Puls Woyzeck, den Puls, klein, hart hüpfend, ungleich." Die Aufzählung vitaler Parameter reduziert Woyzeck auf seine körperlichen Funktionen. Die Diagnose "Gesichtsmuskeln starr, gespannt, zuweilen hüpfend" behandelt ihn wie ein zu beobachtendes Experiment.</p>
-                </div>
-
-                <div class="zitat">
-                    <p>"Herr Hauptmann, die Erd ist höllenheiss, mir eiskalt, eiskalt, die Hölle ist kalt, wollen wir wetten. Unmöglich. Mensch! Mensch! unmöglich."</p>
-                </div>
-
-                <p>Dieser Ausbruch Woyzecks ist sprachlich und inhaltlich bemerkenswert. Die Paradoxie "höllenheiss" und "eiskalt" drückt seine innere Zerrissenheit aus. Die traditionelle Vorstellung der Hölle als heißer Ort wird umgekehrt - für Woyzeck ist die Hölle "kalt", emotionslos, grausam. Der verzweifelte Ausruf "Mensch! Mensch! unmöglich" kann mehrfach gedeutet werden: als Anklage gegen die Unmenschlichkeit seiner Situation, als Zweifel an der Menschlichkeit der anderen oder als Infragestellung seiner eigenen menschlichen Würde.</p>
-
-                <h4>Sprachliche Gestaltung</h4>
-                <ul>
-                    <li><strong>Soziolekt:</strong> Woyzeck spricht in einfacher, fragmentarischer Sprache, die seinen niedrigen Bildungsstand und seine psychische Belastung widerspiegelt</li>
-                    <li><strong>Ellipsen und Pausen:</strong> Die zahlreichen Gedankenstriche zeigen Woyzecks Unfähigkeit, zusammenhängende Gedanken zu formulieren</li>
-                    <li><strong>Wiederholungen:</strong> "Mensch! Mensch!" verstärkt die Dringlichkeit seiner Aussage</li>
-                    <li><strong>Paradoxa:</strong> "höllenheiss" vs. "eiskalt" verdeutlichen innere Widersprüche</li>
-                    <li><strong>Kontrast der Sprachebenen:</strong> Der Hauptmann verwendet ironische, spielerische Sprache, der Doktor medizinisches Fachvokabular, Woyzeck spricht existenziell und emotional</li>
-                </ul>
-
-                <h4>Dramaturgische Funktion</h4>
-                <p>Die Szene markiert einen Wendepunkt in Woyzecks psychischer Entwicklung. Der öffentliche Spott und die Bestätigung seiner Befürchtungen bezüglich Marie treiben ihn weiter in die Verzweiflung. Die Szene zeigt exemplarisch die drei Machtinstanzen, die Woyzeck unterdrücken: der Hauptmann (militärische/soziale Macht), der Doktor (wissenschaftliche Macht) und implizit der Tambourmajor (sexuelle/körperliche Macht). Woyzeck ist diesen Mächten hilflos ausgeliefert.</p>
-
-                <h3>2. Faktoren, die demütigend und zerstörend auf Woyzeck einwirken (ca. 50%)</h3>
-
-                <div class="wichtig">
-                    <h4>Überblick der zerstörenden Faktoren</h4>
-                    <p>Büchners "Woyzeck" präsentiert ein komplexes Geflecht von gesellschaftlichen, psychologischen und ökonomischen Faktoren, die systematisch auf den Protagonisten einwirken und ihn in den Wahnsinn und schließlich zum Mord treiben.</p>
-                </div>
-
-                <h4>1. Soziale und ökonomische Ausbeutung</h4>
-                
-                <p><strong>Armut und Existenznot:</strong> Woyzeck befindet sich in einer prekären ökonomischen Situation. Als einfacher Soldat verdient er kaum genug zum Überleben. Diese materielle Not zwingt ihn, sich dem erniedrigenden medizinischen Experiment des Doktors zu unterwerfen - er muss sich ausschließlich von Erbsen ernähren. Seine Aussage "ich bin ein armer Teufel, - und hab sonst nichts - auf der Welt" unterstreicht seine Mittellosigkeit.</p>
-
-                <p><strong>Fehlende soziale Mobilität:</strong> Die Gesellschaft bietet Woyzeck keine Aufstiegschancen. Seine niedrige Geburt determiniert sein gesamtes Leben. Der Hauptmann behandelt ihn als Untermensch, dessen Meinung und Gefühle irrelevant sind. Die ständige Verwendung der Anrede "Kerl" statt seines Namens entmenschlicht ihn.</p>
-
-                <h4>2. Medizinische Instrumentalisierung</h4>
-
-                <div class="analyse-box">
-                    <p><strong>Der Doktor als Vertreter der Wissenschaft:</strong> Der Doktor verkörpert eine Wissenschaft, die ihre ethischen Grundlagen verloren hat. Er betrachtet Woyzeck nicht als Menschen, sondern als Versuchsobjekt. Die Erbsendiät ist ein unmenschliches Experiment, das Woyzeck körperlich und psychisch schädigt. Der Doktor interessiert sich nur für "wissenschaftliche" Erkenntnisse, nicht für Woyzecks Leiden.</p>
-                </div>
-
-                <p>Die Diagnose in Szene 9 - "Gesichtsmuskeln starr, gespannt, zuweilen hüpfend" - zeigt die Pathologisierung von Woyzecks emotionalem Zustand. Seine berechtigte Verzweiflung wird als medizinisches Phänomen interpretiert. Der Doktor spricht über ihn in der dritten Person, als sei er nicht anwesend, was seine Objektifizierung komplettiert.</p>
-
-                <h4>3. Militärische Hierarchie und Machtmissbrauch</h4>
-
-                <p><strong>Der Hauptmann als Repräsentant der Obrigkeit:</strong> Der Hauptmann nutzt seine Position systematisch zur Demütigung Woyzecks. Seine "moralischen" Predigten über Tugend und "gute Menschen" sind heuchlerisch, da er selbst unmenschlich handelt. Die Szene 9 zeigt seine sadistische Freude daran, Woyzeck mit Andeutungen über Maries Untreue zu quälen.</p>
-
-                <p>Die Art, wie der Hauptmann mit Woyzeck spricht - "was hetzt er sich so an mir vorbei" - behandelt ihn wie ein Tier. Die spielerische Grausamkeit ("He er versteht mich doch") zeigt, dass die Demütigung Woyzecks für den Hauptmann Unterhaltung ist.</p>
-
-                <h4>4. Emotionale und sexuelle Erniedrigung</h4>
-
-                <div class="zitat">
-                    <p><strong>Maries Untreue:</strong> Marie, Woyzecks Lebensgefährtin und Mutter seines Kindes, betrügt ihn mit dem Tambourmajor. Dies ist für Woyzeck besonders zerstörend, weil Marie das Einzige ist, was ihm Identität und Würde verleiht - "hab sonst nichts - auf der Welt".</p>
-                </div>
-
-                <p>Der Tambourmajor verkörpert alles, was Woyzeck nicht ist: Er ist körperlich stark, sozial höhergestellt und sexuell potent. Diese Konstellation verstärkt Woyzecks Gefühl der Unzulänglichkeit und Machtlosigkeit. Die öffentliche Bloßstellung durch den Hauptmann potenziert die Demütigung.</p>
-
-                <h4>5. Psychische Destabilisierung</h4>
-
-                <p><strong>Wahnvorstellungen und Halluzinationen:</strong> Woyzeck leidet unter Visionen und Stimmen. Diese können teilweise auf die Mangelernährung durch die Erbsendiät zurückgeführt werden, sind aber auch Ausdruck seiner psychischen Überlastung. Seine Aussage "die Erd ist höllenheiss, mir eiskalt, eiskalt, die Hölle ist kalt" zeigt seine veränderte Realitätswahrnehmung.</p>
-
-                <p>Die Unfähigkeit, seine Gedanken kohärent zu formulieren (erkennbar an den vielen Gedankenstrichen und Ellipsen), deutet auf einen fortschreitenden psychischen Zerfall hin.</p>
-
-                <h4>6. Fehlende soziale Unterstützung</h4>
-
-                <p>Woyzeck ist völlig isoliert. Er hat keine Freunde, keine Familie, die ihn unterstützen könnten. Selbst in seiner Beziehung zu Marie fehlt emotionale Stabilität. Diese Isolation macht ihn besonders anfällig für die destruktiven Einflüsse seiner Umgebung.</p>
-
-                <h4>7. Sprachlosigkeit und fehlende Artikulationsmöglichkeiten</h4>
-
-                <p>Woyzeck fehlen die sprachlichen Mittel, um sich angemessen zu verteidigen oder seine Situation zu erklären. Im Gespräch mit dem Hauptmann und dem Doktor kann er nur fragmentarisch antworten. Diese Sprachlosigkeit ist sowohl Folge seiner mangelnden Bildung als auch Ausdruck seiner völligen Ohnmacht.</p>
-
-                <div class="wichtig">
-                    <h4>Sozialtheoretischer Kontext</h4>
-                    <p><strong>Büchners gesellschaftskritische Intention:</strong> Durch die Kumulation dieser Faktoren zeigt Büchner, wie gesellschaftliche Strukturen einen Menschen systematisch zerstören können. Woyzeck ist nicht einfach ein "Mörder" - er ist ein Opfer seiner Verhältnisse. Das Drama stellt die Frage nach Schuld und Verantwortung neu: Ist Woyzeck für seine Tat verantwortlich, oder ist es die Gesellschaft, die ihn in diese Situation gebracht hat?</p>
-                </div>
-
-                <h4>Der Determinismus im Drama</h4>
-                <p>Büchners "Woyzeck" ist von einer deterministischen Weltsicht geprägt. Die offene Struktur des Fragments (verschiedene Fassungen existieren nebeneinander) unterstreicht die Zufälligkeit und Willkür, der Woyzeck ausgeliefert ist. Es gibt keine transzendente Instanz, die ihm hilft, keine moralische Weltordnung, die Gerechtigkeit schafft. Er ist gefangen in einem System, das ihn zermalmt.</p>
-
-                <h4>Relevanz für das Gesamtwerk</h4>
-                <p>Die analysierten Faktoren wirken durch das gesamte Drama hindurch. Jede Szene fügt einen weiteren Baustein zur systematischen Vernichtung Woyzecks hinzu. Der Mord an Marie am Ende ist die logische, wenn auch tragische Konsequenz dieser multiplen Demütigungen. Büchner schafft damit eines der ersten Sozialdramen der deutschen Literatur und nimmt literarische Entwicklungen des Naturalismus vorweg.</p>
-
-                <div class="analyse-box">
-                    <h4>Fazit</h4>
-                    <p>Georg Büchners "Woyzeck" präsentiert ein erschütterndes Bild der Zerstörung eines Menschen durch gesellschaftliche Verhältnisse. Die Szene 9 ist exemplarisch für die systematische Demütigung, der Woyzeck ausgesetzt ist. Büchner zeigt, wie soziale Ungleichheit, wissenschaftlicher Missbrauch, militärische Hierarchie und emotionale Verletzungen zusammenwirken, um einen Menschen zu vernichten. Das Drama ist nicht nur eine Anklage gegen die Gesellschaft des 19. Jahrhunderts, sondern bleibt auch heute relevant als Warnung vor den Gefahren sozialer Ausgrenzung und menschlicher Instrumentalisierung.</p>
-                </div>
+        <!-- Aufgabe I: Woyzeck -->
+        <div class="section">
+            <h2>Aufgabe I: Literarische Interpretation - Georg Büchner: Woyzeck (Szene 9)</h2>
+            
+            <h3>1. Einordnung und Interpretation der Textstelle</h3>
+            
+            <h4>Einleitung</h4>
+            <p>Die vorliegende Szene 9 aus Georg Büchners Dramenfragment "Woyzeck" (1836/37) thematisiert die existenzielle Verzweiflung und soziale Ausgrenzung des Protagonisten Franz Woyzeck. Das Fragment, das erst posthum veröffentlicht wurde, gilt als eines der ersten Sozialdramen der deutschen Literatur und basiert auf dem realen Kriminalfall des Johann Christian Woyzeck, der 1821 seine Geliebte ermordete.</p>
+            
+            <h4>Inhaltliche Einordnung</h4>
+            <p>Die Szene findet in einem fortgeschrittenen Stadium der Handlung statt, nachdem Woyzeck bereits die Affäre zwischen Marie und dem Tambourmajor entdeckt hat. Seine psychische Destabilisierung durch die medizinischen Experimente des Doktors und seine prekäre soziale Lage haben bereits begonnen, ihn zu zermürben.</p>
+            
+            <h4>Detaillierte Interpretation</h4>
+            
+            <div class="analyse-box">
+                <h4>Demütigung und Spott</h4>
+                <p>Die Szene beginnt mit der erniedrigenden Anrede des Hauptmanns: "Ha Woyzeck, was hetzt er sich so an mir vorbei." Die Verwendung der dritten Person ("er") statt der direkten Anrede zeigt bereits die herabwürdige Haltung des Hauptmanns. Der Vergleich Woyzecks mit einem "offnen Rasiermesser" deutet einerseits auf Woyzecks Rastlosigkeit hin, enthält aber auch eine unbewusste Vorahnung der späteren Tat.</p>
             </div>
 
-            <!-- AUFGABE II -->
-            <div class="aufgabe-section">
-                <h2>Aufgabe II: Kurzprosa - Alissa Walser: "Wie die Dinge liegen" (2017)</h2>
-                
-                <h3>Interpretation und Analyse der Protagonistenbeziehung</h3>
-                
-                <h4>Einleitung</h4>
-                <p>Die Kurzgeschichte "Wie die Dinge liegen" von Alissa Walser aus dem Jahr 2017 thematisiert eine gescheiterte Paarbeziehung und die damit verbundene Kommunikationsunfähigkeit. Die Erzählung besticht durch ihre minimalistische Sprache und die Fokussierung auf die psychologische Verfassung der Protagonistin.</p>
-
-                <h4>Inhalt und Handlung</h4>
-                <p>Die Geschichte spielt an einem Abend, an dem ein Mann ("er") eine Frau ("sie") besucht, nachdem sie sich möglicherweise getrennt haben oder in einer Krise befinden. Er stellt Fragen über den Aufbewahrungsort alltäglicher Gegenstände, die einen tiefer liegenden Subtext vermuten lassen. Die Frau beobachtet ihn beim Kochen, beim Scheitern seiner Versuche und schließlich bei seinem Weggang in die Nacht.</p>
-
-                <h4>Analyse der Beziehungsdynamik</h4>
-
-                <div class="analyse-box">
-                    <h4>1. Kommunikationsebene</h4>
-                    <p><strong>Oberflächliche vs. eigentliche Kommunikation:</strong> Die Dialoge zwischen den Protagonisten kreisen um banale Alltagsgegenstände ("Wo im Haus die Dinge liegen", "Wo haben wir denn das Schuhputzzeug?"). Diese vordergründig harmlosen Fragen dienen als Platzhalter für die eigentlichen, unausgesprochenen Themen ihrer Beziehung.</p>
-                </div>
-
-                <p>Die Frau weist darauf hin: "Er soll andauernd solche Fragen beantwortet. Als er sich darüber beklagt, sagt sie, er solle auf diese Fragen einfach nicht mehr antworten." Dieser Ratschlag offenbart ihre Frustration über die Sinnlosigkeit dieser Scheinkommunikation. Die Gegenstände (Mottenpapier, Schuhputzzeug, Tempo-Packungen) werden zu Metaphern für die Leere in ihrer Beziehung.</p>
-
-                <div class="wichtig">
-                    <h4>Der "biologische Abflussreiniger"</h4>
-                    <p>Diese Frage ist besonders entlarvend. Sie zeigt, dass der Mann in einer anderen Realität lebt - er kennt die grundlegenden Strukturen des gemeinsamen Alltags nicht mehr oder hat sie nie gekannt. Die Tatsache, dass er nach etwas fragt, das die Frau "eigentlich wissen" müsste, deutet auf eine fundamentale Entfremdung hin.</p>
-                </div>
-
-                <h4>2. Geschlechterstereotype und Rollenmuster</h4>
-
-                <div class="zitat">
-                    <p>"Sind doch alles nur Männer«, sagt er. »Und wann trefft ihr euch?« sagt sie. »Die Uhrzeit?« »Gegen sieben«, sagt er."</p>
-                </div>
-
-                <p>Die "Herrenrunde" symbolisiert eine Rückzugsmöglichkeit in traditionelle Männerräume. Der Mann sucht Bestätigung und Identität außerhalb der Beziehung. Die Frau reagiert zunächst mit Ironie ("Die Uhrzeit?"), dann aber mit einer bedeutsamen Frage.</p>
-
-                <p><strong>Die Kloben-Metapher:</strong> "Wir haben schön Wetter Herr Hauptmann. Sehn sie so ein schönen, festen grauen Himmel, man könnte Lust bekommen, einen Kloben hineinzuschlagen und sich daran zu hängen, nur wegen des Gedankenstrichels zwischen Ja, und nein, ja – und nein, Herr Hauptmann ja und nein?"</p>
-
-                <p>Dieses Zitat (das möglicherweise aus Büchners "Woyzeck" stammt oder darauf anspielt) offenbart die innere Zerrissenheit der Frau. Sie schwankt zwischen "Ja" und "Nein", zwischen Bleiben und Gehen, zwischen Hoffnung und Resignation. Der "Kloben" (Haken) wird zum Symbol für Selbstmord, was die Dramatik ihrer psychischen Situation unterstreicht.</p>
-
-                <h4>3. Psychologische Verfassung der Protagonistin</h4>
-
-                <div class="analyse-box">
-                    <p><strong>Beobachtungsposition:</strong> Die Frau nimmt durchgehend eine passive Beobachterrolle ein. Sie beschreibt seine Handlungen: "Er sieht perfekt aus, doch beim Wenden zerfetzt sie ihn." Diese distanzierte Perspektive zeigt ihre emotionale Entfremdung.</p>
-                </div>
-
-                <p><strong>Handlungsverweigerung:</strong> Obwohl die Frau bemerkt, dass Pfannkuchen am Pfannenboden kleben und Rettungsversuche misslingen, greift sie nicht ein. "Die Rettungsversuche misslingen. Sie kratzt ein paar Stücke auf ihren Teller, lässt den Rest auf dem Herd stehen." Diese Passivität kann als Depression oder als stiller Protest gegen die Beziehung interpretiert werden.</p>
-
-                <div class="wichtig">
-                    <h4>Ambivalenz und innerer Konflikt</h4>
-                    <p>"Am Abend hat er eine Verabredung. »Reine Herrenrunde«, sagt er. Sie weiß, was er sagen will. Sie soll nicht mit."</p>
-                    <p>Diese Passage zeigt das Ungleichgewicht in der Beziehung. Er hat ein soziales Leben außerhalb der Beziehung, sie scheint isoliert zu sein. Ihre Reaktion - sie "soll nicht mit" - deutet auf frühere Konflikte oder implizite Regeln hin.</p>
-                </div>
-
-                <h4>4. Die Nacht-Szene als Klimax</h4>
-
-                <div class="zitat">
-                    <p>"Wo könnten diese Topfreiniger sein?«, fragt sie, als er an ihr vorbeiläuft. Es ist spät. Draußen ist es dunkel, dunkler wird die Nacht nicht mehr."</p>
-                </div>
-
-                <p>Die Dunkelheit wird zur Metapher für ihre Beziehung und ihre psychische Verfassung. "Dunkler wird die Nacht nicht mehr" impliziert, dass der Tiefpunkt erreicht ist.</p>
-
-                <p><strong>Die Entscheidung:</strong> "Sie schlägt ihm vor, zu Hause zu bleiben. Aber er sagt, er gehe gern. Und er geht."</p>
-
-                <p>Diese Passage ist der Wendepunkt der Geschichte. Die Frau versucht ein letztes Mal, ihn zu halten, aber ohne Nachdruck. Sein "er gehe gern" ist brutal ehrlich - er zieht das Leben außerhalb ihrer gemeinsamen Welt vor. Das finale "Und er geht" hat etwas Endgültiges.</p>
-
-                <h4>5. Symbolik und Motivik</h4>
-
-                <p><strong>Die Dinge im Haus:</strong> Die ständige Suche nach Gegenständen symbolisiert die Suche nach Halt und Orientierung in einer Beziehung, die ihre Grundlage verloren hat. Die Frage "Wo liegen die Dinge?" ist existenziell: Wo ist unser Platz, unsere Ordnung, unser gemeinsamer Raum?</p>
-
-                <p><strong>Das Kochen:</strong> Der misslungene Pfannkuchen steht für das Scheitern ihrer Beziehung. Obwohl äußerlich "perfekt", zerfällt er beim Versuch, ihn zu wenden. Die Metapher ist deutlich: Die Beziehung sieht von außen intakt aus, bricht aber bei der kleinsten Belastung auseinander.</p>
-
-                <p><strong>Die Topfreiniger:</strong> Die Frage nach den Topfreinigern in der Dunkelheit ist hochsymbolisch. Sie suchen nach Reinigung, nach einer Möglichkeit, die Beziehung zu "säubern", aber es ist zu spät, zu dunkel.</p>
-
-                <h4>6. Erzähltechnik und Sprache</h4>
-
-                <div class="analyse-box">
-                    <p><strong>Minimalistische Sprache:</strong> Walser verwendet kurze, parataktische Sätze: "Sie wird die Pfanne einweichen und mit Stahlwolle reinigen." Diese Sprache spiegelt die emotionale Leere und Reduktion der Beziehung wider.</p>
-                </div>
-
-                <p><strong>Aussparungstechnik:</strong> Vieles bleibt ungesagt. Wir erfahren nicht, warum sie in der Krise sind, was vorher passiert ist, oder welche Zukunft sie haben. Diese Leerstellen machen die Geschichte offen für Interpretationen.</p>
-
-                <p><strong>Personalpronomen:</strong> Die Verwendung von "er" und "sie" statt Namen entpersonalisiert die Figuren und macht sie universell. Sie könnten jedes Paar sein, das in einer ähnlichen Situation steckt.</p>
-
-                <h4>7. Interpretation der Beziehungsdynamik</h4>
-
-                <div class="wichtig">
-                    <h4>Zentrale These</h4>
-                    <p>Die Beziehung zwischen "ihm" und "ihr" ist geprägt von emotionaler Entfremdung, mangelnder Kommunikation und unterschiedlichen Bedürfnissen. Er sucht Distanz und Flucht, sie verharrt in Passivität und unterdrückter Verzweiflung. Beide sind unfähig, ihre wahren Gefühle auszudrücken, und verstecken sich hinter banalen Alltagsritualen.</p>
-                </div>
-
-                <p><strong>Seine Perspektive:</strong> Er wirkt ruhelos, suchend, aber auch gleichgültig gegenüber der Beziehung. Seine Fragen nach den Dingen sind oberflächlich, ohne echtes Interesse an den Antworten. Er hat sich emotional bereits verabschiedet, zögert aber den endgültigen Bruch hinaus - möglicherweise aus Bequemlichkeit oder Furcht vor Veränderung.</p>
-
-                <p><strong>Ihre Perspektive:</strong> Sie ist gefangen in einer Situation, die sie nicht mehr will, aber auch nicht aktiv beenden kann. Ihre Passivität ist sowohl Resignation als auch ein stiller Protest. Sie beobachtet das Scheitern ihrer Beziehung wie ein Experiment, ohne einzugreifen. Die Frage nach den Topfreinigern zeigt, dass sie noch einen letzten verzweifelten Versuch unternimmt, ihn zu halten - aber es ist zu spät.</p>
-
-                <h4>8. Zeitgenössischer Kontext</h4>
-
-                <p>Die Geschichte reflektiert moderne Beziehungsprobleme: die Schwierigkeit, authentisch zu kommunizieren, die Angst vor Verbindlichkeit, die Flucht in Oberflächlichkeit. Die "Herrenrunde" könnte als Symptom einer Gesellschaft gesehen werden, in der Menschen sich in homogene Gruppen zurückziehen statt sich der Komplexität intimer Beziehungen zu stellen.</p>
-
-                <div class="analyse-box">
-                    <h4>Fazit</h4>
-                    <p>Alissa Walsers "Wie die Dinge liegen" ist eine präzise psychologische Studie einer gescheiterten Beziehung. Durch die Fokussierung auf alltägliche Details und die Aussparung expliziter Erklärungen schafft Walser eine Geschichte von großer emotionaler Dichte. Die Beziehung der Protagonisten ist gekennzeichnet durch Sprachlosigkeit, Entfremdung und die Unfähigkeit, authentische Nähe herzustellen. Die offene Struktur der Geschichte lässt viele Interpretationen zu, macht aber deutlich: Wenn die Grundlagen einer Beziehung verloren gehen, helfen auch keine Topfreiniger mehr - es ist "dunkler wird die Nacht nicht mehr".</p>
-                </div>
-
-                <p>Die Meisterschaft der Erzählung liegt in ihrer Reduktion. Walser zeigt, wie viel über eine Beziehung gesagt werden kann, ohne viel zu sagen - eine Technik, die an Ernest Hemingways "Eisberg-Theorie" erinnert, bei der das Wesentliche unter der Oberfläche liegt.</p>
+            <div class="zitat">
+                <p>"He er versteht mich doch, ein Haar von einem Menschen, vom Bart eines Sapeur, eines Unteroffizier, eines - eines Tambourmajor? He Woyzeck?"</p>
             </div>
 
-            <!-- AUFGABE III -->
-            <div class="aufgabe-section">
-                <h2>Aufgabe III: Texterörterung - Stefan Lutz: "Wie wär's, wenn wir mal wieder alle anpacken?"</h2>
-                
-                <h3>1. Argumentationsgang und Intention des Textes (ca. 40%)</h3>
-                
-                <h4>Einleitung</h4>
-                <p>Der Kommentar "Wie wär's, wenn wir mal wieder alle anpacken?" von Stefan Lutz, erschienen in der Süddeutschen Zeitung am 31.12.2022, setzt sich kritisch mit der Arbeits- und Leistungsmentalität in Deutschland auseinander. Angesichts multipler Krisen (Corona-Pandemie, Energiekrise, Inflation, Klimawandel) fordert Lutz eine Rückbesinnung auf Engagement und Gemeinschaftssinn.</p>
-
-                <h4>Struktur und Argumentationsgang</h4>
-
-                <div class="wichtig">
-                    <h4>These des Autors</h4>
-                    <p>Deutschland befindet sich in einer Phase der Resignation und des Pessimismus. Die Gesellschaft hat sich in eine "Kasko-Mentalität" zurückgezogen, in der jedes Problem als Aufgabe des Staates oder anderer verstanden wird. Um die aktuellen und zukünftigen Herausforderungen zu meistern, bedarf es einer Rückkehr zu Eigeninitiative, Anpackmentalität und Leistungsbereitschaft.</p>
-                </div>
-
-                <h4>1. Einstieg: Provokative Situationsbeschreibung (Zeile 1-12)</h4>
-
-                <div class="analyse-box">
-                    <p>Lutz beginnt mit einem pointierten Alltagsszenario: Eine Apothekerin überbringt mit ihrem Nasenspray eine pessimistische Zeitdiagnose. Der Einstieg über diese Alltagssituation macht die Problematik greifbar und identifizierbar.</p>
-                </div>
-
-                <p><strong>Zitat:</strong> "Das ist das letzte, sagte sie und ergänzte kaum hörbar: Wir sind in einem Mangelland."</p>
-
-                <p>Die Formulierung "Mangelland" ist bewusst gewählt - sie erinnert an Nachkriegszeiten und suggeriert einen fundamentalen Systemwechsel. Lutz verwendet diese Anekdote als Aufhänger für seine grundsätzliche Gesellschaftskritik.</p>
-
-                <p>Er fügt hinzu: "Der scherzhaft gemeinte Satz sollte ein wenig die Stimmung aufhellen, in Wahrheit aber schwang ein ordentlicher Schuss Resignation mit. So sei das halt gerade. Ein Pumpspray als Sinnbild für die Lage im Land."</p>
-
-                <p>Die Ironie dieser Situation - ein Luxusproblem (Nasenspray) wird zum Symbol für fundamentale gesellschaftliche Probleme - zeigt die Perspektive des Autors: Deutschland jammert auf hohem Niveau.</p>
-
-                <h4>2. Krisendiagnose und gesellschaftlicher Zustand (Zeile 13-25)</h4>
-
-                <p>Lutz zählt die vielfältigen Krisen auf, die Deutschland treffen: "Der Zug fällt aus? Das ist dann so. Die Post kommt nicht? Ja, auch das ist schade." Er zeigt eine Gesellschaft, die sich mit Unzulänglichkeiten abgefunden hat und in lähmender Resignation verharrt.</p>
-
-                <div class="zitat">
-                    <p>"Die Liste der Unzulänglichkeiten in Deutschland ließe sich derzeit endlos fortsetzen, was schlimm genug ist. Doch das eigentlich Alarmierende ist weniger, dass die Züge tatsächlich nicht pünktlich kommen oder die Post wegbleibt. Sondern, dass das niemand mehr so richtig aufzuregen scheint. Ein neues Einverständnis mit dem Mittelmaß macht sich breit."</p>
-                </div>
-
-                <p>Hier liegt das Kernargument: Nicht die Probleme an sich sind das Hauptproblem, sondern die Akzeptanz der Probleme, die fehlende Empörung, der Verlust von Ansprüchen.</p>
-
-                <h4>3. Historische Kontrastierung (Zeile 26-35)</h4>
-
-                <div class="analyse-box">
-                    <p>Lutz kontrastiert die gegenwärtige Situation mit früheren Zeiten: "Wo sind sie hin, die als Tugenden gepriesenen Eigenschaften wie Ehrgeiz und Perfektionismus, und wird aus einem Land, das sich darin zu ergeben scheint, dass eben nicht mehr alles funktioniert?"</p>
-                </div>
-
-                <p>Er bedient sich hier eines idealisierten Geschichtsbildes. Die "Tugenden" früherer Generationen - Ehrgeiz, Perfektionismus, Leistungsbereitschaft - hätten Deutschland "zur Blüte getrieben". Diese Argumentation ist nostalgisch und gleichzeitig vorwurfsvoll gegenüber der heutigen Generation.</p>
-
-                <p><strong>Kritik an Generationen Y und Z (Zeile 36-52):</strong> "Der Blick auf die Ursachen dafür lenkt den Fokus aber weg von den jungen Menschen, über deren Einstellungen so häufig geschimpft wird. Denn die sogenannte Generation Z, also die um die Jahrtausendwende Geborenen, ist so, wie sie ist, weil Eltern, Schulen und Hochschulen sie dazu gemacht haben."</p>
-
-                <p>Hier nimmt Lutz die junge Generation teilweise in Schutz, macht aber gleichzeitig ihre Erziehung zum Problem. Die Kritik richtet sich gegen eine Überversorgung: "Früher ging es zu Fuß oder mit dem Rad zur Schule - heute in Mamas SUV."</p>
-
-                <h4>4. Systemkritik und Verantwortungsfrage (Zeile 53-80)</h4>
-
-                <div class="wichtig">
-                    <p><strong>Die "Kasko-Mentalität":</strong> "Vom Sinn oder Unsinn einzelner Maßnahmen wie Neun-Euro-Ticket oder Energiepauschale mal abgesehen, werden die Menschen in Richtung einer Kasko-Mentalität konditioniert, die auf Dauer gar nicht einlösbar ist."</p>
-                </div>
-
-                <p>Lutz kritisiert den fürsorglichen Wohlfahrtsstaat, der die Bürger infantilisiert. Die Metapher der "Kasko-Versicherung" impliziert, dass Menschen erwarten, für alle Schäden entschädigt zu werden, ohne selbst Verantwortung zu übernehmen.</p>
-
-                <p>"Die politischen Entscheidungsträger kündigten zwar erhebliche Wohlstandsverluste an - um dann aber sofort den Geldhahn aufzudrehen und gigantische Summen Richtung Bevölkerung fließen zu lassen."</p>
-
-                <p>Die Politik wird als Teil des Problems dargestellt: Sie verspricht Verantwortung, verhindert aber gleichzeitig, dass Menschen diese übernehmen, indem sie alle Probleme sofort "löst".</p>
-
-                <h4>5. Arbeitswelt und Work-Life-Balance (Zeile 60-75)</h4>
-
-                <div class="analyse-box">
-                    <p>"Wer als Personalverantwortlicher mit jungen Leuten zu tun hat, sieht sich selbstbewussten Menschen gegenüber, die genau wissen, was sie wollen - und vor allem, was sie nicht wollen. Kaputt arbeiten zum Beispiel wollen sie sich nicht. Work-Life-Balance ist das Reizwort, mit dem man Firmen-Chefs alten Schlags auf die Palme bringen kann, dazu Teilzeit und - klar - ein Sabbatical."</p>
-                </div>
-
-                <p>Lutz stellt die Forderungen der jungen Generation als überzogen dar. Die Ironie in "Sabbatical" suggeriert, dass diese Ansprüche unrealistisch oder verwöhnt seien. Er sieht einen Konflikt zwischen den Erwartungen junger Menschen und den Erfordernissen der Wirtschaft.</p>
-
-                <p><strong>Gegenargument des Soziologen Hurrelmann:</strong> "Wer richtig was kann, dem wird der Chef auch all das ermöglichen. Kritisch aber wird es, sagte Soziologe Klaus Hurrelmann in einem Interview, wenn großes Selbstbewusstsein auf mangelnde Kompetenz trifft."</p>
-
-                <p>Diese Argumentation ist problematisch, da sie impliziert, dass nur "kompetente" Menschen Anspruch auf gute Arbeitsbedingungen haben. Es ist eine Leistungslogik, die Rechte an Fähigkeiten koppelt.</p>
-
-                <h4>6. Schlussfrage und Appell (Zeile 75-87)</h4>
-
-                <div class="zitat">
-                    <p>"Was ist also zu tun? Zunächst einmal eine breite Diskussion darüber, wo wir als Gesellschaft und als Volkswirtschaft hinwollen. Der Vorwurf an die Jugend, faul zu sein, ist einfältig und so alt wie die Menschheit selbst. Was aber wollen die Jüngeren denn? Ein gemütliches Leben bei gleichzeitig auskömmlichem Einkommen?"</p>
-                </div>
-
-                <p>Lutz fordert eine gesellschaftliche Debatte über Werte und Ziele. Seine rhetorische Frage impliziert, dass die Ansprüche junger Menschen unrealistisch seien.</p>
-
-                <p><strong>Finaler Appell:</strong> "Die Veränderungen auf dem Arbeitsmarkt und das Wissen, dass die eigene Arbeitskraft nachgefragt ist, suggerieren, dass das möglich ist. Aber wo verläuft die Grenze zwischen Selbstverwirklichung und Faulenzerei? Darüber müssen wir Generationen übergreifend reden. Wir müssen darüber reden, dass es nur gut bleibt, wenn alle in die Hände spucken."</p>
-
-                <p>Die Formulierung "in die Hände spucken" ist ein altmodisches Idiom für harte Arbeit. Der abschließende Appell fordert kollektives Engagement und warnt vor zu viel Individualismus.</p>
-
-                <h4>Intention des Autors</h4>
-
-                <div class="wichtig">
-                    <h4>Zentrale Botschaft</h4>
-                    <p>Stefan Lutz möchte eine gesellschaftliche Debatte anstoßen über Leistungsbereitschaft, Anspruchsdenken und Verantwortung. Seine Intention ist es, die deutsche Gesellschaft - insbesondere die jüngere Generation - wachzurütteln und auf die Notwendigkeit von Eigeninitiative hinzuweisen. Er warnt vor einer "Kasko-Mentalität", die Deutschland langfristig schaden werde.</p>
-                </div>
-
-                <p>Gleichzeitig enthält der Text eine kulturpessimistische Note: Die "guten alten Zeiten" werden idealisiert, die Gegenwart als Verfall dargestellt. Lutz appelliert an traditionelle Werte wie Fleiß, Disziplin und Gemeinschaftssinn.</p>
-
-                <h3>2. Kritik an der Arbeits- und Leistungsmentalität in Deutschland (ca. 60%)</h3>
-
-                <h4>Vorbemerkung zur Kritik</h4>
-                <p>Lutz' Text wirft wichtige Fragen auf, ist aber in seiner Argumentation problematisch und teilweise undifferenziert. Eine kritische Auseinandersetzung mit seinen Thesen ist notwendig, um ein vollständigeres Bild der Arbeits- und Leistungsmentalität in Deutschland zu zeichnen.</p>
-
-                <h4>1. Idealisierung der Vergangenheit</h4>
-
-                <div class="analyse-box">
-                    <p><strong>Problem:</strong> Lutz idealisiert die Arbeitsmentalität früherer Generationen, ohne deren Schattenseiten zu benennen. Die Generation der Nachkriegszeit arbeitete unter völlig anderen Bedingungen: wirtschaftlicher Aufschwung, Vollbeschäftigung, soziale Sicherheit durch lebenslange Betriebszugehörigkeit.</p>
-                </div>
-
-                <p><strong>Gegenargument:</strong> Die "guten alten Zeiten" hatten massive Probleme:</p>
-                <ul>
-                    <li><strong>Geschlechterdiskriminierung:</strong> Frauen hatten bis 1977 das Einverständnis ihrer Ehemänner für eine Berufstätigkeit einzuholen</li>
-                    <li><strong>Autoritäre Strukturen:</strong> Hierarchische Unternehmenskulturen, in denen Kritik nicht geduldet wurde</li>
-                    <li><strong>Gesundheitsschäden:</strong> Burnout, Herz-Kreislauf-Erkrankungen durch Überarbeitung waren weit verbreitet, wurden aber tabuisiert</li>
-                    <li><strong>Keine Work-Life-Balance:</strong> Väter sahen ihre Kinder kaum, Scheidungsraten stiegen, psychische Erkrankungen wurden nicht behandelt</li>
-                </ul>
-
-                <p>Die Nostalgie für diese Zeit übersieht, dass viele Menschen unter diesem System litten, es aber keine Alternative gab.</p>
-
-                <h4>2. Einseitige Generationenkritik</h4>
-
-                <div class="wichtig">
-                    <p><strong>Problem:</strong> Lutz kritisiert die Generationen Y und Z für ihre Ansprüche, ohne die strukturellen Veränderungen zu berücksichtigen, unter denen diese Generationen aufwachsen.</p>
-                </div>
-
-                <p><strong>Realität für junge Menschen heute:</strong></p>
-                <ul>
-                    <li><strong>Prekäre Arbeitsverhältnisse:</strong> Befristete Verträge, Praktika, Zeitarbeit sind zur Norm geworden</li>
-                    <li><strong>Wohnungsnot:</strong> Immobilienpreise sind explodiert, Eigentum ist für viele unerreichbar</li>
-                    <li><strong>Rentenunsicherheit:</strong> Die junge Generation wird mit deutlich geringeren Renten rechnen müssen</li>
-                    <li><strong>Klimakrise:</strong> Sie erben eine ökologisch zerstörte Welt, für die sie nicht verantwortlich sind</li>
-                    <li><strong>Bildungsdruck:</strong> Ständige Qualifikationsanforderungen, lebenslanges Lernen als Zwang</li>
-                    <li><strong>Psychische Belastung:</strong> Generation Y und Z haben höhere Raten von Depressionen und Angststörungen</li>
-                </ul>
-
-                <p>Die Forderung nach Work-Life-Balance ist keine Faulheit, sondern eine rationale Reaktion auf diese Bedingungen. Warum sollten junge Menschen sich "kaputtarbeiten" für ein System, das ihnen keine Sicherheit mehr bietet?</p>
-
-                <h4>3. Die "Kasko-Mentalität" - Fehldiagnose?</h4>
-
-                <div class="analyse-box">
-                    <p>Lutz kritisiert, dass Menschen erwarten, der Staat löse alle Probleme. Diese Kritik trifft auf bestimmte Gruppen zu, ist aber als Generaldiagnose verfehlt.</p>
-                </div>
-
-                <p><strong>Gegenargumente:</strong></p>
-                <ul>
-                    <li><strong>Sozialstaatliche Aufgabe:</strong> In Krisenzeiten (Pandemie, Energiekrise) ist es legitim und notwendig, dass der Staat eingreift. Sonst würde soziale Ungleichheit explodieren</li>
-                    <li><strong>Solidarität vs. Eigenverantwortung:</strong> Die neoliberale Fixierung auf Eigenverantwortung übersieht, dass viele Probleme strukturell bedingt sind und individuell nicht gelöst werden können</li>
-                    <li><strong>Ungleiche Verteilung:</strong> Lutz übersieht, dass viele Menschen sehr wohl "anpacken", aber dennoch nicht vorankommen - working poor, Alleinerziehende, Pflegekräfte</li>
-                </ul>
-
-                <p>Die Metapher der "Kasko-Mentalität" ist irreführend. Sie suggeriert, Menschen wollten sich nicht anstrengen. In Wahrheit fordern viele Menschen nur das ein, was ihnen zusteht: soziale Sicherheit, faire Löhne, menschenwürdige Arbeitsbedingungen.</p>
-
-                <h4>4. Arbeit als Selbstzweck?</h4>
-
-                <div class="zitat">
-                    <p><strong>Fundamentale Frage:</strong> Warum wird Arbeit in Lutz' Argumentation zum Selbstzweck erhoben? Ist das Ziel der Gesellschaft wirklich, dass alle "in die Hände spucken"?</p>
-                </div>
-
-                <p><strong>Alternative Perspektive:</strong> Das Ziel einer Gesellschaft sollte nicht maximale Produktivität sein, sondern das gute Leben für alle. Arbeit ist Mittel zum Zweck, nicht Zweck an sich.</p>
-
-                <p>Die junge Generation stellt berechtigte Fragen:</p>
-                <ul>
-                    <li>Warum 40+ Stunden arbeiten, wenn durch Automatisierung und Produktivitätssteigerungen weniger Arbeitszeit ausreichen könnte?</li>
-                    <li>Warum ein Leben lang für ein Unternehmen schuften, das einen bei der nächsten Krise entlässt?</li>
-                    <li>Warum Überstunden machen, wenn die Gewinne hauptsächlich Aktionären zugutekommen?</li>
-                </ul>
-
-                <p>Diese Fragen sind nicht Ausdruck von Faulheit, sondern von kritischem Bewusstsein.</p>
-
-                <h4>5. Verkennung der tatsächlichen Probleme</h4>
-
-                <div class="wichtig">
-                    <p><strong>Die eigentlichen Herausforderungen der deutschen Wirtschaft sind nicht mangelnde Arbeitsbereitschaft, sondern strukturelle Probleme:</strong></p>
-                </div>
-
-                <ul>
-                    <li><strong>Demografie:</strong> Überalterung der Gesellschaft, zu wenig junge Menschen für den Arbeitsmarkt</li>
-                    <li><strong>Digitalisierungsrückstand:</strong> Deutschlands Infrastruktur (Breitband, 5G, digitale Verwaltung) hinkt hinterher</li>
-                    <li><strong>Bildungssystem:</strong> Chronische Unterfinanzierung, Lehrermangel, veraltete Lehrpläne</li>
-                    <li><strong>Bürokratie:</strong> Überbordende Regulierung hemmt Innovation und Unternehmensgründungen</li>
-                    <li><strong>Investitionsstau:</strong> Marode Infrastruktur (Brücken, Schulen, Bahn) durch jahrzehntelange Sparpolitik</li>
-                    <li><strong>Klimawandel:</strong> Versäumte Transformation der Industrie (Automobilsektor, Energiewende)</li>
-                </ul>
-
-                <p>Keine dieser Probleme wird gelöst, indem Menschen länger oder härter arbeiten. Sie erfordern politische Weichenstellungen, Investitionen und strukturelle Reformen.</p>
-
-                <h4>6. Missverständnis von Work-Life-Balance</h4>
-
-                <div class="analyse-box">
-                    <p>Lutz stellt Work-Life-Balance als verwöhnte Forderung dar. In Wahrheit ist sie ein Zeichen von Reife und Selbstfürsorge.</p>
-                </div>
-
-                <p><strong>Forschungsstand:</strong></p>
-                <ul>
-                    <li>Studien zeigen: Menschen mit guter Work-Life-Balance sind <strong>produktiver</strong>, nicht weniger produktiv</li>
-                    <li>Burnout-Raten sind in Deutschland alarmierend hoch - es gibt zu viel, nicht zu wenig Arbeit</li>
-                    <li>Länder mit kürzeren Arbeitszeiten (z.B. Niederlande, Skandinavien) haben oft <strong>höhere</strong> Produktivität pro Stunde</li>
-                    <li>Die 4-Tage-Woche führt in Pilotprojekten weltweit zu besseren Ergebnissen bei gleicher oder höherer Leistung</li>
-                </ul>
-
-                <p>Work-Life-Balance ist kein Luxus, sondern notwendig für nachhaltige Leistungsfähigkeit.</p>
-
-                <h4>7. Ignoranz gegenüber sozioökonomischen Realitäten</h4>
-
-                <p>Lutz' Text liest sich, als spräche er aus einer privilegierten Position. Für viele Menschen in Deutschland ist die Realität eine andere:</p>
-
-                <ul>
-                    <li><strong>Pflegekräfte</strong> arbeiten am Limit, oft unterbezahlt, und werden mit Applaus statt Verbesserungen abgespeist</li>
-                    <li><strong>Verkäufer*innen</strong> im Einzelhandel arbeiten zu Niedriglöhnen, oft in Teilzeit, ohne Planungssicherheit</li>
-                    <li><strong>Paketboten</strong> schuften unter enormem Zeitdruck für Subunternehmen großer Konzerne</li>
-                    <li><strong>Lehrkräfte</strong> arbeiten weit über ihre Stunden hinaus, oft ohne angemessene Bezahlung</li>
-                </ul>
-
-                <p>Diese Menschen "packen an" - jeden Tag. Die Suggestion, Deutschland leide unter mangelnder Arbeitsbereitschaft, ist eine Beleidigung für Millionen hart arbeitender Menschen.</p>
-
-                <h4>8. Alternative Perspektive: Was wir wirklich brauchen</h4>
-
-                <div class="wichtig">
-                    <h4>Statt einer Rückkehr zu alten "Tugenden" braucht Deutschland:</h4>
-                </div>
-
-                <ol>
-                    <li><strong>Faire Bezahlung:</strong> Löhne, von denen man leben und eine Familie gründen kann</li>
-                    <li><strong>Sichere Arbeitsverhältnisse:</strong> Weniger Befristungen, mehr Planbarkeit</li>
-                    <li><strong>Investitionen in Bildung:</strong> Moderne Schulen, gut bezahlte Lehrer*innen, digitale Ausstattung</li>
-                    <li><strong>Soziale Absicherung:</strong> Funktionierendes Gesundheitssystem, sichere Renten, bezahlbarer Wohnraum</li>
-                    <li><strong>Innovationsförderung:</strong> Weniger Bürokratie, mehr Unterstützung für Startups und neue Technologien</li>
-                    <li><strong>Demokratische Arbeitskultur:</strong> Mitbestimmung, flexible Arbeitsmodelle, Respekt für alle Berufsgruppen</li>
-                    <li><strong>Ökologische Transformation:</strong> Nachhaltige Wirtschaft, die nicht auf Raubbau basiert</li>
-                    <li><strong>Sinnstiftung:</strong> Arbeit, die als bedeutsam erlebt wird, nicht nur als Broterwerb</li>
-                </ol>
-
-                <h4>9. Generationengerechtigkeit neu denken</h4>
-
-                <div class="analyse-box">
-                    <p>Lutz fordert implizit, dass junge Menschen das System übernehmen sollten, das ältere Generationen aufgebaut haben. Aber ist dieses System noch zeitgemäß?</p>
-                </div>
-
-                <p><strong>Kritische Fragen:</strong></p>
-                <ul>
-                    <li>Warum sollten junge Menschen ein Wirtschaftssystem fortführen, das den Planeten zerstört?</li>
-                    <li>Warum sollten sie ein Rentensystem stützen, von dem sie selbst nicht profitieren werden?</li>
-                    <li>Warum sollten sie dieselben Fehler wiederholen (Überarbeitung, Vernachlässigung von Familie, psychische Erkrankungen)?</li>
-                </ul>
-
-                <p>Generationengerechtigkeit bedeutet nicht, dass junge Menschen das Gleiche tun müssen wie alte. Es bedeutet, dass sie die Freiheit haben sollten, es besser zu machen.</p>
-
-                <h4>10. Positive Aspekte von Lutz' Text</h4>
-
-                <p>Trotz aller Kritik: Lutz spricht auch wichtige Punkte an:</p>
-
-                <ul>
-                    <li><strong>Eigenverantwortung ist wichtig:</strong> Eine rein passive Haltung ist tatsächlich problematisch</li>
-                    <li><strong>Gesellschaftlicher Dialog ist nötig:</strong> Wir müssen darüber sprechen, wie wir leben und arbeiten wollen</li>
-                    <li><strong>Anspruchsdenken kann problematisch sein:</strong> Nicht jeder kann alles haben, Kompromisse sind notwendig</li>
-                </ul>
-
-                <p>Das Problem ist nicht, dass Lutz diese Punkte anspricht, sondern wie er es tut: einseitig, nostalgisch, ohne Berücksichtigung struktureller Probleme.</p>
-
-                <div class="analyse-box">
-                    <h4>Fazit der kritischen Erörterung</h4>
-                    <p>Stefan Lutz' Text greift ein wichtiges Thema auf, verfehlt aber in seiner Analyse die Komplexität der Situation. Seine Kritik an der "Kasko-Mentalität" und mangelnder Arbeitsbereitschaft verkennt die realen Herausforderungen, vor denen insbesondere junge Menschen stehen.</p>
-                    
-                    <p>Die Forderungen der Generation Y und Z nach Work-Life-Balance, fairer Bezahlung und sinnvoller Arbeit sind nicht Ausdruck von Faulheit, sondern von einem gewandelten Bewusstsein. Diese Generation hat erkannt, dass das alte Modell - lebenslange Aufopferung für ein Unternehmen - keine Sicherheit mehr bietet und oft zu Lasten von Gesundheit und Lebensqualität geht.</p>
-                    
-                    <p>Deutschland braucht keine Rückkehr zu vergangenen "Tugenden", sondern eine zukunftsorientierte Debatte darüber, wie gute Arbeit im 21. Jahrhundert aussehen soll. Das schließt Engagement und Leistungsbereitschaft ein - aber eben nicht als Selbstzweck, sondern als Teil eines Gesellschaftsmodells, das allen Menschen ein gutes Leben ermöglicht.</p>
-                    
-                    <p>Die wahren Herausforderungen Deutschlands - demografischer Wandel, Digitalisierung, Klimakrise, soziale Ungleichheit - werden nicht durch längere Arbeitszeiten gelöst, sondern durch intelligente Politik, Investitionen in Bildung und Infrastruktur sowie eine Arbeitskultur, die Menschen als Subjekte respektiert, nicht als Ressourcen ausbeutet.</p>
-                    
-                    <p>Letztlich lautet die Frage nicht: "Wie bringen wir Menschen dazu, mehr zu arbeiten?" Sondern: "Wie schaffen wir eine Gesellschaft, in der Arbeit sinnvoll, gerecht verteilt und nachhaltig ist - für Menschen und Planet?"</p>
-                </div>
+            <p>Diese Passage offenbart die perfide Grausamkeit des Hauptmanns. Durch die aufsteigende Klimax ("Sapeur", "Unteroffizier", "Tambourmajor") spielt er gezielt auf die Affäre Maries mit dem Tambourmajor an, ohne es direkt auszusprechen.</p>
+
+            <div class="wichtig">
+                <h4>Woyzecks Verzweiflung</h4>
+                <p>Der zentrale Ausbruch Woyzecks "Herr Hauptmann, ich bin ein armer Teufel, - und hab sonst nichts - auf der Welt" ist von existenzieller Bedeutung. Das Wort "Teufel" verweist auf seine Ausgestoßenheit aus der Gesellschaft. Marie und das gemeinsame Kind sind sein einziger Halt, seine einzige Quelle von Identität und Würde.</p>
             </div>
 
-            <!-- AUFGABE IV -->
-            <div class="aufgabe-section">
-                <h2>Aufgabe IV: Textanalyse - Frank Rieger: "Erschöpfte Überforderung als Zeitgeist"</h2>
-                
-                <h3>1. Analyse: Argumentationsgang, sprachlich-stilistische Gestaltung, Intention (ca. 70%)</h3>
-                
-                <h4>Einleitung</h4>
-                <p>Der Essay "Erschöpfte Überforderung als Zeitgeist - Und wie es danach weitergeht" von Frank Rieger, erschienen am 22.03.2023 auf der Plattform Steady HQ, analysiert den gegenwärtigen gesellschaftlichen Zustand als Epoche der Erschöpfung und Überforderung. Rieger diagnostiziert einen Verlust von Zukunftsoptimismus und fragt nach Wegen aus dieser Krise.</p>
+            <h3>2. Faktoren, die demütigend und zerstörend auf Woyzeck einwirken</h3>
 
-                <h4>Kontext und Autor</h4>
-                <p>Frank Rieger ist Sprecher des Chaos Computer Clubs (CCC) und als Technikphilosoph bekannt für seine kritischen Analysen der Digitalisierung und gesellschaftlicher Entwicklungen. Sein Text ist geprägt von einer nüchternen, analytischen Herangehensweise, kombiniert mit einem ironischen Unterton.</p>
+            <h4>1. Soziale und ökonomische Ausbeutung</h4>
+            <p>Woyzeck befindet sich in einer prekären ökonomischen Situation. Als einfacher Soldat verdient er kaum genug zum Überleben. Diese materielle Not zwingt ihn, sich dem erniedrigenden medizinischen Experiment des Doktors zu unterwerfen.</p>
 
-                <h4>Argumentationsgang - Detailanalyse</h4>
-
-                <div class="wichtig">
-                    <h4>These des Autors</h4>
-                    <p>Die gegenwärtige Zeit ist charakterisiert durch eine allgegenwärtige Erschöpfung und Überforderung, die durch die Dauerkrise der letzten Jahre verstärkt wurde. Der frühere Optimismus und Glaube an Fortschritt ist einer "kurzen Lunte" gewichen - Menschen reagieren schneller gereizt und aggressiv, weil sie keine Perspektive mehr auf Besserung sehen. Gleichzeitig wird die Notwendigkeit betont, trotz dieser Erschöpfung neue Wege zu finden.</p>
-                </div>
-
-                <h4>1. Einstieg: Die chinesische Weisheit (Zeile 1-5)</h4>
-
-                <div class="zitat">
-                    <p>"Es gibt die Legende vom chinesischen Fluch ‚Mögest Du in interessanten Zeiten leben!'."</p>
-                </div>
-
-                <p>Rieger beginnt mit einem ironischen Einstieg: dem angeblichen chinesischen Fluch. Das Paradoxon - "interessante Zeiten" klingen positiv, sind aber ein Fluch - setzt den Ton für den gesamten Text. Es deutet an, dass das, was oberflächlich spannend erscheint, in Wahrheit belastend ist.</p>
-
-                <p>"Vor einer Weile habe ich endlich verstanden, was damit eigentlich gemeint ist: ‚Interessante Zeiten' sind Zeiten, in denen der Inhalt der Abendnachrichten unmittelbare Relevanz für den eigenen Alltag hat."</p>
-
-                <p>Diese Interpretation ist präzise: "Interessante Zeiten" bedeuten, dass große Politik direkt in das Leben der Menschen eingreift. Das Abstrakte wird konkret, das Ferne wird nah - und das ist bedrohlich, nicht spannend.</p>
-
-                <h4>2. Dauerkrise und Polykrisen-Situation (Zeile 5-15)</h4>
-
-                <div class="analyse-box">
-                    <p>"Wenn irgendwas wirklich wichtig war, bekam man es schon mit. Heute sind die Nachrichten konkret alltagsrelevant. Die große Welt ist in das kleine Leben eingebrochen."</p>
-                </div>
-
-                <p>Rieger kontrastiert frühere Zeiten mit heute. Früher war die Weltpolitik abstrakt, fern. Heute bestimmt sie den Alltag: Energiepreise, Inflation, Pandemie. Die Metapher "eingebrochen" suggeriert Gewalt, Ungewolltes, Zerstörung.</p>
-
-                <p>"Nicht ab und zu mal in Form von dieser oder jener isolierten großen Krise, sondern jede Woche, jeden Tag. Große Ereignisse außerhalb der eigenen Beeinflussbarkeit bestimmen, was man heute besser tun oder lassen sollte."</p>
-
-                <p>Die Permanenz der Krise ist das Neue. Es gibt keine Erholungsphasen mehr. Die "Beeinflussbarkeit" - oder deren Fehlen - ist zentral: Menschen fühlen sich ohnmächtig.</p>
-
-                <h4>3. Verlust von Zukunftsoptimismus (Zeile 15-30)</h4>
-
-                <div class="wichtig">
-                    <p>"Beim Flanieren durch die Berliner Straßen schaue ich oft in die Gesichter von Passanten und beobachte ihre Reaktionen auf kleine und große Kalamitäten und Schwierigkeiten. Es ist nun doch unzweideutig Herbst geworden, auch wenn der Klimawandel ein wenig Aufschub vor dem nass kalten Grau gewährt hat."</p>
-                </div>
-
-                <p>Die Beobachterposition Riegers ist bedeutsam. Er nimmt sich Zeit zum Flanieren - eine Tätigkeit, die Muße und Reflexion ermöglicht. Die Gesichter der Menschen sind sein Text, den er liest.</p>
-
-                <p>Die Bemerkung über den "Klimawandel" ist doppelbödig: Selbst der "Aufschub" ist eigentlich eine Katastrophe (globale Erwärmung), wird aber als kleiner Trost empfunden. Die meisten Menschen sehen nicht mehr die "Sonne im Herbst", sondern nur noch den "kommenden Winter" - eine Metapher für Pessimismus.</p>
-
-                <div class="zitat">
-                    <p>"Die Leichtigkeit und Fröhlichkeit des Sommers ist daher, die meisten Menschen sehen angespannt, müde und ganz grundsätzlich genervt in die Welt."</p>
-                </div>
-
-                <p>Die Aufzählung "angespannt, müde und ganz grundsätzlich genervt" beschreibt den Zustand präzise. Das "ganz grundsätzlich" betont, dass dies kein vorübergehendes Phänomen ist, sondern ein neuer Normalzustand.</p>
-
-                <h4>4. Die "kurze Lunte" als Metapher (Zeile 20-28)</h4>
-
-                <div class="analyse-box">
-                    <p>"Eine ‚kurze Lunte' ist der Normalzustand geworden. Die Schwelle zum Überreagieren, zu kleinen und großen Aggressionen ist niedrig."</p>
-                </div>
-
-                <p>Die Metapher der "kurzen Lunte" (kurze Zündschnur) ist prägnant. Menschen explodieren schneller, ihre Frustrationstoleranz ist gesunken. Die Eskalation von "Überreagieren" zu "Aggressionen" zeigt eine Steigerung.</p>
-
-                <p>"Eine ‚kurze Lunte' ist der Normalzustand geworden. Die Schwelle zum Überreagieren, zu kleinen und großen Aggressionen ist niedrig. [...] Beim Flanieren durch die Berliner Straßen schaue ich oft in die Gesichter von Passanten und beobachte ihre Reaktionen auf kleine und große Kalamitäten und Schwierigkeiten."</p>
-
-                <p>Die Alltagsbeobachtungen geben der abstrakten These konkretes Gewicht. Es ist nicht nur eine theoretische Diagnose, sondern eine empirische Feststellung.</p>
-
-                <h4>5. Gesellschaftliche Stabilität in Frage gestellt (Zeile 28-40)</h4>
-
-                <div class="wichtig">
-                    <p>"Die Erschöpfung und Genervtheit in den Gesichtern ist das Sichtbarwerden der Menge an seelischem Gepäck, das jeder Mensch mit sich herumträgt."</p>
-                </div>
-
-                <p>Die Metapher des "seelischen Gepäcks" ist kraftvoll. Menschen tragen unsichtbare Lasten, die sich in ihren Gesichtern manifestieren. Diese Last ist nicht individuell, sondern kollektiv - "jeder Mensch" teilt sie.</p>
-
-                <p>"Die Fähigkeit, die Last zu ignorieren, die Anstrengung zu überspielen, die Sorgen zu kaschieren, ist bei Vielen erschöpft. Wenn es allen schlecht geht, muss auch niemand mehr so tun, als wäre alles super."</p>
-
-                <p>Hier beschreibt Rieger einen interessanten Mechanismus: Der Zusammenbruch der sozialen Maske. Früher musste man vorgeben, dass alles in Ordnung sei. Jetzt ist diese performative Energie aufgebraucht. Das kann befreiend sein (Ehrlichkeit), ist aber auch bedrohlich (sozialer Zusammenhalt bröckelt).</p>
-
-                <h4>6. Historische Einordnung und Regression (Zeile 40-55)</h4>
-
-                <div class="zitat">
-                    <p>"Wir leben in einer Zeit, in der rasche Veränderung das neue Normal ist. Die Aussicht darauf, dass es nochmal ‚so gut wie früher' wird, ist sehr gering. Nicht einmal die Hockeystick-Statistiken der Rosabrillen-Ökonomen, die jahrelang die globale Steigerung von Wohlstand und Lebenserwartung aufzeigten, haben die Seuche unbeschadet überstanden."</p>
-                </div>
-
-                <p>Die Ironie in "Rosabrillen-Ökonomen" ist beißend. Rieger kritisiert den neoliberalen Fortschrittsoptimismus, der jahrzehntelang die Globalisierung als Win-Win verkaufte. Die "Hockeystick-Statistiken" (exponentielles Wachstum) wurden durch die Krisen widerlegt.</p>
-
-                <p>"Die Schlagzahl der Krisen und ihrer Auswirkungen im Alltag wird weiter zunehmen."</p>
-
-                <p>Diese Prognose ist düster. Es gibt keine Entspannung in Sicht. Die Metapher "Schlagzahl" impliziert Kampf, Überlebenskampf.</p>
-
-                <h4>7. Kritik am Krisenmanagement (Zeile 55-62)</h4>
-
-                <div class="analyse-box">
-                    <p>"Für wohlhabende Länder und Menschen langsamer und verkraftbarer als für ärmere, aber am Ende wird niemand verschont bleiben. Es ist einfach unsere neue Realität, die Welt, in der wir leben, ob es uns gefällt oder nicht."</p>
-                </div>
-
-                <p>Rieger erkennt die ungleiche Verteilung von Krisenfolgen an. Reiche Länder können länger kompensieren, aber auch sie werden nicht verschont. Das "ob es uns gefällt oder nicht" ist resignativ - es gibt keine Alternative, nur Anpassung.</p>
-
-                <h4>8. Suche nach Auswegen (Zeile 62-87)</h4>
-
-                <p>Der Schlussabschnitt ist der konstruktivste Teil. Rieger fragt:</p>
-
-                <div class="zitat">
-                    <p>"Was dürfen wir erwarten von uns? Von der nachwachsenden Generation, von Zuwanderern und Flüchtlingen, von Rentnern, von Politik, von Arbeitgebern, der öffentlichen Hand - in einem Wort - voneinander?"</p>
-                </div>
-
-                <p>Diese Frage ist zentral. Sie wendet den Blick von der Diagnose zur Therapie. Aber Rieger bietet keine einfachen Antworten.</p>
-
-                <div class="wichtig">
-                    <h4>Kritische Analyse der Lösungsvorschläge</h4>
-                    <p>"Aber: Vielleicht hilft es, sich zu vergegenwärtigen, dass auch in instabilen, ‚interessanten', düsteren Zeiten - sowohl heute als auch in der Vergangenheit - viele Menschen es geschafft haben, gute Leben zu leben und etwas dafür zu tun, dass die große Welt und das kleine Leben besser wurden."</p>
-                </div>
-
-                <p>Dies ist der hoffnungsvolle Kern des Texts. Rieger verweist auf historische Resilienz. Menschen haben immer Wege gefunden, auch in Krisen Sinn zu stiften. Die Formulierung "gute Leben" (nicht "das gute Leben") ist bewusst plural - es gibt viele Wege.</p>
-
-                <p>"Die mentalen und emotionalen Fähigkeiten dafür aufzubauen, mit schneller Veränderung gut umzugehen, Resilienz gegen immer neue bedrohliche Widrigkeiten zu entwickeln und dabei auch noch Spaß zu haben, wird Kraft, Solidarität und Zeit brauchen."</p>
-
-                <p>Die Trias "Kraft, Solidarität und Zeit" fasst zusammen, was nötig ist. Bemerkenswert ist "Spaß" - trotz allem sollte Leben lebenswert bleiben.</p>
-
-                <h4>Sprachlich-stilistische Gestaltung</h4>
-
-                <div class="analyse-box">
-                    <h4>1. Stilebene und Register</h4>
-                    <p>Rieger bewegt sich zwischen verschiedenen Stilebenen:</p>
-                    <ul>
-                        <li><strong>Essayistisch-reflektierend:</strong> "Beim Flanieren durch die Berliner Straßen schaue ich oft in die Gesichter"</li>
-                        <li><strong>Analytisch-nüchtern:</strong> "Die Schlagzahl der Krisen und ihrer Auswirkungen im Alltag wird weiter zunehmen"</li>
-                        <li><strong>Ironisch-sarkastisch:</strong> "Rosabrillen-Ökonomen"</li>
-                        <li><strong>Alltagsnah:</strong> "Eine ‚kurze Lunte' ist der Normalzustand geworden"</li>
-                    </ul>
-                </div>
-
-                <h4>2. Metaphorik und Bildlichkeit</h4>
-                <ul>
-                    <li><strong>"Die große Welt ist in das kleine Leben eingebrochen":</strong> Räumliche Metapher für den Verlust von Privatheit und Sicherheit</li>
-                    <li><strong>"Kurze Lunte":</strong> Explosive, gefährliche Stimmung</li>
-                    <li><strong>"Seelisches Gepäck":</strong> Unsichtbare Last, die Menschen tragen</li>
-                    <li><strong>"Hockeystick-Statistiken":</strong> Visuell prägnant für exponentielles Wachstum</li>
-                    <li><strong>"Startek und Replikator":</strong> Science-Fiction-Referenz als Symbol für unrealistische Hoffnungen</li>
-                </ul>
-
-                <h4>3. Rhetorische Mittel</h4>
-                <ul>
-                    <li><strong>Rhetorishe Fragen:</strong> "Was dürfen wir erwarten von uns?" - öffnet den Dialog</li>
-                    <li><strong>Aufzählungen:</strong> "von Zuwanderern und Flüchtlingen, von Rentnern, von Politik" - zeigt Vielfalt der Akteure</li>
-                    <li><strong>Kontrastierung:</strong> "früher" vs. "heute", "große Welt" vs. "kleines Leben"</li>
-                    <li><strong>Steigerung:</strong> "klein, hart hüpfend, ungleich" → "Überreagieren" → "Aggressionen"</li>
-                    <li><strong>Ironie:</strong> Durchgängig, besonders bei Kritik am Fortschrittsoptimismus</li>
-                </ul>
-
-                <h4>4. Syntax und Satzbau</h4>
-                <ul>
-                    <li><strong>Hypotaxe:</strong> Komplexe, verschachtelte Sätze für differenzierte Gedankengänge</li>
-                    <li><strong>Kurze, prägnante Sätze:</strong> "Es ist einfach unsere neue Realität" - für Pointen</li>
-                    <li><strong>Parenthesen:</strong> Einschübe in Klammern oder Gedankenstrichen für Nebenbemerkungen</li>
-                </ul>
-
-                <h4>5. Lexik und Wortwahl</h4>
-                <ul>
-                    <li><strong>Fachbegriffe:</strong> "Kalamitäten", "Instabilität", "existenziell" - zeigt Bildung</li>
-                    <li><strong>Alltagssprache:</strong> "genervt", "Spaß", "anpacken" - Nähe zum Leser</li>
-                    <li><strong>Anglizismen:</strong> "Work-Life-Balance" (im Kontext), "Hockeystick" - moderne Realität</li>
-                    <li><strong>Neologismen:</strong> "Rosabrillen-Ökonomen" - kreativ und kritisch</li>
-                </ul>
-
-                <h4>6. Textsortenmerkmale des Essays</h4>
-                <ul>
-                    <li><strong>Subjektive Perspektive:</strong> "schaue ich", "verstanden" - persönliche Erfahrung als Ausgangspunkt</li>
-                    <li><strong>Offenheit:</strong> Keine dogmatischen Antworten, sondern Fragen und Denkanstöße</li>
-                    <li><strong>Reflexivität:</strong> Nachdenken über Nachdenken - Meta-Ebene</li>
-                    <li><strong>Fragmentarischer Charakter:</strong> Gedankensprünge, assoziativer Aufbau</li>
-                </ul>
-
-                <h4>Intention des Textes</h4>
-
-                <div class="wichtig">
-                    <h4>Primäre Absichten Riegers:</h4>
-                    <ol>
-                        <li><strong>Diagnose des Zeitgeists:</strong> Rieger will die gegenwärtige Krise benennen und verstehbar machen</li>
-                        <li><strong>Dekonstruktion falscher Narrative:</strong> Er entlarvt den neoliberalen Fortschrittsoptimismus als Illusion</li>
-                        <li><strong>Solidarität stiften:</strong> Durch die Diagnose "wir alle sind betroffen" schafft er ein Gefühl von Gemeinsamkeit</li>
-                        <li><strong>Handlungsoptionen aufzeigen:</strong> Trotz aller Düsternis endet der Text nicht resignativ, sondern mit einem Appell</li>
-                        <li><strong>Zum Nachdenken anregen:</strong> Die offenen Fragen sollen Leser*innen zu eigenen Überlegungen motivieren</li>
-                    </ol>
-                </div>
-
-                <p><strong>Implizite Botschaften:</strong></p>
-                <ul>
-                    <li>Krise ist der neue Normalzustand - Anpassung ist notwendig</li>
-                    <li>Individuallösungen reichen nicht - nur kollektive Antworten helfen</li>
-                    <li>Resilienz muss aktiv entwickelt werden</li>
-                    <li>Trotz allem: Es gibt Handlungsspielräume</li>
-                </ul>
-
-                <h3>2. Sicht des Autors auf Zeit und Gesellschaft (ca. 30%)</h3>
-
-                <h4>Riegers Zeitdiagnose im Detail</h4>
-
-                <div class="analyse-box">
-                    <h4>1. Die Polykrisen-These</h4>
-                    <p>Rieger sieht die Gegenwart nicht als einzelne Krise, sondern als Überlagerung multipler Krisen:</p>
-                    <ul>
-                        <li>Pandemie (Covid-19)</li>
-                        <li>Klimakrise</li>
-                        <li>Geopolitische Konflikte (Ukraine-Krieg, Spannungen mit China)</li>
-                        <li>Energiekrise</li>
-                        <li>Inflation und wirtschaftliche Unsicherheit</li>
-                        <li>Demokratiekrise (Populismus, Autoritarismus)</li>
-                    </ul>
-                    <p>Diese Krisen verstärken sich gegenseitig. Es gibt keine isolierten Lösungen mehr.</p>
-                </div>
-
-                <h4>2. Ende des Fortschrittsnarrativs</h4>
-
-                <p>Zentral für Riegers Analyse ist die Feststellung, dass das Narrativ des kontinuierlichen Fortschritts gebrochen ist. Die Nachkriegsgeneration(en) konnten davon ausgehen, dass es ihren Kindern besser gehen würde. Diese Gewissheit existiert nicht mehr.</p>
-
-                <p>Die "Hockeystick-Statistiken" (exponentielle Verbesserung von Wohlstand und Lebenserwartung weltweit) waren das Fundament des neoliberalen Weltbilds. Rieger zeigt, dass dieses Fundament brüchig ist:</p>
-                <ul>
-                    <li>Lebenserwartung sinkt in einigen entwickelten Ländern (USA)</li>
-                    <li>Soziale Mobilität nimmt ab</li>
-                    <li>Klimakrise bedroht alle Fortschritte</li>
-                </ul>
-
-                <h4>3. Psychologie der Erschöpfung</h4>
-
-                <div class="wichtig">
-                    <p>Rieger diagnostiziert eine kollektive psychische Krise. Die Menschen sind nicht nur materiell belastet, sondern emotional und mental erschöpft. Diese Erschöpfung manifestiert sich in:</p>
-                    <ul>
-                        <li><strong>Aggressivität:</strong> "Kurze Lunte", schnelleres Überreagieren</li>
-                        <li><strong>Resignation:</strong> "Wenn es allen schlecht geht, muss auch niemand mehr so tun"</li>
-                        <li><strong>Verlust der Zukunftsperspektive:</strong> Menschen planen nicht mehr langfristig</li>
-                        <li><strong>Brüchige soziale Normen:</strong> Die performative Fassade ("alles ist super") bricht zusammen</li>
-                    </ul>
-                </div>
-
-                <h4>4. Gesellschaftsmodell in der Krise</h4>
-
-                <p>Implizit kritisiert Rieger das neoliberale Gesellschaftsmodell:</p>
-                <ul>
-                    <li>Die Individualisierung (jeder ist seines Glückes Schmied) versagt angesichts struktureller Krisen</li>
-                    <li>Der Glaube an technologische Lösungen ("Startrek und Replikator") ist naiv</li>
-                    <li>Die Kasko-Mentalität (alle Probleme werden vom Staat gelöst) ist nicht nachhaltig</li>
-                </ul>
-
-                <p>Was fehlt, ist ein neues, kohärentes Gesellschaftsmodell.</p>
-
-                <h4>5. Die Frage nach Resilienz</h4>
-
-                <div class="analyse-box">
-                    <p>Rieger sieht Resilienz als Schlüssel. Aber Resilienz bedeutet nicht, Krisen passiv zu ertragen, sondern:</p>
-                    <ul>
-                        <li><strong>Anpassungsfähigkeit:</strong> Umgang mit Veränderung lernen</li>
-                        <li><strong>Solidarität:</strong> Gemeinsam stark sein, nicht individuell kämpfen</li>
-                        <li><strong>Sinnstiftung:</strong> Auch in Krisen "gute Leben" leben können</li>
-                        <li><strong>Langfristiges Denken:</strong> Nicht nur reagieren, sondern aktiv gestalten</li>
-                    </ul>
-                </div>
-
-                <h4>6. Generationenfrage neu gestellt</h4>
-
-                <p>Anders als Lutz (Aufgabe III) gibt Rieger der jungen Generation nicht die Schuld, sondern fragt, was verschiedene Generationen voneinander erwarten dürfen:</p>
-
-                <ul>
-                    <li>Ältere Generationen haben die Welt in den jetzigen Zustand gebracht - müssen sie Verantwortung übernehmen?</li>
-                    <li>Junge Generationen erben eine beschädigte Welt - was dürfen sie fordern?</li>
-                    <li>Wie kann Solidarität zwischen Generationen aussehen?</li>
-                </ul>
-
-                <h4>7. Die Rolle der Technik</h4>
-
-                <p>Als Sprecher des CCC hat Rieger ein ambivalentes Verhältnis zur Technik. Er glaubt nicht an technologischen Utopismus ("Startrek"), sieht aber Technik auch nicht als Feind. Sie kann Teil der Lösung sein - aber nur, wenn sie eingebettet ist in soziale und politische Veränderungen.</p>
-
-                <h4>8. Politische Implikationen</h4>
-
-                <div class="wichtig">
-                    <p>Rieger stellt implizit politische Forderungen:</p>
-                    <ul>
-                        <li><strong>Ehrlichkeit:</strong> Politik muss aufhören, unrealistische Versprechungen zu machen</li>
-                        <li><strong>Strukturelle Lösungen:</strong> Individuelle Appelle reichen nicht, es braucht systemische Veränderungen</li>
-                        <li><strong>Demokratische Teilhabe:</strong> Bürger*innen müssen in Entscheidungen einbezogen werden</li>
-                        <li><strong>Internationale Kooperation:</strong> Nationale Alleingänge scheitern bei globalen Krisen</li>
-                    </ul>
-                </div>
-
-                <h4>9. Kulturpessimismus oder Realismus?</h4>
-
-                <p>Ist Riegers Analyse kulturpessimistisch? Auf den ersten Blick: ja. Er zeichnet ein düsteres Bild. Aber im Gegensatz zu reinen Kulturpessimisten endet er nicht in Resignation. Er sucht nach Wegen, fordert Handeln, glaubt an menschliche Gestaltungskraft.</p>
-
-                <p>Seine Botschaft ist nicht: "Alles ist verloren", sondern: "Es wird schwer, aber wir können es schaffen - wenn wir zusammenarbeiten."</p>
-
-                <div class="analyse-box">
-                    <h4>Fazit zu Riegers Weltsicht</h4>
-                    <p>Frank Rieger diagnostiziert eine Zeitenwende. Die Epoche des Fortschrittsoptimismus und Wachstums ist vorbei. Was folgt, ist offen. Es kann entweder eine Phase des Zusammenbruchs werden - oder eine Phase der Transformation zu einem nachhaltigeren, gerechteren, resilienteren Gesellschaftsmodell.</p>
-                    
-                    <p>Seine Sicht auf Zeit und Gesellschaft ist geprägt von:</p>
-                    <ul>
-                        <li><strong>Nüchternem Realismus:</strong> Er verschleiert nicht die Schwere der Lage</li>
-                        <li><strong>Kritischem Bewusstsein:</strong> Er hinterfragt herrschende Narrative</li>
-                        <li><strong>Vorsichtigem Optimismus:</strong> Trotz allem glaubt er an Handlungsmöglichkeiten</li>
-                        <li><strong>Kollektivem Denken:</strong> Lösungen müssen gemeinsam gefunden werden</li>
-                    </ul>
-                    
-                    <p>Im Vergleich zu Stefan Lutz (Aufgabe III) ist Riegers Analyse differenzierter und weniger moralisierend. Wo Lutz individuelle Leistungsbereitschaft einfordert, fordert Rieger strukturelle Veränderungen und kollektive Resilienz. Rieger vermeidet die nostalgische Verklärung der Vergangenheit und richtet den Blick nach vorn.</p>
-                    
-                    <p>Letztlich ist Riegers Text ein Aufruf zur Ehrlichkeit: Wir müssen die Realität der Polykrise anerkennen, ohne in Panik oder Resignation zu verfallen. Nur aus dieser ehrlichen Anerkennung heraus können wir Wege finden, die lebenswert sind - für uns und kommende Generationen.</p>
-                </div>
-
-                <h4>Vergleichende Perspektive: Rieger vs. Lutz</h4>
-
-                <p>Ein Vergleich der beiden Texte aus Aufgabe III und IV zeigt interessante Unterschiede:</p>
-
-                <table style="width:100%; border-collapse: collapse; margin: 20px 0;">
-                    <tr style="background: #667eea; color: white;">
-                        <th style="padding: 10px; border: 1px solid #ddd;">Aspekt</th>
-                        <th style="padding: 10px; border: 1px solid #ddd;">Stefan Lutz</th>
-                        <th style="padding: 10px; border: 1px solid #ddd;">Frank Rieger</th>
-                    </tr>
-                    <tr>
-                        <td style="padding: 10px; border: 1px solid #ddd;"><strong>Problemdiagnose</strong></td>
-                        <td style="padding: 10px; border: 1px solid #ddd;">Mangelnde Arbeitsbereitschaft</td>
-                        <td style="padding: 10px; border: 1px solid #ddd;">Strukturelle Polykrise</td>
-                    </tr>
-                    <tr style="background: #f8f9fa;">
-                        <td style="padding: 10px; border: 1px solid #ddd;"><strong>Ursache</strong></td>
-                        <td style="padding: 10px; border: 1px solid #ddd;">Verwöhnung, Kasko-Mentalität</td>
-                        <td style="padding: 10px; border: 1px solid #ddd;">Multiplen Krisen, Ende des Fortschritts</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 10px; border: 1px solid #ddd;"><strong>Lösung</strong></td>
-                        <td style="padding: 10px; border: 1px solid #ddd;">Mehr anpacken, Eigenverantwortung</td>
-                        <td style="padding: 10px; border: 1px solid #ddd;">Kollektive Resilienz, Solidarität</td>
-                    </tr>
-                    <tr style="background: #f8f9fa;">
-                        <td style="padding: 10px; border: 1px solid #ddd;"><strong>Ton</strong></td>
-                        <td style="padding: 10px; border: 1px solid #ddd;">Vorwurfsvoll, nostalgisch</td>
-                        <td style="padding: 10px; border: 1px solid #ddd;">Analytisch, nüchtern</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 10px; border: 1px solid #ddd;"><strong>Perspektive</strong></td>
-                        <td style="padding: 10px; border: 1px solid #ddd;">Individualistisch</td>
-                        <td style="padding: 10px; border: 1px solid #ddd;">Kollektivistisch</td>
-                    </tr>
-                </table>
-
-                <p>Beide Texte reagieren auf dieselbe Krisenrealität, kommen aber zu völlig unterschiedlichen Schlussfolgerungen. Diese Differenz zeigt, wie stark die jeweilige ideologische Perspektive die Analyse prägt.</p>
+            <h4>2. Medizinische Instrumentalisierung</h4>
+            <div class="analyse-box">
+                <p>Der Doktor verkörpert eine Wissenschaft, die ihre ethischen Grundlagen verloren hat. Er betrachtet Woyzeck nicht als Menschen, sondern als Versuchsobjekt. Die Erbsendiät ist ein unmenschliches Experiment, das Woyzeck körperlich und psychisch schädigt.</p>
             </div>
 
+            <h4>3. Militärische Hierarchie und Machtmissbrauch</h4>
+            <p>Der Hauptmann nutzt seine Position systematisch zur Demütigung Woyzecks. Seine "moralischen" Predigten über Tugend und "gute Menschen" sind heuchlerisch, da er selbst unmenschlich handelt.</p>
+
+            <h4>4. Emotionale und sexuelle Erniedrigung</h4>
+            <p>Maries Untreue mit dem Tambourmajor ist für Woyzeck besonders zerstörend, weil Marie das Einzige ist, was ihm Identität und Würde verleiht.</p>
+
+            <h4>5. Psychische Destabilisierung</h4>
+            <p>Woyzeck leidet unter Visionen und Stimmen. Diese können teilweise auf die Mangelernährung zurückgeführt werden, sind aber auch Ausdruck seiner psychischen Überlastung.</p>
+
+            <div class="analyse-box">
+                <h4>Fazit</h4>
+                <p>Büchners "Woyzeck" präsentiert ein erschütterndes Bild der Zerstörung eines Menschen durch gesellschaftliche Verhältnisse. Die Szene 9 ist exemplarisch für die systematische Demütigung, der Woyzeck ausgesetzt ist. Das Drama ist nicht nur eine Anklage gegen die Gesellschaft des 19. Jahrhunderts, sondern bleibt auch heute relevant als Warnung vor den Gefahren sozialer Ausgrenzung.</p>
+            </div>
         </div>
 
-        <div class="footer">
-            <p>© 2025 - Probeabitur Deutsch gAN Musterlösungen</p>
-            <p>Erstellt für Bildungszwecke</p>
+        <!-- Aufgabe II: Kurzprosa -->
+        <div class="section">
+            <h2>Aufgabe II: Kurzprosa - Alissa Walser: "Wie die Dinge liegen"</h2>
+            
+            <h3>Interpretation und Analyse der Protagonistenbeziehung</h3>
+            
+            <h4>Einleitung</h4>
+            <p>Die Kurzgeschichte "Wie die Dinge liegen" von Alissa Walser aus dem Jahr 2017 thematisiert eine gescheiterte Paarbeziehung und die damit verbundene Kommunikationsunfähigkeit. Die Erzählung besticht durch ihre minimalistische Sprache und die Fokussierung auf die psychologische Verfassung der Protagonistin.</p>
+
+            <h4>Analyse der Beziehungsdynamik</h4>
+
+            <div class="analyse-box">
+                <h4>Kommunikationsebene</h4>
+                <p>Die Dialoge zwischen den Protagonisten kreisen um banale Alltagsgegenstände ("Wo im Haus die Dinge liegen"). Diese vordergründig harmlosen Fragen dienen als Platzhalter für die eigentlichen, unausgesprochenen Themen ihrer Beziehung.</p>
+            </div>
+
+            <div class="wichtig">
+                <h4>Der "biologische Abflussreiniger"</h4>
+                <p>Diese Frage ist besonders entlarvend. Sie zeigt, dass der Mann in einer anderen Realität lebt - er kennt die grundlegenden Strukturen des gemeinsamen Alltags nicht mehr oder hat sie nie gekannt.</p>
+            </div>
+
+            <h4>Symbolik und Motivik</h4>
+            <p><strong>Die Dinge im Haus:</strong> Die ständige Suche nach Gegenständen symbolisiert die Suche nach Halt und Orientierung in einer Beziehung, die ihre Grundlage verloren hat.</p>
+
+            <p><strong>Das Kochen:</strong> Der misslungene Pfannkuchen steht für das Scheitern ihrer Beziehung. Obwohl äußerlich "perfekt", zerfällt er beim Versuch, ihn zu wenden.</p>
+
+            <div class="zitat">
+                <p>"Wo könnten diese Topfreiniger sein?", fragt sie, als er an ihr vorbeiläuft. Es ist spät. Draußen ist es dunkel, dunkler wird die Nacht nicht mehr."</p>
+            </div>
+
+            <div class="analyse-box">
+                <h4>Fazit</h4>
+                <p>Alissa Walsers "Wie die Dinge liegen" ist eine präzise psychologische Studie einer gescheiterten Beziehung. Die Beziehung der Protagonisten ist gekennzeichnet durch Sprachlosigkeit, Entfremdung und die Unfähigkeit, authentische Nähe herzustellen. Die offene Struktur der Geschichte lässt viele Interpretationen zu, macht aber deutlich: es ist "dunkler wird die Nacht nicht mehr".</p>
+            </div>
         </div>
+
+        <!-- Aufgabe III: Texterörterung Stefan Lutz -->
+        <div class="section">
+            <h2>Aufgabe III: Texterörterung - Stefan Lutz</h2>
+            
+            <h3>1. Argumentationsgang und Intention</h3>
+            
+            <h4>Einleitung</h4>
+            <p>Der Kommentar "Wie wär's, wenn wir mal wieder alle anpacken?" von Stefan Lutz, erschienen in der Süddeutschen Zeitung am 31.12.2022, setzt sich kritisch mit der Arbeits- und Leistungsmentalität in Deutschland auseinander.</p>
+
+            <div class="wichtig">
+                <h4>These des Autors</h4>
+                <p>Deutschland befindet sich in einer Phase der Resignation und des Pessimismus. Die Gesellschaft hat sich in eine "Kasko-Mentalität" zurückgezogen. Um die aktuellen und zukünftigen Herausforderungen zu meistern, bedarf es einer Rückkehr zu Eigeninitiative und Leistungsbereitschaft.</p>
+            </div>
+
+            <h3>2. Kritische Auseinandersetzung</h3>
+
+            <h4>1. Idealisierung der Vergangenheit</h4>
+            <div class="analyse-box">
+                <p>Lutz idealisiert die Arbeitsmentalität früherer Generationen, ohne deren Schattenseiten zu benennen. Die "guten alten Zeiten" hatten massive Probleme: Geschlechterdiskriminierung, autoritäre Strukturen, Gesundheitsschäden durch Überarbeitung.</p>
+            </div>
+
+            <h4>2. Einseitige Generationenkritik</h4>
+            <p>Lutz kritisiert die Generationen Y und Z für ihre Ansprüche, ohne die strukturellen Veränderungen zu berücksichtigen:</p>
+            <ul>
+                <li>Prekäre Arbeitsverhältnisse (Befristungen, Zeitarbeit)</li>
+                <li>Wohnungsnot und explodierende Immobilienpreise</li>
+                <li>Rentenunsicherheit</li>
+                <li>Klimakrise als geerbtes Problem</li>
+                <li>Psychische Belastungen</li>
+            </ul>
+
+            <h4>3. Missverständnis von Work-Life-Balance</h4>
+            <div class="wichtig">
+                <p>Studien zeigen: Menschen mit guter Work-Life-Balance sind produktiver, nicht weniger produktiv. Work-Life-Balance ist kein Luxus, sondern notwendig für nachhaltige Leistungsfähigkeit.</p>
+            </div>
+
+            <div class="analyse-box">
+                <h4>Fazit</h4>
+                <p>Deutschland braucht keine Rückkehr zu vergangenen "Tugenden", sondern eine zukunftsorientierte Debatte darüber, wie gute Arbeit im 21. Jahrhundert aussehen soll. Die wahren Herausforderungen werden nicht durch längere Arbeitszeiten gelöst, sondern durch intelligente Politik und eine Arbeitskultur, die Menschen als Subjekte respektiert.</p>
+            </div>
+        </div>
+
+        <!-- Aufgabe IV: Frank Rieger -->
+        <div class="section">
+            <h2>Aufgabe IV: Textanalyse - Frank Rieger</h2>
+            
+            <h3>1. Analyse: Argumentationsgang und Intention</h3>
+            
+            <h4>Einleitung</h4>
+            <p>Der Essay "Erschöpfte Überforderung als Zeitgeist" von Frank Rieger analysiert den gegenwärtigen gesellschaftlichen Zustand als Epoche der Erschöpfung und Überforderung.</p>
+
+            <div class="wichtig">
+                <h4>These des Autors</h4>
+                <p>Die gegenwärtige Zeit ist charakterisiert durch eine allgegenwärtige Erschöpfung, die durch Dauerkrise verstärkt wurde. Der frühere Optimismus ist einer "kurzen Lunte" gewichen - Menschen reagieren schneller gereizt, weil sie keine Perspektive mehr auf Besserung sehen.</p>
+            </div>
+
+            <div class="zitat">
+                <p>"Die große Welt ist in das kleine Leben eingebrochen. Nicht ab und zu mal, sondern jede Woche, jeden Tag."</p>
+            </div>
+
+            <h4>Sprachlich-stilistische Gestaltung</h4>
+
+            <h5>Metaphorik und Bildlichkeit:</h5>
+            <ul>
+                <li><strong>"Die große Welt ist in das kleine Leben eingebrochen"</strong> - Räumliche Metapher für Verlust von Privatheit</li>
+                <li><strong>"Kurze Lunte"</strong> - Explosive, gefährliche Stimmung</li>
+                <li><strong>"Seelisches Gepäck"</strong> - Unsichtbare Last</li>
+                <li><strong>"Rosabrillen-Ökonomen"</strong> - Ironische Kritik am Fortschrittsoptimismus</li>
+            </ul>
+
+            <h3>2. Riegers Sicht auf Zeit und Gesellschaft</h3>
+
+            <h4>Die Polykrisen-These</h4>
+            <div class="analyse-box">
+                <p>Rieger sieht die Gegenwart nicht als einzelne Krise, sondern als Überlagerung multipler Krisen: Pandemie, Klimakrise, geopolitische Konflikte, Energiekrise, Inflation, Demokratiekrise. Diese Krisen verstärken sich gegenseitig.</p>
+            </div>
+
+            <h4>Ende des Fortschrittsnarrativs</h4>
+            <p>Die Gewissheit, dass es den nächsten Generationen besser gehen wird, existiert nicht mehr. Die "Hockeystick-Statistiken" wurden durch die Krisen widerlegt.</p>
+
+            <h4>Resilienz als Schlüssel</h4>
+            <div class="wichtig">
+                <p>Rieger sieht Resilienz nicht als passive Erduldung, sondern als:</p>
+                <ul>
+                    <li>Anpassungsfähigkeit im Umgang mit Veränderung</li>
+                    <li>Solidarität statt individueller Kampf</li>
+                    <li>Sinnstiftung auch in Krisen</li>
+                    <li>Langfristiges, aktives Gestalten</li>
+                </ul>
+            </div>
+
+            <h4>Vergleich: Rieger vs. Lutz</h4>
+            <table>
+                <tr>
+                    <th>Aspekt</th>
+                    <th>Stefan Lutz</th>
+                    <th>Frank Rieger</th>
+                </tr>
+                <tr>
+                    <td><strong>Problemdiagnose</strong></td>
+                    <td>Mangelnde Arbeitsbereitschaft</td>
+                    <td>Strukturelle Polykrise</td>
+                </tr>
+                <tr>
+                    <td><strong>Lösung</strong></td>
+                    <td>Mehr anpacken, Eigenverantwortung</td>
+                    <td>Kollektive Resilienz, Solidarität</td>
+                </tr>
+                <tr>
+                    <td><strong>Ton</strong></td>
+                    <td>Vorwurfsvoll, nostalgisch</td>
+                    <td>Analytisch, nüchtern</td>
+                </tr>
+                <tr>
+                    <td><strong>Perspektive</strong></td>
+                    <td>Individualistisch</td>
+                    <td>Kollektivistisch</td>
+                </tr>
+            </table>
+
+            <div class="analyse-box">
+                <h4>Fazit</h4>
+                <p>Riegers Text ist ein Aufruf zur Ehrlichkeit: Wir müssen die Realität der Polykrise anerkennen, ohne in Panik oder Resignation zu verfallen. Nur aus dieser ehrlichen Anerkennung heraus können wir Wege finden, die lebenswert sind - für uns und kommende Generationen.</p>
+            </div>
+        </div>
+
+        <!-- Scroll to Top Button -->
+        <div id="scrollTop" class="scroll-top">↑</div>
     </div>
+
+    <script>
+        // Toggle PDF Viewer
+        function togglePDF() {
+            const pdfViewer = document.getElementById('pdfViewer');
+            if (pdfViewer.style.display === 'none' || pdfViewer.style.display === '') {
+                pdfViewer.style.display = 'block';
+                pdfViewer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else {
+                pdfViewer.style.display = 'none';
+            }
+        }
+
+        // Scroll to top functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const scrollTopButton = document.getElementById('scrollTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollTopButton.classList.add('visible');
+                } else {
+                    scrollTopButton.classList.remove('visible');
+                }
+            });
+            
+            scrollTopButton.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // Keyboard shortcut: Press 'T' to scroll to top
+            document.addEventListener('keydown', function(e) {
+                if ((e.key === 't' || e.key === 'T') && !e.ctrlKey && !e.altKey) {
+                    const active = document.activeElement;
+                    if (active.tagName !== 'INPUT' && active.tagName !== 'TEXTAREA') {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                }
+            });
+
+            console.log('✅ Probeprüfung Deutsch loaded! Press T to scroll to top.');
+        });
+    </script>
 </body>
 </html>
