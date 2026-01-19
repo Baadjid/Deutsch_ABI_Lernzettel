@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Epochen und literarische Strömungen - Deutsch Lernzettel</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --bg-color: #ecf0f1;
+            --card-bg: #ffffff;
+            --text-color: #2c3e50;
+            --border-color: #bdc3c7;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--bg-color) 0%, #d5dbdb 100%);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #000000, #DD0000, #FFCE00);
+        }
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        .back-button:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+        .header h1 {
+            color: var(--primary-color);
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .section {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--secondary-color);
+        }
+        .section h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+        .section h3 {
+            color: var(--secondary-color);
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+        .section h4 {
+            color: var(--primary-color);
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        .section p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        .section ul, .section ol {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+        .section li {
+            margin-bottom: 8px;
+        }
+        .timeline-item {
+            background: #f8f9fa;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            border-left: 4px solid var(--secondary-color);
+            position: relative;
+        }
+        .timeline-year {
+            display: inline-block;
+            background: var(--accent-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .epoch-card {
+            background: linear-gradient(135deg, #ffffff, #f8f9fa);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            border-left: 5px solid var(--secondary-color);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .epoch-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+        .epoch-title {
+            font-size: 1.6em;
+            color: var(--primary-color);
+            margin: 0;
+        }
+        .epoch-years {
+            background: linear-gradient(45deg, var(--secondary-color), #2980b9);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        .info-box {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid var(--secondary-color);
+        }
+        .warning-box {
+            background: #fff3e0;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid var(--warning-color);
+        }
+        .example-box {
+            background: #e8f5e9;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid var(--success-color);
+        }
+        .nav-container {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            top: 20px;
+            z-index: 100;
+        }
+        .nav-container h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 10px;
+        }
+        .nav-link {
+            background: linear-gradient(45deg, var(--secondary-color), #2980b9);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+        .nav-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+            background: linear-gradient(45deg, #2980b9, var(--secondary-color));
+        }
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(45deg, var(--accent-color), #c0392b);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+        }
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
+        }
+        .collapsible-header {
+            background: linear-gradient(135deg, var(--secondary-color), #2980b9);
+            color: white;
+            padding: 15px 20px;
+            cursor: pointer;
+            border-radius: 10px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+        .collapsible-header:hover {
+            background: linear-gradient(135deg, #2980b9, var(--secondary-color));
+            transform: translateX(5px);
+        }
+        .collapsible-header h3 {
+            margin: 0;
+            color: white;
+            font-size: 1.3em;
+        }
+        .collapsible-icon {
+            font-size: 1.5em;
+            transition: transform 0.3s ease;
+        }
+        .collapsible-header.active .collapsible-icon {
+            transform: rotate(180deg);
+        }
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        .collapsible-content.active {
+            max-height: 15000px;
+        }
+        .collapsible-inner {
+            padding: 20px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background: var(--secondary-color);
+            color: white;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            .header h1 {
+                font-size: 2em;
+            }
+            .section {
+                padding: 20px;
+            }
+            .section h2 {
+                font-size: 1.5em;
+            }
+            .nav-grid {
+                grid-template-columns: 1fr;
+            }
+            .epoch-header {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .scroll-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+            }
+            .nav-container {
+                position: relative;
+                top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">← Zurück zur Hauptseite</a>
+        
+        <div class="header">
+            <h1>📜 Epochen und literarische Strömungen der deutschen Literatur</h1>
+            <p>Von der Althochdeutschen Dichtung bis zur Gegenwartsliteratur</p>
+        </div>
+
+        <!-- Navigation -->
+        <div class="nav-container">
+            <h3>📑 Epochenübersicht</h3>
+            <div class="nav-grid">
+                <a href="#einfuehrung" class="nav-link">4.1 Einführung</a>
+                <a href="#althochdeutsch" class="nav-link">4.2 Althochdeutsch</a>
+                <a href="#mittelhochdeutsch" class="nav-link">4.3 Mittelhochdeutsch</a>
+                <a href="#renaissance" class="nav-link">4.4 Renaissance</a>
+                <a href="#barock" class="nav-link">4.5 Barock</a>
+                <a href="#aufklaerung" class="nav-link">4.6 Aufklärung</a>
+                <a href="#sturm-klassik-romantik" class="nav-link">4.7 Klassik/Romantik</a>
+                <a href="#vormaerz" class="nav-link">4.8 Vormärz</a>
+                <a href="#realismus" class="nav-link">4.9 Realismus</a>
+                <a href="#naturalismus" class="nav-link">4.10 Naturalismus</a>
+                <a href="#gegenbewegungen" class="nav-link">4.11 Gegenbewegungen</a>
+                <a href="#expressionismus" class="nav-link">4.12 Expressionismus</a>
+                <a href="#weimarer-republik" class="nav-link">4.13 Weimarer Rep.</a>
+                <a href="#nachkriegszeit" class="nav-link">4.14 Nachkriegszeit</a>
+                <a href="#brd" class="nav-link">4.15 BRD</a>
+                <a href="#ddr" class="nav-link">4.16 DDR</a>
+                <a href="#gegenwart" class="nav-link">4.17 Gegenwart</a>
+            </div>
+        </div>
+
+        <!-- 4.1 Einführung -->
+        <div id="einfuehrung" class="section">
+            <h2>4.1 Einführung</h2>
+            
+            <p>Die deutsche Literaturgeschichte ist ein Spiegel der gesellschaftlichen, politischen und kulturellen Entwicklungen von über 1200 Jahren. Jede <strong style="background: #e3f2fd; padding: 2px 8px; border-radius: 4px;">Epoche</strong> hat charakteristische Merkmale, die sich in Themen, Motiven, Stil und Weltanschauung äußern.</p>
+
+            <div class="info-box">
+                <h4>📚 Was ist eine literarische Epoche?</h4>
+                <p>Eine literarische Epoche ist ein Zeitabschnitt, in dem bestimmte geistige Strömungen, künstlerische Prinzipien und gesellschaftliche Bedingungen die Literatur prägen. Epochen sind Ordnungskategorien der Literaturgeschichte – die Übergänge sind fließend!</p>
+            </div>
+
+            <div class="warning-box">
+                <h4>⚠️ Wichtig zu beachten:</h4>
+                <ul>
+                    <li>Epochengrenzen sind nicht scharf – Übergänge sind fließend</li>
+                    <li>Verschiedene Epochen können zeitlich überlappen</li>
+                    <li>Nicht alle Autoren einer Zeit gehören zur gleichen Epoche</li>
+                    <li>Epochenmerkmale sind Idealtypen – nicht jedes Werk erfüllt alle Kriterien</li>
+                </ul>
+            </div>
+
+            <h3>Merkmale literarischer Epochen</h3>
+            <table>
+                <tr>
+                    <th>Merkmal</th>
+                    <th>Beschreibung</th>
+                </tr>
+                <tr>
+                    <td><strong>Historischer Kontext</strong></td>
+                    <td>Politische, gesellschaftliche, wirtschaftliche Bedingungen</td>
+                </tr>
+                <tr>
+                    <td><strong>Weltanschauung</strong></td>
+                    <td>Menschenbild, Naturverständnis, Verhältnis zu Gott/Vernunft</td>
+                </tr>
+                <tr>
+                    <td><strong>Themen und Motive</strong></td>
+                    <td>Bevorzugte Inhalte und wiederkehrende Symbole</td>
+                </tr>
+                <tr>
+                    <td><strong>Stil und Form</strong></td>
+                    <td>Sprache, Satzbau, bevorzugte Gattungen und Versformen</td>
+                </tr>
+                <tr>
+                    <td><strong>Autoren und Werke</strong></td>
+                    <td>Repräsentative Schriftsteller und ihre Hauptwerke</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 4.2 Althochdeutsche Dichtung -->
+        <div id="althochdeutsch" class="section">
+            <h2>4.2 Althochdeutsche Dichtung (um 750-1050)</h2>
+            
+            <div class="epoch-card">
+                <div class="epoch-header">
+                    <h3 class="epoch-title">Althochdeutsch</h3>
+                    <div class="epoch-years">ca. 750-1050</div>
+                </div>
+                
+                <div class="info-box">
+                    <h4>📊 Historischer Kontext</h4>
+                    <ul>
+                        <li>Zeit Karls des Großen (768-814)</li>
+                        <li>Christianisierung der germanischen Völker</li>
+                        <li>Klöster als Zentren der Bildung und Schriftlichkeit</li>
+                        <li>Übergang von mündlicher zu schriftlicher Kultur</li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <h4>✍️ Merkmale</h4>
+                    <ul>
+                        <li>Erste deutsche Schriftsprache (vorher nur Latein)</li>
+                        <li>Starke regionale Unterschiede (keine Einheitssprache)</li>
+                        <li>Komplexe Flexion mit vielen Endungen</li>
+                        <li>Einfluss des Lateinischen durch christliche Missionierung</li>
+                        <li>Überwiegend religiöse Texte (Gebete, Glaubensbekenntnisse)</li>
+                    </ul>
+                </div>
+
+                <div class="example-box">
+                    <h4>📖 Wichtige Texte</h4>
+                    <ul>
+                        <li><strong>Hildebrandslied</strong> (um 820): Ältestes deutsches Heldenlied, Tragik des Vater-Sohn-Kampfes</li>
+                        <li><strong>Merseburger Zaubersprüche</strong> (10. Jh.): Heidnische Beschwörungsformeln</li>
+                        <li><strong>Wessobrunner Gebet</strong> (um 790): Christliches Schöpfungsgedicht</li>
+                        <li><strong>Heliand</strong> (um 830): Evangelienharmonie in altsächsischer Stabreimdichtung</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4.3 Mittelhochdeutsche Dichtung -->
+        <div id="mittelhochdeutsch" class="section">
+            <h2>4.3 Mittelhochdeutsche Dichtung (um 1050-1350)</h2>
+            
+            <div class="epoch-card">
+                <div class="epoch-header">
+                    <h3 class="epoch-title">Mittelhochdeutsch</h3>
+                    <div class="epoch-years">ca. 1050-1350</div>
+                </div>
+                
+                <div class="info-box">
+                    <h4>📊 Historischer Kontext</h4>
+                    <ul>
+                        <li>Blütezeit des Rittertums und der höfischen Kultur</li>
+                        <li>Kreuzzüge (1096-1291)</li>
+                        <li>Minnesan und höfische Dichtung</li>
+                        <li>Feudalsystem und Ständegesellschaft</li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <h4>✍️ Merkmale</h4>
+                    <ul>
+                        <li>Blütezeit der mittelalterlichen Dichtung</li>
+                        <li>Höfische Epik (Artusroman, Heldenepos)</li>
+                        <li>Minnesang (Liebeslyrik)</li>
+                        <li>Ideale: mâze (Maßhalten), triuwe (Treue), êre (Ehre)</li>
+                        <li>Einfluss französischer Vorbilder</li>
+                    </ul>
+                </div>
+
+                <div class="example-box">
+                    <h4>🎭 Wichtige Autoren und Werke</h4>
+                    <ul>
+                        <li><strong>Walther von der Vogelweide:</strong> Bedeutendster Minnesänger, politische Spruchdichtung</li>
+                        <li><strong>Wolfram von Eschenbach:</strong> "Parzival" (Artusroman)</li>
+                        <li><strong>Hartmann von Aue:</strong> "Der arme Heinrich", "Iwein"</li>
+                        <li><strong>Das Nibelungenlied:</strong> Nationales Heldenepos, Siegfried und Kriemhild</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4.4 Renaissance, Humanismus, Reformation -->
+        <div id="renaissance" class="section">
+            <h2>4.4 Renaissance, Humanismus, Reformation (um 1350-1600)</h2>
+            
+            <div class="epoch-card">
+                <div class="epoch-header">
+                    <h3 class="epoch-title">Renaissance & Humanismus</h3>
+                    <div class="epoch-years">ca. 1350-1600</div>
+                </div>
+                
+                <div class="info-box">
+                    <h4>📊 Historischer Kontext</h4>
+                    <ul>
+                        <li>Vom Mittelalter zur Neuzeit</li>
+                        <li>Erfindung des Buchdrucks (Gutenberg, 1450)</li>
+                        <li>Reformation (Martin Luther, 1517)</li>
+                        <li>Entdeckung Amerikas (1492)</li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <h4>💡 Renaissance: Wiedergeburt der Antike</h4>
+                    <ul>
+                        <li>Rückbesinnung auf antike Bildung und Kunst</li>
+                        <li>Mensch im Mittelpunkt (Anthropozentrismus)</li>
+                        <li>Wissenschaft und Forschung</li>
+                        <li>Individualität und Persönlichkeit</li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <h4>📚 Humanismus: Bildung und Menschenwürde</h4>
+                    <ul>
+                        <li>Studia humanitatis (Grammatik, Rhetorik, Poesie, Geschichte, Moral)</li>
+                        <li>Bildung als Weg zur Vervollkommnung</li>
+                        <li>Lateinische Gelehrtensprache</li>
+                        <li>Erasmus von Rotterdam: "Lob der Torheit"</li>
+                    </ul>
+                </div>
+
+                <div class="example-box">
+                    <h4>✝️ Reformation: Martin Luther und die Bibelübersetzung</h4>
+                    <p><strong>Martin Luther</strong> (1483-1546) übersetzte die Bibel ins Deutsche und schuf damit die Grundlage für die deutsche Standardsprache.</p>
+                    <ul>
+                        <li>Orientierung an "ostmitteldeutscher Kanzleisprache"</li>
+                        <li>Verständlich für Nord- und Süddeutsche</li>
+                        <li>Volksnah, aber gehoben</li>
+                        <li>Schuf viele bis heute gebräuchliche Ausdrücke</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4.5 Barock -->
+        <div id="barock" class="section">
+            <h2>4.5 Barock (um 1600-1720)</h2>
+            
+            <div class="epoch-card">
+                <div class="epoch-header">
+                    <h3 class="epoch-title">Barock</h3>
+                    <div class="epoch-years">1600-1720</div>
+                </div>
+                
+                <div class="info-box">
+                    <h4>📊 Historischer Kontext</h4>
+                    <ul>
+                        <li><strong>30-jähriger Krieg</strong> (1618-1648) - Verwüstung, Tod, Hunger</li>
+                        <li>Absolutismus (Ludwig XIV. in Frankreich)</li>
+                        <li>Gespaltene Gesellschaft: Hunger, Zerstörung, Verfolgung</li>
+                        <li>Furcht vor dem Tod und starker christlicher Glaube</li>
+                    </ul>
+                </div>
+
+                <div class="warning-box">
+                    <h4>🎭 Zentrale Motive</h4>
+                    <ul>
+                        <li><strong>Vanitas:</strong> Vergänglichkeit alles Irdischen</li>
+                        <li><strong>Memento mori:</strong> "Gedenke, dass du sterblich bist!"</li>
+                        <li><strong>Carpe diem:</strong> "Nutze den Tag!" - Lebensgenuss trotz Todesnähe</li>
+                        <li><strong>Antithetik:</strong> Diesseits vs. Jenseits, Schein vs. Sein</li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <h4>✍️ Sprachliche Merkmale</h4>
+                    <ul>
+                        <li>Schwülstige, bildreiche Sprache</li>
+                        <li>Antithesen und Paradoxa</li>
+                        <li>Sonett als bevorzugte Form</li>
+                        <li>Alexandriner (6-hebiger Jambus mit Zäsur)</li>
+                    </ul>
+                </div>
+
+                <div class="example-box">
+                    <h4>🎭 Wichtige Autoren</h4>
+                    <ul>
+                        <li><strong>Martin Opitz:</strong> "Buch von der deutschen Poetrey" - Reformator der Dichtung</li>
+                        <li><strong>Andreas Gryphius:</strong> Sonette, Dramen, Vanitas-Motiv</li>
+                        <li><strong>Paul Fleming:</strong> Persönliche Lyrik</li>
+                        <li><strong>Hans Jakob Christoffel von Grimmelshausen:</strong> "Der abenteuerliche Simplicissimus"</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4.6 Aufklärung -->
+        <div id="aufklaerung" class="section">
+            <h2>4.6 Literatur der Aufklärung (um 1700-1800)</h2>
+            
+            <div class="epoch-card">
+                <div class="epoch-header">
+                    <h3 class="epoch-title">Aufklärung</h3>
+                    <div class="epoch-years">1720-1790</div>
+                </div>
+                
+                <div class="info-box">
+                    <h4>📊 Historischer Kontext</h4>
+                    <ul>
+                        <li>Absolutismus und aufstrebendes Bürgertum</li>
+                        <li>Französische Revolution (1789)</li>
+                        <li>Rationalismus und Empirismus</li>
+                        <li>Forderung: Freiheit, Gleichheit, Brüderlichkeit</li>
+                    </ul>
+                </div>
+
+                <div class="example-box">
+                    <h4>💡 Zentrale Ideen</h4>
+                    <ul>
+                        <li><strong>"Sapere aude!"</strong> - Wage es, deinen Verstand zu gebrauchen! (Kant)</li>
+                        <li><strong>Vernunft:</strong> Höchstes Gut, Weg zur Wahrheit</li>
+                        <li><strong>Humanität:</strong> Mensch im Mittelpunkt</li>
+                        <li><strong>Fortschritt:</strong> Durch Bildung und Vernunft</li>
+                        <li><strong>Toleranz:</strong> Religiöse und geistige Offenheit</li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <h4>✍️ Literarische Merkmale</h4>
+                    <ul>
+                        <li>Lehrhaftigkeit und moralische Besserung</li>
+                        <li>Bürgerliche Sprache ohne Fachwörter</li>
+                        <li>Fabel, Lehrgedicht, bürgerliches Trauerspiel</li>
+                        <li>Kritik an Autoritäten und Standesschranken</li>
+                    </ul>
+                </div>
+
+                <div class="example-box">
+                    <h4>🎭 Gotthold Ephraim Lessing (1729-1781)</h4>
+                    <p><strong>Hauptwerke:</strong></p>
+                    <ul>
+                        <li><strong>"Nathan der Weise"</strong> (1779): Toleranzdrama, Ringparabel</li>
+                        <li><strong>"Emilia Galotti"</strong> (1772): Bürgerliches Trauerspiel</li>
+                        <li><strong>"Minna von Barnhelm"</strong> (1767): Komödie</li>
+                    </ul>
+                    <p><strong>Leistung:</strong> Begründer des deutschen Nationaltheaters, Verfechter von Toleranz und Humanität</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4.7 Sturm und Drang, Klassik, Romantik -->
+        <div id="sturm-klassik-romantik" class="section">
+            <h2>4.7 Sturm und Drang, Empfindsamkeit, Klassik und Romantik (um 1740-1830)</h2>
+            
+            <div class="collapsible-header">
+                <h3>⚡ Sturm und Drang (1767-1790)</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="info-box">
+                        <h4>📊 Historischer Kontext</h4>
+                        <ul>
+                            <li>Gegenbewegung zur Aufklärung</li>
+                            <li>Einfluss der Französischen Revolution</li>
+                            <li>Jugendbewegung der Literatur</li>
+                            <li>Genie-Ästhetik und Individualismus</li>
+                        </ul>
+                    </div>
+
+                    <div class="warning-box">
+                        <h4>🎭 Zentrale Merkmale</h4>
+                        <ul>
+                            <li><strong>Gefühl vor Vernunft:</strong> Emotionalität steht im Vordergrund</li>
+                            <li><strong>Naturverehrung:</strong> Natur als Kraftquelle</li>
+                            <li><strong>Regelbruch:</strong> Ablehnung literarischer Normen</li>
+                            <li><strong>Genie-Kult:</strong> Verehrung des schöpferischen Individuums</li>
+                            <li><strong>Rebellion:</strong> Gegen Autoritäten und gesellschaftliche Zwänge</li>
+                        </ul>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>📖 Wichtige Werke</h4>
+                        <ul>
+                            <li><strong>Johann Wolfgang Goethe:</strong> "Die Leiden des jungen Werther" (1774) - Briefroman über unerfüllte Liebe</li>
+                            <li><strong>Friedrich Schiller:</strong> "Die Räuber" (1781) - Drama über Rebellion</li>
+                            <li><strong>Jakob Michael Reinhold Lenz:</strong> "Der Hofmeister" - Sozialkritisches Drama</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>🏛️ Weimarer Klassik (1785-1805)</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="info-box">
+                        <h4>📊 Historischer Kontext</h4>
+                        <ul>
+                            <li>Zentrum: Weimar (Herzog Karl August)</li>
+                            <li>Orientierung an der Antike</li>
+                            <li>Italienreise Goethes (1786-1788)</li>
+                            <li>Freundschaft Goethe-Schiller</li>
+                        </ul>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>💎 Zentrale Ideale</h4>
+                        <ul>
+                            <li><strong>Humanitätsideal:</strong> Vollendung des Menschen</li>
+                            <li><strong>Harmonie:</strong> Ausgewogenheit von Gefühl und Verstand</li>
+                            <li><strong>Bildung:</strong> Erziehung durch Kunst</li>
+                            <li><strong>"Edle Einfalt, stille Größe"</strong> (Winckelmann)</li>
+                            <li><strong>Maß und Form:</strong> Klassische Formstrenge</li>
+                        </ul>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>📖 Hauptwerke</h4>
+                        <ul>
+                            <li><strong>Goethe: "Faust I"</strong> (1808) - Tragödie über Erkenntnisstreben</li>
+                            <li><strong>Goethe: "Wilhelm Meisters Lehrjahre"</strong> - Bildungsroman</li>
+                            <li><strong>Schiller: "Wallenstein"</strong> - Historisches Drama</li>
+                            <li><strong>Schiller: "Maria Stuart"</strong> - Klassisches Drama</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>🌙 Romantik (1795-1830)</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="info-box">
+                        <h4>📊 Phasen der Romantik</h4>
+                        <ul>
+                            <li><strong>Frühromantik</strong> (um 1795-1804): Universalpoesie, Fragment, Jenaer Kreis</li>
+                            <li><strong>Hochromantik</strong> (um 1804-1818): Märchen, Volkslieder, Heidelberger Kreis</li>
+                            <li><strong>Spätromantik</strong> (um 1815-1830): Schwarze Romantik, Dämonisches, E.T.A. Hoffmann</li>
+                        </ul>
+                    </div>
+
+                    <div class="warning-box">
+                        <h4>🎭 Zentrale Motive</h4>
+                        <ul>
+                            <li><strong>All-Einheit:</strong> Verschmelzung mit der Natur und dem Universum</li>
+                            <li><strong>Blaue Blume:</strong> Symbol der Sehnsucht und des Unerreichbaren (Novalis)</li>
+                            <li><strong>Märchenwelt:</strong> Flucht aus der Realität in Fantasiewelten</li>
+                            <li><strong>Romantische Ironie:</strong> Illusion und ihre Brechung</li>
+                            <li><strong>Nacht, Traum, Wahnsinn:</strong> Grenzbereiche der Existenz</li>
+                        </ul>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>📖 Wichtige Autoren und Werke</h4>
+                        <ul>
+                            <li><strong>Novalis:</strong> "Heinrich von Ofterdingen" - Roman mit der blauen Blume</li>
+                            <li><strong>E.T.A. Hoffmann:</strong> "Der goldne Topf" - Kunstmärchen über Doppelwelt</li>
+                            <li><strong>Joseph von Eichendorff:</strong> "Aus dem Leben eines Taugenichts" - Wandermotiv</li>
+                            <li><strong>Gebrüder Grimm:</strong> "Kinder- und Hausmärchen" - Volksmärchen</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4.8 Vormärz und Biedermeier -->
+        <div id="vormaerz" class="section">
+            <h2>4.8 Junges Deutschland, Vormärz und Biedermeier (um 1815-1849)</h2>
+            
+            <div class="epoch-card">
+                <div class="epoch-header">
+                    <h3 class="epoch-title">Vormärz</h3>
+                    <div class="epoch-years">1815-1849</div>
+                </div>
+                
+                <div class="info-box">
+                    <h4>📊 Historischer Kontext</h4>
+                    <ul>
+                        <li>Restauration nach dem Wiener Kongress (1815)</li>
+                        <li>Zensur und politische Unterdrückung</li>
+                        <li>Märzrevolution 1848</li>
+                        <li>Forderung nach nationaler Einheit und Demokratie</li>
+                    </ul>
+                </div>
+
+                <div class="example-box">
+                    <h4>💪 Junges Deutschland & Vormärz</h4>
+                    <ul>
+                        <li><strong>Politisches Engagement:</strong> Literatur als Waffe</li>
+                        <li><strong>Heinrich Heine:</strong> "Deutschland. Ein Wintermärchen" - Satirische Verseerzählung</li>
+                        <li><strong>Georg Büchner:</strong> "Woyzeck" - Soziales Drama, Determinismus</li>
+                        <li><strong>Politische Lyrik:</strong> Kritik an Fürstenherrschaft</li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <h4>🏡 Biedermeier: Rückzug ins Private</h4>
+                    <ul>
+                        <li><strong>Idylle:</strong> Häusliches Glück, Natur</li>
+                        <li><strong>Resignation:</strong> Verzicht auf politisches Engagement</li>
+                        <li><strong>Eduard Mörike:</strong> Lyrik, "Mozart auf der Reise nach Prag"</li>
+                        <li><strong>Adalbert Stifter:</strong> "Der Nachsommer" - Bildungsroman</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4.9 Poetischer Realismus -->
+        <div id="realismus" class="section">
+            <h2>4.9 Poetischer (oder bürgerlicher) Realismus (um 1848-1890)</h2>
+            
+            <div class="epoch-card">
+                <div class="epoch-header">
+                    <h3 class="epoch-title">Realismus</h3>
+                    <div class="epoch-years">1850-1900</div>
+                </div>
+                
+                <div class="info-box">
+                    <h4>📊 Historischer Kontext</h4>
+                    <ul>
+                        <li>Industrialisierung und Urbanisierung</li>
+                        <li>Gründung des Deutschen Reichs (1871)</li>
+                        <li>Aufstieg des Bürgertums</li>
+                        <li>Soziale Frage und Verelendung der Arbeiter</li>
+                    </ul>
+                </div>
+
+                <div class="example-box">
+                    <h4>✍️ Merkmale</h4>
+                    <ul>
+                        <li><strong>Wirklichkeitstreue:</strong> Objektive Darstellung der Realität</li>
+                        <li><strong>Bürgerliche Welt:</strong> Themen aus dem Alltag</li>
+                        <li><strong>Poetische Verklärung:</strong> Nicht jede Härte wird gezeigt</li>
+                        <li><strong>Gesellschaftskritik:</strong> Subtile Kritik an Missständen</li>
+                    </ul>
+                </div>
+
+                <div class="example-box">
+                    <h4>📖 Wichtige Autoren</h4>
+                    <ul>
+                        <li><strong>Theodor Fontane:</strong> "Effi Briest" - Ehebruchsroman, Gesellschaftskritik</li>
+                        <li><strong>Theodor Storm:</strong> "Der Schimmelreiter" - Novelle</li>
+                        <li><strong>Gottfried Keller:</strong> "Romeo und Julia auf dem Dorfe"</li>
+                        <li><strong>Wilhelm Raabe:</strong> "Die Chronik der Sperlingsgasse"</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4.10 Naturalismus -->
+        <div id="naturalismus" class="section">
+            <h2>4.10 Naturalismus (um 1890-1900)</h2>
+            
+            <div class="epoch-card">
+                <div class="epoch-header">
+                    <h3 class="epoch-title">Naturalismus</h3>
+                    <div class="epoch-years">1880-1900</div>
+                </div>
+                
+                <div class="info-box">
+                    <h4>📊 Historischer Kontext</h4>
+                    <ul>
+                        <li>Hochindustrialisierung</li>
+                        <li>Soziale Verelendung der Arbeiterklasse</li>
+                        <li>Einfluss von Darwin, Marx, Comte</li>
+                        <li>Determinismus: Mensch durch Vererbung und Milieu bestimmt</li>
+                    </ul>
+                </div>
+
+                <div class="warning-box">
+                    <h4>🔬 Zentrale Merkmale</h4>
+                    <ul>
+                        <li><strong>Naturwissenschaftliche Genauigkeit:</strong> Exakte Milieuschilderung</li>
+                        <li><strong>Sekundenstil:</strong> Detaillierte Wiedergabe von Dialekten</li>
+                        <li><strong>Soziales Elend:</strong> Thematisierung von Armut, Alkoholismus</li>
+                        <li><strong>Determinismus:</strong> Mensch als Produkt seiner Umstände</li>
+                    </ul>
+                </div>
+
+                <div class="example-box">
+                    <h4>🎭 Gerhart Hauptmann (1862-1946)</h4>
+                    <ul>
+                        <li><strong>"Die Weber"</strong> (1892): Soziales Drama über Weberaufstand</li>
+                        <li><strong>"Vor Sonnenaufgang"</strong> (1889): Alkoholismus und Vererbung</li>
+                        <li><strong>"Bahnwärter Thiel"</strong>: Novelle über Schicksalsergebenheit</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4.11 Gegenbewegungen zum Naturalismus -->
+        <div id="gegenbewegungen" class="section">
+            <h2>4.11 Gegenbewegungen zum Naturalismus (1890-1918)</h2>
+            
+            <div class="epoch-card">
+                <div class="epoch-header">
+                    <h3 class="epoch-title">Gegenbewegungen</h3>
+                    <div class="epoch-years">1890-1918</div>
+                </div>
+                
+                <div class="info-box">
+                    <h4>🎨 Ästhetizismus und "L'art pour l'art"</h4>
+                    <ul>
+                        <li>Kunst um der Kunst willen</li>
+                        <li>Abkehr vom sozialen Engagement</li>
+                        <li>Betonung von Schönheit und Form</li>
+                    </ul>
+                </div>
+
+                <div class="example-box">
+                    <h4>🌺 Wichtige Strömungen</h4>
+                    <ul>
+                        <li><strong>Impressionismus:</strong> Hugo von Hofmannsthal - Stimmungen und Augenblicke</li>
+                        <li><strong>Symbolismus:</strong> Rainer Maria Rilke, Stefan George - Symbole und Chiffren</li>
+                        <li><strong>Jugendstil:</strong> Ornamentale Kunst</li>
+                        <li><strong>Décadence:</strong> Lebensüberdruss, Verfall</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4.12 Expressionismus -->
+        <div id="expressionismus" class="section">
+            <h2>4.12 Expressionismus (um 1910-1920)</h2>
+            
+            <div class="epoch-card">
+                <div class="epoch-header">
+                    <h3 class="epoch-title">Expressionismus</h3>
+                    <div class="epoch-years">1905-1925</div>
+                </div>
+                
+                <div class="info-box">
+                    <h4>📊 Historischer Kontext</h4>
+                    <ul>
+                        <li>Erster Weltkrieg (1914-1918)</li>
+                        <li>Zivilisationskrise und Technikkritik</li>
+                        <li>Angst vor Zerstörung</li>
+                        <li>Sehnsucht nach neuem Menschen</li>
+                    </ul>
+                </div>
+
+                <div class="warning-box">
+                    <h4>💥 Zentrale Merkmale</h4>
+                    <ul>
+                        <li><strong>Subjektive Weltsicht:</strong> Inneres Erleben statt äußere Realität</li>
+                        <li><strong>Zivilisationskritik:</strong> Aufschrei gegen Krieg und Großstadt</li>
+                        <li><strong>Aufbruch:</strong> Sehnsucht nach neuem Menschen</li>
+                        <li><strong>Verzerrung:</strong> Grelle Metaphern, Neologismen</li>
+                        <li><strong>Fragmentierung:</strong> Zerstörung traditioneller Formen</li>
+                    </ul>
+                </div>
+
+                <div class="example-box">
+                    <h4>📖 Wichtige Autoren</h4>
+                    <ul>
+                        <li><strong>Georg Trakl:</strong> "Grodek" - Kriegslyrik</li>
+                        <li><strong>Gottfried Benn:</strong> "Morgue" - Zynische Großstadtlyrik</li>
+                        <li><strong>Georg Heym:</strong> "Der Gott der Stadt" - Großstadtmotiv</li>
+                        <li><strong>Franz Kafka:</strong> "Die Verwandlung" - Parabelhafte Prosa</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4.13 Weimarer Republik und Exil -->
+        <div id="weimarer-republik" class="section">
+            <h2>4.13 Weimarer Republik und Exil während des Nationalsozialismus (1919-1945)</h2>
+            
+            <div class="epoch-card">
+                <div class="epoch-header">
+                    <h3 class="epoch-title">Weimarer Republik</h3>
+                    <div class="epoch-years">1919-1933</div>
+                </div>
+                
+                <div class="info-box">
+                    <h4>📰 Neue Sachlichkeit</h4>
+                    <ul>
+                        <li>Nüchterne, realistische Darstellung</li>
+                        <li>Gesellschaftskritik</li>
+                        <li><strong>Bertolt Brecht:</strong> Episches Theater, "Die Dreigroschenoper"</li>
+                        <li><strong>Erich Kästner:</strong> "Fabian" - Zeitroman</li>
+                    </ul>
+                </div>
+
+                <div class="warning-box">
+                    <h4>✈️ Exilliteratur (1933-1945)</h4>
+                    <ul>
+                        <li>Flucht vor dem Nationalsozialismus</li>
+                        <li><strong>Thomas Mann:</strong> "Doktor Faustus" - Deutschland-Roman</li>
+                        <li><strong>Bertolt Brecht:</strong> "Mutter Courage" - Antikriegsdrama</li>
+                        <li><strong>Anna Seghers:</strong> "Das siebte Kreuz"</li>
+                        <li><strong>Heinrich Heine Mann:</strong> "Der Untertan"</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4.14 Nachkriegszeit -->
+        <div id="nachkriegszeit" class="section">
+            <h2>4.14 Literatur der Nachkriegszeit (1945-1949)</h2>
+            
+            <div class="epoch-card">
+                <div class="epoch-header">
+                    <h3 class="epoch-title">Nachkriegszeit</h3>
+                    <div class="epoch-years">1945-1949</div>
+                </div>
+                
+                <div class="info-box">
+                    <h4>🏚️ Stunde Null</h4>
+                    <ul>
+                        <li>Deutschland in Trümmern</li>
+                        <li>Vergangenheitsbewältigung</li>
+                        <li>Trümmerliteratur und Kahlschlagliteratur</li>
+                        <li>Gruppe 47 (Schriftsteller-Vereinigung)</li>
+                    </ul>
+                </div>
+
+                <div class="example-box">
+                    <h4>📖 Wichtige Autoren</h4>
+                    <ul>
+                        <li><strong>Wolfgang Borchert:</strong> "Draußen vor der Tür" - Heimkehrerdrama</li>
+                        <li><strong>Heinrich Böll:</strong> "Wo warst du, Adam?" - Kriegsroman</li>
+                        <li><strong>Günter Eich:</strong> "Inventur" - Gedicht</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4.15 BRD -->
+        <div id="brd" class="section">
+            <h2>4.15 Literatur der Bundesrepublik Deutschland, der Schweiz und Österreichs (1949-1990)</h2>
+            
+            <div class="epoch-card">
+                <div class="epoch-header">
+                    <h3 class="epoch-title">BRD-Literatur</h3>
+                    <div class="epoch-years">1949-1990</div>
+                </div>
+                
+                <div class="collapsible-header">
+                    <h3>📚 1950er-1960er: Vergangenheitsbewältigung</h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <ul>
+                            <li><strong>Günter Grass:</strong> "Die Blechtrommel" (1959) - Danzig-Trilogie</li>
+                            <li><strong>Heinrich Böll:</strong> "Ansichten eines Clowns" (1963)</li>
+                            <li><strong>Max Frisch:</strong> "Homo faber" (1957) - Schweiz</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="collapsible-header">
+                    <h3>✊ 1970er: Politisierung und Neue Subjektivität</h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <ul>
+                            <li>68er-Bewegung und Studentenproteste</li>
+                            <li><strong>Peter Handke:</strong> "Die Angst des Tormanns beim Elfmeter"</li>
+                            <li><strong>Christa Wolf:</strong> "Nachdenken über Christa T."</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="collapsible-header">
+                    <h3>🎭 1980er: Postmoderne</h3>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <ul>
+                            <li>Spielerischer Umgang mit Formen</li>
+                            <li><strong>Patrick Süskind:</strong> "Das Parfum" (1985)</li>
+                            <li><strong>Christoph Ransmayr:</strong> "Die letzte Welt" (1988)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4.16 DDR -->
+        <div id="ddr" class="section">
+            <h2>4.16 Literatur der Deutschen Demokratischen Republik (1949-1990)</h2>
+            
+            <div class="epoch-card">
+                <div class="epoch-header">
+                    <h3 class="epoch-title">DDR-Literatur</h3>
+                    <div class="epoch-years">1949-1990</div>
+                </div>
+                
+                <div class="info-box">
+                    <h4>🚩 Sozialistischer Realismus</h4>
+                    <ul>
+                        <li>Parteiliche Literatur im Dienst des Sozialismus</li>
+                        <li>Positiver Held und optimistische Weltsicht</li>
+                        <li>Aufbauliteratur (1950er Jahre)</li>
+                        <li>Ankunftsliteratur (1960er Jahre)</li>
+                    </ul>
+                </div>
+
+                <div class="example-box">
+                    <h4>📖 Wichtige Autoren</h4>
+                    <ul>
+                        <li><strong>Christa Wolf:</strong> "Der geteilte Himmel" (1963)</li>
+                        <li><strong>Ulrich Plenzdorf:</strong> "Die neuen Leiden des jungen W." (1972)</li>
+                        <li><strong>Heiner Müller:</strong> Dramatiker</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4.17 Gegenwart -->
+        <div id="gegenwart" class="section">
+            <h2>4.17 Von der "Wende" (1990) bis zur Gegenwart</h2>
+            
+            <div class="epoch-card">
+                <div class="epoch-header">
+                    <h3 class="epoch-title">Gegenwartsliteratur</h3>
+                    <div class="epoch-years">ab 1990</div>
+                </div>
+                
+                <div class="info-box">
+                    <h4>🔄 Wende-Literatur</h4>
+                    <ul>
+                        <li>Aufarbeitung der deutschen Teilung</li>
+                        <li>Erinnerungsliteratur</li>
+                        <li><strong>Thomas Brussig:</strong> "Helden wie wir" (1995) - Satirisch</li>
+                    </ul>
+                </div>
+
+                <div class="example-box">
+                    <h4>🎸 Popliteratur</h4>
+                    <ul>
+                        <li>Oberflächlichkeit und Konsum</li>
+                        <li><strong>Christian Kracht:</strong> "Faserland" (1995)</li>
+                        <li><strong>Benjamin von Stuckrad-Barre:</strong> "Soloalbum"</li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <h4>🌍 Migrationsliteratur</h4>
+                    <ul>
+                        <li>Interkulturelle Perspektiven</li>
+                        <li>Identität und Zugehörigkeit</li>
+                        <li><strong>Rafik Schami, Feridun Zaimoglu</strong></li>
+                    </ul>
+                </div>
+
+                <div class="example-box">
+                    <h4>📚 Aktuelle Tendenzen</h4>
+                    <ul>
+                        <li><strong>Daniel Kehlmann:</strong> "Die Vermessung der Welt" (2005)</li>
+                        <li><strong>Juli Zeh:</strong> "Corpus Delicti" (2009)</li>
+                        <li><strong>Jenny Erpenbeck:</strong> "Gehen, ging, gegangen" (2015)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll to Top Button -->
+        <div id="scrollTop" class="scroll-top">↑</div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Collapsible sections
+            const collapsibleHeaders = document.querySelectorAll('.collapsible-header');
+            
+            collapsibleHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    const content = this.nextElementSibling;
+                    content.classList.toggle('active');
+                });
+            });
+            
+            // Smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+            
+            // Scroll to top button
+            const scrollTopButton = document.getElementById('scrollTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollTopButton.classList.add('visible');
+                } else {
+                    scrollTopButton.classList.remove('visible');
+                }
+            });
+            
+            scrollTopButton.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+            
+            // Keyboard shortcut: Press 'T' to scroll to top
+            document.addEventListener('keydown', function(e) {
+                if ((e.key === 't' || e.key === 'T') && !e.ctrlKey && !e.altKey) {
+                    const active = document.activeElement;
+                    if (active.tagName !== 'INPUT' && active.tagName !== 'TEXTAREA') {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                }
+            });
+            
+            // Highlight active navigation link
+            const sections = document.querySelectorAll('.section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            const observerOptions = {
+                root: null,
+                rootMargin: '-20% 0px -80% 0px',
+                threshold: 0
+            };
+            
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.style.background = 'linear-gradient(45deg, var(--secondary-color), #2980b9)';
+                        });
+                        
+                        const id = entry.target.getAttribute('id');
+                        const activeLink = document.querySelector(`.nav-link[href="#${id}"]`);
+                        if (activeLink) {
+                            activeLink.style.background = 'linear-gradient(45deg, var(--accent-color), #c0392b)';
+                        }
+                    }
+                });
+            }, observerOptions);
+            
+            sections.forEach(section => observer.observe(section));
+            
+            console.log('✅ Epochen und Strömungen loaded! Press T to scroll to top.');
+        });
+    </script>
+</body>
+</html>
