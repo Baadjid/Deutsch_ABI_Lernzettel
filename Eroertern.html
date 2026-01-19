@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erörtern - Deutsch Lernzettel</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --bg-color: #ecf0f1;
+            --card-bg: #ffffff;
+            --text-color: #2c3e50;
+            --border-color: #bdc3c7;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--bg-color) 0%, #d5dbdb 100%);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #000000, #DD0000, #FFCE00);
+        }
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        .back-button:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+        .header h1 {
+            color: var(--primary-color);
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .section {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--secondary-color);
+        }
+        .section h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+        .section h3 {
+            color: var(--secondary-color);
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+        .section h4 {
+            color: var(--primary-color);
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        .section p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        .section ul, .section ol {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+        .section li {
+            margin-bottom: 8px;
+        }
+        .key-term {
+            background: #e3f2fd;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+        .important-note {
+            background: #fff3cd;
+            border-left: 4px solid var(--warning-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .quote {
+            background: #f8f9fa;
+            border-left: 4px solid var(--accent-color);
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 5px;
+        }
+        .nav-container {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 20px;
+            z-index: 100;
+        }
+        .nav-container h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+        .nav-link {
+            background: linear-gradient(45deg, var(--secondary-color), #2980b9);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+        .nav-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+            background: linear-gradient(45deg, #2980b9, var(--secondary-color));
+        }
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(45deg, var(--accent-color), #c0392b);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+        }
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
+        }
+        .collapsible-header {
+            background: linear-gradient(135deg, var(--secondary-color), #2980b9);
+            color: white;
+            padding: 15px 20px;
+            cursor: pointer;
+            border-radius: 10px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+        .collapsible-header:hover {
+            background: linear-gradient(135deg, #2980b9, var(--secondary-color));
+            transform: translateX(5px);
+        }
+        .collapsible-header h3 {
+            margin: 0;
+            color: white;
+            font-size: 1.3em;
+        }
+        .collapsible-icon {
+            font-size: 1.5em;
+            transition: transform 0.3s ease;
+        }
+        .collapsible-header.active .collapsible-icon {
+            transform: rotate(180deg);
+        }
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        .collapsible-content.active {
+            max-height: 10000px;
+        }
+        .collapsible-inner {
+            padding: 20px 0;
+        }
+        .model-card {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid var(--secondary-color);
+        }
+        .model-card h4 {
+            color: var(--secondary-color);
+            margin-top: 0;
+        }
+        .example-box {
+            background: #e8f5e9;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid var(--success-color);
+        }
+        .info-box {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid var(--secondary-color);
+        }
+        .warning-box {
+            background: #fff3e0;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid var(--warning-color);
+        }
+        .argumentation-pyramid {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 30px 0;
+        }
+        .pyramid-level {
+            padding: 15px 30px;
+            margin: 5px 0;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            color: white;
+        }
+        .pyramid-level.top {
+            background: var(--accent-color);
+            width: 40%;
+        }
+        .pyramid-level.middle {
+            background: var(--warning-color);
+            width: 60%;
+        }
+        .pyramid-level.bottom {
+            background: var(--secondary-color);
+            width: 80%;
+        }
+        .argument-card {
+            background: white;
+            border: 2px solid var(--secondary-color);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .structure-diagram {
+            background: linear-gradient(135deg, #fff9e6, #ffe6cc);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 25px 0;
+            border: 2px solid var(--warning-color);
+        }
+        .structure-box {
+            background: white;
+            border: 2px solid var(--secondary-color);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+            text-align: center;
+            font-weight: 600;
+        }
+        .arrow-down {
+            text-align: center;
+            font-size: 2em;
+            color: var(--secondary-color);
+            margin: 10px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background: var(--secondary-color);
+            color: white;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            .header h1 {
+                font-size: 2em;
+            }
+            .section {
+                padding: 20px;
+            }
+            .section h2 {
+                font-size: 1.5em;
+            }
+            .nav-grid {
+                grid-template-columns: 1fr;
+            }
+            .scroll-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+            }
+            .nav-container {
+                position: relative;
+                top: 0;
+            }
+            .pyramid-level.top {
+                width: 60%;
+            }
+            .pyramid-level.middle {
+                width: 80%;
+            }
+            .pyramid-level.bottom {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">← Zurück zur Hauptseite</a>
+        
+        <div class="header">
+            <h1>💭 Erörtern</h1>
+            <p>Argumentieren • Erörterungsformen • Aufbau & Struktur • Schreibstrategien</p>
+        </div>
+
+        <!-- Navigation -->
+        <div class="nav-container">
+            <h3>📑 Themenübersicht</h3>
+            <div class="nav-grid">
+                <a href="#argumentieren" class="nav-link">3.1 Argumentieren</a>
+                <a href="#textgebundene-eroerterung" class="nav-link">3.2 Textgebundene Erörterung</a>
+                <a href="#tipps-schreiben" class="nav-link">Schreibtipps</a>
+                <a href="#fehler-vermeiden" class="nav-link">Fehler vermeiden</a>
+            </div>
+        </div>
+
+        <!-- 3.1 Argumentieren und Erörtern -->
+        <div id="argumentieren" class="section">
+            <h2>3.1 Argumentieren und Erörtern</h2>
+            
+            <p>Das <span class="key-term">Argumentieren</span> ist die Grundlage des Erörterns. Beim Argumentieren wird eine Behauptung (These) durch Argumente begründet und mit Beispielen oder Belegen gestützt, um den Leser von der Richtigkeit der Behauptung zu überzeugen.</p>
+
+            <div class="collapsible-header">
+                <h3>📊 Grundstruktur einer Argumentation</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="argumentation-pyramid">
+                        <div class="pyramid-level top">💡 These/Behauptung</div>
+                        <div class="pyramid-level middle">📝 Argument/Begründung</div>
+                        <div class="pyramid-level bottom">📊 Beispiel/Beleg</div>
+                    </div>
+
+                    <div class="argument-card">
+                        <h4>1. These/Behauptung</h4>
+                        <p>Eine <span class="key-term">These</span> ist eine Behauptung, die aufgestellt wird und die es zu begründen gilt.</p>
+                        <p><strong>Beispiel:</strong> "Erfolgreiche Schulaufbahn und beruflicher Erfolg stimmen nicht immer überein."</p>
+                    </div>
+
+                    <div class="argument-card">
+                        <h4>2. Argument/Begründung</h4>
+                        <p>Das <span class="key-term">Argument</span> begründet die These und macht deutlich, warum die Behauptung richtig sein könnte.</p>
+                        <p><strong>Beispiel:</strong> "Sie haben nämlich nicht genau genug den Text beachtet."</p>
+                    </div>
+
+                    <div class="argument-card">
+                        <h4>3. Beispiel/Beleg</h4>
+                        <p>Das <span class="key-term">Beispiel</span> veranschaulicht das Argument konkret und macht es nachvollziehbar.</p>
+                        <p><strong>Beispiel:</strong> "Hier haben Sie einen wichtigen Ausdruck übersehen."</p>
+                    </div>
+
+                    <div class="important-note">
+                        <h4>⚠️ Wichtig</h4>
+                        <p>In einer Diskussion können Behauptungen grundsätzlich durch Gegenbehauptungen infrage gestellt werden. Auch Argumente können als nicht stichhaltig zurückgewiesen werden.</p>
+                    </div>
+
+                    <div class="info-box">
+                        <h4>Erweiterte Argumentationsstruktur</h4>
+                        <p>Eine vollständige Argumentation kann zusätzlich enthalten:</p>
+                        <ul>
+                            <li><strong>Gegenbehauptung:</strong> Alternative Position darstellen</li>
+                            <li><strong>Begründung:</strong> Argumente für die Gegenposition</li>
+                            <li><strong>Veranschaulichung:</strong> Beispiele, Zitate, Statistiken</li>
+                            <li><strong>Einwand:</strong> Schwächen der Gegenposition aufzeigen</li>
+                            <li><strong>Entkräftung:</strong> Einwand widerlegen</li>
+                            <li><strong>Folgerung:</strong> Schlussfolgerung ziehen</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>🎯 Arten von Argumenten</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p>Argumente lassen sich nach ihrer Art unterscheiden. Jeder Argumenttyp hat seine eigene Überzeugungskraft:</p>
+
+                    <div class="model-card">
+                        <h4>📊 Faktenargument (Sachargument)</h4>
+                        <p><strong>Basis:</strong> Objektive Tatsachen, Statistiken, wissenschaftliche Erkenntnisse</p>
+                        <p><strong>Beispiel:</strong> "Tatsache ist, dass ein gutes Abitur zu 90 Prozent mit guten Berufsaussichten korreliert."</p>
+                        <p><strong>Wirkung:</strong> Hohe Objektivität und Glaubwürdigkeit, schwer zu widerlegen</p>
+                        <p><strong>Merkmale:</strong> Fakten haben den Vorteil, überprüfbar zu sein; sie können jedoch in Zweifel gezogen werden</p>
+                    </div>
+
+                    <div class="model-card">
+                        <h4>👥 Autoritätsargument</h4>
+                        <p><strong>Basis:</strong> Berufung auf anerkannte Autoritäten (Experten, Personen, Grundgesetz, Bibel)</p>
+                        <p><strong>Beispiel:</strong> "Thomas Mann hat die Schule vor dem Abitur verlassen; er wurde später ein weltberühmter Schriftsteller."</p>
+                        <p><strong>Wirkung:</strong> Vertrauen durch Expertise, kann aber auch manipulativ sein</p>
+                        <p><strong>Vorsicht:</strong> Autoritäten können irren oder voreingenommen sein</p>
+                    </div>
+
+                    <div class="model-card">
+                        <h4>💭 Erfahrungsargument</h4>
+                        <p><strong>Basis:</strong> Persönliche Erfahrungen und Beobachtungen</p>
+                        <p><strong>Beispiel:</strong> "Ich habe ein schlechtes Abitur gemacht und bin in meinem Beruf topfit."</p>
+                        <p><strong>Wirkung:</strong> Authentizität, aber nicht verallgemeinerbar</p>
+                        <p><strong>Problem:</strong> Nicht verallgemeinerbar, da es durch ein entsprechendes Argument eines anderen ausgehebelt werden kann</p>
+                    </div>
+
+                    <div class="model-card">
+                        <h4>⚖️ Normatives Argument</h4>
+                        <p><strong>Basis:</strong> Gesellschaftliche Konventionen, Normen, Regeln</p>
+                        <p><strong>Beispiel:</strong> "Wer das Abitur bestanden hat, müsste im Sinne der Richtlinien und Lehrpläne propädeutisch-wissenschaftliche Allgemeinbildung nachweisen können."</p>
+                        <p><strong>Wirkung:</strong> Ethische Überzeugung, Gewissensappell</p>
+                        <p><strong>Hinweis:</strong> Normen können umstritten sein; diese können umstritten sein</p>
+                    </div>
+
+                    <div class="model-card">
+                        <h4>🔄 Analogisierendes Argument</h4>
+                        <p><strong>Basis:</strong> Parallele zu anderen Sachbereichen gezogen; Vergleich</p>
+                        <p><strong>Beispiel:</strong> "Ein modernes Outfit ist kein Garant für gutes Aussehen, ein Abitur kein Garant für Erfolg im Leben."</p>
+                        <p><strong>Wirkung:</strong> Veranschaulichung durch Vergleich</p>
+                        <p><strong>Problem:</strong> Der Vergleich hinkt manchmal</p>
+                    </div>
+
+                    <div class="warning-box">
+                        <h4>🎯 Tipps für überzeugende Argumente</h4>
+                        <ul>
+                            <li>Wähle Argumente, die zur Zielgruppe passen</li>
+                            <li>Verwende eine Mischung verschiedener Argumenttypen</li>
+                            <li>Beginne mit schwächeren, steigere zu stärkeren Argumenten</li>
+                            <li>Stelle Argumente logisch nachvollziehbar dar</li>
+                            <li>Belege abstrakte Argumente mit konkreten Beispielen</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>🔗 Überzeugende Argumente und schlüssige Gedankenführung</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p>Der Schreiber setzt seine Argumente so ein, dass er seine eigene Gedankenführung deutlich macht. Das heißt, sein Ziel erreicht, den Leser von der Richtigkeit der vorgebrachten Meinung zu überzeugen.</p>
+
+                    <div class="info-box">
+                        <h4>Kriterien für überzeugende Argumentation</h4>
+                        <ul>
+                            <li><strong>Logische Verknüpfung:</strong> Argumente bauen aufeinander auf</li>
+                            <li><strong>Nachvollziehbarkeit:</strong> Gedankengang ist klar erkennbar</li>
+                            <li><strong>Relevanz:</strong> Argumente beziehen sich direkt auf die These</li>
+                            <li><strong>Stichhaltig keit:</strong> Argumente sind fundiert und belegt</li>
+                            <li><strong>Fairness:</strong> Gegenargumente werden berücksichtigt</li>
+                        </ul>
+                    </div>
+
+                    <h4>Gegenbehauptung und Entkräftung</h4>
+                    <p>Eine starke Argumentation berücksichtigt auch die Gegenseite:</p>
+                    <div class="example-box">
+                        <p><strong>Gegenbehauptung:</strong> "Man könnte einwenden, dass..."</p>
+                        <p><strong>Entkräftung:</strong> "Allerdings zeigt sich, dass..."</p>
+                        <p><strong>Beispiel:</strong> "Zwar wird oft argumentiert, dass Hausaufgaben die Selbstständigkeit fördern. Jedoch belegen Studien, dass übermäßige Hausaufgaben zu Stress führen und die Freizeit der Schüler stark einschränken."</p>
+                    </div>
+
+                    <h4>Veranschaulichung durch Beispiele und Belege</h4>
+                    <div class="model-card">
+                        <p><strong>Funktion:</strong> Beispiele machen abstrakte Argumente konkret und nachvollziehbar</p>
+                        <p><strong>Arten von Belegen:</strong></p>
+                        <ul>
+                            <li>Konkrete Beispiele aus dem Alltag</li>
+                            <li>Historische Beispiele</li>
+                            <li>Statistische Daten</li>
+                            <li>Zitate von Experten</li>
+                            <li>Persönliche Erfahrungen</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3.2 Textgebundene Erörterung -->
+        <div id="textgebundene-eroerterung" class="section">
+            <h2>3.2 Textgebundene Erörterung</h2>
+            
+            <p>Bei der <span class="key-term">schriftlichen Form des Argumentierens</span> spricht man von <span class="key-term">Erörterung</span>. Es ist eine Form der gedanklichen Auseinandersetzung mit einer nicht geklärten Frage.</p>
+
+            <div class="collapsible-header">
+                <h3>📖 Die literarische Erörterung</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p>Die literarische Erörterung bezieht sich auf literarische Texte (Gedichte, Dramen, Erzählungen, Romane).</p>
+                    
+                    <div class="model-card">
+                        <h4>Aufgabenstellung</h4>
+                        <p>Oft wird gebeten, eine Textstelle oder ein Werk in Bezug auf eine bestimmte Fragestellung zu erörtern, z.B.:</p>
+                        <ul>
+                            <li>"Erörtern Sie, inwiefern die Figur X als tragischer Held bezeichnet werden kann."</li>
+                            <li>"Diskutieren Sie die Bedeutung des Symbols Y im Werk."</li>
+                            <li>"Setzen Sie sich mit der These auseinander, dass..."</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-box">
+                        <h4>Vorgehen bei der literarischen Erörterung</h4>
+                        <ol>
+                            <li><strong>Textverständnis sichern:</strong> Text gründlich lesen und verstehen</li>
+                            <li><strong>Fragestellung klären:</strong> Was genau soll erörtert werden?</li>
+                            <li><strong>Argumente sammeln:</strong> Pro und Contra zur Fragestellung</li>
+                            <li><strong>Belege aus dem Text:</strong> Konkrete Textstellen als Beispiele</li>
+                            <li><strong>Eigene Position entwickeln:</strong> Standpunkt begründen</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>📰 Erörterung von Sachtexten</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p>Die textgebundene Erörterung von Sachtexten ist eine häufige Abituraufgabe. Dabei wird ein Sachtext (Kommentar, Essay, Rede) analysiert und seine Argumentation kritisch erörtert.</p>
+
+                    <div class="structure-diagram">
+                        <h4 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">Aufbau der textgebundenen Erörterung</h4>
+                        
+                        <div class="structure-box" style="background: #e8f5e9;">
+                            <strong>1. Einleitung</strong>
+                            <p style="font-weight: normal; margin-top: 5px;">Autor, Titel, Textart, Erscheinungsdatum, Thema, Kernthese</p>
+                        </div>
+                        
+                        <div class="arrow-down">↓</div>
+                        
+                        <div class="structure-box" style="background: #e3f2fd;">
+                            <strong>2. Hauptteil A: Analyse</strong>
+                            <p style="font-weight: normal; margin-top: 5px;">Gedankengang, Argumentationsstruktur, sprachliche Gestaltung</p>
+                        </div>
+                        
+                        <div class="arrow-down">↓</div>
+                        
+                        <div class="structure-box" style="background: #fff3e0;">
+                            <strong>2. Hauptteil B: Erörterung</strong>
+                            <p style="font-weight: normal; margin-top: 5px;">Kritische Auseinandersetzung, eigene Argumente, Bewertung</p>
+                        </div>
+                        
+                        <div class="arrow-down">↓</div>
+                        
+                        <div class="structure-box" style="background: #fce4ec;">
+                            <strong>3. Schluss</strong>
+                            <p style="font-weight: normal; margin-top: 5px;">Zusammenfassung, eigene Stellungnahme, Ausblick</p>
+                        </div>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>Mustereinleitung</h4>
+                        <p>"In dem Kommentar 'Titel' aus der Zeitung 'Name' vom TT.MM.JJJJ thematisiert der Autor XY die Problematik ... Er vertritt dabei die These, dass ..."</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>⚖️ Dialektische Erörterung (Pro-und-Kontra-Verfahren)</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p>Die <span class="key-term">dialektische Erörterung</span> erfolgt mithilfe der Gegenüberstellung von These und Antithese.</p>
+
+                    <div class="model-card">
+                        <h4>Wann wird sie verwendet?</h4>
+                        <p>Bei Fragestellungen, zu denen es verschiedene Standpunkte gibt:</p>
+                        <ul>
+                            <li>"Sollten Smartphones in Schulen verboten werden?"</li>
+                            <li>"Ist soziale Medien-Nutzung für Jugendliche schädlich?"</li>
+                            <li>"Kann wissenschaftlicher Fortschritt auch ein Rückschritt sein?"</li>
+                        </ul>
+                    </div>
+
+                    <div class="structure-diagram">
+                        <h4 style="text-align: center; margin-bottom: 15px;">Zwei Aufbauformen</h4>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
+                            <div>
+                                <h4 style="color: var(--secondary-color); text-align: center;">Sanduhr-Prinzip</h4>
+                                <div class="structure-box" style="margin: 10px 0;">Einleitung</div>
+                                <div class="structure-box" style="margin: 10px 0; background: #ffebee;">Contra-Argumente<br>(schwächstes → stärkstes)</div>
+                                <div class="structure-box" style="margin: 10px 0; background: #e8f5e9;">Pro-Argumente<br>(schwächstes → stärkstes)</div>
+                                <div class="structure-box" style="margin: 10px 0;">Synthese/Schluss</div>
+                            </div>
+                            
+                            <div>
+                                <h4 style="color: var(--secondary-color); text-align: center;">Ping-Pong-Prinzip</h4>
+                                <div class="structure-box" style="margin: 10px 0;">Einleitung</div>
+                                <div class="structure-box" style="margin: 10px 0; background: #ffebee;">Contra 1</div>
+                                <div class="structure-box" style="margin: 10px 0; background: #e8f5e9;">Pro 1 (entkräftet Contra 1)</div>
+                                <div class="structure-box" style="margin: 10px 0; background: #ffebee;">Contra 2</div>
+                                <div class="structure-box" style="margin: 10px 0; background: #e8f5e9;">Pro 2 (entkräftet Contra 2)</div>
+                                <div class="structure-box" style="margin: 10px 0;">Synthese/Schluss</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="warning-box">
+                        <h4>⚠️ Wichtig beim Sanduhr-Prinzip</h4>
+                        <p>Beginne mit der Seite, die du <strong>nicht</strong> vertrittst (meist Contra), und steigere die Argumentation. Die eigene Position kommt am Ende und hat so das letzte Wort.</p>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>Beispiel: Aufbau einer dialektischen Erörterung</h4>
+                        <p><strong>Thema:</strong> "Sollte die Schulpflicht abgeschafft werden?"</p>
+                        <p><strong>Einleitung:</strong> Hinführung zum Thema, Relevanz, Fragestellung</p>
+                        <p><strong>Hauptteil:</strong></p>
+                        <ul>
+                            <li><strong>Contra 1:</strong> Bildung ist Grundrecht → Schulpflicht sichert dieses Recht</li>
+                            <li><strong>Contra 2:</strong> Soziale Integration → Schule als Ort der Begegnung</li>
+                            <li><strong>Contra 3:</strong> Chancengleichheit → Benachteiligte Kinder würden ohne Schulpflicht abgehängt</li>
+                            <li><strong>Pro 1:</strong> Individuelle Freiheit → Jeder sollte selbst entscheiden</li>
+                            <li><strong>Pro 2:</strong> Alternative Lernformen → Homeschooling kann effektiver sein</li>
+                            <li><strong>Pro 3:</strong> Motivation → Freiwilligkeit steigert Lernbereitschaft</li>
+                        </ul>
+                        <p><strong>Schluss:</strong> Synthese, eigene Position, Kompromiss (z.B. teilweise Flexibilisierung)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>📈 Lineare oder steigernde Erörterung (Sacherörterung)</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p>Bei der <span class="key-term">linearen Erörterung</span> erfolgt die Anordnung von Argumenten vom weniger Wichtigen zum Wichtigsten. Am Schluss steht die persönliche Stellungnahme des Verfassers.</p>
+
+                    <div class="model-card">
+                        <h4>Wann wird sie verwendet?</h4>
+                        <p>Bei Fragestellungen, die nicht kontrovers diskutiert werden:</p>
+                        <ul>
+                            <li>"Erörtern Sie, aus welchen Gründen in der heutigen Zeit wissenschaftlicher Fortschritt auch kritisch betrachtet werden muss."</li>
+                            <li>"Warum ist Lesen wichtig für die Persönlichkeitsentwicklung?"</li>
+                            <li>"Welche Bedeutung hat Sport für die Gesundheit?"</li>
+                        </ul>
+                    </div>
+
+                    <div class="structure-diagram">
+                        <h4 style="text-align: center; margin-bottom: 15px;">Aufbau der linearen Erörterung</h4>
+                        
+                        <div class="structure-box" style="background: #e8f5e9;">
+                            <strong>1. Einleitung/These</strong>
+                        </div>
+                        
+                        <div class="arrow-down">↓</div>
+                        
+                        <div class="structure-box" style="background: #e3f2fd;">
+                            <strong>2. Hauptteil</strong>
+                            <div style="margin-top: 10px; font-weight: normal;">
+                                <div style="padding: 5px; margin: 5px 0;">1. Arg. mit Beispiel(en) → schwächstes</div>
+                                <div style="padding: 5px; margin: 5px 0;">2. Arg. mit Beispiel(en)</div>
+                                <div style="padding: 5px; margin: 5px 0;">3. Arg. mit Beispiel(en)</div>
+                                <div style="padding: 5px; margin: 5px 0; background: #fff9e6;">4. Arg. mit Beispiel(en) → stärkstes</div>
+                            </div>
+                            <div style="margin-top: 10px; text-align: center; font-weight: bold; color: var(--accent-color);">
+                                ↑ Steigerung ↑
+                            </div>
+                        </div>
+                        
+                        <div class="arrow-down">↓</div>
+                        
+                        <div class="structure-box" style="background: #fce4ec;">
+                            <strong>3. Zusammenfassung/persönliche Stellungnahme</strong>
+                        </div>
+                        
+                        <div class="arrow-down">↓</div>
+                        
+                        <div class="structure-box" style="background: #f3e5f5;">
+                            <strong>4. ggf. Schlussteil</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tipps für das Schreiben -->
+        <div id="tipps-schreiben" class="section">
+            <h2>✍️ Tipps für das Schreiben einer Erörterung</h2>
+            
+            <div class="collapsible-header">
+                <h3>📋 Allgemeine Schreibtipps</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="info-box">
+                        <h4>Vorbereitung und Planung</h4>
+                        <ul>
+                            <li><strong>Das anstehende Problem deutlich benennen</strong> (in Texten das Problem isolieren)</li>
+                            <li><strong>Unterschiedliche Aspekte des Problems erfassen</strong> und übersichtlich darstellen</li>
+                            <li><strong>Wichtige Begriffe definieren bzw. erläutern</strong>, was gemeint ist</li>
+                            <li><strong>Das Problem aus unterschiedlicher Sicht darstellen</strong></li>
+                            <li><strong>Argumente anderer stützen oder wenn nötig zurückweisen</strong></li>
+                        </ul>
+                    </div>
+
+                    <div class="model-card">
+                        <h4>Durchführung</h4>
+                        <ul>
+                            <li><strong>Einen eigenen Standpunkt beziehen</strong> und entsprechende Argumente zur Stützung dieses Standpunktes darstellen</li>
+                            <li><strong>Das Resultat der Auseinandersetzung mit dem Problem zusammenfassen</strong></li>
+                            <li><strong>Eigene Entscheidung fällen/Beurteilung geben bzw. begründen</strong>, warum nicht möglich</li>
+                        </ul>
+                    </div>
+
+                    <div class="warning-box">
+                        <h4>⚠️ Sprachliche Hinweise</h4>
+                        <ul>
+                            <li>Verwende <strong>Präsens</strong> (Gegenwartsform)</li>
+                            <li>Schreibe <strong>sachlich und objektiv</strong></li>
+                            <li>Nutze <strong>Konjunktive</strong> bei indirekter Rede</li>
+                            <li>Vermeide <strong>umgangssprachliche</strong> Ausdrücke</li>
+                            <li>Verwende <strong>Konnektoren</strong> für logische Verknüpfungen</li>
+                        </ul>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>Nützliche Formulierungen</h4>
+                        <table>
+                            <tr>
+                                <th>Funktion</th>
+                                <th>Formulierungen</th>
+                            </tr>
+                            <tr>
+                                <td><strong>Einleitung</strong></td>
+                                <td>In letzter Zeit wird häufig diskutiert... / Die Frage, ob... / Angesichts der Tatsache...</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Argumentation</strong></td>
+                                <td>Ein wichtiges Argument ist... / Dagegen spricht... / Hinzu kommt... / Außerdem...</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Beispiele</strong></td>
+                                <td>Dies zeigt sich beispielsweise an... / Ein Beispiel hierfür ist... / So etwa...</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Schlussfolgerung</strong></td>
+                                <td>Daraus folgt... / Zusammenfassend lässt sich sagen... / Abschließend...</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>📖 Für das Verfassen einer textgebundenen Erörterung</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="model-card">
+                        <h4>Wichtige Grundsätze</h4>
+                        <ul>
+                            <li><strong>Den Schwerpunkt der Aufgabenstellung beachten</strong></li>
+                            <li><strong>Den Text zunächst gründlich untersuchen</strong></li>
+                            <li><strong>Bei der Textwiedergabe Präsens verwenden</strong></li>
+                            <li><strong>Zitate sinnvoll in den eigenen Satzbau integrieren</strong></li>
+                            <li><strong>Deutlich trennen zwischen Beschreibung/Analyse und kritisch-wertenden Gedanken</strong></li>
+                            <li><strong>Hauptprobleme und Kernstellen des Textes beachten</strong></li>
+                        </ul>
+                    </div>
+
+                    <div class="info-box">
+                        <h4>Voraussetzungen für die kritische Texterörterung</h4>
+                        <p>Die Ansichten des Verfassers und eigene Ansichten können in unterschiedlichem Verhältnis zueinander stehen:</p>
+                        <ul>
+                            <li><strong>Fall 1:</strong> Ansichten stimmen <strong>überein</strong> → Zustimmung formulieren, zusätzliche Argumente bringen</li>
+                            <li><strong>Fall 2:</strong> Ansichten stimmen <strong>teilweise überein</strong> → Differenzierte Position beziehen</li>
+                            <li><strong>Fall 3:</strong> Ansichten stimmen <strong>überhaupt nicht überein</strong> → Kritische Auseinandersetzung erforderlich</li>
+                        </ul>
+                        <p><strong>In jedem Fall:</strong> Position des Textautors zunächst einnehmen und verstehen, dann entsprechend kritisch argumentieren</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fehler vermeiden -->
+        <div id="fehler-vermeiden" class="section">
+            <h2>⚠️ Tipps für das Vermeiden von Fehlern</h2>
+            
+            <div class="collapsible-header">
+                <h3>❌ Häufige Fehler bei der Erörterung</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="warning-box">
+                        <h4>1. Keine inhaltliche Umschreibung des Textes (Paraphrase)</h4>
+                        <p><strong>Fehler:</strong> Den Text einfach nacherzählen oder umformulieren</p>
+                        <p><strong>Richtig:</strong> Den Text analysieren und kritisch bewerten</p>
+                    </div>
+
+                    <div class="warning-box">
+                        <h4>2. Keine krampfhafte Gegenposition zum vorliegenden Text</h4>
+                        <p><strong>Fehler:</strong> Automatisch widersprechen, nur um eine Gegenposition zu haben</p>
+                        <p><strong>Richtig:</strong> Differenziert bewerten - zustimmen, wo sinnvoll, widersprechen, wo berechtigt</p>
+                    </div>
+
+                    <div class="warning-box">
+                        <h4>3. Sinnvolle und angemessene Gegenposition</h4>
+                        <p>Wenn Gegenargumente, dann gut begründet:</p>
+                        <ul>
+                            <li><strong>Richtigkeit der Thesen pauschal oder teilweise bestreiten</strong></li>
+                            <li><strong>Zusammenhang von Ursache und Wirkung bezweifeln</strong></li>
+                            <li><strong>Im Einzelnen genauer unterscheiden</strong> (nicht alles über einen Kamm scheren)</li>
+                            <li><strong>Gegen Verallgemeinerungen argumentieren</strong> (Gegenbeispiele bringen)</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-box">
+                        <h4>Weitere typische Fehler</h4>
+                        <table>
+                            <tr>
+                                <th>Fehler</th>
+                                <th>Wie vermeiden?</th>
+                            </tr>
+                            <tr>
+                                <td>Fehlende Struktur</td>
+                                <td>Gliederung erstellen, Absätze verwenden, klare Übergänge</td>
+                            </tr>
+                            <tr>
+                                <td>Schwache Argumente</td>
+                                <td>Argumente konkret belegen, Beispiele geben, logisch verknüpfen</td>
+                            </tr>
+                            <tr>
+                                <td>Zu persönlich/emotional</td>
+                                <td>Sachlich bleiben, objektive Sprache verwenden</td>
+                            </tr>
+                            <tr>
+                                <td>Keine eigene Position</td>
+                                <td>Klare Stellungnahme im Schluss, begründete Bewertung</td>
+                            </tr>
+                            <tr>
+                                <td>Zitate nicht belegt</td>
+                                <td>Seitenangaben machen, korrekt zitieren</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>✅ Checkliste für eine gelungene Erörterung</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="example-box">
+                        <h4>Vor dem Schreiben</h4>
+                        <ul>
+                            <li>☐ Aufgabenstellung genau gelesen und verstanden?</li>
+                            <li>☐ Text gründlich analysiert (bei textgebundener Erörterung)?</li>
+                            <li>☐ Argumente gesammelt und geordnet?</li>
+                            <li>☐ Gliederung erstellt?</li>
+                            <li>☐ Beispiele und Belege vorbereitet?</li>
+                        </ul>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>Beim Schreiben</h4>
+                        <ul>
+                            <li>☐ Einleitung führt zum Thema hin?</li>
+                            <li>☐ These/Fragestellung klar formuliert?</li>
+                            <li>☐ Argumente logisch aufgebaut?</li>
+                            <li>☐ Jedes Argument mit Beispiel belegt?</li>
+                            <li>☐ Übergänge zwischen Argumenten?</li>
+                            <li>☐ Gegenargumente berücksichtigt?</li>
+                            <li>☐ Sachliche Sprache verwendet?</li>
+                            <li>☐ Eigene Position deutlich?</li>
+                        </ul>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>Nach dem Schreiben</h4>
+                        <ul>
+                            <li>☐ Rechtschreibung und Grammatik geprüft?</li>
+                            <li>☐ Alle Argumente schlüssig?</li>
+                            <li>☐ Zitate korrekt eingebunden?</li>
+                            <li>☐ Schluss rundet die Erörterung ab?</li>
+                            <li>☐ Aufgabenstellung vollständig bearbeitet?</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll to Top Button -->
+        <div id="scrollTop" class="scroll-top">↑</div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Collapsible sections
+            const collapsibleHeaders = document.querySelectorAll('.collapsible-header');
+            
+            collapsibleHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    const content = this.nextElementSibling;
+                    content.classList.toggle('active');
+                });
+            });
+            
+            // Smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+            
+            // Scroll to top button
+            const scrollTopButton = document.getElementById('scrollTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollTopButton.classList.add('visible');
+                } else {
+                    scrollTopButton.classList.remove('visible');
+                }
+            });
+            
+            scrollTopButton.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+            
+            // Keyboard shortcut: Press 'T' to scroll to top
+            document.addEventListener('keydown', function(e) {
+                if ((e.key === 't' || e.key === 'T') && !e.ctrlKey && !e.altKey) {
+                    const active = document.activeElement;
+                    if (active.tagName !== 'INPUT' && active.tagName !== 'TEXTAREA') {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                }
+            });
+            
+            // Highlight active navigation link
+            const sections = document.querySelectorAll('.section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            const observerOptions = {
+                root: null,
+                rootMargin: '-20% 0px -80% 0px',
+                threshold: 0
+            };
+            
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.style.background = 'linear-gradient(45deg, var(--secondary-color), #2980b9)';
+                        });
+                        
+                        const id = entry.target.getAttribute('id');
+                        const activeLink = document.querySelector(`.nav-link[href="#${id}"]`);
+                        if (activeLink) {
+                            activeLink.style.background = 'linear-gradient(45deg, var(--accent-color), #c0392b)';
+                        }
+                    }
+                });
+            }, observerOptions);
+            
+            sections.forEach(section => observer.observe(section));
+            
+            console.log('✅ Erörtern loaded! Press T to scroll to top.');
+        });
+    </script>
+</body>
+</html>
