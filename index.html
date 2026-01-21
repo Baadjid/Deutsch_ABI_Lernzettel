@@ -35,6 +35,7 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+            width: 100%;
         }
 
         .header {
@@ -77,6 +78,7 @@
             gap: 25px;
             margin-bottom: 40px;
             margin-top: 40px;
+            width: 100%;
         }
 
         .category-card {
@@ -89,6 +91,8 @@
             position: relative;
             overflow: visible;
             z-index: 1;
+            width: 100%;
+            max-width: 100%;
         }
 
         .category-card:hover {
@@ -116,6 +120,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            flex-wrap: wrap;
         }
 
         .category-card .icon {
@@ -132,6 +137,7 @@
         .topic-list {
             list-style: none;
             margin-bottom: 20px;
+            width: 100%;
         }
 
         .topic-list li {
@@ -141,6 +147,8 @@
             border-radius: 8px;
             border-left: 3px solid var(--secondary-color);
             transition: background 0.3s ease;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         .topic-list li:hover {
@@ -153,6 +161,9 @@
             background: #f8f9fa;
             border-radius: 10px;
             border-left: 3px solid var(--secondary-color);
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
         }
 
         .subcategory h3 {
@@ -163,11 +174,14 @@
             display: flex;
             align-items: center;
             gap: 8px;
+            flex-wrap: wrap;
+            word-wrap: break-word;
         }
 
         .subcategory .sub-icon {
             font-size: 1.2em;
             color: var(--secondary-color);
+            flex-shrink: 0;
         }
 
         .subcategory .topic-list {
@@ -184,10 +198,12 @@
             justify-content: space-between;
             align-items: flex-start;
             margin-bottom: 15px;
+            gap: 10px;
         }
 
         .card-title-wrapper {
             flex: 1;
+            min-width: 0;
         }
 
         .toggle-btn {
@@ -197,6 +213,8 @@
             border-radius: 50%;
             width: 40px;
             height: 40px;
+            min-width: 40px;
+            min-height: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -224,10 +242,13 @@
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.5s ease-in-out;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .collapsible-content.expanded {
-            max-height: 5000px;
+            max-height: 10000px;
+            overflow: visible;
         }
 
         .card-footer {
@@ -249,6 +270,7 @@
             cursor: pointer;
             text-align: center;
             margin: 5px;
+            word-wrap: break-word;
         }
 
         .btn:hover {
@@ -272,6 +294,9 @@
             padding: 25px;
             box-shadow: 0 8px 25px rgba(0,0,0,0.1);
             margin-top: 30px;
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
         }
 
         .quick-links h3 {
@@ -285,6 +310,7 @@
             grid-template-columns: 1fr;
             gap: 15px;
             margin-bottom: 20px;
+            width: 100%;
         }
 
         .footer {
@@ -304,11 +330,116 @@
             .links-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+
+            .header h1 {
+                font-size: 2.5em;
+            }
+
+            .category-card h2 {
+                font-size: 1.4em;
+            }
         }
 
         @media (min-width: 1024px) {
             .links-grid {
                 grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 767px) {
+            .container {
+                padding: 10px;
+            }
+
+            .header {
+                padding: 20px 15px;
+                margin-bottom: 20px;
+            }
+
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .header p {
+                font-size: 0.95em;
+            }
+
+            .category-card {
+                padding: 15px;
+                margin-bottom: 15px;
+            }
+
+            .category-card h2 {
+                font-size: 1.2em;
+                line-height: 1.4;
+            }
+
+            .category-card p {
+                font-size: 0.95em;
+            }
+
+            .subcategory {
+                padding: 12px;
+                margin: 15px 0;
+            }
+
+            .subcategory h3 {
+                font-size: 1em;
+                line-height: 1.4;
+            }
+
+            .topic-list li {
+                padding: 8px 12px;
+                font-size: 0.95em;
+            }
+
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.95em;
+                width: 100%;
+                margin: 5px 0;
+            }
+
+            .toggle-btn {
+                width: 35px;
+                height: 35px;
+                min-width: 35px;
+                min-height: 35px;
+                font-size: 1em;
+            }
+
+            .card-header-section {
+                gap: 8px;
+            }
+
+            .quick-links {
+                padding: 15px;
+            }
+
+            .quick-links h3 {
+                font-size: 1.1em;
+            }
+
+            .footer {
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.5em;
+            }
+
+            .category-card h2 {
+                font-size: 1.1em;
+            }
+
+            .subcategory h3 {
+                font-size: 0.95em;
+            }
+
+            .topic-list li {
+                font-size: 0.9em;
             }
         }
     </style>
@@ -804,7 +935,7 @@
                 
                 <div class="collapsible-content">
                     <div class="subcategory">
-                        <h3><span class="sub-icon">⏳</span>1.4 Sprachgeschichte und Sprachwandel</h3>
+                        <h3><span class="sub-icon">⏳</span>Prüfungsvorbereitung</h3>
                         <ul class="topic-list">
                             <li>Prüfungsstrategien und Zeitmanagement</li>
                             <li>Übungsaufgaben zur Textanalyse</li>
@@ -826,7 +957,7 @@
         <div class="quick-links">
             <h3>🔗 Spezifiziert</h3>
             <div class="links-grid">
-                <a href="KurzgeschichtenAnalysieren.html" class="btn">📖 Kurzgeschichten analysieren</a>
+                <a href="kurzgeschichte-lernzettel.html" class="btn">📖 Kurzgeschichten analysieren</a>
                 <a href="SprachlicheMittelAnalysieren.html" class="btn">🎨 Sprachliche Mittel analysieren</a>
                 <a href="AkademischeSprachePerformativeVerben.html" class="btn">📚 Gehobenes Vokabular und Sprechakte</a>
             </div>
@@ -956,7 +1087,3 @@
     </script>
 </body>
 </html>
-
-
-
-
