@@ -1,0 +1,1779 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akademische Sprache & Performative Verben - Deutsch Lernzettel</title>
+    <style>
+        :root {
+            --primary-color: #1e3c72;
+            --secondary-color: #2a5298;
+            --accent-color: #667eea;
+            --gradient-1: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            --gradient-2: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--gradient-1);
+            line-height: 1.6;
+            color: #2c3e50;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #000000, #DD0000, #FFCE00);
+        }
+
+        .header h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 1.1rem;
+            font-style: italic;
+        }
+
+        .back-button {
+            display: inline-block;
+            background: var(--accent-color);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .back-button:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .nav-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .tab-button {
+            padding: 12px 30px;
+            border: none;
+            background: #f0f0f0;
+            color: #333;
+            cursor: pointer;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .tab-button:hover {
+            background: #e0e0e0;
+            transform: translateY(-2px);
+        }
+
+        .tab-button.active {
+            background: var(--gradient-2);
+            color: white;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .content-section {
+            background: rgba(255, 255, 255, 0.95);
+            margin-bottom: 25px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .section-header {
+            background: var(--gradient-1);
+            color: white;
+            padding: 25px;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .section-content {
+            padding: 30px;
+        }
+
+        /* Akademische Hochsprache Styles */
+        .terms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .term-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #e0e0e0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .term-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background: var(--gradient-1);
+            transition: height 0.3s ease;
+        }
+
+        .term-card:hover::before {
+            height: 100%;
+        }
+
+        .term-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(30, 60, 114, 0.2);
+            border-color: var(--secondary-color);
+        }
+
+        .term-card strong {
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.2em;
+            font-weight: 700;
+        }
+
+        .term-card .definition {
+            color: #333;
+            font-size: 1em;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        .term-card .example {
+            color: #666;
+            font-size: 0.9em;
+            font-style: italic;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px dashed #ddd;
+        }
+
+        .level-indicator {
+            display: inline-block;
+            padding: 4px 10px;
+            background: var(--secondary-color);
+            color: white;
+            border-radius: 12px;
+            font-size: 0.75em;
+            margin-left: 8px;
+            font-weight: normal;
+        }
+
+        /* Performative Verben Table Styles */
+        .table-responsive {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        th {
+            background: var(--gradient-2);
+            color: white;
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        tr:hover {
+            background: #e8eaf6;
+            transition: all 0.3s ease;
+        }
+
+        .category-row {
+            background: var(--gradient-1) !important;
+            font-weight: bold;
+            color: white !important;
+            text-align: center;
+            font-size: 1.1em;
+        }
+
+        .category-row td {
+            padding: 12px;
+            border-bottom: 3px solid var(--secondary-color);
+        }
+
+        .verb-cell {
+            font-weight: bold;
+            color: var(--accent-color);
+            min-width: 120px;
+        }
+
+        .usage-cell {
+            color: #555;
+            font-style: italic;
+            min-width: 150px;
+        }
+
+        .example-cell {
+            color: #333;
+            line-height: 1.5;
+        }
+
+        .lang-label {
+            display: inline-block;
+            background: var(--accent-color);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 0.8em;
+            margin-right: 8px;
+            font-weight: 600;
+        }
+
+        .de { background: #000; }
+        .ru { background: #d52b1e; }
+        .en { background: #012169; }
+        .es { background: #c60b1e; }
+
+        .intro-box {
+            background: var(--gradient-2);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 25px 0;
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .intro-box h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .tip-box {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .tip-box h4 {
+            color: #f39c12;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--gradient-2);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .terms-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-tabs {
+                flex-direction: column;
+            }
+
+            .tab-button {
+                width: 100%;
+            }
+
+            /* Mobile Tabellen-Anpassung */
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+
+            thead tr {
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+
+            tbody tr {
+                margin-bottom: 15px;
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                padding: 10px;
+                background: white;
+            }
+
+            td {
+                border: none;
+                position: relative;
+                padding-left: 0;
+                padding-right: 0;
+            }
+
+            td:nth-of-type(1):before {
+                content: "Verb: ";
+                font-weight: bold;
+                color: var(--accent-color);
+            }
+
+            td:nth-of-type(2):before {
+                content: "Verwendung: ";
+                font-weight: bold;
+                color: var(--accent-color);
+            }
+
+            td:nth-of-type(3):before {
+                content: "Beispiele: ";
+                font-weight: bold;
+                color: var(--accent-color);
+                display: block;
+                margin-bottom: 5px;
+            }
+
+            .category-row td:before {
+                content: "";
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">← Zurück zur Hauptseite</a>
+        
+        <div class="header">
+            <h1>📚 Akademische Sprache & Performative Verben</h1>
+            <p>Gehobenes Vokabular und Sprechakte für wissenschaftliche Texte</p>
+        </div>
+
+        <!-- Tab Navigation -->
+        <div class="nav-tabs">
+            <button class="tab-button active" onclick="switchTab('hochsprache')">🎓 Akademische Hochsprache</button>
+            <button class="tab-button" onclick="switchTab('performativ')">💬 Performative Verben</button>
+        </div>
+
+        <!-- Tab 1: Akademische Hochsprache -->
+        <div id="hochsprache" class="tab-content active">
+            <div class="intro-box">
+                <h3>🎯 Was ist akademische Hochsprache?</h3>
+                <p>Akademische Hochsprache umfasst ein gehobenes Vokabular, das in wissenschaftlichen Diskursen, Fachpublikationen und anspruchsvollen Texten verwendet wird. Diese Begriffe ermöglichen präzise, differenzierte und nuancierte Ausdrucksweise.</p>
+                <ul style="margin-top: 15px;">
+                    <li>• <strong>C1-Niveau:</strong> Fortgeschrittene akademische Begriffe</li>
+                    <li>• <strong>C2-Niveau:</strong> Höchstes Sprachniveau, Expertenvokabular</li>
+                    <li>• Verwendung in Abituraufsätzen demonstriert sprachliche Kompetenz</li>
+                </ul>
+            </div>
+
+            <!-- Argumentation & Rhetorik -->
+            <div class="content-section">
+                <div class="section-header">
+                    🎤 Argumentation & Rhetorik
+                </div>
+                <div class="section-content">
+                    <div class="terms-grid">
+                        <div class="term-card">
+                            <strong>Apodiktisch <span class="level-indicator">C2</span></strong>
+                            <div class="definition">Unwiderlegbar, unumstößlich gewiss; keinen Widerspruch duldend</div>
+                            <div class="example">Seine apodiktischen Aussagen ließen keinen Raum für alternative Interpretationen.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Dichotomie <span class="level-indicator">C1</span></strong>
+                            <div class="definition">Zweiteilung, strikte Trennung in zwei gegensätzliche Bereiche</div>
+                            <div class="example">Die Dichotomie zwischen Theorie und Praxis wurde in der Studie aufgelöst.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Sophistik <span class="level-indicator">C2</span></strong>
+                            <div class="definition">Scheinbar logische, aber tatsächlich irreführende Argumentation</div>
+                            <div class="example">Seine Sophistik konnte die Kernproblematik nicht verschleiern.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Axiomatisch <span class="level-indicator">C2</span></strong>
+                            <div class="definition">Als Grundsatz geltend, keines Beweises bedürfend</div>
+                            <div class="example">Die axiomatische Annahme bildete das Fundament der gesamten Theorie.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Syllogismus <span class="level-indicator">C2</span></strong>
+                            <div class="definition">Logischer Schluss aus zwei Prämissen auf eine Konklusion</div>
+                            <div class="example">Der aristotelische Syllogismus dient als klassisches Beispiel deduktiven Denkens.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Kontradiktorisch <span class="level-indicator">C2</span></strong>
+                            <div class="definition">Sich gegenseitig ausschließend, widersprüchlich</div>
+                            <div class="example">Die beiden Hypothesen waren kontradiktorisch und konnten nicht gleichzeitig wahr sein.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Dialektisch <span class="level-indicator">C2</span></strong>
+                            <div class="definition">Auf dem Prinzip von These, Antithese und Synthese beruhend</div>
+                            <div class="example">Die dialektische Methode führte zu einer Synthese der gegensätzlichen Positionen.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Rhetorisch versiert <span class="level-indicator">C1</span></strong>
+                            <div class="definition">Sprachlich gewandt und überzeugend in der Darstellung</div>
+                            <div class="example">Der rhetorisch versierte Redner überzeugte das Publikum mit geschliffenen Argumenten.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Stringent <span class="level-indicator">C1</span></strong>
+                            <div class="definition">Streng logisch, zwingend, konsequent durchgeführt</div>
+                            <div class="example">Die stringente Argumentation ließ keine logischen Lücken erkennen.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Plausibel <span class="level-indicator">C1</span></strong>
+                            <div class="definition">Einleuchtend, glaubhaft, nachvollziehbar</div>
+                            <div class="example">Die Erklärung erscheint plausibel, bedarf aber empirischer Überprüfung.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Prämisse <span class="level-indicator">C1</span></strong>
+                            <div class="definition">Voraussetzung, Grundannahme einer Argumentation</div>
+                            <div class="example">Die Prämisse seiner Argumentation war nicht haltbar.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Kohärent <span class="level-indicator">C1</span></strong>
+                            <div class="definition">Zusammenhängend, in sich schlüssig, widerspruchsfrei</div>
+                            <div class="example">Die Theorie ist kohärent und konsistent formuliert.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Diffus <span class="level-indicator">C1</span></strong>
+                            <div class="definition">Unklar, verschwommen, nicht präzise gefasst</div>
+                            <div class="example">Seine diffusen Ausführungen erschwerten das Verständnis erheblich.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Redundant <span class="level-indicator">C1</span></strong>
+                            <div class="definition">Überflüssig, sich wiederholend, überzählig</div>
+                            <div class="example">Die redundanten Ausführungen verlängerten den Text unnötig.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Tautologie <span class="level-indicator">C2</span></strong>
+                            <div class="definition">Unnötige Wiederholung des gleichen Sachverhalts mit anderen Worten</div>
+                            <div class="example">Die Formulierung "weißer Schimmel" ist eine Tautologie.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Persuasiv <span class="level-indicator">C2</span></strong>
+                            <div class="definition">Überzeugend, überredend wirkend</div>
+                            <div class="example">Die persuasive Kraft seiner Rede war bemerkenswert.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Eloquent <span class="level-indicator">C1</span></strong>
+                            <div class="definition">Redegewandt, sprachlich ausdrucksstark</div>
+                            <div class="example">Der eloquente Vortrag fesselte das Auditorium.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wissenschaftliche Methodik -->
+            <div class="content-section">
+                <div class="section-header">
+                    🔬 Wissenschaftliche Methodik
+                </div>
+                <div class="section-content">
+                    <div class="terms-grid">
+                        <div class="term-card">
+                            <strong>Heuristisch <span class="level-indicator">C1</span></strong>
+                            <div class="definition">Auf Auffindung und Entdeckung ausgerichtet; problemlösend durch Probieren</div>
+                            <div class="example">Die heuristische Methode führte zu unerwarteten Erkenntnissen.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Epistemologisch <span class="level-indicator">C2</span></strong>
+                            <div class="definition">Die Erkenntnistheorie betreffend; Fragen des Wissens und seiner Begründung</div>
+                            <div class="example">Die epistemologischen Implikationen der Quantenphysik sind weitreichend.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Hermeneutik <span class="level-indicator">C2</span></strong>
+                            <div class="definition">Lehre vom Verstehen und Auslegen von Texten und Sinnzusammenhängen</div>
+                            <div class="example">Die hermeneutische Analyse des Textes offenbarte verborgene Bedeutungsebenen.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Induktiv <span class="level-indicator">C1</span></strong>
+                            <div class="definition">Vom Besonderen zum Allgemeinen schließend</div>
+                            <div class="example">Die induktive Forschungsmethode basierte auf empirischen Einzelbeobachtungen.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Deduktiv <span class="level-indicator">C1</span></strong>
+                            <div class="definition">Vom Allgemeinen zum Besonderen schließend</div>
+                            <div class="example">Die deduktive Vorgehensweise erlaubte präzise Vorhersagen.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Paradigmatisch <span class="level-indicator">C2</span></strong>
+                            <div class="definition">Mustergültig, beispielhaft für ein wissenschaftliches Weltbild</div>
+                            <div class="example">Die Relativitätstheorie markierte einen paradigmatischen Wandel in der Physik.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Empirisch <span class="level-indicator">C1</span></strong>
+                            <div class="definition">Auf Erfahrung und Beobachtung beruhend</div>
+                            <div class="example">Die empirische Forschung bestätigte die theoretischen Vorhersagen.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Hypothetisch <span class="level-indicator">C1</span></strong>
+                            <div class="definition">Auf einer Annahme beruhend, noch zu beweisend</div>
+                            <div class="example">Die hypothetische Erklärung bedurfte weiterer empirischer Überprüfung.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Analytisch <span class="level-indicator">C1</span></strong>
+                            <div class="definition">Zerlegend, untersuchend, methodisch prüfend</div>
+                            <div class="example">Die analytische Herangehensweise ermöglichte tiefe Einsichten.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Synthetisch <span class="level-indicator">C1</span></strong>
+                            <div class="definition">Zusammensetzend, verbindend, vereinigend</div>
+                            <div class="example">Die synthetische Methode führte verschiedene Theorien zusammen.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Verifizieren <span class="level-indicator">C1</span></strong>
+                            <div class="definition">Die Richtigkeit nachweisen, bestätigen</div>
+                            <div class="example">Die Hypothese konnte durch mehrere Studien verifiziert werden.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Falsifizieren <span class="level-indicator">C1</span></strong>
+                            <div class="definition">Die Unrichtigkeit nachweisen, widerlegen</div>
+                            <div class="example">Poppers Wissenschaftstheorie betont die Bedeutung der Falsifizierbarkeit.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Kausal <span class="level-indicator">C1</span></strong>
+                            <div class="definition">Ursächlich, auf Ursache-Wirkungs-Beziehungen beruhend</div>
+                            <div class="example">Die kausale Verknüpfung zwischen den Variablen wurde nachgewiesen.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Korrelation <span class="level-indicator">C1</span></strong>
+                            <div class="definition">Wechselbeziehung, statistischer Zusammenhang</div>
+                            <div class="example">Eine Korrelation impliziert nicht zwingend Kausalität.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Deskriptiv <span class="level-indicator">C1</span></strong>
+                            <div class="definition">Beschreibend, nicht wertend darstellend</div>
+                            <div class="example">Die deskriptive Statistik fasst die erhobenen Daten zusammen.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Normativ <span class="level-indicator">C1</span></strong>
+                            <div class="definition">Vorschreibend, Normen setzend, wertend</div>
+                            <div class="example">Die normative Ethik befasst sich mit moralischen Sollens-Aussagen.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Operationalisieren <span class="level-indicator">C2</span></strong>
+                            <div class="definition">Abstrakte Begriffe messbar machen</div>
+                            <div class="example">Die Forscher mussten den Begriff "Lebensqualität" operationalisieren.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Validität <span class="level-indicator">C1</span></strong>
+                            <div class="definition">Gültigkeit einer Messung oder Untersuchung</div>
+                            <div class="example">Die Validität der Studie wurde durch mehrere Faktoren gefährdet.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Reliabilität <span class="level-indicator">C1</span></strong>
+                            <div class="definition">Zuverlässigkeit, Genauigkeit einer Messung</div>
+                            <div class="example">Die hohe Reliabilität des Tests wurde durch Wiederholungsmessungen bestätigt.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Philosophie & Ontologie -->
+            <div class="content-section">
+                <div class="section-header">
+                    💭 Philosophie & Ontologie
+                </div>
+                <div class="section-content">
+                    <div class="terms-grid">
+                        <div class="term-card">
+                            <strong>Ontologisch <span class="level-indicator">C2</span></strong>
+                            <div class="definition">Das Sein und die Existenz betreffend</div>
+                            <div class="example">Die ontologische Frage nach der Natur der Realität bleibt umstritten.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Teleologisch <span class="level-indicator">C2</span></strong>
+                            <div class="definition">Zweck- oder zielgerichtet; auf ein Endziel ausgerichtet</div>
+                            <div class="example">Eine teleologische Erklärung setzt intentionale Ziele voraus.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Transzendent <span class="level-indicator">C2</span></strong>
+                            <div class="definition">Über die Erfahrung hinausgehend, jenseitig</div>
+                            <div class="example">Die transzendente Dimension der Religion entzieht sich empirischer Analyse.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Immanent <span class="level-indicator">C2</span></strong>
+                            <div class="definition">Innewohnend, der Sache selbst zugehörig</div>
+                            <div class="example">Die immanente Logik des Systems wurde durch die Analyse offenbar.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Determinismus <span class="level-indicator">C1</span></strong>
+                            <div class="definition">Lehre der vollständigen Vorherbestimmtheit allen Geschehens</div>
+                            <div class="example">Der Determinismus steht im Widerspruch zur Idee des freien Willens.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Kontingent <span class="level-indicator">C2</span></strong>
+                            <div class="definition">Möglich, aber nicht notwendig; zufällig</div>
+                            <div class="example">Die kontingenten Ereignisse hätten auch anders verlaufen können.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>A priori <span class="level-indicator">C2</span></strong>
+                            <div class="definition">Von vornherein, unabhängig von Erfahrung gültig</div>
+                            <div class="example">Kant unterscheidet zwischen a priori und a posteriori Erkenntnissen.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>A posteriori <span class="level-indicator">C2</span></strong>
+                            <div class="definition">Aus Erfahrung gewonnen, nachträglich</div>
+                            <div class="example">Empirische Wissenschaften liefern a posteriori Erkenntnisse.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Dualismus <span class="level-indicator">C2</span></strong>
+                            <div class="definition">Zweiheitslehre (z.B. Körper-Geist-Trennung)</div>
+                            <div class="example">Der cartesianische Dualismus trennt Materie und Bewusstsein.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Monismus <span class="level-indicator">C2</span></strong>
+                            <div class="definition">Lehre, dass alles auf ein Grundprinzip zurückgeht</div>
+                            <div class="example">Der materialistische Monismus sieht alles als Materie an.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Nihilismus <span class="level-indicator">C2</span></strong>
+                            <div class="definition">Verneinung aller Werte und Sinngebungen</div>
+                            <div class="example">Nietzsches Auseinandersetzung mit dem Nihilismus prägte die Moderne.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Existenziell <span class="level-indicator">C1</span></strong>
+                            <div class="definition">Die Existenz betreffend, fundamental wichtig</div>
+                            <div class="example">Die existenzielle Krise führte zu einer Neuorientierung.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Phänomenologie <span class="level-indicator">C2</span></strong>
+                            <div class="definition">Lehre von den Erscheinungen und ihrer Erfahrung</div>
+                            <div class="example">Husserls Phänomenologie untersucht Bewusstseinsinhalte.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Metaphysik <span class="level-indicator">C2</span></strong>
+                            <div class="definition">Lehre vom Übersinnlichen, jenseits der Physik</div>
+                            <div class="example">Die Metaphysik fragt nach den letzten Gründen der Wirklichkeit.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Skeptizismus <span class="level-indicator">C2</span></strong>
+                            <div class="definition">Zweifel an der Möglichkeit sicherer Erkenntnis</div>
+                            <div class="example">Der erkenntnistheoretische Skeptizismus hinterfragt alle Gewissheiten.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Textanalyse & Literatur -->
+            <div class="content-section">
+                <div class="section-header">
+                    📖 Textanalyse & Literaturwissenschaft
+                </div>
+                <div class="section-content">
+                    <div class="terms-grid">
+                        <div class="term-card">
+                            <strong>Konnotation <span class="level-indicator">C1</span></strong>
+                            <div class="definition">Nebenbedeutung, mitschwingende Bedeutung eines Wortes</div>
+                            <div class="example">Die Konnotationen des Begriffs "Heimat" variieren kulturell stark.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Denotation <span class="level-indicator">C1</span></strong>
+                            <div class="definition">Grundbedeutung, wörtliche Bedeutung eines Wortes</div>
+                            <div class="example">Die Denotation ist die objektive, lexikalische Bedeutung.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Ambiguität <span class="level-indicator">C1</span></strong>
+                            <div class="definition">Mehrdeutigkeit, verschiedene Interpretationsmöglichkeiten</div>
+                            <div class="example">Die Ambiguität des Symbols erlaubt multiple Lesarten.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Narrativ <span class="level-indicator">C1</span></strong>
+                            <div class="definition">Erzählend; auch: sinnstiftende Erzählung oder Deutungsmuster</div>
+                            <div class="example">Das Narrativ vom American Dream prägt die US-amerikanische Identität.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Intertextualität <span class="level-indicator">C2</span></strong>
+                            <div class="definition">Bezüge und Verweise zwischen verschiedenen Texten</div>
+                            <div class="example">Die Intertextualität des Romans zeigt sich in zahlreichen literarischen Anspielungen.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Diskurs <span class="level-indicator">C1</span></strong>
+                            <div class="definition">Übergeordnete, gesellschaftliche Auseinandersetzung mit einem Thema</div>
+                            <div class="example">Der Diskurs um Künstliche Intelligenz prägt die gegenwärtige Debatte.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Rezeption <span class="level-indicator">C1</span></strong>
+                            <div class="definition">Aufnahme und Verarbeitung eines Textes durch Leser</div>
+                            <div class="example">Die Rezeption des Werkes variierte je nach historischem Kontext.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Implizit <span class="level-indicator">C1</span></strong>
+                            <div class="definition">Mitgemeint, unausgesprochen, indirekt enthalten</div>
+                            <div class="example">Die implizite Kritik am System war deutlich spürbar.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Explizit <span class="level-indicator">C1</span></strong>
+                            <div class="definition">Ausdrücklich, klar ausgedrückt, eindeutig</div>
+                            <div class="example">Der Autor formuliert seine These explizit in der Einleitung.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Kontext <span class="level-indicator">C1</span></strong>
+                            <div class="definition">Zusammenhang, Umfeld, in dem etwas steht</div>
+                            <div class="example">Ohne historischen Kontext ist der Text kaum verständlich.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Kohäsion <span class="level-indicator">C2</span></strong>
+                            <div class="definition">Grammatischer Zusammenhang durch Verknüpfungsmittel</div>
+                            <div class="example">Die Kohäsion des Textes wird durch Konnektoren hergestellt.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Pragmatik <span class="level-indicator">C2</span></strong>
+                            <div class="definition">Lehre vom Sprachgebrauch in Kontexten</div>
+                            <div class="example">Die Pragmatik untersucht, wie Sprecher Bedeutungen erzeugen.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Semantik <span class="level-indicator">C1</span></strong>
+                            <div class="definition">Bedeutungslehre, Wissenschaft von der Bedeutung</div>
+                            <div class="example">Die Semantik des Wortes hat sich im Laufe der Zeit gewandelt.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Syntax <span class="level-indicator">C1</span></strong>
+                            <div class="definition">Lehre vom Satzbau, grammatische Struktur</div>
+                            <div class="example">Die komplexe Syntax erschwert das Textverständnis.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Genre <span class="level-indicator">C1</span></strong>
+                            <div class="definition">Gattung, literarische oder künstlerische Kategorie</div>
+                            <div class="example">Der Text lässt sich keinem eindeutigen Genre zuordnen.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Allegorie <span class="level-indicator">C2</span></strong>
+                            <div class="definition">Durchgängige Metapher mit übertragener Bedeutung</div>
+                            <div class="example">Die Allegorie der Höhle bei Platon illustriert seine Erkenntnistheorie.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Topos <span class="level-indicator">C2</span></strong>
+                            <div class="definition">Wiederkehrendes Motiv, feststehende Redefigur</div>
+                            <div class="example">Der Topos des "edlen Wilden" prägte die Aufklärung.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <h4>💡 Tipps für die Verwendung akademischer Hochsprache</h4>
+                <ul>
+                    <li>• <strong>Dosierung:</strong> Verwende gehobenes Vokabular gezielt, nicht inflationär</li>
+                    <li>• <strong>Präzision:</strong> Achte darauf, dass die Bedeutung exakt passt</li>
+                    <li>• <strong>Kontext:</strong> Akademische Begriffe wirken in wissenschaftlichen Texten, nicht in Alltagstexten</li>
+                    <li>• <strong>Verständlichkeit:</strong> Opfere nie Klarheit für Komplexität</li>
+                    <li>• <strong>Integration:</strong> Baue die Begriffe natürlich in deine Argumentation ein</li>
+                </ul>
+            </div>
+
+            <!-- Neue Kategorie: Gesellschaft & Soziologie -->
+            <div class="content-section">
+                <div class="section-header">
+                    👥 Gesellschaft & Soziologie
+                </div>
+                <div class="section-content">
+                    <div class="terms-grid">
+                        <div class="term-card">
+                            <strong>Heterogen <span class="level-indicator">C1</span></strong>
+                            <div class="definition">Ungleichartig, aus verschiedenen Elementen zusammengesetzt</div>
+                            <div class="example">Die heterogene Zusammensetzung der Gruppe führte zu vielfältigen Perspektiven.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Homogen <span class="level-indicator">C1</span></strong>
+                            <div class="definition">Gleichartig, einheitlich strukturiert</div>
+                            <div class="example">Die homogene Bevölkerungsstruktur erschwert Integration.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Sozioökonomisch <span class="level-indicator">C1</span></strong>
+                            <div class="definition">Gesellschaftliche und wirtschaftliche Faktoren betreffend</div>
+                            <div class="example">Der sozioökonomische Status beeinflusst Bildungschancen erheblich.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Egalitär <span class="level-indicator">C2</span></strong>
+                            <div class="definition">Auf Gleichheit ausgerichtet, gleichheitsorientiert</div>
+                            <div class="example">Die egalitäre Gesellschaftsordnung strebt nach Chancengleichheit.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Hierarchisch <span class="level-indicator">C1</span></strong>
+                            <div class="definition">In Rangordnung gegliedert, gestuft</div>
+                            <div class="example">Die hierarchische Struktur der Organisation ist klar definiert.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Marginal <span class="level-indicator">C1</span></strong>
+                            <div class="definition">Am Rand stehend, unbedeutend, geringfügig</div>
+                            <div class="example">Die marginale Gruppe erhält kaum gesellschaftliche Aufmerksamkeit.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Prekär <span class="level-indicator">C1</span></strong>
+                            <div class="definition">Unsicher, schwierig, heikel</div>
+                            <div class="example">Die prekäre Beschäftigungssituation belastet viele Arbeitnehmer.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Inklusion <span class="level-indicator">C1</span></strong>
+                            <div class="definition">Einbeziehung, Integration in die Gesellschaft</div>
+                            <div class="example">Inklusion bedeutet die gleichberechtigte Teilhabe aller Menschen.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Exklusion <span class="level-indicator">C1</span></strong>
+                            <div class="definition">Ausschluss, Ausgrenzung aus der Gesellschaft</div>
+                            <div class="example">Soziale Exklusion führt zu gesellschaftlicher Marginalisierung.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Distinktion <span class="level-indicator">C2</span></strong>
+                            <div class="definition">Abgrenzung, Unterscheidung zur Wahrung sozialer Distanz</div>
+                            <div class="example">Bourdieu analysiert Distinktion als Mittel zur sozialen Abgrenzung.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Habitus <span class="level-indicator">C2</span></strong>
+                            <div class="definition">Verinnerlichte Denk- und Verhaltensmuster einer sozialen Gruppe</div>
+                            <div class="example">Der Habitus prägt unbewusst unser Verhalten und unsere Präferenzen.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Hegemonie <span class="level-indicator">C2</span></strong>
+                            <div class="definition">Vorherrschaft, dominante Stellung einer Gruppe</div>
+                            <div class="example">Die kulturelle Hegemonie manifestiert sich in gesellschaftlichen Normen.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Neue Kategorie: Sprache & Kommunikation -->
+            <div class="content-section">
+                <div class="section-header">
+                    💬 Sprache & Kommunikation
+                </div>
+                <div class="section-content">
+                    <div class="terms-grid">
+                        <div class="term-card">
+                            <strong>Redundanz <span class="level-indicator">C1</span></strong>
+                            <div class="definition">Überflüssigkeit, unnötige Wiederholung</div>
+                            <div class="example">Die Redundanz in der Kommunikation dient der Fehlerkorrektur.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Prägnant <span class="level-indicator">C1</span></strong>
+                            <div class="definition">Knapp und treffend formuliert, aussagekräftig</div>
+                            <div class="example">Seine prägnante Formulierung brachte das Problem auf den Punkt.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Eloquent <span class="level-indicator">C1</span></strong>
+                            <div class="definition">Redegewandt, sprachlich gewandt</div>
+                            <div class="example">Der eloquente Redner fesselte das Publikum mit seinen Worten.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Konzis <span class="level-indicator">C2</span></strong>
+                            <div class="definition">Kurz und präzise, gedrängt formuliert</div>
+                            <div class="example">Die konzise Darstellung verzichtet auf jede Weitschweifigkeit.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Diffus <span class="level-indicator">C1</span></strong>
+                            <div class="definition">Unklar, verschwommen ausgedrückt</div>
+                            <div class="example">Seine diffusen Ausführungen hinterließen mehr Fragen als Antworten.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Artikulieren <span class="level-indicator">C1</span></strong>
+                            <div class="definition">Klar ausdrücken, deutlich aussprechen</div>
+                            <div class="example">Sie kann ihre Gedanken präzise artikulieren.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Diskursiv <span class="level-indicator">C2</span></strong>
+                            <div class="definition">Erörternd, im Gespräch entwickelt</div>
+                            <div class="example">Die diskursive Methode führt durch Dialog zur Erkenntnis.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Referenziell <span class="level-indicator">C2</span></strong>
+                            <div class="definition">Auf etwas verweisend, Bezug nehmend</div>
+                            <div class="example">Die referenzielle Funktion der Sprache stellt Bezüge zur Wirklichkeit her.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Metakommunikativ <span class="level-indicator">C2</span></strong>
+                            <div class="definition">Über Kommunikation selbst sprechend</div>
+                            <div class="example">Metakommunikative Äußerungen klären Missverständnisse.</div>
+                        </div>
+                        <div class="term-card">
+                            <strong>Performativ <span class="level-indicator">C2</span></strong>
+                            <div class="definition">Handlungsvollziehend durch Sprechen</div>
+                            <div class="example">Performative Äußerungen vollziehen die Handlung, die sie benennen.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 2: Performative Verben -->
+        <div id="performativ" class="tab-content">
+            <div class="intro-box">
+                <h3>🎭 Was sind performative Verben?</h3>
+                <p>Performative Verben (auch: Sprechaktverben) sind Verben, mit denen eine Handlung vollzogen wird, indem man sie ausspricht. Sie stammen aus der Sprechakttheorie von John L. Austin und beschreiben, was mit einer Äußerung getan wird.</p>
+                <ul style="margin-top: 15px;">
+                    <li>• <strong>Beispiel:</strong> "Ich verspreche dir..." – Das Aussprechen IST bereits das Versprechen</li>
+                    <li>• Wichtig für die Textanalyse: Sie zeigen die Absicht des Autors</li>
+                    <li>• In akademischen Texten zeigen sie die argumentative Struktur</li>
+                </ul>
+            </div>
+
+            <!-- Behaupten & Feststellen -->
+            <div class="content-section">
+                <div class="section-header">
+                    📢 Assertive (Behaupten & Feststellen)
+                </div>
+                <div class="section-content">
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Performatives Verb</th>
+                                    <th>Verwendungskontext</th>
+                                    <th>Beispiele</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="verb-cell">behaupten</td>
+                                    <td class="usage-cell">Eine These aufstellen, ohne Beweis</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Der Autor behauptet, dass Klimawandel menschengemacht sei.<br>
+                                        <span class="lang-label en">EN</span> The author claims that climate change is man-made.<br>
+                                        <span class="lang-label es">ES</span> El autor afirma que el cambio climático es causado por el hombre.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">feststellen</td>
+                                    <td class="usage-cell">Etwas als Tatsache konstatieren</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Die Studie stellt fest, dass die Hypothese bestätigt wurde.<br>
+                                        <span class="lang-label en">EN</span> The study establishes that the hypothesis was confirmed.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">argumentieren</td>
+                                    <td class="usage-cell">Begründete Aussagen vorbringen</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Er argumentiert, dass eine Reform notwendig sei.<br>
+                                        <span class="lang-label en">EN</span> He argues that a reform is necessary.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">konstatieren</td>
+                                    <td class="usage-cell">Förmlich feststellen</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Der Bericht konstatiert erhebliche Mängel im System.<br>
+                                        <span class="lang-label en">EN</span> The report notes significant deficiencies in the system.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">postulieren</td>
+                                    <td class="usage-cell">Als notwendig fordern/behaupten</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Die Theorie postuliert die Existenz dunkler Materie.<br>
+                                        <span class="lang-label en">EN</span> The theory postulates the existence of dark matter.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">beteuern</td>
+                                    <td class="usage-cell">Nachdrücklich versichern</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Er beteuert seine Unschuld.<br>
+                                        <span class="lang-label en">EN</span> He asserts his innocence.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">verkünden</td>
+                                    <td class="usage-cell">Öffentlich bekanntmachen</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Der Minister verkündet neue Maßnahmen.<br>
+                                        <span class="lang-label en">EN</span> The minister announces new measures.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">darlegen</td>
+                                    <td class="usage-cell">Ausführlich erklären und begründen</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Die Autorin legt ihre Position differenziert dar.<br>
+                                        <span class="lang-label en">EN</span> The author explains her position in detail.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">diagnostizieren</td>
+                                    <td class="usage-cell">Eine Diagnose stellen, ermitteln</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Der Soziologe diagnostiziert eine gesellschaftliche Krise.<br>
+                                        <span class="lang-label en">EN</span> The sociologist diagnoses a social crisis.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">plädieren</td>
+                                    <td class="usage-cell">Sich für etwas einsetzen, verteidigen</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Der Anwalt plädiert auf Freispruch.<br>
+                                        <span class="lang-label en">EN</span> The lawyer pleads for acquittal.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">konstatieren</td>
+                                    <td class="usage-cell">Förmlich feststellen</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Der Gutachter konstatiert erhebliche Mängel.<br>
+                                        <span class="lang-label en">EN</span> The expert notes significant deficiencies.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">inferieren</td>
+                                    <td class="usage-cell">Schlussfolgern, ableiten</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Aus den Daten lässt sich inferieren, dass...<br>
+                                        <span class="lang-label en">EN</span> From the data one can infer that...
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">attestieren</td>
+                                    <td class="usage-cell">Bescheinigen, zusprechen</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Man muss ihm große Kompetenz attestieren.<br>
+                                        <span class="lang-label en">EN</span> One must attest to his great competence.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">postulieren</td>
+                                    <td class="usage-cell">Als Forderung aufstellen</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Kant postuliert die Existenz des kategorischen Imperativs.<br>
+                                        <span class="lang-label en">EN</span> Kant postulates the existence of the categorical imperative.
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Direktive -->
+            <div class="content-section">
+                <div class="section-header">
+                    👉 Direktive (Auffordern & Anweisen)
+                </div>
+                <div class="section-content">
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Performatives Verb</th>
+                                    <th>Verwendungskontext</th>
+                                    <th>Beispiele</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="verb-cell">fordern</td>
+                                    <td class="usage-cell">Nachdrücklich verlangen</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Der Text fordert eine Reform des Bildungssystems.<br>
+                                        <span class="lang-label en">EN</span> The text demands a reform of the education system.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">appellieren</td>
+                                    <td class="usage-cell">Eindringlich bitten</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Die Autorin appelliert an die Vernunft der Leser.<br>
+                                        <span class="lang-label en">EN</span> The author appeals to the readers' reason.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">auffordern</td>
+                                    <td class="usage-cell">Zu einer Handlung veranlassen</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Der Artikel fordert dazu auf, aktiv zu werden.<br>
+                                        <span class="lang-label en">EN</span> The article calls for action.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">mahnen</td>
+                                    <td class="usage-cell">Warnend erinnern</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Der Autor mahnt zur Vorsicht bei voreiligen Schlüssen.<br>
+                                        <span class="lang-label en">EN</span> The author urges caution about hasty conclusions.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">beschwören</td>
+                                    <td class="usage-cell">Eindringlich bitten, heraufbeschwören</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Er beschwört die Gefahr eines Rückfalls.<br>
+                                        <span class="lang-label en">EN</span> He conjures up the danger of a relapse.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">befehlen</td>
+                                    <td class="usage-cell">Autoritativ anordnen</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Der Kommandant befiehlt den Rückzug.<br>
+                                        <span class="lang-label en">EN</span> The commander orders the retreat.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">anweisen</td>
+                                    <td class="usage-cell">Konkrete Anweisungen geben</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Der Lehrer weist die Schüler an, den Text zu lesen.<br>
+                                        <span class="lang-label en">EN</span> The teacher instructs the students to read the text.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">ermahnen</td>
+                                    <td class="usage-cell">Mit Nachdruck zu etwas auffordern</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Die Eltern ermahnen ihre Kinder zur Vorsicht.<br>
+                                        <span class="lang-label en">EN</span> The parents admonish their children to be careful.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">warnen</td>
+                                    <td class="usage-cell">Auf Gefahren hinweisen</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Experten warnen vor den Folgen des Klimawandels.<br>
+                                        <span class="lang-label en">EN</span> Experts warn about the consequences of climate change.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">bitten</td>
+                                    <td class="usage-cell">Höflich um etwas ersuchen</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Ich bitte Sie, mir zu helfen.<br>
+                                        <span class="lang-label en">EN</span> I ask you to help me.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">raten</td>
+                                    <td class="usage-cell">Einen Rat geben, empfehlen</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Ich rate dir, vorsichtig zu sein.<br>
+                                        <span class="lang-label en">EN</span> I advise you to be careful.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">empfehlen</td>
+                                    <td class="usage-cell">Als vorteilhaft nahelegen</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Ich empfehle die Lektüre dieses Buches.<br>
+                                        <span class="lang-label en">EN</span> I recommend reading this book.
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kommissive -->
+            <div class="content-section">
+                <div class="section-header">
+                    🤝 Kommissive (Versprechen & Verpflichten)
+                </div>
+                <div class="section-content">
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Performatives Verb</th>
+                                    <th>Verwendungskontext</th>
+                                    <th>Beispiele</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="verb-cell">versprechen</td>
+                                    <td class="usage-cell">Sich zu etwas verpflichten</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Ich verspreche, die Arbeit rechtzeitig abzugeben.<br>
+                                        <span class="lang-label en">EN</span> I promise to submit the work on time.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">zusichern</td>
+                                    <td class="usage-cell">Verbindlich zusagen</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Die Regierung sichert zu, Maßnahmen zu ergreifen.<br>
+                                        <span class="lang-label en">EN</span> The government assures to take measures.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">garantieren</td>
+                                    <td class="usage-cell">Für etwas einstehen</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Der Hersteller garantiert die Funktionsfähigkeit.<br>
+                                        <span class="lang-label en">EN</span> The manufacturer guarantees functionality.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">sich verpflichten</td>
+                                    <td class="usage-cell">Eine Verbindlichkeit eingehen</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Ich verpflichte mich, die Regeln einzuhalten.<br>
+                                        <span class="lang-label en">EN</span> I commit to following the rules.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">schwören</td>
+                                    <td class="usage-cell">Feierlich geloben</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Ich schwöre, die Wahrheit zu sagen.<br>
+                                        <span class="lang-label en">EN</span> I swear to tell the truth.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">geloben</td>
+                                    <td class="usage-cell">Feierlich versprechen</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Ich gelobe Treue und Gehorsam.<br>
+                                        <span class="lang-label en">EN</span> I vow loyalty and obedience.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">zusagen</td>
+                                    <td class="usage-cell">Verbindlich versprechen</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Der Minister sagt Unterstützung zu.<br>
+                                        <span class="lang-label en">EN</span> The minister promises support.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">bürgen</td>
+                                    <td class="usage-cell">Sich für jemanden/etwas verbürgen</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Ich bürge für die Qualität des Produkts.<br>
+                                        <span class="lang-label en">EN</span> I vouch for the quality of the product.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">sich anbieten</td>
+                                    <td class="usage-cell">Freiwillig bereit sein</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Ich biete mich an, die Aufgabe zu übernehmen.<br>
+                                        <span class="lang-label en">EN</span> I offer to take on the task.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">sich verbürgen</td>
+                                    <td class="usage-cell">Die Gewähr übernehmen</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Ich verbürge mich für die Richtigkeit der Angaben.<br>
+                                        <span class="lang-label en">EN</span> I guarantee the accuracy of the information.
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Expressive -->
+            <div class="content-section">
+                <div class="section-header">
+                    😊 Expressive (Gefühle ausdrücken)
+                </div>
+                <div class="section-content">
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Performatives Verb</th>
+                                    <th>Verwendungskontext</th>
+                                    <th>Beispiele</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="verb-cell">bedauern</td>
+                                    <td class="usage-cell">Trauer/Mitgefühl ausdrücken</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Ich bedauere zutiefst, was geschehen ist.<br>
+                                        <span class="lang-label en">EN</span> I deeply regret what happened.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">gratulieren</td>
+                                    <td class="usage-cell">Glückwünsche aussprechen</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Ich gratuliere Ihnen zu diesem Erfolg!<br>
+                                        <span class="lang-label en">EN</span> I congratulate you on this success!
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">danken</td>
+                                    <td class="usage-cell">Dankbarkeit zeigen</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Ich danke Ihnen für Ihre Unterstützung.<br>
+                                        <span class="lang-label en">EN</span> I thank you for your support.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">entschuldigen</td>
+                                    <td class="usage-cell">Um Verzeihung bitten</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Ich entschuldige mich für die Verspätung.<br>
+                                        <span class="lang-label en">EN</span> I apologize for the delay.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">würdigen</td>
+                                    <td class="usage-cell">Anerkennung zollen</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Ich würdige seine außerordentlichen Leistungen.<br>
+                                        <span class="lang-label en">EN</span> I appreciate his extraordinary achievements.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">loben</td>
+                                    <td class="usage-cell">Positiv bewerten, anerkennen</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Ich lobe deine Ausdauer und deinen Fleiß.<br>
+                                        <span class="lang-label en">EN</span> I praise your perseverance and diligence.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">begrüßen</td>
+                                    <td class="usage-cell">Willkommen heißen, positiv aufnehmen</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Ich begrüße diese Initiative ausdrücklich.<br>
+                                        <span class="lang-label en">EN</span> I explicitly welcome this initiative.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">beklagen</td>
+                                    <td class="usage-cell">Sein Bedauern ausdrücken über etwas</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Ich beklage den Verlust eines großen Denkers.<br>
+                                        <span class="lang-label en">EN</span> I lament the loss of a great thinker.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">kondolieren</td>
+                                    <td class="usage-cell">Beileid aussprechen</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Ich kondoliere den Hinterbliebenen.<br>
+                                        <span class="lang-label en">EN</span> I offer my condolences to the bereaved.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">willkommen heißen</td>
+                                    <td class="usage-cell">Freundlich empfangen</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Ich heiße Sie herzlich willkommen!<br>
+                                        <span class="lang-label en">EN</span> I warmly welcome you!
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">beglückwünschen</td>
+                                    <td class="usage-cell">Glückwünsche aussprechen</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Ich beglückwünsche dich zu deinem Erfolg.<br>
+                                        <span class="lang-label en">EN</span> I congratulate you on your success.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">bewundern</td>
+                                    <td class="usage-cell">Hochachtung ausdrücken</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Ich bewundere deinen Mut und deine Entschlossenheit.<br>
+                                        <span class="lang-label en">EN</span> I admire your courage and determination.
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Deklarative -->
+            <div class="content-section">
+                <div class="section-header">
+                    ⚖️ Deklarative (Zustände schaffen)
+                </div>
+                <div class="section-content">
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Performatives Verb</th>
+                                    <th>Verwendungskontext</th>
+                                    <th>Beispiele</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="verb-cell">erklären</td>
+                                    <td class="usage-cell">Offiziell verkünden</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Ich erkläre Sie hiermit zu Mann und Frau.<br>
+                                        <span class="lang-label en">EN</span> I now pronounce you husband and wife.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">benennen</td>
+                                    <td class="usage-cell">Einen Namen/Titel geben</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Ich benenne dich hiermit zum Projektleiter.<br>
+                                        <span class="lang-label en">EN</span> I hereby appoint you as project manager.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">taufen</td>
+                                    <td class="usage-cell">Religiöse/symbolische Benennung</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Ich taufe dich auf den Namen...<br>
+                                        <span class="lang-label en">EN</span> I baptize you in the name of...
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">ernennen</td>
+                                    <td class="usage-cell">Offiziell in ein Amt einsetzen</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Ich ernenne Sie hiermit zum Direktor.<br>
+                                        <span class="lang-label en">EN</span> I hereby appoint you as director.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">eröffnen</td>
+                                    <td class="usage-cell">Offiziell beginnen, für geöffnet erklären</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Ich eröffne hiermit die Sitzung.<br>
+                                        <span class="lang-label en">EN</span> I hereby open the session.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">schließen</td>
+                                    <td class="usage-cell">Offiziell beenden</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Ich schließe hiermit die Verhandlung.<br>
+                                        <span class="lang-label en">EN</span> I hereby close the negotiation.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">verkünden</td>
+                                    <td class="usage-cell">Offiziell bekanntgeben</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Das Gericht verkündet das Urteil.<br>
+                                        <span class="lang-label en">EN</span> The court pronounces the verdict.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">segnen</td>
+                                    <td class="usage-cell">Religiöse Weihe erteilen</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Ich segne dieses Haus und seine Bewohner.<br>
+                                        <span class="lang-label en">EN</span> I bless this house and its inhabitants.
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Neue Kategorie: Bewertende & Analysierende -->
+            <div class="content-section">
+                <div class="section-header">
+                    🔍 Bewertende & Analysierende Verben
+                </div>
+                <div class="section-content">
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Performatives Verb</th>
+                                    <th>Verwendungskontext</th>
+                                    <th>Beispiele</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="verb-cell">kritisieren</td>
+                                    <td class="usage-cell">Negativ beurteilen, Mängel aufzeigen</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Ich kritisiere die mangelnde Transparenz des Verfahrens.<br>
+                                        <span class="lang-label en">EN</span> I criticize the lack of transparency in the procedure.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">befürworten</td>
+                                    <td class="usage-cell">Positiv bewerten, unterstützen</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Ich befürworte diese Maßnahme nachdrücklich.<br>
+                                        <span class="lang-label en">EN</span> I strongly support this measure.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">analysieren</td>
+                                    <td class="usage-cell">Systematisch untersuchen</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Ich analysiere die zugrundeliegenden Strukturen.<br>
+                                        <span class="lang-label en">EN</span> I analyze the underlying structures.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">interpretieren</td>
+                                    <td class="usage-cell">Bedeutung auslegen, deuten</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Ich interpretiere den Text als Kritik am System.<br>
+                                        <span class="lang-label en">EN</span> I interpret the text as criticism of the system.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">beurteilen</td>
+                                    <td class="usage-cell">Bewertend Stellung nehmen</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Ich beurteile die Lage als kritisch.<br>
+                                        <span class="lang-label en">EN</span> I assess the situation as critical.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">einschätzen</td>
+                                    <td class="usage-cell">Eine Bewertung vornehmen</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Ich schätze die Erfolgsaussichten als hoch ein.<br>
+                                        <span class="lang-label en">EN</span> I estimate the chances of success as high.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">verurteilen</td>
+                                    <td class="usage-cell">Scharf ablehnen, verdammen</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Ich verurteile jede Form von Gewalt.<br>
+                                        <span class="lang-label en">EN</span> I condemn any form of violence.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">billigen</td>
+                                    <td class="usage-cell">Gutheißen, akzeptieren</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Ich billige das Vorgehen der Kommission.<br>
+                                        <span class="lang-label en">EN</span> I approve of the commission's approach.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">missbilligen</td>
+                                    <td class="usage-cell">Nicht gutheißen, ablehnen</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Ich missbillige diese Entscheidung entschieden.<br>
+                                        <span class="lang-label en">EN</span> I strongly disapprove of this decision.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="verb-cell">hinterfragen</td>
+                                    <td class="usage-cell">Kritisch prüfen, infrage stellen</td>
+                                    <td class="example-cell">
+                                        <span class="lang-label de">DE</span> Ich hinterfrage die Grundannahmen dieser Theorie.<br>
+                                        <span class="lang-label en">EN</span> I question the basic assumptions of this theory.
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <h4>💡 Performative Verben in der Textanalyse</h4>
+                <ul>
+                    <li>• <strong>Autorintention:</strong> Performative Verben zeigen, was der Autor mit seiner Aussage tun will</li>
+                    <li>• <strong>Argumentationsstruktur:</strong> Sie strukturieren die Argumentation (behaupten → belegen → folgern)</li>
+                    <li>• <strong>Appellfunktion:</strong> Direktive Verben zeigen, dass der Text überzeugen/bewegen will</li>
+                    <li>• <strong>Textsorte:</strong> Wissenschaftliche Texte nutzen andere performative Verben als politische Reden</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Zurück-Button -->
+        <div style="text-align: center; margin: 30px 0;">
+            <a href="index.html" class="back-button">← Zurück zur Hauptseite</a>
+        </div>
+
+        <!-- Scroll to Top Button -->
+        <div id="scrollTop" class="scroll-top">↑</div>
+    </div>
+
+    <script>
+        // Tab Switching
+        function switchTab(tabName) {
+            // Hide all tabs
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.classList.remove('active'));
+
+            // Remove active class from all buttons
+            const buttons = document.querySelectorAll('.tab-button');
+            buttons.forEach(button => button.classList.remove('active'));
+
+            // Show selected tab
+            document.getElementById(tabName).classList.add('active');
+
+            // Add active class to clicked button
+            event.target.classList.add('active');
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Scroll to top functionality
+            const scrollTopButton = document.getElementById('scrollTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollTopButton.classList.add('visible');
+                } else {
+                    scrollTopButton.classList.remove('visible');
+                }
+            });
+            
+            scrollTopButton.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // Keyboard shortcut: Press 'T' to scroll to top
+            document.addEventListener('keydown', function(e) {
+                if ((e.key === 't' || e.key === 'T') && !e.ctrlKey && !e.altKey) {
+                    const active = document.activeElement;
+                    if (active.tagName !== 'INPUT' && active.tagName !== 'TEXTAREA') {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                }
+            });
+
+            // Term cards animation
+            const termCards = document.querySelectorAll('.term-card');
+            termCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    card.style.transition = 'all 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 50);
+            });
+
+            // Interactive table row highlighting
+            const tableRows = document.querySelectorAll('table tbody tr:not(.category-row)');
+            tableRows.forEach(row => {
+                row.addEventListener('click', function() {
+                    tableRows.forEach(r => {
+                        r.style.background = '';
+                        r.style.transform = '';
+                    });
+                    this.style.background = 'linear-gradient(135deg, #e8eaf6, #c5cae9)';
+                    this.style.transform = 'scale(1.01)';
+                    setTimeout(() => {
+                        this.style.background = '';
+                        this.style.transform = '';
+                    }, 2000);
+                });
+            });
+
+            console.log('✅ Akademische Sprache & Performative Verben geladen! Drücke T um nach oben zu scrollen.');
+        });
+    </script>
+</body>
+</html>
