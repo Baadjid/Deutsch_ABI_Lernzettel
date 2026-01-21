@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprachliche Mittel analysieren - Deutsch Lernzettel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #000000, #DD0000, #FFCE00);
+        }
+
+        .header h1 {
+            color: #667eea;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+        }
+
+        .back-button {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .back-button:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+        }
+
+        .content-section {
+            background: rgba(255, 255, 255, 0.95);
+            margin-bottom: 25px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 25px;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .section-content {
+            padding: 30px;
+        }
+
+        .intro-box {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 25px 0;
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .intro-box h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        th {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        tr:hover {
+            background: #e8eaf6;
+            transform: scale(1.01);
+            transition: all 0.3s ease;
+        }
+
+        .category-header {
+            background: linear-gradient(135deg, #764ba2, #667eea) !important;
+            color: white !important;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .example-box {
+            background: #ecf0f1;
+            border-left: 5px solid #667eea;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .example-box h4 {
+            color: #667eea;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+
+        .tip-box {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .tip-box h4 {
+            color: #f39c12;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+
+        .analysis-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .analysis-card {
+            background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+            border: 2px solid #667eea;
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .analysis-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+
+        .analysis-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.2);
+        }
+
+        .analysis-card h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .checklist {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 12px;
+            border: 2px solid #667eea;
+        }
+
+        .checklist h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .checklist ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .checklist li {
+            padding: 10px;
+            margin: 8px 0;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s ease;
+        }
+
+        .checklist li:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+        }
+
+        .checklist li::before {
+            content: '✓';
+            color: #27ae60;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .method-steps {
+            counter-reset: step-counter;
+            list-style: none;
+            padding: 0;
+        }
+
+        .method-steps li {
+            counter-increment: step-counter;
+            padding: 20px;
+            margin: 15px 0;
+            background: white;
+            border-radius: 12px;
+            border-left: 5px solid #667eea;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .method-steps li:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+        }
+
+        .method-steps li::before {
+            content: counter(step-counter);
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            left: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .method-steps li strong {
+            color: #667eea;
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .analysis-grid {
+                grid-template-columns: 1fr;
+            }
+
+            table {
+                font-size: 0.9rem;
+            }
+
+            th, td {
+                padding: 10px;
+            }
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">← Zurück zur Hauptseite</a>
+        
+        <div class="header">
+            <h1>🎨 Sprachliche Mittel analysieren</h1>
+            <p>Umfassender Leitfaden für die Abitur-Vorbereitung</p>
+        </div>
+
+        <!-- Einführung -->
+        <div class="content-section">
+            <div class="section-header">
+                📖 Was sind sprachliche Mittel?
+            </div>
+            <div class="section-content">
+                <div class="intro-box">
+                    <h3>🎯 Warum sind sprachliche Mittel wichtig?</h3>
+                    <p>Sprachliche Mittel (auch: rhetorische Mittel, Stilmittel) sind bewusst eingesetzte Gestaltungselemente von Sprache, die über die reine Informationsvermittlung hinausgehen. Sie dienen dazu:</p>
+                    <ul style="margin-top: 15px;">
+                        <li>• Die Aufmerksamkeit der Leser/Hörer zu lenken</li>
+                        <li>• Emotionen zu wecken und zu beeinflussen</li>
+                        <li>• Argumente zu verstärken oder abzuschwächen</li>
+                        <li>• Texte anschaulich und einprägsam zu gestalten</li>
+                        <li>• Die eigene Position subtil zu vermitteln</li>
+                        <li>• Ästhetische Wirkungen zu erzeugen</li>
+                    </ul>
+                </div>
+
+                <div class="tip-box">
+                    <h4>⚠️ Wichtig für die Analyse!</h4>
+                    <p><strong>Das bloße Benennen sprachlicher Mittel reicht nicht!</strong></p>
+                    <p>Du musst immer auch die <strong>Funktion</strong> und <strong>Wirkung</strong> des jeweiligen Mittels im konkreten Textkontext erläutern. Die Fragen lauten:</p>
+                    <ul>
+                        <li>• <strong>Was</strong> wird durch das Mittel ausgedrückt?</li>
+                        <li>• <strong>Wie</strong> wirkt das Mittel auf den Leser?</li>
+                        <li>• <strong>Warum</strong> hat der Autor dieses Mittel gewählt?</li>
+                        <li>• <strong>Welche</strong> Intention verfolgt der Autor damit?</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Haupttabelle: Sprachliche Mittel -->
+        <div class="content-section">
+            <div class="section-header">
+                📚 Übersicht: Sprachliche Mittel für die Textanalyse
+            </div>
+            <div class="section-content">
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Sprachliches Mittel</th>
+                                <th>Definition</th>
+                                <th>Beispiel</th>
+                                <th>Wirkung / Funktion</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Klangfiguren -->
+                            <tr class="category-header">
+                                <td colspan="4">🎵 KLANGFIGUREN</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Alliteration</strong></td>
+                                <td>Gleicher Anfangslaut bei aufeinanderfolgenden Wörtern</td>
+                                <td>"<em>M</em>ilch macht <em>m</em>üde <em>M</em>änner munter"</td>
+                                <td>Einprägsam, rhythmisch, betont Zusammengehörigkeit</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Assonanz</strong></td>
+                                <td>Gleiche Vokale in betonten Silben</td>
+                                <td>"Der Wind singt sein Lied"</td>
+                                <td>Melodisch, verbindend, harmonisch</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Onomatopoesie</strong><br>(Lautmalerei)</td>
+                                <td>Wörter ahmen Klänge/Geräusche nach</td>
+                                <td>"Das Wasser <em>plätschert</em>, die Bienen <em>summen</em>"</td>
+                                <td>Anschaulich, lebendig, appelliert an Sinne</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Anapher</strong></td>
+                                <td>Wiederholung am Satzanfang</td>
+                                <td>"<em>Ich sehe</em> was du nicht siehst. <em>Ich höre</em> was du nicht hörst."</td>
+                                <td>Eindringlich, nachdrücklich, strukturierend</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Epipher</strong></td>
+                                <td>Wiederholung am Satzende</td>
+                                <td>"Er kam, er sah, er <em>siegte</em>. Wir kamen, wir sahen, wir <em>siegten</em>."</td>
+                                <td>Betont Gemeinsamkeit, verstärkend</td>
+                            </tr>
+
+                            <!-- Wortfiguren -->
+                            <tr class="category-header">
+                                <td colspan="4">📝 WORTFIGUREN</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Metapher</strong></td>
+                                <td>Bildlicher Vergleich ohne "wie"</td>
+                                <td>"Er ist ein <em>Fels in der Brandung</em>"</td>
+                                <td>Anschaulich, verdichtet Bedeutung, poetisch</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Vergleich</strong></td>
+                                <td>Bildlicher Vergleich mit "wie" oder "als"</td>
+                                <td>"Stark <em>wie</em> ein Löwe"</td>
+                                <td>Veranschaulicht, konkretisiert abstrakte Begriffe</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Personifikation</strong></td>
+                                <td>Vermenschlichung von Dingen/Tieren</td>
+                                <td>"Der Wind <em>flüstert</em> durch die Bäume"</td>
+                                <td>Lebendig, emotional, schafft Nähe</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Symbol</strong></td>
+                                <td>Zeichen steht für abstrakten Begriff</td>
+                                <td>"Die <em>Taube</em> (= Frieden), die <em>Rose</em> (= Liebe)"</td>
+                                <td>Verdichtet Bedeutung, universell verständlich</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Hyperbel</strong></td>
+                                <td>Starke Übertreibung</td>
+                                <td>"Ich habe dir das <em>tausendmal</em> gesagt"</td>
+                                <td>Dramatisch, emotional verstärkend, expressiv</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Litotes</strong></td>
+                                <td>Untertreibung durch Verneinung des Gegenteils</td>
+                                <td>"Das ist <em>nicht schlecht</em>" (= sehr gut)</td>
+                                <td>Ironisch-distanziert, vorsichtig wertend</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Euphemismus</strong></td>
+                                <td>Beschönigende Umschreibung</td>
+                                <td>"<em>Entlassen</em>" statt "gefeuert"</td>
+                                <td>Abschwächend, höflich, verschleiernd</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Dysphemismus</strong></td>
+                                <td>Abwertende Umschreibung</td>
+                                <td>"<em>Abkratzen</em>" statt "sterben"</td>
+                                <td>Provokant, respektlos, schockierend</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Oxymoron</strong></td>
+                                <td>Verbindung zweier Widersprüche</td>
+                                <td>"<em>Bittere Süße</em>", "<em>alter Knabe</em>"</td>
+                                <td>Paradox, provoziert Nachdenken, pointiert</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Antithese</strong></td>
+                                <td>Gegenüberstellung von Gegensätzen</td>
+                                <td>"<em>Heiß und kalt</em>", "<em>Freund und Feind</em>"</td>
+                                <td>Kontrastreich, dramatisch, verdeutlichend</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Paradoxon</strong></td>
+                                <td>Scheinbar widersprüchliche Aussage</td>
+                                <td>"<em>Weniger ist mehr</em>"</td>
+                                <td>Provoziert Nachdenken, tiefere Wahrheit</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Neologismus</strong></td>
+                                <td>Wortneuschöpfung</td>
+                                <td>"<em>Netiquette</em>", "<em>Coronaleugner</em>"</td>
+                                <td>Kreativ, zeitgemäß, prägnant</td>
+                            </tr>
+
+                            <!-- Satzfiguren -->
+                            <tr class="category-header">
+                                <td colspan="4">✍️ SATZFIGUREN</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Parallelismus</strong></td>
+                                <td>Gleicher Satzbau in aufeinanderfolgenden Sätzen</td>
+                                <td>"<em>Ich kam</em>, <em>ich sah</em>, <em>ich siegte</em>"</td>
+                                <td>Rhythmisch, einprägsam, strukturierend</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Chiasmus</strong></td>
+                                <td>Überkreuzstellung von Satzgliedern</td>
+                                <td>"<em>Die Kunst ist lang, kurz ist das Leben</em>"</td>
+                                <td>Elegant, kontrastierend, pointiert</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ellipse</strong></td>
+                                <td>Unvollständiger Satz (Auslassung)</td>
+                                <td>"<em>Je früher, desto besser</em>"</td>
+                                <td>Dynamisch, direkt, umgangssprachlich</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Inversion</strong></td>
+                                <td>Umkehrung der normalen Wortstellung</td>
+                                <td>"<em>Groß war die Freude</em>" (statt: Die Freude war groß)</td>
+                                <td>Betont das vorangestellte Element, poetisch</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Klimax</strong></td>
+                                <td>Steigerung in drei Stufen</td>
+                                <td>"<em>Ich kam, ich sah, ich siegte</em>"</td>
+                                <td>Steigernd, dramatisch, zielgerichtet</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Antiklimax</strong></td>
+                                <td>Absteigende Reihung</td>
+                                <td>"<em>Kaiser, Könige, Bauern</em>"</td>
+                                <td>Ironisch, ernüchternd, desillusionierend</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Enumeration</strong></td>
+                                <td>Aufzählung gleichwertiger Begriffe</td>
+                                <td>"<em>Haus, Hof und Garten</em>"</td>
+                                <td>Vollständig, konkretisierend, detailliert</td>
+                            </tr>
+
+                            <!-- Rhetorische Fragen -->
+                            <tr class="category-header">
+                                <td colspan="4">❓ RHETORISCHE MITTEL</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Rhetorische Frage</strong></td>
+                                <td>Frage, die keine Antwort erwartet</td>
+                                <td>"<em>Wer will das nicht?</em>" (= Alle wollen das)</td>
+                                <td>Appellativ, überzeugend, aktivierend</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Correctio</strong></td>
+                                <td>Selbstkorrektur des Sprechers</td>
+                                <td>"<em>Er ist klug – nein, genial!</em>"</td>
+                                <td>Steigernd, authentisch, nachdenklich</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Concretio</strong></td>
+                                <td>Zusammenfassung des Gesagten</td>
+                                <td>"<em>Kurz gesagt: Es funktioniert nicht</em>"</td>
+                                <td>Verdichtend, pointiert, abschließend</td>
+                            </tr>
+
+                            <!-- Ironie und Sarkasmus -->
+                            <tr class="category-header">
+                                <td colspan="4">😏 IRONIE & SARKASMUS</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ironie</strong></td>
+                                <td>Das Gegenteil von dem sagen, was gemeint ist</td>
+                                <td>"<em>Das hast du ja wieder toll gemacht!</em>" (bei Fehler)</td>
+                                <td>Kritisch-distanziert, subtil, humorvoll</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Sarkasmus</strong></td>
+                                <td>Verletzende, beißende Ironie</td>
+                                <td>"<em>Gratuliere, du bist ein Genie!</em>" (höhnisch)</td>
+                                <td>Verletzend, aggressiv, vernichtend</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Understatement</strong></td>
+                                <td>Bewusste Untertreibung</td>
+                                <td>"<em>Ganz nett</em>" (für: fantastisch)</td>
+                                <td>Ironisch, britischer Humor, distanziert</td>
+                            </tr>
+
+                            <!-- Wortspiele -->
+                            <tr class="category-header">
+                                <td colspan="4">🎭 WORTSPIELE</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Wortspiel</strong></td>
+                                <td>Spiel mit Doppeldeutigkeit</td>
+                                <td>"<em>Eile mit Weile</em>"</td>
+                                <td>Witzig, geistreich, unterhaltend</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Pars pro toto</strong></td>
+                                <td>Teil steht für das Ganze</td>
+                                <td>"<em>Berlin</em> (= die Bundesregierung) hat entschieden"</td>
+                                <td>Verkürzend, prägnant, journalistisch</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Totum pro parte</strong></td>
+                                <td>Das Ganze steht für einen Teil</td>
+                                <td>"<em>Deutschland</em> spielt gegen Frankreich" (= die Mannschaften)</td>
+                                <td>Vereinfachend, kollektivierend</td>
+                            </tr>
+
+                            <!-- Appellfunktionen -->
+                            <tr class="category-header">
+                                <td colspan="4">📢 APPELLFUNKTIONEN</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Imperativ</strong></td>
+                                <td>Befehlsform</td>
+                                <td>"<em>Kauf jetzt!</em>", "<em>Denk nach!</em>"</td>
+                                <td>Fordernd, direkt, aktivierend</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ausruf</strong><br>(Exklamation)</td>
+                                <td>Emotionaler Ausruf</td>
+                                <td>"<em>Welch ein Wahnsinn!</em>"</td>
+                                <td>Emotional, expressiv, dramatisch</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Apostrophe</strong></td>
+                                <td>Direkte Anrede (auch abwesender Personen)</td>
+                                <td>"<em>Oh Freiheit, du großes Gut!</em>"</td>
+                                <td>Pathetisch, dramatisch, beschwörend</td>
+                            </tr>
+
+                            <!-- Sonstige -->
+                            <tr class="category-header">
+                                <td colspan="4">🔧 WEITERE MITTEL</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Zitat</strong></td>
+                                <td>Wörtliche Übernahme fremder Aussagen</td>
+                                <td>"<em>Wie Einstein sagte: 'Fantasie ist wichtiger als Wissen'</em>"</td>
+                                <td>Autoritätsargument, stützend, bildungssprachlich</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Anspielung</strong><br>(Allusion)</td>
+                                <td>Indirekter Verweis auf Bekanntes</td>
+                                <td>"<em>Das ist sein Waterloo</em>" (→ Napoleon)</td>
+                                <td>Kulturell verbindend, subtil, intellektuell</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Archaismus</strong></td>
+                                <td>Veralteter Ausdruck</td>
+                                <td>"<em>Oheim</em>" (= Onkel), "<em>weiland</em>" (= einst)</td>
+                                <td>Historisierend, poetisch, distanzierend</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Neologismus</strong></td>
+                                <td>Wortneuschöpfung</td>
+                                <td>"<em>googeln</em>", "<em>covidioten</em>"</td>
+                                <td>Modern, kreativ, zeitbezogen</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Systematische Analyse -->
+        <div class="content-section">
+            <div class="section-header">
+                🔍 Systematische Analyse: Schritt für Schritt
+            </div>
+            <div class="section-content">
+                <ol class="method-steps">
+                    <li>
+                        <strong>1. Text mehrmals lesen</strong>
+                        <p>Lies den Text zunächst ohne Unterstreichungen, um ein Gesamtverständnis zu entwickeln. Beim zweiten Lesen markiere auffällige Formulierungen, Wiederholungen und ungewöhnliche Ausdrücke.</p>
+                    </li>
+                    <li>
+                        <strong>2. Sprachliche Mittel identifizieren</strong>
+                        <p>Gehe systematisch durch den Text und markiere alle sprachlichen Mittel. Nutze verschiedene Farben für verschiedene Kategorien (z.B. Blau für Metaphern, Grün für Wiederholungen, Rot für Appelle).</p>
+                    </li>
+                    <li>
+                        <strong>3. Kontext beachten</strong>
+                        <p>Betrachte jedes Mittel im Zusammenhang: An welcher Stelle steht es? Was kommt davor/danach? Welche Textfunktion hat dieser Abschnitt (Einleitung, Argumentation, Schluss)?</p>
+                    </li>
+                    <li>
+                        <strong>4. Wirkung analysieren</strong>
+                        <p>Frage dich: Welche Emotion/Assoziation löst das Mittel aus? Wie beeinflusst es die Argumentation? Verstärkt es eine These oder schwächt sie ab?</p>
+                    </li>
+                    <li>
+                        <strong>5. Intention erschließen</strong>
+                        <p>Überlege: Warum hat der Autor gerade dieses Mittel gewählt? Was will er beim Leser erreichen? (Überzeugung, Emotion, Abschreckung, Identifikation?)</p>
+                    </li>
+                    <li>
+                        <strong>6. Verknüpfung mit Textaussage</strong>
+                        <p>Verbinde die sprachlichen Mittel mit der Gesamtaussage des Textes. Unterstützen sie die Hauptthese? Gibt es einen roten Faden in der sprachlichen Gestaltung?</p>
+                    </li>
+                    <li>
+                        <strong>7. Formulierung der Analyse</strong>
+                        <p>Schreibe deine Analyse in vollständigen Sätzen nach dem Schema: Mittel benennen → Textstelle zitieren → Wirkung erläutern → Intention des Autors interpretieren.</p>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Formulierungshilfen -->
+        <div class="content-section">
+            <div class="section-header">
+                💬 Formulierungshilfen für die Analyse
+            </div>
+            <div class="section-content">
+                <div class="analysis-grid">
+                    <div class="analysis-card">
+                        <h3>Mittel benennen</h3>
+                        <ul>
+                            <li>• "Der Autor verwendet..."</li>
+                            <li>• "Auffällig ist die Verwendung von..."</li>
+                            <li>• "Durch den Einsatz von... wird..."</li>
+                            <li>• "Besonders deutlich zeigt sich... in..."</li>
+                            <li>• "Im Text findet sich..."</li>
+                        </ul>
+                    </div>
+
+                    <div class="analysis-card">
+                        <h3>Textstelle zitieren</h3>
+                        <ul>
+                            <li>• "Dies zeigt sich in der Formulierung: '...'"</li>
+                            <li>• "Wie in Zeile X deutlich wird: '...'"</li>
+                            <li>• "Beispielhaft heißt es: '...'"</li>
+                            <li>• "Der Ausdruck '...' verdeutlicht..."</li>
+                        </ul>
+                    </div>
+
+                    <div class="analysis-card">
+                        <h3>Wirkung beschreiben</h3>
+                        <ul>
+                            <li>• "Dies bewirkt beim Leser..."</li>
+                            <li>• "Dadurch entsteht der Eindruck..."</li>
+                            <li>• "Dies verleiht der Aussage..."</li>
+                            <li>• "Der Effekt ist..."</li>
+                            <li>• "Hierdurch wird... verstärkt/abgeschwächt"</li>
+                        </ul>
+                    </div>
+
+                    <div class="analysis-card">
+                        <h3>Intention erschließen</h3>
+                        <ul>
+                            <li>• "Der Autor beabsichtigt damit..."</li>
+                            <li>• "Die Intention ist offensichtlich..."</li>
+                            <li>• "Damit will der Autor erreichen, dass..."</li>
+                            <li>• "Dies dient dazu, den Leser zu..."</li>
+                            <li>• "Ziel dieser Formulierung ist..."</li>
+                        </ul>
+                    </div>
+
+                    <div class="analysis-card">
+                        <h3>Verknüpfung herstellen</h3>
+                        <ul>
+                            <li>• "In Verbindung mit... wird deutlich..."</li>
+                            <li>• "Dies korrespondiert mit..."</li>
+                            <li>• "Im Zusammenhang mit... zeigt sich..."</li>
+                            <li>• "Dies fügt sich ein in..."</li>
+                            <li>• "Parallel dazu findet sich..."</li>
+                        </ul>
+                    </div>
+
+                    <div class="analysis-card">
+                        <h3>Wertung vornehmen</h3>
+                        <ul>
+                            <li>• "Besonders wirkungsvoll ist..."</li>
+                            <li>• "Überzeugend wirkt..."</li>
+                            <li>• "Problematisch erscheint..."</li>
+                            <li>• "Gelungen ist..."</li>
+                            <li>• "Kritisch zu betrachten ist..."</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="example-box">
+                    <h4>✅ Musterformulierung (vollständig)</h4>
+                    <p><strong>Beispieltext:</strong> "Deutschland ist ein Fels in der Brandung Europas."</p>
+                    <p><strong>Analyse:</strong></p>
+                    <p>"Der Autor verwendet die <strong>Metapher</strong> 'Deutschland ist ein Fels in der Brandung' (Z. 5), um die Stabilität und Verlässlichkeit Deutschlands in Krisenzeiten zu verdeutlichen. Das Bild des 'Felsens' evoziert Assoziationen von Unerschütterlichkeit und Stärke, während die 'Brandung' für die turbulenten politischen Verhältnisse in Europa steht. Diese bildhafte Sprache <strong>verleiht der Aussage emotionale Kraft</strong> und macht sie einprägsam. Der Autor <strong>beabsichtigt damit</strong>, beim Leser Vertrauen in die deutsche Politik zu wecken und Deutschland als verlässlichen Partner darzustellen. Die Metapher <strong>unterstützt somit die zentrale These</strong> des Textes, dass Deutschland eine Führungsrolle in Europa einnehmen sollte."</p>
+                </div>
+
+                <div class="tip-box">
+                    <h4>⚠️ Häufige Fehler vermeiden!</h4>
+                    <ul>
+                        <li><strong>❌ NUR benennen:</strong> "Der Autor verwendet eine Metapher."</li>
+                        <li><strong>✅ Richtig:</strong> "Der Autor verwendet die Metapher '...', um... zu verdeutlichen. Dies bewirkt..."</li>
+                        <li><br></li>
+                        <li><strong>❌ Falsche Zuordnung:</strong> "Die Alliteration 'Haus und Hof' betont..."</li>
+                        <li><strong>✅ Richtig:</strong> "Die Paarformel 'Haus und Hof' betont..." (keine Alliteration!)</li>
+                        <li><br></li>
+                        <li><strong>❌ Keine Textanbindung:</strong> "Metaphern wirken anschaulich."</li>
+                        <li><strong>✅ Richtig:</strong> "Die Metapher '...' (Z. 12) wirkt anschaulich, weil..."</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Checkliste -->
+        <div class="content-section">
+            <div class="section-header">
+                ✅ Checkliste für die Sprachanalyse
+            </div>
+            <div class="section-content">
+                <div class="checklist">
+                    <h3>Habe ich an alles gedacht?</h3>
+                    <ul>
+                        <li>Sprachliche Mittel korrekt identifiziert und benannt?</li>
+                        <li>Konkrete Textstellen zitiert (mit Zeilenangabe)?</li>
+                        <li>Wirkung der Mittel auf den Leser beschrieben?</li>
+                        <li>Intention des Autors erschlossen?</li>
+                        <li>Verknüpfung mit der Gesamtaussage des Textes hergestellt?</li>
+                        <li>Verschiedene Sprachebenen berücksichtigt (Wortebene, Satzebene, Textebene)?</li>
+                        <li>Funktionale Interpretation statt bloßer Auflistung?</li>
+                        <li>Fachbegriffe korrekt verwendet?</li>
+                        <li>Zusammenhänge zwischen verschiedenen Mitteln erkannt?</li>
+                        <li>Eigene Formulierungen verwendet (keine Textbausteine)?</li>
+                    </ul>
+                </div>
+
+                <div class="intro-box" style="margin-top: 25px;">
+                    <h3>🎓 Abitur-Tipp: Qualität vor Quantität!</h3>
+                    <p>Es ist besser, <strong>wenige sprachliche Mittel ausführlich und funktional zu analysieren</strong>, als viele Mittel nur zu benennen. Die Tiefe der Interpretation ist entscheidend für eine gute Bewertung!</p>
+                    <p style="margin-top: 15px;"><strong>Faustformel:</strong> Pro Hauptabschnitt des Textes 2-3 zentrale sprachliche Mittel intensiv analysieren = bessere Note als 20 Mittel nur auflisten!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Zurück-Button -->
+        <div style="text-align: center; margin: 30px 0;">
+            <a href="index.html" class="back-button">← Zurück zur Hauptseite</a>
+        </div>
+
+        <!-- Scroll to Top Button -->
+        <div id="scrollTop" class="scroll-top">↑</div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Fade-in animation for sections
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach((section, index) => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(30px)';
+                setTimeout(() => {
+                    section.style.transition = 'all 0.6s ease';
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+
+            // Interactive table row highlighting
+            const tableRows = document.querySelectorAll('table tbody tr:not(.category-header)');
+            tableRows.forEach(row => {
+                row.addEventListener('click', function() {
+                    // Remove highlight from all rows
+                    tableRows.forEach(r => {
+                        r.style.background = '';
+                        r.style.transform = '';
+                    });
+                    // Highlight clicked row
+                    this.style.background = 'linear-gradient(135deg, #e8eaf6, #c5cae9)';
+                    this.style.transform = 'scale(1.02)';
+                    setTimeout(() => {
+                        this.style.background = '';
+                        this.style.transform = '';
+                    }, 3000);
+                });
+            });
+
+            // Analysis cards hover effect
+            const analysisCards = document.querySelectorAll('.analysis-card');
+            analysisCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-12px) rotate(1deg)';
+                    this.style.boxShadow = '0 20px 40px rgba(102, 126, 234, 0.3)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(-8px) rotate(0deg)';
+                    this.style.boxShadow = '0 15px 35px rgba(102, 126, 234, 0.2)';
+                });
+            });
+
+            // Method steps animation
+            const methodSteps = document.querySelectorAll('.method-steps li');
+            methodSteps.forEach((step, index) => {
+                step.style.opacity = '0';
+                step.style.transform = 'translateX(-50px)';
+                setTimeout(() => {
+                    step.style.transition = 'all 0.6s ease';
+                    step.style.opacity = '1';
+                    step.style.transform = 'translateX(0)';
+                }, index * 300);
+            });
+
+            // Scroll to top functionality
+            const scrollTopButton = document.getElementById('scrollTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollTopButton.classList.add('visible');
+                } else {
+                    scrollTopButton.classList.remove('visible');
+                }
+            });
+            
+            scrollTopButton.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // Keyboard shortcut: Press 'T' to scroll to top
+            document.addEventListener('keydown', function(e) {
+                if ((e.key === 't' || e.key === 'T') && !e.ctrlKey && !e.altKey) {
+                    const active = document.activeElement;
+                    if (active.tagName !== 'INPUT' && active.tagName !== 'TEXTAREA') {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                }
+            });
+
+            console.log('✅ Sprachliche Mittel Seite geladen! Drücke T um nach oben zu scrollen.');
+        });
+    </script>
+</body>
+</html>
