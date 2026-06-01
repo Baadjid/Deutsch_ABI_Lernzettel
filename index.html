@@ -1,129 +1,1230 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Deutsch Abitur Lernzettel</title>
-<style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deutsch Lernzettel - Gymnasium Baden-Württemberg</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --bg-color: #ecf0f1;
+            --card-bg: #ffffff;
+            --text-color: #2c3e50;
+            --border-color: #bdc3c7;
+        }
 
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background-color: #1e3a5f;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 3rem 1.5rem;
-  }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  .card {
-    background: #ffffff;
-    border-radius: 20px;
-    max-width: 600px;
-    width: 100%;
-    padding: 3rem 3.5rem 2.5rem;
-    text-align: center;
-    box-shadow: 0 8px 40px rgba(0,0,0,0.25);
-  }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--bg-color) 0%, #d5dbdb 100%);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
 
-  h1 {
-    font-size: 1.9rem;
-    font-weight: 800;
-    color: #1a2e4a;
-    margin-bottom: 1.1rem;
-    line-height: 1.25;
-  }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            width: 100%;
+        }
 
-  .desc {
-    font-size: 0.95rem;
-    color: #555;
-    line-height: 1.65;
-    margin-bottom: 2rem;
-  }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
 
-  .btn {
-    display: inline-block;
-    background: #e05a2b;
-    color: #fff;
-    font-weight: 700;
-    font-size: 0.95rem;
-    padding: 0.75rem 2.4rem;
-    border-radius: 50px;
-    text-decoration: none;
-    letter-spacing: 0.02em;
-    transition: background 0.2s;
-    margin-bottom: 2.5rem;
-  }
-  .btn:hover { background: #c94d22; }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #000000, #DD0000, #FFCE00);
+        }
 
-  .section-title {
-    font-size: 1.25rem;
-    font-weight: 800;
-    color: #1a2e4a;
-    margin-bottom: 0.5rem;
-  }
+        .header h1 {
+            color: var(--primary-color);
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
 
-  .tagline {
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: #2b6cb0;
-    margin-bottom: 1.8rem;
-  }
+        .header p {
+            color: #7f8c8d;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
 
-  .checklist {
-    list-style: none;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+            margin-bottom: 40px;
+            margin-top: 40px;
+            width: 100%;
+        }
 
-  .checklist li {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 0.75rem 0;
-    border-bottom: 1px solid #f0f0f0;
-    font-size: 0.95rem;
-    color: #2d2d2d;
-  }
-  .checklist li:last-child { border-bottom: none; }
+        .category-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-left: 5px solid var(--secondary-color);
+            position: relative;
+            overflow: visible;
+            z-index: 1;
+            width: 100%;
+            max-width: 100%;
+        }
 
-  .tick {
-    color: #2b6cb0;
-    font-size: 1.3rem;
-    font-weight: 900;
-    flex-shrink: 0;
-    width: 22px;
-    text-align: center;
-  }
+        .category-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+            z-index: 10;
+        }
 
-  .wish {
-    margin-top: 2rem;
-    font-style: italic;
-    font-weight: 700;
-    color: #2b6cb0;
-    font-size: 1rem;
-  }
-</style>
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(45deg, transparent, rgba(52, 152, 219, 0.1));
+            border-radius: 50%;
+            transform: translate(30px, -30px);
+        }
+
+        .category-card h2 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.4em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .category-card .icon {
+            font-size: 1.5em;
+            color: var(--secondary-color);
+        }
+
+        .category-card p {
+            margin-bottom: 20px;
+            color: #7f8c8d;
+            line-height: 1.6;
+        }
+
+        .topic-list {
+            list-style: none;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        .topic-list li {
+            background: #f8f9fa;
+            margin: 8px 0;
+            padding: 10px 15px;
+            border-radius: 8px;
+            border-left: 3px solid var(--secondary-color);
+            transition: background 0.3s ease;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .topic-list li:hover {
+            background: #e3f2fd;
+        }
+
+        .subcategory {
+            margin: 20px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 3px solid var(--secondary-color);
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .subcategory h3 {
+            color: var(--primary-color);
+            font-size: 1.1em;
+            margin-bottom: 12px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            word-wrap: break-word;
+        }
+
+        .subcategory .sub-icon {
+            font-size: 1.2em;
+            color: var(--secondary-color);
+            flex-shrink: 0;
+        }
+
+        .subcategory .topic-list {
+            margin-bottom: 0;
+        }
+
+        .subcategory .topic-list li {
+            background: white;
+            border-left-color: var(--secondary-color);
+        }
+
+        .card-header-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            gap: 10px;
+        }
+
+        .card-title-wrapper {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .toggle-btn {
+            background: var(--secondary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            min-width: 40px;
+            min-height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.2em;
+            flex-shrink: 0;
+            margin-left: 15px;
+        }
+
+        .toggle-btn:hover {
+            background: var(--primary-color);
+            transform: scale(1.1);
+        }
+
+        .toggle-btn.collapsed {
+            transform: rotate(0deg);
+        }
+
+        .toggle-btn.expanded {
+            transform: rotate(180deg);
+        }
+
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .collapsible-content.expanded {
+            max-height: 10000px;
+            overflow: visible;
+        }
+
+        .card-footer {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 2px solid #e3e8eb;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: linear-gradient(45deg, var(--secondary-color), #2980b9);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            margin: 5px;
+            word-wrap: break-word;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.3);
+            background: linear-gradient(45deg, #2980b9, var(--secondary-color));
+        }
+
+        .btn-secondary {
+            background: linear-gradient(45deg, var(--success-color), #229954);
+        }
+
+        .btn-secondary:hover {
+            background: linear-gradient(45deg, #229954, var(--success-color));
+            box-shadow: 0 8px 20px rgba(39, 174, 96, 0.3);
+        }
+
+        .quick-links {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            margin-top: 30px;
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .quick-links h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.3em;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background: var(--card-bg);
+            border-radius: 15px;
+        }
+
+        .footer p {
+            color: #7f8c8d;
+            margin-bottom: 10px;
+        }
+
+        @media (min-width: 768px) {
+            .links-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .header h1 {
+                font-size: 2.5em;
+            }
+
+            .category-card h2 {
+                font-size: 1.4em;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .links-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 767px) {
+            .container {
+                padding: 10px;
+            }
+
+            .header {
+                padding: 20px 15px;
+                margin-bottom: 20px;
+            }
+
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .header p {
+                font-size: 0.95em;
+            }
+
+            .category-card {
+                padding: 15px;
+                margin-bottom: 15px;
+            }
+
+            .category-card h2 {
+                font-size: 1.2em;
+                line-height: 1.4;
+            }
+
+            .category-card p {
+                font-size: 0.95em;
+            }
+
+            .subcategory {
+                padding: 12px;
+                margin: 15px 0;
+            }
+
+            .subcategory h3 {
+                font-size: 1em;
+                line-height: 1.4;
+            }
+
+            .topic-list li {
+                padding: 8px 12px;
+                font-size: 0.95em;
+            }
+
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.95em;
+                width: 100%;
+                margin: 5px 0;
+            }
+
+            .toggle-btn {
+                width: 35px;
+                height: 35px;
+                min-width: 35px;
+                min-height: 35px;
+                font-size: 1em;
+            }
+
+            .card-header-section {
+                gap: 8px;
+            }
+
+            .quick-links {
+                padding: 15px;
+            }
+
+            .quick-links h3 {
+                font-size: 1.1em;
+            }
+
+            .footer {
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.5em;
+            }
+
+            .category-card h2 {
+                font-size: 1.1em;
+            }
+
+            .subcategory h3 {
+                font-size: 0.95em;
+            }
+
+            .topic-list li {
+                font-size: 0.9em;
+            }
+        }
+
+        .universal-navbar {
+        top: 0;
+        z-index: 9999;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 12px 20px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 15px;
+        flex-wrap: wrap;
+        animation: slideDown 0.5s ease-out;
+    }
+
+    @keyframes slideDown {
+        from {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .universal-navbar-content {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        flex-wrap: wrap;
+        flex: 1;
+    }
+
+    .universal-navbar-icon {
+        font-size: 1.8em;
+        color: white;
+        text-decoration: none;
+        transition: transform 0.3s ease;
+    }
+
+    .universal-navbar-icon:hover {
+        transform: scale(1.2) rotate(5deg);
+    }
+
+    .universal-navbar-text {
+        color: white;
+        font-size: 1em;
+        font-weight: 600;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .universal-navbar-link {
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        color: white;
+        text-decoration: none;
+        padding: 8px 20px;
+        border-radius: 25px;
+        font-weight: 600;
+        font-size: 0.95em;
+        transition: all 0.3s ease;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        white-space: nowrap;
+    }
+
+    .universal-navbar-link:hover {
+        background: rgba(255, 255, 255, 0.35);
+        border-color: rgba(255, 255, 255, 0.6);
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .universal-navbar-link-arrow {
+        transition: transform 0.3s ease;
+    }
+
+    .universal-navbar-link:hover .universal-navbar-link-arrow {
+        transform: translateX(-3px);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .universal-navbar {
+            padding: 10px 15px;
+        }
+
+        .universal-navbar-text {
+            font-size: 0.9em;
+        }
+
+        .universal-navbar-link {
+            padding: 7px 15px;
+            font-size: 0.85em;
+        }
+
+        .universal-navbar-icon {
+            font-size: 1.5em;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .universal-navbar {
+            justify-content: center;
+        }
+
+        .universal-navbar-content {
+            justify-content: center;
+            width: 100%;
+        }
+
+        .universal-navbar-text {
+            display: none; /* Text verstecken auf sehr kleinen Bildschirmen */
+        }
+    }
+    </style>
 </head>
 <body>
-<div class="card">
-  <h1>Deutsch Abitur Lernzettel</h1>
-  <p class="desc">Ein umfassender Lernzettel für das Deutsch-Abitur in Baden-Württemberg. Enthält Dramenanalyse, Lyrikinterpretation, Erörterung und Sprachgeschichte.</p>
-  <a href="https://baadjid.github.io/educational-platform/#/projekte/lernzettel/faecher/deutsch" class="btn">Zum Lernzettel</a>
-  <p class="section-title">Das bietet dir der Lernzettel:</p>
-  <p class="tagline">Deine kompakte Vorbereitung für das Deutsch-Abitur</p>
-  <ul class="checklist">
-    <li><span class="tick">✓</span>Dramenanalyse: Struktur, Figuren und dramatische Mittel</li>
-    <li><span class="tick">✓</span>Lyrikinterpretation: Metrum, Reimschema und sprachliche Bilder</li>
-    <li><span class="tick">✓</span>Erörterung und Textanalyse: Argumentationsstrukturen kompakt erklärt</li>
-    <li><span class="tick">✓</span>Epochen und Kontext: Von der Klassik bis zur Gegenwart</li>
-    <li><span class="tick">✓</span>Sprachgeschichte und Sprachentwicklung im Überblick</li>
-    <li><span class="tick">✓</span>Schreibstrategien und Aufsatztechniken für die Prüfung</li>
-  </ul>
-  <p class="wish">Viel Erfolg bei deiner Abitur-Vorbereitung!</p>
-</div>
+
+    <nav class="universal-navbar">
+    <div class="universal-navbar-content">
+        <a href="https://baadjid.github.io/Abitur-Lernzettel_2026/" class="universal-navbar-icon" title="Zur Übersicht" aria-label="Zur Übersicht">
+            🏠
+        </a>
+        <p class="universal-navbar-text">
+            <span>📚</span>
+            <span>Abitur 2026 Lernzettel</span>
+        </p>
+    </div>
+    <a href="https://baadjid.github.io/Abitur-Lernzettel_2026/" class="universal-navbar-link">
+        <span class="universal-navbar-link-arrow">←</span>
+        <span>Alle Fächer</span>
+    </a>
+    </nav>
+    
+    <div class="container">
+        <div class="header">
+            <h1>📚 Deutsch Lernzettel</h1>
+            <p>Umfassende Lernmaterialien | Gymnasium Baden-Württemberg</p>
+        </div>
+        <div class="main-grid">
+            
+            <!-- Kategorie 1: Sprache, Sprechen, Kommunikation -->
+            <div class="category-card">
+                <div class="card-header-section">
+                    <div class="card-title-wrapper">
+                        <h2><span class="icon">🗣️</span>Sprache, Sprechen, Kommunikation</h2>
+                        <p>Grundlagen der Sprache, ihre Funktionen und Bedeutung in der Kommunikation</p>
+                    </div>
+                    <button class="toggle-btn collapsed" onclick="toggleCard(this)" aria-label="Toggle content">
+                        ▼
+                    </button>
+                </div>
+                
+                <div class="collapsible-content">
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">📖</span>1.1 Was ist Sprache? – Erklärungsansätze</h3>
+                        <ul class="topic-list">
+                            <li>Sprache als künstliches System von Zeichen</li>
+                            <li>Sprache als Mittel der Verständigung und des sozialen Handelns</li>
+                            <li>Sprache und Denken</li>
+                            <li>Sprachliche Zeichen und ihre Bedeutung</li>
+                            <li>Arbitrarität und Konventionalität von Zeichen</li>
+                        </ul>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">💬</span>1.2 Leistung und kommunikative Funktion von Sprache</h3>
+                        <ul class="topic-list">
+                            <li>Sprache als Organon/Werkzeug</li>
+                            <li>Sprache und menschliche Kommunikation</li>
+                            <li>Die vier Seiten einer Nachricht (Schulz von Thun)</li>
+                            <li>Kommunikationsmodelle und -theorien</li>
+                            <li>Sender-Empfänger-Modell</li>
+                            <li>Missverständnisse und Kommunikationsstörungen</li>
+                        </ul>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">🌍</span>1.3 Sprachvarietäten und ihre Reichweite</h3>
+                        <ul class="topic-list">
+                            <li>Standardsprache/Hochsprache/Gemeinsprache</li>
+                            <li>Dialekt/Mundart</li>
+                            <li>(Regionale) Umgangssprache</li>
+                            <li>Gruppensprache und soziale Integration</li>
+                            <li>Fachsprache und ihre Merkmale</li>
+                            <li>Jugendsprache</li>
+                            <li>Weitere Varianten des Sprachgebrauchs</li>
+                        </ul>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">⏳</span>1.4 Sprachgeschichte und Sprachwandel</h3>
+                        <ul class="topic-list">
+                            <li>Althochdeutsche Sprache (um 750-1050)</li>
+                            <li>Mittelhochdeutsch (um 1050-1350)</li>
+                            <li>Frühneuhochdeutsch (um 1350-1650)</li>
+                            <li>Neuhochdeutsch (um 1650-1900)</li>
+                            <li>Deutsch von heute – allgemeine Tendenzen</li>
+                            <li>Sprachverfall oder Sprachwandel?</li>
+                            <li>Einfluss von Digitalisierung und Anglizismen</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <a href="SpracheSprechenKommunikation.html" class="btn btn-secondary">Sprache & Kommunikation erkunden</a>
+                </div>
+            </div>
+
+            <!-- Kategorie 2: Literarische Gattungen, Sachtexte -->
+            <div class="category-card">
+                <div class="card-header-section">
+                    <div class="card-title-wrapper">
+                        <h2><span class="icon">📚</span>Literarische Gattungen, Sachtexte</h2>
+                        <p>Epik, Dramatik, Lyrik und die Analyse von Sachtexten</p>
+                    </div>
+                    <button class="toggle-btn collapsed" onclick="toggleCard(this)" aria-label="Toggle content">
+                        ▼
+                    </button>
+                </div>
+                
+                <div class="collapsible-content">
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">📖</span>2.1 Literarische Gattungen: Epik, Dramatik, Lyrik</h3>
+                        <ul class="topic-list">
+                            <li>Kennzeichen epischer Texte</li>
+                            <li>Erzählformen und Erzählverhalten</li>
+                            <li>Erzähler, Erzählerperspektive, Erzählstandpunkt</li>
+                            <li>Figur der Handlung und Figurenkonstellation</li>
+                            <li>Zeit: Zeitdeckung, Zeitdehnung, Zeitraffung</li>
+                            <li>Zeitstruktur/Bauform (chronologisch, Rückblende)</li>
+                            <li>Zusammenhang von Handlung und Raum</li>
+                        </ul>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">🎭</span>Dramatische Texte</h3>
+                        <ul class="topic-list">
+                            <li>Kennzeichen dramatischer Texte</li>
+                            <li>Figuren und Figurenkonstellation</li>
+                            <li>Dialog und Monolog</li>
+                            <li>Handlung und Aufbau</li>
+                            <li>Aristotelische Bauform des Dramas</li>
+                            <li>Offenes Drama und geschlossenes Drama</li>
+                            <li>Raum/Zeit im Drama</li>
+                            <li>Dramatische Gattungen: Tragödie, Komödie, Tragikomödie</li>
+                        </ul>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">✒️</span>Lyrische Texte</h3>
+                        <ul class="topic-list">
+                            <li>Kennzeichen lyrischer Texte</li>
+                            <li>Lyrischer Sprecher (lyrisches Ich)</li>
+                            <li>Vers, Strophe, Reim</li>
+                            <li>Rhythmus und Metrum (Jambus, Trochäus, Daktylus, Anapäst)</li>
+                            <li>Klanggestalt (lautliche Ebene)</li>
+                            <li>Sprachliche Bilder (Metapher, Vergleich, Personifikation)</li>
+                            <li>Typische Inhalts- und Formelemente</li>
+                            <li>Verschiedene Gedichtformen</li>
+                        </ul>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">📰</span>2.2 Sachtexte</h3>
+                        <ul class="topic-list">
+                            <li>Kennzeichen von Sachtexten</li>
+                            <li>Informierende Texte (Bericht, Beschreibung, Dokumentation)</li>
+                            <li>Ausdruckstexte (Tagebuch, Brief)</li>
+                            <li>Appellative Texte (Aufruf, Flugblatt, Wahlrede, Werbetext)</li>
+                            <li>Argumentierende Texte (Erörterung, Kommentar, Rezension, Rede)</li>
+                            <li>Normierende Texte (Anordnung, Gesetz, Satzung)</li>
+                            <li>Ästhetisch-kreative Texte (Essay, Glosse)</li>
+                        </ul>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">🗨️</span>2.3 Reden</h3>
+                        <ul class="topic-list">
+                            <li>Kennzeichen von Reden</li>
+                            <li>Die Feier- oder Festrede</li>
+                            <li>Die Gerichtsrede</li>
+                            <li>Die argumentative Form der Rede</li>
+                            <li>Die politische Rede und ihre Wirkungsmittel</li>
+                            <li>Redesituation und Kommunikationsmodell</li>
+                        </ul>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">🔍</span>2.4 Analyse/Interpretation von Texten</h3>
+                        <ul class="topic-list">
+                            <li>Analyse/Interpretation literarischer Texte</li>
+                            <li>Analyse von Sachtexten</li>
+                            <li>Analyse einer Rede</li>
+                            <li>Die wichtigsten stilistisch-rhetorischen Mittel (Figuren)</li>
+                            <li>Textimmanente und textübergreifende Deutung</li>
+                            <li>Produktionsorientierte Deutung</li>
+                            <li>Vergleichende Analyse/Interpretation zweier Texte</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <a href="LiterarischeGattungen.html" class="btn btn-secondary">Literarische Gattungen entdecken</a>
+                </div>
+            </div>
+            <!-- Kategorie 3: Erörtern -->
+            <div class="category-card">
+                <div class="card-header-section">
+                    <div class="card-title-wrapper">
+                        <h2><span class="icon">💭</span>Erörtern</h2>
+                        <p>Argumentationstechniken und verschiedene Formen der Erörterung</p>
+                    </div>
+                    <button class="toggle-btn collapsed" onclick="toggleCard(this)" aria-label="Toggle content">
+                        ▼
+                    </button>
+                </div>
+                
+                <div class="collapsible-content">
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">🎯</span>3.1 Argumentieren und Erörtern</h3>
+                        <ul class="topic-list">
+                            <li>Unterschied zwischen Argumentationsformen</li>
+                            <li>Grundstruktur einer Argumentation: These/Behauptung</li>
+                            <li>Argument/Begründung mit Beispiel/Beleg</li>
+                            <li>Arten von Argumenten (Erfahrungsargument, Autoritätsargument, Faktenargument, normatives Argument, analogisierendes Argument)</li>
+                            <li>Überzeugende Argumente und schlüssige Gedankenführung</li>
+                            <li>Gegenbehauptung und Entkräftung</li>
+                            <li>Veranschaulichung durch Beispiele und Belege</li>
+                            <li>Einwand und Entkräftung</li>
+                        </ul>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">📝</span>3.2 Textgebundene Erörterung</h3>
+                        <ul class="topic-list">
+                            <li>Die literarische Erörterung</li>
+                            <li>Erörterung von Sachtexten</li>
+                            <li>Schriftliche Form des Argumentierens: Erörterung</li>
+                            <li>Dialektische Erörterung (Pro-und-Kontra-Verfahren)</li>
+                            <li>Lineare oder steigernde Erörterung (Sacherörterung)</li>
+                            <li>Aufbau einer Erörterung</li>
+                        </ul>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">🔧</span>Tipps für das Schreiben einer Erörterung</h3>
+                        <ul class="topic-list">
+                            <li>Das anstehende Problem deutlich benennen</li>
+                            <li>Unterschiedliche Aspekte des Problems erfassen</li>
+                            <li>Wichtige Begriffe definieren bzw. erläutern</li>
+                            <li>Das Problem aus unterschiedlicher Sicht darstellen</li>
+                            <li>Argumente anderer stützen oder zurückweisen</li>
+                            <li>Einen eigenen Standpunkt beziehen</li>
+                            <li>Das Resultat der Auseinandersetzung mit dem Problem zusammenfassen</li>
+                            <li>Eigene Entscheidung fällen/Beurteilung geben bzw. begründen</li>
+                        </ul>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">⚠️</span>Tipps für das Vermeiden von Fehlern</h3>
+                        <ul class="topic-list">
+                            <li>Keine inhaltliche Umschreibung des Textes (Paraphrase)</li>
+                            <li>Keine krampfhafte Gegenposition zum vorliegenden Text</li>
+                            <li>Sinnvolle und angemessene Gegenposition</li>
+                            <li>Richtigkeit der Thesen pauschal oder teilweise bestreiten</li>
+                            <li>Zusammenhang von Ursache und Wirkung bezweifeln</li>
+                            <li>Im Einzelnen genauer unterscheiden</li>
+                            <li>Gegen Verallgemeinerungen argumentieren</li>
+                        </ul>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">📋</span>Voraussetzungen für die kritische Texterörterung</h3>
+                        <ul class="topic-list">
+                            <li>Ansichten des Verfassers und eigene Ansichten stimmen überein</li>
+                            <li>Ansichten des Verfassers und eigene Ansichten stimmen teilweise überein</li>
+                            <li>Ansichten des Verfassers und eigene Ansichten stimmen überhaupt nicht überein</li>
+                            <li>Kritische Auseinandersetzung erforderlich</li>
+                            <li>Position des Textautors einnehmen und entsprechend argumentieren</li>
+                        </ul>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">✍️</span>Für das Verfassen</h3>
+                        <ul class="topic-list">
+                            <li>Den Schwerpunkt der Aufgabenstellung beachten</li>
+                            <li>Den Text zunächst gründlich untersuchen</li>
+                            <li>Bei der Textwiedergabe Präsens verwenden</li>
+                            <li>Sinnvoll in den eigenen Satzbau integrieren</li>
+                            <li>Deutlich trennen zwischen Beschreibung/Analyse und kritisch-wertenden Gedanken</li>
+                            <li>Hauptprobleme und Kernstellen des Textes beachten</li>
+                        </ul>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">📊</span>Formale Aufbauformen für die dialektische Erörterung</h3>
+                        <ul class="topic-list">
+                            <li>Einleitung: Thema benennen, Aufmerksamkeit des Lesers wecken</li>
+                            <li>Hauptteil: These und Antithese mit Argumenten und Beispielen</li>
+                            <li>Synthese: eigene Entscheidung/Kompromiss</li>
+                            <li>Schlussteil: Zusammenfassung, persönliche Stellungnahme, Ausblick</li>
+                            <li>Sanduhr-Prinzip oder Ping-Pong-Prinzip</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <a href="Eroertern.html" class="btn btn-secondary">Erörtern lernen</a>
+                </div>
+            </div>
+
+            <!-- Kategorie 4: Epochen und literarische Strömungen der deutschen Literatur -->
+            <div class="category-card">
+                <div class="card-header-section">
+                    <div class="card-title-wrapper">
+                        <h2><span class="icon">📜</span>Epochen und literarische Strömungen der deutschen Literatur</h2>
+                        <p>Von der Aufklärung bis zur Gegenwartsliteratur</p>
+                    </div>
+                    <button class="toggle-btn collapsed" onclick="toggleCard(this)" aria-label="Toggle content">
+                        ▼
+                    </button>
+                </div>
+                
+                <div class="collapsible-content">
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">💡</span>4.1 Einführung</h3>
+                        <ul class="topic-list">
+                            <li>Epochenbegriff und Periodisierung</li>
+                            <li>Literaturgeschichtliche Zusammenhänge</li>
+                            <li>Merkmale literarischer Epochen</li>
+                        </ul>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">🏰</span>4.2 Althochdeutsche Dichtung (um 750-1050)</h3>
+                        <ul class="topic-list">
+                            <li>Historische Zusammenhänge</li>
+                            <li>Christianisierung und erste deutsche Texte</li>
+                            <li>Hildebrandslied und Merseburger Zaubersprüche</li>
+                        </ul>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">⚔️</span>4.3 Mittelhochdeutsche Dichtung (um 1050-1350)</h3>
+                        <ul class="topic-list">
+                            <li>Allgemeine Hinweise zur Epoche</li>
+                            <li>Zum höfischen Roman (Epos): Hartmann von Aue, Wolfram von Eschenbach</li>
+                            <li>Zum Minnesang der mittelhochdeutschen Blütezeit: Walther von der Vogelweide</li>
+                            <li>Verfall und Ende der klassischen mittelhochdeutschen Dichtung</li>
+                            <li>Das Nibelungenlied</li>
+                        </ul>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">🎨</span>4.4 Renaissance, Humanismus, Reformation (um 1350-1600)</h3>
+                        <ul class="topic-list">
+                            <li>Historische Zusammenhänge: vom Mittelalter zur Neuzeit</li>
+                            <li>Zur Literatur der Renaissance und des Humanismus</li>
+                            <li>Renaissance: Wiedergeburt der Antike</li>
+                            <li>Humanismus: Bildung und Menschenwürde</li>
+                            <li>Reformation: Martin Luther und die Bibelübersetzung</li>
+                        </ul>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">🎭</span>4.5 Barock (um 1600-1720)</h3>
+                        <ul class="topic-list">
+                            <li>Begriff und historische Einordnung</li>
+                            <li>Historischer Hintergrund: Dreißigjähriger Krieg</li>
+                            <li>Lebensgefühl der Barock-Zeit</li>
+                            <li>Selbstverständnis der Barock-Dichter und Dichtungstheorie</li>
+                            <li>Sprache und Stil: Schwulst und Pathos</li>
+                            <li>Bevorzugte Textarten: Sonett, Epigramm</li>
+                            <li>Andreas Gryphius, Martin Opitz</li>
+                        </ul>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">🕯️</span>4.6 Literatur der Aufklärung (um 1700-1800)</h3>
+                        <ul class="topic-list">
+                            <li>Historische Zusammenhänge: Absolutismus und Bürgertum</li>
+                            <li>Kennzeichen der Epoche: Vernunft und Toleranz</li>
+                            <li>Zur Literatur: Gotthold Ephraim Lessing</li>
+                            <li>Aufklärerische Forderungen</li>
+                            <li>Bürgerliches Trauerspiel</li>
+                        </ul>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">⚡</span>4.7 Sturm und Drang, Empfindsamkeit, Klassik und Romantik (um 1740-1830)</h3>
+                        <ul class="topic-list">
+                            <li>Einführung: Übergang vom 18. zum 19. Jahrhundert</li>
+                            <li>Sturm und Drang – "Geniezeit" (um 1770-1785)</li>
+                            <li>Weimarer Klassik (um 1786-1805): Goethe und Schiller</li>
+                            <li>Romantik (um 1795-1830): Früh-, Hoch- und Spätromantik</li>
+                            <li>Merkmale und Motive der Romantik</li>
+                        </ul>
+                    </div>
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">🏭</span>4.8 Junges Deutschland, Vormärz und Biedermeier (um 1815-1849)</h3>
+                        <ul class="topic-list">
+                            <li>Historische Zusammenhänge: Restauration und Revolution</li>
+                            <li>Kennzeichen der Epoche: politisches Engagement</li>
+                            <li>Junges Deutschland: Heinrich Heine, Georg Büchner</li>
+                            <li>Vormärz: politische Lyrik</li>
+                            <li>Biedermeier: Rückzug ins Private</li>
+                        </ul>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">🔬</span>4.9 Poetischer (oder bürgerlicher) Realismus (um 1848-1890)</h3>
+                        <ul class="topic-list">
+                            <li>Historische Zusammenhänge: Industrialisierung</li>
+                            <li>Kennzeichen der Epoche: Wirklichkeitstreue</li>
+                            <li>Theodor Fontane, Gottfried Keller</li>
+                            <li>Poetischer Realismus vs. Naturalismus</li>
+                        </ul>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">🎪</span>4.10 Naturalismus (um 1890-1900)</h3>
+                        <ul class="topic-list">
+                            <li>Zeitgeschichtliche Rahmenbedingungen</li>
+                            <li>Kennzeichen: naturwissenschaftliche Genauigkeit</li>
+                            <li>Gerhart Hauptmann: "Die Weber"</li>
+                            <li>Sekundenstil und soziales Drama</li>
+                        </ul>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">🌺</span>4.11 Gegenbewegungen zum Naturalismus (1890-1918)</h3>
+                        <ul class="topic-list">
+                            <li>Kennzeichen der Epoche: Ästhetizismus</li>
+                            <li>Impressionismus: Hugo von Hofmannsthal</li>
+                            <li>Symbolismus: Rainer Maria Rilke, Stefan George</li>
+                            <li>Jugendstil und Décadence</li>
+                        </ul>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">💥</span>4.12 Expressionismus (um 1910-1920)</h3>
+                        <ul class="topic-list">
+                            <li>Historische Zusammenhänge: Erster Weltkrieg</li>
+                            <li>Kennzeichen der Epoche: Aufschrei und Protest</li>
+                            <li>Georg Trakl, Gottfried Benn, Georg Heym</li>
+                            <li>Großstadtlyrik und Kriegslyrik</li>
+                            <li>Sprachliche Ausdrucksmittel: Neologismen, grelle Metaphern</li>
+                        </ul>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">📰</span>4.13 Weimarer Republik und Exil während des Nationalsozialismus (1919-1945)</h3>
+                        <ul class="topic-list">
+                            <li>Historische Zusammenhänge: Zwischenkriegszeit</li>
+                            <li>Weimarer Republik: literarische Vielfalt</li>
+                            <li>Neue Sachlichkeit: Bertolt Brecht, Erich Kästner</li>
+                            <li>Nationalsozialismus: Gleichschaltung und Exil</li>
+                            <li>Exilliteratur: Thomas Mann, Bertolt Brecht, Anna Seghers</li>
+                        </ul>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">🏚️</span>4.14 Literatur der Nachkriegszeit (1945-1949)</h3>
+                        <ul class="topic-list">
+                            <li>Historische Zusammenhänge: Stunde Null</li>
+                            <li>Trümmerliteratur und Kahlschlagliteratur</li>
+                            <li>Gruppe 47: Heinrich Böll, Günter Grass</li>
+                            <li>Vergangenheitsbewältigung</li>
+                        </ul>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">🇩🇪</span>4.15 Literatur der Bundesrepublik Deutschland, der Schweiz und Österreichs (1949-1990)</h3>
+                        <ul class="topic-list">
+                            <li>Von der Gründung der Bundesrepublik bis zur Mitte der 60er-Jahre</li>
+                            <li>Politisierung der Literatur: Die 60er- und 70er-Jahre</li>
+                            <li>„Neue Subjektivität" – Literatur der 70er-Jahre</li>
+                            <li>„Postmoderne" – Literatur der 80er-Jahre</li>
+                            <li>Max Frisch, Friedrich Dürrenmatt, Peter Handke</li>
+                        </ul>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">📚</span>4.16 Literatur der Deutschen Demokratischen Republik (1949-1990)</h3>
+                        <ul class="topic-list">
+                            <li>Historische Zusammenhänge: DDR-Gründung</li>
+                            <li>Sozialistischer Realismus</li>
+                            <li>Entwicklungen: von der Aufbauliteratur zur kritischen Literatur</li>
+                            <li>Schriftsteller zwischen Ost und West</li>
+                            <li>Christa Wolf, Ulrich Plenzdorf</li>
+                        </ul>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">🔄</span>4.17 Von der "Wende" (1990) bis zur Gegenwart</h3>
+                        <ul class="topic-list">
+                            <li>Historische Zusammenhänge: Deutsche Wiedervereinigung</li>
+                            <li>Zur Literaturentwicklung nach 1990</li>
+                            <li>Wende-Literatur und Erinnerungsliteratur</li>
+                            <li>Popliteratur: Christian Kracht, Benjamin von Stuckrad-Barre</li>
+                            <li>Migrationsliteratur und interkulturelle Literatur</li>
+                            <li>Gegenwartsliteratur: Daniel Kehlmann, Juli Zeh</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <a href="EpochenStroemungendeutschenLiteratur.html" class="btn btn-secondary">Literarische Epochen erkunden</a>
+                </div>
+            </div>
+
+            <div class="category-card">
+                <div class="card-header-section">
+                    <div class="card-title-wrapper">
+                        <h2><span class="icon">🗣️</span>Probeprüfung</h2>
+                    </div>
+                    <button class="toggle-btn collapsed" onclick="toggleCard(this)" aria-label="Toggle content">
+                        ▼
+                    </button>
+                </div>
+                
+                <div class="collapsible-content">
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">⏳</span>Prüfungsvorbereitung</h3>
+                        <ul class="topic-list">
+                            <li>Prüfungsstrategien und Zeitmanagement</li>
+                            <li>Übungsaufgaben zur Textanalyse</li>
+                            <li>Musterlösungen und Erwartungshorizonte</li>
+                            <li>Erörterungsthemen zum Üben</li>
+                            <li>Mündliche Prüfungsvorbereitung</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <a href="deutsch_probepruefung.html" class="btn btn-secondary">Zur Probeprüfung</a>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="quick-links">
+            <h3>🔗 Spezifiziert</h3>
+            <div class="links-grid">
+                <a href="KurzgeschichtenAnalysieren.html" class="btn">📖 Kurzgeschichten analysieren</a>
+                <a href="SprachlicheMittelAnalysieren.html" class="btn">🎨 Sprachliche Mittel analysieren</a>
+                <a href="AkademischeSprachePerformativeVerben.html" class="btn">📚 Gehobenes Vokabular und Sprechakte</a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>
+                📚 Basierend auf dem Bildungsplan 2021 für Gymnasien in Baden-Württemberg
+            </p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for internal links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Enhanced hover effects for cards
+            const cards = document.querySelectorAll('.category-card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+
+            // Progress tracking
+            const visitedPages = JSON.parse(localStorage.getItem('visitedPages') || '[]');
+            const totalPages = 5; // Total number of main sections
+            
+            // Track current page visit
+            if (!visitedPages.includes('index')) {
+                visitedPages.push('index');
+                localStorage.setItem('visitedPages', JSON.stringify(visitedPages));
+            }
+
+            // Add click tracking to category links
+            const categoryLinks = document.querySelectorAll('.category-card .btn');
+            categoryLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    const page = this.getAttribute('href').replace('.html', '');
+                    trackPageVisit(page);
+                });
+            });
+
+            // Log welcome message
+            console.log('✅ Deutsch Lernzettel geladen! Viel Erfolg beim Lernen!');
+        });
+
+        // Track page visits function
+        function trackPageVisit(page) {
+            let visitedPages = JSON.parse(localStorage.getItem('visitedPages') || '[]');
+            if (!visitedPages.includes(page)) {
+                visitedPages.push(page);
+                localStorage.setItem('visitedPages', JSON.stringify(visitedPages));
+            }
+        }
+
+        // Toggle card content function
+        function toggleCard(button) {
+            const card = button.closest('.category-card');
+            const content = card.querySelector('.collapsible-content');
+            const isExpanded = content.classList.contains('expanded');
+            
+            if (isExpanded) {
+                content.classList.remove('expanded');
+                button.classList.remove('expanded');
+                button.classList.add('collapsed');
+                button.innerHTML = '▼';
+            } else {
+                content.classList.add('expanded');
+                button.classList.add('expanded');
+                button.classList.remove('collapsed');
+                button.innerHTML = '▲';
+            }
+        }
+
+        // Add visual feedback on button clicks
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 150);
+            });
+        });
+
+        // Keyboard shortcut: Press 'H' to go to top
+        document.addEventListener('keydown', function(e) {
+            if ((e.key === 'h' || e.key === 'H') && !e.ctrlKey && !e.altKey) {
+                const active = document.activeElement;
+                if (active.tagName !== 'INPUT' && active.tagName !== 'TEXTAREA') {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            }
+        });
+
+        // Add entrance animation
+        window.addEventListener('load', function() {
+            const cards = document.querySelectorAll('.category-card');
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    
+                    requestAnimationFrame(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    });
+                }, index * 100);
+            });
+        });
+    </script>
 </body>
 </html>
+
